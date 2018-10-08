@@ -90,7 +90,7 @@ public class ConstraintExt extends Constraint{
 			Object valConstraint = t.get(indexVar);
 			Object valAssignment = a.get(varList.get(indexVar));
 			
-			if (valConstraint == valAssignment)
+			if (valConstraint.equals(valAssignment))
 				indexVar++;
 			else {
 				indexVar = 0;
