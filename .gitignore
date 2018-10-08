@@ -1,0 +1,16 @@
+# Fichiers ~ cachés
+*~
+*.tmp.nlogo
+
+# Fichiers compilés
+*.o
+*.class
+
+# Exécutables
+*.out
+
+# Eclipse
+.metadata/
+.recommenders/
+.project
+.classpath
