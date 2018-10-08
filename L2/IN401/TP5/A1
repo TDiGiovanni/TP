@@ -1,0 +1,13 @@
+\documentclass{article} 
+ \usepackage{tikz} 
+ \begin{document} 
+ \resizebox{300pt}{!}{
+ \begin{tikzpicture}
+\node[draw, color=black, rounded corners=5pt, text width=3cm, text centered] (SZ1) at (5, 1) { (\textcolor{red}{1})\\This = \textcolor{red}{0x1c59c20}\\Pere = (\textcolor{red}{0})};
+\node[draw, color=black, rounded corners=5pt, text width=3cm, text centered] (SZ2) at (-3, -2) { (\textcolor{red}{2})\\This = \textcolor{red}{0x1c59cb0}\\Pere = (\textcolor{red}{0})};
+\draw[->, >=latex, color=blue] (SZ1) -- (SZ2);
+\node[draw, color=black, rounded corners=5pt, text width=3cm, text centered] (SZ3) at (14, -2) { (\textcolor{red}{3})\\This = \textcolor{red}{0x1c59ce0}\\Pere = (\textcolor{red}{0})};
+\draw[->, >=latex, color=blue] (SZ1) -- (SZ3);
+\end{tikzpicture}
+ } \end{document} 
+

@@ -1,0 +1,28 @@
+digraph G { label = "Arbre parfait" 
+14465024 [label="7" ] ;
+14465024 -> 14464992 [color="red",label="g" ] ;
+14464992 [label="4" ] ;
+14464992 -> 14464960 [color="red",label="g" ] ;
+14464960 [label="2" ] ;
+14464960 -> 14464928 [color="red",label="g" ] ;
+14464928 [label="1" ] ;
+14464960 -> 14464896 [color="blue",label="d" ] ;
+14464896 [label="1" ] ;
+14464992 -> 14464864 [color="blue",label="d" ] ;
+14464864 [label="2" ] ;
+14464864 -> 14464832 [color="red",label="g" ] ;
+14464832 [label="1" ] ;
+14464864 -> 14464800 [color="blue",label="d" ] ;
+14464800 [label="1" ] ;
+14465024 -> 14464768 [color="blue",label="d" ] ;
+14464768 [label="3" ] ;
+14464768 -> 14464736 [color="red",label="g" ] ;
+14464736 [label="2" ] ;
+14464736 -> 14464704 [color="red",label="g" ] ;
+14464704 [label="1" ] ;
+14464736 -> 14464672 [color="blue",label="d" ] ;
+14464672 [label="1" ] ;
+14464768 -> 14464640 [color="blue",label="d" ] ;
+14464640 [label="1" ] ;
+
+ }

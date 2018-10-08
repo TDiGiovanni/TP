@@ -1,0 +1,9 @@
+\documentclass{article} 
+ \usepackage{tikz} 
+ \begin{document} 
+ \resizebox{300pt}{!}{
+ \begin{tikzpicture}
+\node[draw, color=black, rounded corners=5pt, text width=3cm, text centered] (SZ1) at (5, 1) { (\textcolor{red}{1})\\This = \textcolor{red}{0x1c59d10}\\Pere = (\textcolor{red}{0})};
+\end{tikzpicture}
+ } \end{document} 
+

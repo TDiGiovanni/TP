@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+   <title>M1 prog. agent - TP2 NetLogo</title>
+<link href="Sujet_fichiers/netlogo.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="white">
+
+<center>
+  <h1>TP 2 - Programmation orientée agent  <br>
+    <br>
+  Croissance et consommation de ressources en NetLogo</h1>
+<p>&nbsp; </p>
+  <h3>proposé par <a href="http://www.lirmm.fr/~ferber/ProgAgent/www.lirmm.fr/~ferber/">Jacques Ferber</a><br>
+    2016-2018</h3>
+  <p>&nbsp; </p>
+</center>
+<p>On va essayer de modéliser un système de gestion de ressources
+  en NetLogo.</p>
+<h2>1. Faire évoluer l'environnement </h2>
+<p>a) Dans un premier temps on va faire "pousser" des ressources dans un environnement..
+  Pour cela on va supposer que les patches peuvent faire pousser de l'herbe...</p>
+<p>On supposera que chaque parcelle de terrain (représentée par
+  un patch) peut être soit pleine d'herbe (verte), soit déserte (noir). 
+On va supposer que l'herbe repousse naturellement chaque patch disposant
+ de sa propre vitesse de croissance.</p>
+<p>Dans un premier temps, on suppose que les patches n'ont que deux 
+états: l'état 'plein d'herbes' et l'état 'désert'. Mais le temps de 
+passage de l'état désert à l'état 'herbe' dépend d'un compteur de temps 
+ 'cpt-temps', propre à chaque patch, qui indiquera le temps qu'il lui 
+reste à attendre avant de passer de l'état 'désert' à l'état 'herbeux' 
+et inversement.</p>
+<p>Ce compteur est initialisé à une valeur 'cpt-temps-init' laquelle est
+ définie de manière aléatoire pour chaque patch par une valeur entre 1 
+et 'temps-croissance-max' qui sera associé à un slider.</p>
+<p>Le diagramme de classe du patch est le suivant:</p>
+<p><img src="Sujet_fichiers/patch-class-diagram.png" width="389" height="151"></p>
+<p> Le principe est le suivant: </p>
+<ul>
+  <li>à l'initialisation, le patche est dans l'état <tt>'desert'</tt> 
+(couleur noire). On calcule une valeur initiale pour cpt-temps-init. 
+Puis on met cette valeur initiale dans cpt-temps. A chaque pas on 
+décrémente le compteur cpt-temps. </li>
+  <li>Lorsque cpt-temps est à zéro on change l'état du patch (qui passe alors à <tt>'prairie'</tt>), puis on réaffecte la valeur <tt>cpt-temps-init</tt> à la variable <tt>cpt-temps</tt> et on continue. </li>
+  <li>Lorsque <tt>cpt-temps</tt> arrive à zéro, le patche passe dans l'état <tt>'desert'</tt>, etc..</li>
+</ul>
+<p>Implémentez de tels patches</p>
+<blockquote>
+  <p><strong>Note</strong>: dans la version 5 de NetLogo il est important de mettre une instruction '<tt>clear-all</tt>' au début et un 'reset-ticks' à la fin de votre procédure d'initialisation (<tt>setup</tt>). Cela donne donc ceci:</p>
+  <pre>to setup
+    clear-all
+    ...     ;; initialisation
+    ...		;; du programme
+    reset-ticks
+end
+
+to go
+    ..		;; la procedure qui sera appelee a céquà cycle...
+    tick
+end</pre>
+</blockquote>
+<p>b) On supposera maintenant qu'il n'y a plus deux états possibles, 
+mais une variable continue qui caractérise la quantité de plantes qu'il y
+ a sur un patch (attribut <tt>taille-plante</tt>). Cet attribut sera incrémenté à chaque fois que le compteur <tt>cpt-temps</tt> revient à zéro.</p>
+<p>On attribuera une valeur maximum pour la taille des plantes (<tt>taille-plante-max</tt>) qui sera associée à un slider (par exemple entre 50 et 200)</p>
+<p>Pour visualiser la taille des plantes, on pourra utiliser la fonction <tt>scale-color</tt> de
+  NetLogo qui retourne une couleur proportionnelle à une valeur (aller
+  regarder sa définition dans le manuel de <a href="http://ccl.northwestern.edu/netlogo/docs/">programmation
+    de NetLogo</a>). Par exemple, pour mettre la couleur d'un patche en correspondance
+  avec la valeur de l'attribut '<tt>taille-plante</tt>', quelque chose 
+comme cela devrait
+  faire l'affaire (Attention: c'est juste une proposition: essayez avec 
+d'autres valeurs que 70 et faites en sorte ensuite que le gradient de 
+couleur soit relié à la taille maximale des plantes (<tt>taille-plante-max</tt>) tout en conservant une belle couleur verte sur les patches.</p>
+<pre>	set pcolor scale-color green taille-plante 0 70</pre>
+<p>Visualisez ainsi des patches qui poussent et croissent à partir de
+  valeurs aléatoires
+  initiales.  On supposera que lorsque la valeur de l'attribut <tt>taille-plante</tt>
+  est à taille-plante-max le patch voit la taille des plante décroire, 
+et quand elle arrive à zéro (ou négatif), le patch devient désert et il 
+recontinue
+  sa croissance ensuite.</p>
+<h2>2.     Créer des consommateurs de ressources</h2>
+<p>On fait maintenant venir des vaches qui viennent brouter l'herbe. On suppose
+  qu'une vache prend un peu de la valeur de <tt>taille-plante</tt>, c'est à dire
+  qu'elle diminue la quantité d'herbe qui se trouve sur un patche.. Chaque
+  fois qu'une vache tombe sur un patche vert, elle diminue sa valeur taille-plante
+  d'une valeur <tt>consommation-vache</tt> qui est définie de manière
+  globale (c'est un paramètre auquel on associe un slider). Evidemment
+  l'herbe repousse ensuite. </p>
+<p>Faites en sorte que les vaches se déplacent aléatoirement et
+  broutent.. Voyez ce qui se passe en fonction des paramètres   temps-croissance
+  et consommation-vache.. Qui va gagner de l'herbe ou des vaches? </p>
+<p>Visualiser la quantité totale de vaches et d'herbe à l'aide
+  d'un moniteur d'interface de type 'plot'.</p>
+<blockquote>
+  <p><strong>Note</strong>: pour visualiser une courbe sous NetLogo : à la fin de la procédure to go, ajouter la ligne suivante:</p>
+  <pre>    	update-plots</pre>
+  <p>Et créez un "plot" (comme on crée un bouton) et dans le pen (le 
+crayon) "default" (dont vous pouvez changer le nom en "herbe" par 
+exemple), écrivez l'expression suivante</p>
+  <pre>  sum [taille-plante] of patches
+</pre>
+  <p>Cela signifie qu'à chaque tour, il affiche dans le "plot", pour la
+    courbe "herbe", la totalité d'herbe qui existe dans votre
+    terrain..  </p>
+  <p>Pour plus d'informations sur la manière de visualiser une courbe sous NetLogo, voir la <a href="http://ccl.northwestern.edu/netlogo/docs/">documentation de l'interface de NetLogo</a>.</p>
+</blockquote>
+<h2>3. Troupeaux de vaches </h2>
+<p>Faites en sorte que vos vaches se déplacent en troupeau.. Utilisez
+  la technique que vous avez mis au point lors de la poursuite des reines par les abeilles. Faites un "taureau"
+  et un ensemble de vaches qui le suivent (comme pour les reines et les abeilles).
+  En même temps qu'elles avencent et suivent le taureau, elles se repaissent
+  de l'herbe qu'elles croisent.. Voyez l'évolution de votre terrain en
+  fonction du déplacement des vaches..</p>
+<h2>4. Prédateurs</h2>
+<p>a) On crée maintenant un ensemble de prédateurs, des lions,
+  qui viennent manger les vaches (ils ne mangent pas les taureaux!!).   Ces lions
+  avancent de manière
+  aléatoires,
+  et dès qu'ils repèrent une vache dans un certain rayon de perception
+  (de 3 à 20 par exemple, mettre cela aussi sous la forme d'un paramètre
+  et d'un slider), ils lui foncent dessus, et s'il se trouve sur le même patche
+  que la vache, il la mange (En NetLogo, le code <tt>other &lt;breed&gt;-here</tt> retourne
+  toutes les tortues de type &lt;breed&gt; qui se trouvent sur le même patch, la tortue
+  courante ayant été omise.
+  Attention, même s'il y a plusieurs vaches sur le même patch, il ne doit en
+  manger qu'une!! Regardez dans la doc la définition
+  de <tt>other </tt>et
+  de <tt>turtles-here</tt>). La primitive pour tuer un agent est 'die'. Si l'agent se "tue" lui-même, il suffit de faire </p>
+  <pre>die </pre>
+<p>Si on demande à un autre agent de se tuer, on peut le faire en utilisant la commande:</p>
+<pre>ask &lt;agent&gt; [die] </pre>
+<p>Regardez ce qui se passe en fonction du nombre initial de lions et de vaches.</p>
+<p>b) On donne maintenant des capacités de reproduction aux lions et aux
+  vaches. On suppose d'abord qu'ils disposent tous les deux d'une variable énergie
+  qui est décrémentée à chaque tick (à chaque
+  pas de temps). Cette valeur est incrémentée lorsque les vaches
+  mangent l'herbe (elles prennent un certain quota d'énergie à chaque
+  fois qu'elles prennent de l'herbe) et lorsque les lions mangent les vaches
+  (les lions prennent un certain quota d'énergie à chaque fois
+  qu'ils mangent une vache). Ces quotas d'énergie correspondent à des
+  paramètres <tt>gain-brouter</tt> pour les vaches et <tt>gain-devorer</tt> pour les lions. 
+  Leur attribut énergétique s'exprime alors sous la forme:</p>
+<pre>        set energie energie + gain-brouter   </pre>
+<p>pour la vache
+  chaque fois qu'elle broute et idem pour le lion à chaque fois qu'il mange une vache (avec la valeur<tt> gain-devore</tt>r dans ce cas). On
+  suppose qu'ils se reproduisent de manière
+  aléatoire,
+  ce nombre aléatoire étant pris dans l'étendue <tt>0..reproduction-vaches</tt>  pour
+  la reproduction des vaches (et de la même manière pour les
+  lions). On suppose aussi  que la valeur énergétique d'un animal
+  est divisée
+  par deux lorsqu'il se reproduit.</p>
+<p>En NetLogo, la commande <tt>hatch 1 [... ]</tt> permet de créer  une copie de
+  la tortue courante, l'enfant se trouvant au même endroit que le parent. </p>
+<p>Jouez un peu avec les variables et observez l'évolution de votre monde
+  dans lequel de l'herbe pousse, des vaches et des lions évoluent... A
+  l'école des dieux, savez vous créer un monde qui perdure?  </p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+
+
+
+</body></html>
