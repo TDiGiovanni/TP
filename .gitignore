@@ -7,7 +7,7 @@
 *~
 *.tmp.nlogo
 
-# compiled files
+# Compiled files
 *.o
 *.class
 
