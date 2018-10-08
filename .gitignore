@@ -1,12 +1,17 @@
-# Fichiers ~ cachés
+# Files wihtout extension
+*
+!*.*
+!*/
+
+# Temporary files
 *~
 *.tmp.nlogo
 
-# Fichiers compilés
+# compiled files
 *.o
 *.class
 
-# Exécutables
+# Executables
 *.out
 
 # Eclipse
