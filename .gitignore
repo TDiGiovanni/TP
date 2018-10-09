@@ -19,3 +19,6 @@
 .recommenders/
 .project
 .classpath
+
+# Programmation concurente et répartie
+!calculC.o
