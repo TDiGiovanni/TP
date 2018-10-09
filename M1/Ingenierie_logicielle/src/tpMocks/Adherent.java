@@ -38,7 +38,7 @@ public class Adherent {
 		setCotisationPayee(false);
 		
 		if (new GregorianCalendar().get(GregorianCalendar.YEAR)-derniereAnneeCotisation > 5) {
-			System.out.println("il faudrait radier l'abonné");
+			System.out.println("Il faudrait radier l'abonné.");
 			return true;
 		}
 		
