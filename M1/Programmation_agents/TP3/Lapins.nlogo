@@ -9,7 +9,9 @@ to setup
   set-default-shape turtles "face happy"
 
   ask patches [
-   set odor 0
+    set odor 0
+    set maleOdor 0
+    set femaleOdor 0
   ]
 
   create-wolves nbWolves [
@@ -46,7 +48,7 @@ end
 to moveWolf
   let bestPatch max-one-of patches in-radius wolfPerception [odor]
 
-  ifelse [odor] of bestPatch > 0
+  ifelse [odor] of bestPatch > odor
   [face bestPatch]
   [lt random 50 rt random 50]
 
@@ -56,9 +58,9 @@ end
 
 to moveRabbit
   let nearWolf one-of wolves-on patches in-radius rabbitPerception
-  ifelse nearWolf != nobody  [ ; Si un loup est proche
-    face nearWolf              ;
-    rt 180                     ;
+  ifelse (nearWolf != nobody)  [ ; Si un loup est proche
+    face nearWolf                ;
+    rt 180                       ;
   ]
   [
     set odor (odor + maxOdor)
@@ -67,20 +69,20 @@ to moveRabbit
     [set femaleOdor (femaleOdor + maxOdor)]
 
     let nearRabbit one-of rabbits-on patches in-radius personalSpace
-    ifelse nearRabbit != nobody  [ ; Si un lapin est trop proche
-      face nearRabbit              ;
-      rt 180                       ;
+    ifelse (nearRabbit != nobody and nearRabbit != self)  [ ; Si un lapin est trop proche
+      face nearRabbit                ;
+      rt 180                         ;
     ]
     [
       ifelse (isMale = 1) [
         let bestPatch max-one-of patches in-radius rabbitPerception [femaleOdor]
-        ifelse [femaleOdor] of bestPatch > 0
+        ifelse [femaleOdor] of bestPatch > femaleOdor
         [face bestPatch]
         [lt random 50 rt random 50]
       ]
       [
         let bestPatch max-one-of patches in-radius rabbitPerception [maleOdor]
-        ifelse [maleOdor] of bestPatch > 0
+        ifelse [maleOdor] of bestPatch > maleOdor
         [face bestPatch]
         [lt random 50 rt random 50]
       ]
@@ -169,10 +171,10 @@ NIL
 1
 
 SLIDER
-1007
-38
-1178
-71
+966
+40
+1137
+73
 nbWolves
 nbWolves
 1
@@ -184,10 +186,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-1007
-88
-1179
-121
+966
+90
+1138
+123
 nbRabbits
 nbRabbits
 1
@@ -199,10 +201,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-1204
-37
-1412
-70
+1163
+39
+1371
+72
 wolfPerception
 wolfPerception
 1
@@ -214,10 +216,10 @@ pixels
 HORIZONTAL
 
 SLIDER
-1005
-139
-1177
-172
+964
+141
+1136
+174
 diffusionRate
 diffusionRate
 0
@@ -229,10 +231,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-1452
-90
-1624
-123
+1411
+92
+1583
+125
 maxOdor
 maxOdor
 0
@@ -244,10 +246,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-1205
-140
-1399
-173
+1164
+142
+1358
+175
 evaporationRate
 evaporationRate
 0
@@ -259,10 +261,10 @@ evaporationRate
 HORIZONTAL
 
 SLIDER
-1204
-89
-1427
-122
+1163
+91
+1386
+124
 rabbitPerception
 rabbitPerception
 1
@@ -274,10 +276,10 @@ pixels
 HORIZONTAL
 
 SLIDER
-1658
-88
-1859
-121
+1617
+90
+1818
+123
 personalSpace
 personalSpace
 1
