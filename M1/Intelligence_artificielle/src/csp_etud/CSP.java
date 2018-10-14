@@ -82,13 +82,13 @@ public class CSP {
 		 * @return la liste des assignations solutions
 		 * 
 		 */
-		public ArrayList<Assignment> searchAllSolutions(){
-			exploredNodes = 1;
+		public ArrayList<Assignment> searchAllSolutions() {
 			solutions.clear();
+			exploredNodes = 1;
 			
 			backtrackAll();
 						
-			System.out.println(exploredNodes + " noeuds ont été explorés.");
+			System.out.println(exploredNodes + " noeuds ont été explorés.");			
 			
 			return solutions;
 		}
@@ -98,7 +98,37 @@ public class CSP {
 		 * étendant l'assignation courante
 		 */
 		private void backtrackAll() {
-		    // TODO
+			/*
+			while (backtrack() != null) {
+				solutions.add(currentAssignment);
+			}
+			*/
+			
+			if (currentAssignment.size() == network.getVarNumber()) {
+				solutions.add(currentAssignment.clone());
+				currentAssignment.clear();
+			}
+			
+			String currentVar = chooseVar();
+			
+			ArrayList<Object> domaineTrie = tri(network.getDom(currentVar));
+			
+			for (Object val : domaineTrie) {
+				currentAssignment.put(currentVar, val);
+				exploredNodes++;
+			
+				if (consistant(currentVar)) {
+					Assignment suite = backtrack();
+					if (suite != null) {
+						solutions.add(currentAssignment.clone());
+						currentAssignment.clear();
+					}
+					else
+						currentAssignment.remove(currentVar);
+				}
+				else
+					currentAssignment.remove(currentVar);
+			}
 		}
     
   			
@@ -109,8 +139,6 @@ public class CSP {
 		 */
 		private String chooseVar() {
 			ArrayList<String> varList = network.getVars();
-			
-			
 			
 			for (String var : varList)
 				if (!currentAssignment.containsKey(var))

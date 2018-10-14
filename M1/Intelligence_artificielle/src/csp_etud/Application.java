@@ -16,8 +16,8 @@ public class Application {
 		System.out.println("Réseau récupéré : " + myNetwork);
 		
 		CSP myCSP = new CSP(myNetwork);
-		System.out.println(myCSP.searchSolution());;
-		//System.out.println(myCSP.searchAllSolutions());
+		System.out.println(myCSP.searchSolution());
+		System.out.println(myCSP.searchAllSolutions());
 	}
 
 }
