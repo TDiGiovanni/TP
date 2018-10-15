@@ -34,6 +34,7 @@ public class CSP {
 		 * @return une assignation solution du réseau, ou null si pas de solution
 		 */
 		public Assignment searchSolution() {
+			currentAssignment.clear();
 			exploredNodes = 1;
 			
 			Assignment solution = backtrack();
@@ -57,19 +58,17 @@ public class CSP {
 			
 			ArrayList<Object> domaineTrie = tri(network.getDom(currentVar));
 			
-			for (Object val : domaineTrie) {
-				currentAssignment.put(currentVar, val);
+			for (Object currentVal : domaineTrie) {
+				currentAssignment.put(currentVar, currentVal);
 				exploredNodes++;
 			
 				if (consistant(currentVar)) {
 					Assignment suite = backtrack();
 					if (suite != null)
 						return suite;
-					else
-						currentAssignment.remove(currentVar);
 				}
-				else
-					currentAssignment.remove(currentVar);
+				
+				currentAssignment.remove(currentVar);
 			}
 			
 			return null;
@@ -83,12 +82,14 @@ public class CSP {
 		 * 
 		 */
 		public ArrayList<Assignment> searchAllSolutions() {
+			currentAssignment.clear();
 			solutions.clear();
 			exploredNodes = 1;
 			
 			backtrackAll();
 						
-			System.out.println(exploredNodes + " noeuds ont été explorés.");			
+			System.out.println(exploredNodes + " noeuds ont été explorés.");
+			System.out.println(solutions.size() + " solutions trouvées.");
 			
 			return solutions;
 		}
@@ -98,36 +99,23 @@ public class CSP {
 		 * étendant l'assignation courante
 		 */
 		private void backtrackAll() {
-			/*
-			while (backtrack() != null) {
-				solutions.add(currentAssignment);
-			}
-			*/
-			
 			if (currentAssignment.size() == network.getVarNumber()) {
 				solutions.add(currentAssignment.clone());
-				currentAssignment.clear();
+				return;
 			}
 			
 			String currentVar = chooseVar();
 			
 			ArrayList<Object> domaineTrie = tri(network.getDom(currentVar));
 			
-			for (Object val : domaineTrie) {
-				currentAssignment.put(currentVar, val);
+			for (Object currentVal : domaineTrie) {
+				currentAssignment.put(currentVar, currentVal);
 				exploredNodes++;
 			
-				if (consistant(currentVar)) {
-					Assignment suite = backtrack();
-					if (suite != null) {
-						solutions.add(currentAssignment.clone());
-						currentAssignment.clear();
-					}
-					else
-						currentAssignment.remove(currentVar);
-				}
-				else
-					currentAssignment.remove(currentVar);
+				if (consistant(currentVar))
+					backtrackAll();
+				
+				currentAssignment.remove(currentVar);
 			}
 		}
     

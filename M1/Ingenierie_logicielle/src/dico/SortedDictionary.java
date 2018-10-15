@@ -1,5 +1,6 @@
 package dico;
 
+@SuppressWarnings("unchecked")
 public class SortedDictionary extends AbstractDictionary {
 	// Constructeurs
 	public SortedDictionary() {
@@ -17,10 +18,10 @@ public class SortedDictionary extends AbstractDictionary {
 		int index = keys.length / 2;
 		
 		while (index > 0 && index < keys.length) {
-			if (keys[index].compareTo(k) == 0)
+			if (((Comparable<Object>) keys[index]).compareTo(k) == 0)
 				return index;
 			
-			if (keys[index].compareTo(k) < 0)
+			if (((Comparable<Object>) keys[index]).compareTo(k) < 0)
 				index = (index + keys.length) / 2;
 			
 			else
@@ -39,7 +40,7 @@ public class SortedDictionary extends AbstractDictionary {
 			return indexOf(k);
 		
 		for (int i = 0; i < keys.length; i++)
-			if (keys[i].compareTo(k) > 0)
+			if (((Comparable<Object>) keys[i]).compareTo(k) > 0)
 				return i;
 		
 		grow();
