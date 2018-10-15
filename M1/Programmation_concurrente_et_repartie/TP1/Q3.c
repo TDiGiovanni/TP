@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
+#include "calcul.h"
 
 #define n 3
 
@@ -10,7 +11,7 @@ pthread_mutex_t lockWorkDone = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t doneWorking = PTHREAD_COND_INITIALIZER;
 
 void* work() {
-  sleep(rand()%3); // Travail à synchroniser ici
+  calcul(rand()%3); // Travail à synchroniser ici
   
   pthread_mutex_lock(&lockWorkDone); // Lock quand on utilise la variable commune
   workDone++;
@@ -28,7 +29,7 @@ void* work() {
   
   printf("Tâches sychronisées. Suite du travail... \n");
 
-  sleep(rand()%3);
+  calcul(rand()%3);
   
   pthread_exit(NULL);
 }

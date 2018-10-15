@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
+#include "calcul.h"
 
 #define NB_THREADS 3
 #define NB_ZONES 5
@@ -31,7 +32,7 @@ void* activite(void* parametres) {
     pthread_mutex_unlock(&lockD);
     
     printf("Traitement de la zone %i par l'activité %i... \n", currentZone+1, numActivite+1);
-    sleep(rand() % 3); // Traitement de l'image
+    calcul(rand() % 3); // Traitement de l'image
     printf("Zone %i traitée par l'activité %i. \n", currentZone+1, numActivite+1);
 
     currentZone++;

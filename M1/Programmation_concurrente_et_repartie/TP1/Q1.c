@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <pthread.h>
+#include "calcul.h"
 
 void* thread1(void* pa) {
   int* a = (int*)pa;
   
   printf("thread1.1 \n");
-  sleep(1);
+  calcul(1);
   printf("thread1.2 \n");
 
   (*a)++;
