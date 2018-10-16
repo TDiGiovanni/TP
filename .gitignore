@@ -21,5 +21,8 @@
 .project
 .classpath
 
+# Analyse d'algorithmes
+!fonctionsMysterieuses.o
+
 # Programmation concurente et répartie
 !calculC.o
