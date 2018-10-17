@@ -4,6 +4,18 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 
 public class ConstraintDif extends Constraint {
+	
+	// Constructeurs
+	public ConstraintDif(ArrayList<String> var) {
+		super(var);
+		tuples = new ArrayList<ArrayList<Object>>();
+	}
+	
+	public ConstraintDif(ArrayList<String> var, String name) {
+		super(var,name);
+		tuples = new ArrayList<ArrayList<Object>>();
+	}
+	
 	public ConstraintDif(BufferedReader in) throws Exception{
 		super(in);
 		tuples = new ArrayList<ArrayList<Object>>();
@@ -18,7 +30,29 @@ public class ConstraintDif extends Constraint {
 	}
 
 	public boolean violation(Assignment a) {
-		// TODO Auto-generated method stub
+		// TODO
+		for (String var : varList)
+			if (!a.containsKey(var)) // Si une des variables de la contrainte n'est pas dans l'assignation
+				return false;
+		
+		int indexVar = 0, indexTuple = 0;
+		while (indexVar < varList.size() && indexTuple < tuples.size()) {
+			ArrayList<Object> t = tuples.get(indexTuple);
+			Object valConstraint = t.get(indexVar);
+			Object valAssignment = a.get(varList.get(indexVar));
+			
+			if (valConstraint.equals(valAssignment))
+				indexVar++;
+			else {
+				indexVar = 0;
+				indexTuple++;
+			}
+		}
+		
+		if (indexVar == varList.size())
+			return false;
+		
+		return true;
 		return false;
 	}
 }

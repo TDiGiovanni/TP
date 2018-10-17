@@ -11,8 +11,6 @@ import org.mockito.ArgumentMatcher;
 import org.mockito.junit.MockitoJUnitRunner;
 import static org.mockito.Mockito.*;
 
-import java.util.ArrayList;
-
 @RunWith(MockitoJUnitRunner.class)
 public class ITest {
 	@Mock I mock;
@@ -62,8 +60,8 @@ public class ITest {
 	
 	@Test
 	public void testMatchersInt() {
-		when (mock.methodeParam(gt(10))).thenReturn(42);
-		when (mock.methodeParam(leq(10))).thenReturn(0);
+		//when (mock.methodeParam(gt(10))).thenReturn(42);
+		//when (mock.methodeParam(leq(10))).thenReturn(0);
 		
 		assertEquals(mock.methodeParam(3), 0);
 		assertEquals(mock.methodeParam(12), 42);

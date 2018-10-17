@@ -8,4 +8,4 @@ Main:
 	$(COMPIL) $@.c -o $@.out $(FLAGS)
 
 clean:
-	rm -f $(SOURCES)
+	rm -f *.out
