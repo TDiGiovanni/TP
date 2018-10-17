@@ -2,7 +2,7 @@ breed [boeufs boeuf]
 breed [wolves wolf]
 
 patches-own [initialTime time grassSize]
-boeufs-own [currentTask energy isAdult recuperationTime childhoodtime hatchTime]
+boeufs-own [currentTask energy isAdult recuperationTime childTime hatchTime]
 
 to setup
   clear-all
@@ -21,11 +21,10 @@ to setup
     set color brown
     setxy random-xcor random-ycor
     set currentTask "regroup"
-    set energy (minEnergy * 2)
+    set energy (random (minEnergy * 2)) + minEnergy
     set isAdult true
-    set recuperationTime 0
-    set childhoodTime 0
-    set hatchTime 0
+    set childTime initialChildTime
+    set hatchTime random initialHatchTime
   ]
 
   create-wolves nbWolves [
@@ -78,19 +77,28 @@ to goBoeuf
   set energy (energy - energyConsumption)
 
   ifelse (isAdult) [
-    ifelse (hatchTime < maxHatchTime) [
-      set hatchTime (hatchTime + 1)
+    ifelse (hatchTime > 0) [
+      set hatchTime (hatchTime - 1)
     ]
     [
-      hatch 1
+      set hatchTime initialHatchTime
+      set energy (energy / 2)
+
+      hatch 1 [
+        set color pink
+        set isAdult false
+        set energy ([energy] of myself / 2)
+        set currentTask "regroup"
+      ]
     ]
   ]
   [
-    ifelse (childhoodTime < maxChildhoodTime) [
-      set childhoodTime (childhoodTime + 1)
+    ifelse (childTime > 0) [
+      set childTime (childTime - 1)
     ]
     [
       set isAdult true
+      set color brown
     ]
   ]
 
@@ -126,7 +134,7 @@ to regroup
     ]
   ]
 
-    fd 1
+  fd 1
 end
 
 to lookForFood
@@ -142,16 +150,46 @@ to lookForFood
 end
 
 to beScared
-  regroup
-  set color blue
-  set recuperationTime (recuperationTime + 1)
+  ifelse (recuperationTime > 0) [
+    regroup
+    set color blue
+
+    let closeWolf one-of wolves in-radius perceptionBoeuf
+
+    ifelse (isAdult) [
+      ;stand
+    ]
+    [
+      if (closeWolf != nobody) [
+        rt 180
+        fd 1
+      ]
+    ]
+
+    set recuperationTime (recuperationTime - 1)
+  ]
+  [
+    ifelse (isAdult) [
+      set color brown
+    ]
+    [
+      set color pink
+    ]
+
+    set recuperationTime initialRecuperationTime
+  ]
 end
 
 to goWolf
-  let boeufOnPatch one-of boeufs-here
-  if (boeufOnPatch != nobody) [
-   ask boeufOnPatch [
-      if (not isAdult) [
+  let adultOnPatch one-of boeufs-here with [isAdult = true]
+  let childOnPatch one-of boeufs-here with [isAdult = false]
+
+  ifelse (adultOnPatch != nobody) [
+    rt 180
+  ]
+  [
+   if (childOnPatch != nobody) [
+      ask childOnPatch [
         die
       ]
     ]
@@ -172,11 +210,11 @@ end
 GRAPHICS-WINDOW
 104
 35
-595
-527
+756
+688
 -1
 -1
-3.0
+4.0
 1
 10
 1
@@ -231,10 +269,10 @@ NIL
 1
 
 SLIDER
-635
-37
-807
-70
+799
+35
+971
+68
 nbBoeufs
 nbBoeufs
 1
@@ -246,10 +284,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-833
-37
-1045
-70
+997
+35
+1209
+68
 perceptionBoeuf
 perceptionBoeuf
 1
@@ -261,10 +299,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-1077
-39
-1249
-72
+1241
+37
+1413
+70
 minSpaceBoeuf
 minSpaceBoeuf
 1
@@ -276,10 +314,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-638
-186
-810
-219
+802
+184
+974
+217
 nbWolves
 nbWolves
 1
@@ -291,10 +329,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-839
-262
-1016
-295
+1003
+260
+1180
+293
 maxGrowingTime
 maxGrowingTime
 1
@@ -306,10 +344,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-635
-261
-807
-294
+799
+259
+971
+292
 maxGrassSize
 maxGrassSize
 50
@@ -321,10 +359,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-632
-90
-804
-123
+796
+88
+968
+121
 minEnergy
 minEnergy
 1
@@ -336,10 +374,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-840
-91
-1041
-124
+1004
+89
+1205
+122
 energyConsumption
 energyConsumption
 1
@@ -351,10 +389,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-1063
-91
-1255
-124
+1227
+89
+1473
+122
 grassConsumption
 grassConsumption
 1
@@ -362,29 +400,29 @@ grassConsumption
 50.0
 1
 1
-NIL
+energy
 HORIZONTAL
 
 SLIDER
-1288
-39
-1532
-72
-maxRecuperationTime
-maxRecuperationTime
+1452
+37
+1706
+70
+initialRecuperationTime
+initialRecuperationTime
 1
-20
-10.0
+50
+25.0
 1
 1
 ticks
 HORIZONTAL
 
 SLIDER
-844
-186
-1016
-219
+1008
+184
+1180
+217
 wolfPerception
 wolfPerception
 1
@@ -396,31 +434,31 @@ NIL
 HORIZONTAL
 
 SLIDER
-1292
-92
-1500
-125
-maxHatchTime
-maxHatchTime
+1516
+87
+1725
+120
+initialHatchTime
+initialHatchTime
 1
-100
-50.0
-1
+500
+100.0
+10
 1
 ticks
 HORIZONTAL
 
 SLIDER
-1534
-93
-1762
-126
-maxChildhoodTime
-maxChildhoodTime
+1448
+150
+1686
+183
+initialChildTime
+initialChildTime
 1
-100
-50.0
-1
+500
+100.0
+10
 1
 ticks
 HORIZONTAL
