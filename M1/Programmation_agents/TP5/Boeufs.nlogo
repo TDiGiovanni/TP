@@ -1,168 +1,172 @@
-breed [sheeps sheep]
-breed [villagers villager]
+breed [boeufs boeuf]
+breed [wolves wolf]
 
-villagers-own [currentTask isGatherer]
-
-globals [villageEnergy]
+patches-own [initialTime time grassSize]
+boeufs-own [currentTask energy isAdult recuperationTime childhoodtime hatchTime]
 
 to setup
   clear-all
   set-default-shape turtles "face happy"
 
-  set villageEnergy initialVillageEnergy
-
   ask patches [
-    if (pxcor > -20 and pxcor < 20 and pycor < 20 and pycor > -20) [
-      set pcolor brown
-    ]
-
-    if (pxcor > max-pxcor - 20 and pycor > max-pycor - 20) [
-      set pcolor green
-    ]
+    set initialTime random maxGrowingTime
+    set time initialTime
+    set grassSize (maxGrassSize / 2)
+    set pcolor scale-color green grassSize 0 (maxGrassSize * 2)
   ]
 
-  create-sheeps nbSheeps [
-    set shape "sheep"
+  create-boeufs nbBoeufs [
+    set shape "cow"
     set size 5
-    set color white
+    set color brown
     setxy random-xcor random-ycor
+    set currentTask "regroup"
+    set energy (minEnergy * 2)
+    set isAdult true
+    set recuperationTime 0
+    set childhoodTime 0
+    set hatchTime 0
   ]
 
-  let finalNbGatherers count villagers * initialGathererRatio / 100
-  create-villagers nbVillagers [
-    set shape "person"
+  create-wolves nbWolves [
+    set shape "wolf"
     set size 5
-    set currentTask "decide"
-
-    let nbGatherers count villagers with [isGatherer = true]
-
-    ifelse (nbGatherers < finalNbGatherers) [
-      set isGatherer true
-      set color blue
-    ]
-    [
-      set isGatherer false
-      set color red
-    ]
-
+    set color grey
+    setxy random-xcor random-ycor
   ]
 
   reset-ticks
 end
 
-
 to go
-  ask sheeps [
-    if (count sheeps < nbSheepsMax) [
-      reproduce
-    ]
-
-    lt random 50
-    rt random 50
-    fd 0.2
+  ask patches [
+    grow
   ]
 
-  ask villagers [
-    run currentTask
+  ask boeufs [
+    goBoeuf
+  ]
 
-    ifelse (villageEnergy > 0) [
-      set villageEnergy villageEnergy - energyConsumed
-    ]
-    [
-      ;die
-    ]
+  ask wolves [
+    goWolf
   ]
 
   update-plots
   tick
 end
 
-to reproduce
-  let p random-float 100
-  if (p < reproductionRate) [
-    hatch 1
-  ]
-end
+to grow
+  ifelse (time = 0) [
+    set time initialTime
 
-to decide
-  let nbHunters count villagers with [isGatherer = false]
-  let nbGatherers count villagers with [isGatherer = true]
-
-  let huntSuccessRate huntEnergy * count sheeps; Pour éviter la division par 0
-  if (nbHunters != 0) [
-    set huntSuccessRate huntEnergy / nbHunters
-  ]
-  let gatherSuccessRate gatherEnergy; Pour éviter la division par 0
-  if (nbGatherers != 0) [
-    set gatherSuccessRate gatherEnergy / nbGatherers
-  ]
-
-  ifelse (huntSuccessRate < gatherSuccessRate) [
-    set isGatherer true
-    set color blue
-    set currentTask "gather"
-  ]
-  [
-    set isGatherer false
-    set color red
-    set currentTask "hunt"
-  ]
-
-end
-
-to gather
-  ifelse (pcolor = green) [
-    set currentTask "gathererGoBackVillage"
-  ]
-  [
-    face patch max-pxcor max-pycor
-    fd 1
-  ]
-end
-
-to gathererGoBackVillage
-  ifelse (pcolor = brown) [
-    set villageEnergy villageEnergy + gatherEnergy
-    set currentTask "decide"
-  ]
-  [
-    face patch 0 0
-    fd 1
-  ]
-end
-
-to hunt
-  let nearestSheep one-of sheeps-here
-
-  ifelse (nearestSheep != nobody) [
-    ask nearestSheep [
-      die
+    if (grassSize < maxGrassSize) [
+      set grassSize (grassSize + 1)
     ]
 
-    set currentTask "hunterGoBackVillage"
+    set pcolor scale-color green grassSize 0 (maxGrassSize * 2)
   ]
   [
-    set nearestSheep min-one-of sheeps [distance myself]
+    set time (time - 1)
+  ]
+end
 
-    ifelse (nearestSheep != nobody) [
-      face nearestSheep
-      fd 1
+to goBoeuf
+  if (energy <= 0) [
+    die
+  ]
+
+  set energy (energy - energyConsumption)
+
+  ifelse (isAdult) [
+    ifelse (hatchTime < maxHatchTime) [
+      set hatchTime (hatchTime + 1)
     ]
     [
-      set currentTask "decide"
+      hatch 1
     ]
+  ]
+  [
+    ifelse (childhoodTime < maxChildhoodTime) [
+      set childhoodTime (childhoodTime + 1)
+    ]
+    [
+      set isAdult true
+    ]
+  ]
+
+  let closeWolf one-of wolves in-radius perceptionBoeuf
+  ifelse (closeWolf != nobody) [
+    set currentTask "beScared"
+  ]
+  [
+    ifelse (energy <= minEnergy) [
+      set currentTask "lookForFood"
+    ]
+    [
+      set currentTask "regroup"
+    ]
+  ]
+
+  run currentTask
+end
+
+to regroup
+  lt random 50
+  rt random 50
+
+  let closeBoeuf one-of other boeufs in-radius perceptionBoeuf
+  if (closeBoeuf != nobody) [
+    let closestBoeuf one-of other boeufs in-radius minSpaceBoeuf
+    ifelse (closestBoeuf != nobody)  [
+      face closestBoeuf
+      rt 180
+    ]
+    [
+      face closeBoeuf
+    ]
+  ]
+
+    fd 1
+end
+
+to lookForFood
+  ifelse (grassSize > 0) [
+    set grassSize (grassSize - grassConsumption)
+    set energy (energy + grassConsumption)
+  ]
+  [
+    lt random 50
+    rt random 50
+    fd 1
   ]
 end
 
-to hunterGoBackVillage
-  ifelse (pcolor = brown) [
-    set villageEnergy villageEnergy + huntEnergy
-    set currentTask "decide"
+to beScared
+  regroup
+  set color blue
+  set recuperationTime (recuperationTime + 1)
+end
+
+to goWolf
+  let boeufOnPatch one-of boeufs-here
+  if (boeufOnPatch != nobody) [
+   ask boeufOnPatch [
+      if (not isAdult) [
+        die
+      ]
+    ]
+  ]
+
+  let closestBoeuf min-one-of boeufs in-radius wolfPerception [distance myself]
+  ifelse (closestBoeuf != nobody) [
+    face closestBoeuf
   ]
   [
-    face patch 0 0
-    fd 1
+    lt random 50
+    rt random 50
   ]
+
+  fd 1
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -227,42 +231,57 @@ NIL
 1
 
 SLIDER
-816
-30
-988
-63
-nbSheepsMax
-nbSheepsMax
-1
-400
-30.0
-1
-1
-NIL
-HORIZONTAL
-
-SLIDER
-624
-132
-796
-165
-nbVillagers
-nbVillagers
+635
+37
+807
+70
+nbBoeufs
+nbBoeufs
 1
 50
-30.0
+25.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-628
-31
-800
-64
-nbSheeps
-nbSheeps
+833
+37
+1045
+70
+perceptionBoeuf
+perceptionBoeuf
+1
+30
+15.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+1077
+39
+1249
+72
+minSpaceBoeuf
+minSpaceBoeuf
+1
+10
+5.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+638
+186
+810
+219
+nbWolves
+nbWolves
 1
 50
 10.0
@@ -272,44 +291,29 @@ NIL
 HORIZONTAL
 
 SLIDER
-631
-80
-993
-113
-reproductionRate
-reproductionRate
-0.05
-5
-0.5
-0.05
+839
+262
+1016
+295
+maxGrowingTime
+maxGrowingTime
 1
-%
-HORIZONTAL
-
-SLIDER
-622
-177
-823
-210
-initialVillageEnergy
-initialVillageEnergy
 100
-1000
-1000.0
+50.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-857
-179
-1029
-212
-huntEnergy
-huntEnergy
-1
-100
+635
+261
+807
+294
+maxGrassSize
+maxGrassSize
+50
+200
 100.0
 1
 1
@@ -317,15 +321,30 @@ NIL
 HORIZONTAL
 
 SLIDER
-1069
-176
-1241
-209
-gatherEnergy
-gatherEnergy
+632
+90
+804
+123
+minEnergy
+minEnergy
 1
 100
 50.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+840
+91
+1041
+124
+energyConsumption
+energyConsumption
+1
+10
+5.0
 1
 1
 NIL
@@ -333,89 +352,78 @@ HORIZONTAL
 
 SLIDER
 1063
-127
-1245
-160
-energyConsumed
-energyConsumed
-0.1
-5
-0.5
-0.1
+91
+1255
+124
+grassConsumption
+grassConsumption
+1
+100
+50.0
+1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-826
-129
-1039
-162
-initialGathererRatio
-initialGathererRatio
-0
+1288
+39
+1532
+72
+maxRecuperationTime
+maxRecuperationTime
+1
+20
+10.0
+1
+1
+ticks
+HORIZONTAL
+
+SLIDER
+844
+186
+1016
+219
+wolfPerception
+wolfPerception
+1
+30
+15.0
+1
+1
+NIL
+HORIZONTAL
+
+SLIDER
+1292
+92
+1500
+125
+maxHatchTime
+maxHatchTime
+1
 100
 50.0
 1
 1
-%
+ticks
 HORIZONTAL
 
-PLOT
-627
-237
-1210
-520
-Population
-Ticks
-Number
-0.0
-10.0
-0.0
-10.0
-true
-true
-"" ""
-PENS
-"Sheeps" 1.0 0 -16777216 true "" "plot count sheeps"
-"Hunters" 1.0 0 -2674135 true "" "plot count villagers with [isGatherer = false] "
-"Gatherers" 1.0 0 -13345367 true "" "plot count villagers with [isGatherer = true]"
-
-PLOT
-629
-544
-889
-723
-Village energy
-Ticks
-Number
-0.0
-10.0
-0.0
-10.0
-true
-false
-"" ""
-PENS
-"energy" 1.0 0 -16777216 true "" "plot villageEnergy"
-
-PLOT
-939
-544
-1184
-725
-Success rates
-NIL
-NIL
-0.0
-10.0
-0.0
-10.0
-true
-false
-"" ""
-PENS
-"huntSuccessRate" 1.0 0 -16777216 true "" "let nbHunters count villagers with [isGatherer = false]\nlet successRate huntEnergy\nif (nbHunters != 0) [\n  set successRate huntEnergy / nbHunters\n]\nplot successRate"
+SLIDER
+1534
+93
+1762
+126
+maxChildhoodTime
+maxChildhoodTime
+1
+100
+50.0
+1
+1
+ticks
+HORIZONTAL
 
 @#$#@#$#@
 @#$#@#$#@
