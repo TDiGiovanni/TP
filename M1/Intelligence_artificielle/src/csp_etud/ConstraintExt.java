@@ -109,7 +109,7 @@ public class ConstraintExt extends Constraint{
 	 * @see Constraint#toString()
 	 */
 	public String toString() {
-		return "\n\t Ext "+ super.toString() + " : " + tuples; 
+		return "\n\t Ext "+ name + " " + varList + " : " + tuples; 
 	}
 
 

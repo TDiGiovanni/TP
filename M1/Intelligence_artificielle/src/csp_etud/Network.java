@@ -77,7 +77,9 @@ public class Network {
 			Constraint c = null;
 			String type = in.readLine().trim();					// le type de la contrainte 
 			if (type.equals("ext")) c = new ConstraintExt(in);
-			// else if(type.equals("AUTRE TYPE")) c = new ConstraintTYPE(in)
+			else if(type.equals("dif")) c = new ConstraintDif(in);
+			else if(type.equals("eq")) c = new ConstraintEq(in);
+			//else if(type.equals("exp")) c = new ConstraintExp(in);
 			else 
 				{
 				System.out.println(type);
@@ -204,7 +206,7 @@ public class Network {
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {
-		return "Var et Dom : " + varDom + "\nConstraints :" + constraints;
+		return "Variables et domaines : " + varDom + "\nContraintes : " + constraints;
 	}
 	
 	public static void main(String[] args){

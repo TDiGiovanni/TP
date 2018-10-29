@@ -62,7 +62,8 @@ public abstract class Constraint {
 		num++;
 		this.name = "C"+num;
 		varList = new ArrayList<String>();
-		for (String v : in.readLine().split(";")) varList.add(v);	// Var1;Var2;...;Var(arity)
+		for (String v : in.readLine().split(";"))
+			varList.add(v);	// Var1;Var2;...;Var(arity)
 	}
 	
 	/**
@@ -106,8 +107,6 @@ public abstract class Constraint {
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-	public String toString() {
-		return "\n\t"+ name + " " + varList; 
-	}
+	public abstract String toString();
 
 }
