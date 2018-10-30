@@ -1,9 +1,9 @@
 COMPIL = gcc
 FLAGS = 
 SOURCES = URBCSP
-PARAMETERS = 50 20 300 100 #nbVariables tailleDomaine nbConstraints nbTuples
+PARAMETERS = 50 20 300 100 #nbVariables tailleDomaine nbContraintes nbTuples
 
-all: $(SOURCES) clean
+all: clean $(SOURCES)
 
 URBCSP:
 	$(COMPIL) $@.c -o $@.out $(FLAGS)

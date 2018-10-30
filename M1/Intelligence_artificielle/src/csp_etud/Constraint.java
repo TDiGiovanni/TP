@@ -99,7 +99,7 @@ public abstract class Constraint {
 	 * Teste si une assignation viole la contrainte. 
 	 * Doit être implantée dans la classe concrète. 
 	 * @param a l'assignation à tester
-	 * @return vrai ssi l'assignation viole la contrainte 
+	 * @return vrai ssi l'assignation viole la contrainte
 	 */
 	public abstract boolean violation(Assignment a);
 	

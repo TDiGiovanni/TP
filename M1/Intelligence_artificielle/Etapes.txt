@@ -1,0 +1,7 @@
+Etapes réalisées : jusqu'à 5, pas de méthode de tri implémentée.
+
+Contraintes en intension implémentées : différence, égalité.
+
+Optimisations programmées : aucune.
+
+Expérimentations réalisées : tests sur les CSP fournis, pas de résultat sur des grands CSP créés avec URBCSP (temps de résolution trop long).

@@ -79,7 +79,7 @@ public class Network {
 			if (type.equals("ext")) c = new ConstraintExt(in);
 			else if(type.equals("dif")) c = new ConstraintDif(in);
 			else if(type.equals("eq")) c = new ConstraintEq(in);
-			//else if(type.equals("exp")) c = new ConstraintExp(in);
+			else if(type.equals("exp")) c = new ConstraintExp(in);
 			else 
 				{
 				System.out.println(type);
