@@ -42,7 +42,6 @@ public class ConstraintExp extends Constraint {
 		catch (ScriptException e) {
 			e.printStackTrace();
 		}
-		System.out.println(expression + exprNoViolation);
 
 		return !exprNoViolation;
 	}

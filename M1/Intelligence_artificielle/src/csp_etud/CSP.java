@@ -158,9 +158,10 @@ public class CSP {
 		private boolean consistant(String lastAssignedVar) {
 			ArrayList<Constraint> contraintesConcernees = network.getConstraints(lastAssignedVar);
 			
-			for (Constraint c : contraintesConcernees)
+			for (Constraint c : contraintesConcernees) {
 				if (c.violation(currentAssignment))
 					return false;
+			}
 			
 			return true;
 		}

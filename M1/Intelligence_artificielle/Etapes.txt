@@ -1,6 +1,6 @@
-Etapes réalisées : jusqu'à 5, pas de méthode de tri implémentée.
+Etapes réalisées : toutes, mais pas toutes les optimisations ont été implémentées.
 
-Contraintes en intension implémentées : différence, égalité.
+Contraintes en intension implémentées : différence, égalité, expression (dans le cas d'expression, le temps de recherche d'une solution est extrêmement long sur des exemples comme 8reinesExp ou ZebreExpOpt).
 
 Optimisations programmées : aucune.
 
