@@ -159,7 +159,7 @@ public class CSP {
 			ArrayList<Constraint> contraintesConcernees = network.getConstraints(lastAssignedVar);
 			
 			for (Constraint c : contraintesConcernees) {
-				if (c.violation(currentAssignment))
+				if (c.violationOpt(currentAssignment))
 					return false;
 			}
 			

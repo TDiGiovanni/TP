@@ -29,6 +29,7 @@ public class Network {
 	private HashMap<String,ArrayList<Object>> varDom; // Associe à chaque variable de X un domaine de D
 	private ArrayList<Constraint> constraints; // Ensemble des contraintes C
 	
+	
 	/**
 	 * Construit un réseau de contraintes sans variable (ni contrainte)
 	 */
@@ -36,7 +37,8 @@ public class Network {
 		varDom = new HashMap<String,ArrayList<Object>>();
 		constraints = new ArrayList<Constraint>();
 	}
-
+	
+	
 	/**
 	 * Construit un réseau de contraintes à partir d'une représentation textuelle au 
 	 * format :
@@ -63,33 +65,54 @@ public class Network {
 	public Network(BufferedReader in) throws Exception {
 		varDom = new HashMap<String,ArrayList<Object>>();
 		constraints = new ArrayList<Constraint>();
+		
 		// Les variables et domaines
-		int nbVariables = Integer.parseInt(in.readLine());		// le nombre de variables
-		for(int i=1;i<=nbVariables;i++) {
+		int nbVariables = Integer.parseInt(in.readLine());	// le nombre de variables
+		for (int i = 0; i < nbVariables; i++) {
 			String[] varDeclaration = in.readLine().split(";"); // Var;Val1;Val2;Val3;...
 			ArrayList<Object> dom = new ArrayList<Object>();
 			varDom.put(varDeclaration[0], dom);
-			for(int j=1;j<varDeclaration.length;j++) dom.add(varDeclaration[j]);
+			for (int j = 1; j < varDeclaration.length; j++)
+				dom.add(varDeclaration[j]);
 		}
+		
 		// Les contraintes
-		int nbConstraints = Integer.parseInt(in.readLine());	// le nombre de contraintes
-		for(int k=0;k<nbConstraints;k++) {
+		int nbConstraints = Integer.parseInt(in.readLine()); // le nombre de contraintes
+		for(int k = 0; k < nbConstraints; k++) {
 			Constraint c = null;
-			String type = in.readLine().trim();					// le type de la contrainte 
-			if (type.equals("ext")) c = new ConstraintExt(in);
-			else if(type.equals("dif")) c = new ConstraintDif(in);
-			else if(type.equals("eq")) c = new ConstraintEq(in);
-			else if(type.equals("exp")) c = new ConstraintExp(in);
-			else 
-				{
-				System.out.println(type);
-				System.err.println("Type contrainte inconnu");
-				}
+			
+			String type = in.readLine().trim();	// Type de la contrainte
+			
+			if (type.equals("ext")) {
+				c = new ConstraintExt(in);
 				
-			addConstraint(c);
+				if (c.varList.size() == 1) { // Si la contrainte en extension est d'arité 1, on réduit le domaine de la variable concernée et supprime la contrainte
+					ArrayList<Object> domaine = new ArrayList<Object>();
+					
+					for (int i = 0; i < ((ConstraintExt)c).getTuples().size(); i++) {
+						Object constraintVal = ((ConstraintExt)c).getTuples().get(i).get(0);
+						domaine.add(constraintVal);
+					}
+					
+					varDom.put(c.varList.get(0), domaine);
+					c = null;
+				}
+			}
+			
+			else if(type.equals("dif")) c = new ConstraintDif(in);
+			
+			else if(type.equals("eq")) c = new ConstraintEq(in);
+			
+			else if(type.equals("exp")) c = new ConstraintExp(in);
+			
+			else System.err.println("Type contrainte inconnu : " + type);
+			
+			if (c != null)
+				addConstraint(c);
 		}
 	}
-		
+	
+	
 	/**
 	 * Ajoute une nouvelle variable dans le réseau avec un domaine vide
 	 * (ne fait rien si la variable existe déjà : message d'avertissement)
@@ -101,6 +124,7 @@ public class Network {
 		else System.err.println("Variable " + var + " deja existante");
 	}
 
+	
 	/**
 	 * Ajoute une nouvelle valeur au domaine d'une variable du réseau
 	 * 
@@ -116,6 +140,7 @@ public class Network {
 		}
 	}
 	
+	
 	/**
 	 * Ajoute une contrainte dans le réseau. Les variables de la
 	 * contrainte doivent déjà exister dans le réseau.
@@ -130,6 +155,7 @@ public class Network {
 		else constraints.add(c);
 	}
 	
+	
 	/**
 	 * Retourne le nombre de variables du réseau
 	 * 
@@ -139,6 +165,7 @@ public class Network {
 		return varDom.size();
 	}
 
+	
 	/**
 	 * Retourne la taille du domaine d'une variable du réseau.
 	 * 
@@ -149,6 +176,7 @@ public class Network {
 		return varDom.get(var).size();
 	}
 	
+	
 	/**
 	 * Retourne le nombre de contraintes du réseau
 	 * 
@@ -157,6 +185,7 @@ public class Network {
 	public int getConstraintNumber(){
 		return constraints.size();
 	}
+	
 	
 	/**
 	 * Retourne la liste des variables du réseau
@@ -167,6 +196,7 @@ public class Network {
 		return new ArrayList<String>(varDom.keySet());
 	}
 
+	
 	/**
 	 * Retourne le domaine d'une variable
 	 * 
@@ -186,6 +216,7 @@ public class Network {
 	public ArrayList<Constraint> getConstraints() {
 		return constraints;
 	}
+	
 	
 	/**
 	 * Retourne la liste des contraintes du réseau contenant une
@@ -207,97 +238,6 @@ public class Network {
 	 */
 	public String toString() {
 		return "Variables et domaines : " + varDom + "\nContraintes : " + constraints;
-	}
-	
-	public static void main(String[] args){
-		Network monCSP = new Network();
-
-		System.out.println("Exemple de création d'un CSP bidon avec quelques erreurs de création : \n");
-		
-		// Variables
-		String v1 = new String("x");
-		String v2 = new String("y");
-		String v3 = new String("z");
-		monCSP.addVariable(v1);
-		monCSP.addVariable(v2);
-		monCSP.addVariable(v3);
-		monCSP.addVariable("x");
-		
-		// Domaines
-		monCSP.addValue(v1,1);
-		monCSP.addValue(v1,2);
-		monCSP.addValue(v1,3);
-		monCSP.addValue(v2,"toto");
-		monCSP.addValue(v2,"tutu");
-		monCSP.addValue(v3,2);
-		monCSP.addValue(v3,4);
-		monCSP.addValue(v3,6);
-		monCSP.addValue(v3,0);
-		monCSP.addValue(v3,2);
-		
-		// Contraintes
-		ArrayList<String> varTuple;
-		ArrayList<Object> valTuple;
-		// c1 : <x,y> : <2,"tutu"> <2,"toto">,<4,"tutu">
-		varTuple= new ArrayList<String>(2);
-		varTuple.add(0,"x") ;
-		varTuple.add(1,"y") ;
-		ConstraintExt c1 = new ConstraintExt(varTuple);
-		valTuple = new ArrayList<Object>(2);
-		valTuple.add(0,2);
-		valTuple.add(1,"tutu");
-		c1.addTuple(valTuple);
-		valTuple = new ArrayList<Object>(2);
-		valTuple.add(0,2);
-		valTuple.add(1,"toto");
-		c1.addTuple(valTuple);
-		valTuple = new ArrayList<Object>(2);
-		valTuple.add(0,4);
-		valTuple.add(1,"tutu");
-		c1.addTuple(valTuple);
-		monCSP.addConstraint(c1);  
-
-		// c2 : <y,x,z> : <"toto",1,3> <"toto",3,5>
-		varTuple= new ArrayList<String>(3);
-		varTuple.add(0,"y") ;
-		varTuple.add(1,"x") ;
-		varTuple.add(2,"z") ;
-		ConstraintExt c2 = new ConstraintExt(varTuple);
-		valTuple = new ArrayList<Object>(3);
-		valTuple.add(0,"toto");
-		valTuple.add(1,1);
-		valTuple.add(2,3);
-		c2.addTuple(valTuple);
-		valTuple = new ArrayList<Object>(3);
-		valTuple.add(0,"toto");
-		valTuple.add(1,3);
-		valTuple.add(2,5);
-		c2.addTuple(valTuple);
-		valTuple = new ArrayList<Object>(2);
-		valTuple.add(0,6);
-		valTuple.add(1,"tutu");
-		c2.addTuple(valTuple);
-		valTuple = new ArrayList<Object>(3);
-		valTuple.add(0,"toto");
-		valTuple.add(1,1);
-		valTuple.add(2,3);
-		c2.addTuple(valTuple);
-		monCSP.addConstraint(c2);
-		
-		// c3 : <w> : <1> <2>
-		varTuple= new ArrayList<String>(1);
-		varTuple.add(0,"w") ;
-		ConstraintExt c3 = new ConstraintExt(varTuple);
-		valTuple = new ArrayList<Object>(1);
-		valTuple.add(0,1);
-		c3.addTuple(valTuple);
-		valTuple = new ArrayList<Object>(1);
-		valTuple.add(0,2);
-		c3.addTuple(valTuple);
-		monCSP.addConstraint(c3);
-
-		System.out.println("Mon réseau de contraintes (les entrées incorrectes ayant été ignorées) : \n" + monCSP);
-		
 	}
 	
 }

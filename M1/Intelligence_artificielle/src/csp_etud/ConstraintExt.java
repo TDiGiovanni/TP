@@ -47,14 +47,24 @@ public class ConstraintExt extends Constraint{
 	public ConstraintExt(BufferedReader in) throws Exception{
 		super(in);
 		tuples = new ArrayList<ArrayList<Object>>();
-		int nbTuples = Integer.parseInt(in.readLine());		// nombre de tuples de valeurs
-		for(int j=1;j<=nbTuples;j++) {
+		
+		int nbTuples = Integer.parseInt(in.readLine()); // Nombre de tuples de valeurs
+		for(int i = 0; i < nbTuples; i++) {
 			ArrayList<Object> tuple = new ArrayList<Object>();
-			for (String v : in.readLine().split(";")) tuple.add(v);	// Val1;Val2;...;Val(arity)
+			
+			for (String v : in.readLine().split(";"))
+				tuple.add(v); // Val1;Val2;...;Val(arity)
+			
 			if(tuple.size() != varList.size()) 
 				System.err.println("Le tuple " + tuple + " n'a pas l'arité " + varList.size() + " de la contrainte " + name);
-			else if(!tuples.add(tuple)) System.err.println("Le tuple " + tuple + " est déjà présent dans la contrainte "+ name);
+			else if(!getTuples().add(tuple))
+				System.err.println("Le tuple " + tuple + " est déjà présent dans la contrainte "+ name);
 		}
+	}
+	
+	
+	public ArrayList<ArrayList<Object>> getTuples() {
+		return tuples;
 	}
 	
 	
@@ -66,7 +76,7 @@ public class ConstraintExt extends Constraint{
 	public void addTuple(ArrayList<Object> valTuple) {
 		if(valTuple.size() != varList.size()) 
 			System.err.println("Le tuple " + valTuple + " n'a pas l'arité " + varList.size() + " de la contrainte " + name);
-		else if(!tuples.add(valTuple)) System.err.println("Le tuple " + valTuple + " est déjà présent dans la contrainte "+ name);
+		else if(!getTuples().add(valTuple)) System.err.println("Le tuple " + valTuple + " est déjà présent dans la contrainte "+ name);
 	}
 	
 
@@ -85,12 +95,33 @@ public class ConstraintExt extends Constraint{
 				return false;
 		
 		int indexVar = 0, indexTuple = 0;
-		while (indexVar < varList.size() && indexTuple < tuples.size()) {
-			ArrayList<Object> t = tuples.get(indexTuple);
+		while (indexVar < varList.size() && indexTuple < getTuples().size()) {
+			ArrayList<Object> t = getTuples().get(indexTuple);
 			Object valConstraint = t.get(indexVar);
 			Object valAssignment = a.get(varList.get(indexVar));
 			
 			if (valConstraint.equals(valAssignment))
+				indexVar++;
+			else {
+				indexVar = 0;
+				indexTuple++;
+			}
+		}
+		
+		if (indexVar == varList.size())
+			return false;
+		
+		return true;
+	}
+	
+	public boolean violationOpt(Assignment a) {
+		int indexVar = 0, indexTuple = 0;
+		while (indexVar < varList.size() && indexTuple < getTuples().size()) {
+			ArrayList<Object> t = getTuples().get(indexTuple);
+			Object valConstraint = t.get(indexVar);
+			Object valAssignment = a.get(varList.get(indexVar));
+			
+			if (valAssignment == null || valConstraint.equals(valAssignment))
 				indexVar++;
 			else {
 				indexVar = 0;
@@ -109,8 +140,7 @@ public class ConstraintExt extends Constraint{
 	 * @see Constraint#toString()
 	 */
 	public String toString() {
-		return "\n\t Ext "+ name + " " + varList + " : " + tuples; 
+		return "\n\t Ext "+ name + " " + varList + " : " + getTuples(); 
 	}
-
 
 }

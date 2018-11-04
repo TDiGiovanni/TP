@@ -46,6 +46,25 @@ public class ConstraintExp extends Constraint {
 		return !exprNoViolation;
 	}
 	
+	public boolean violationOpt(Assignment a) {
+		ScriptEngine engine = manager.getEngineByName("JavaScript");
+		boolean exprNoViolation = true;
+		
+		for (String var : varList) {
+			if (a.containsKey(var))
+				engine.put(var, a.get(var));
+		}
+		
+		try {
+			exprNoViolation = (boolean) engine.eval(expression);
+		}
+		catch (ScriptException e) {
+			return false;
+		}
+
+		return !exprNoViolation;
+	}
+	
 	public String toString() {
 		return "\n\t Exp "+ name + " " + expression; 
 	}

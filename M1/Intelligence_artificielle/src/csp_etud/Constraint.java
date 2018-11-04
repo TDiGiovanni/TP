@@ -103,6 +103,8 @@ public abstract class Constraint {
 	 */
 	public abstract boolean violation(Assignment a);
 	
+	public abstract boolean violationOpt(Assignment a);
+	
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

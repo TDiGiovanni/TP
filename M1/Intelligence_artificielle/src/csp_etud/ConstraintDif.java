@@ -36,6 +36,24 @@ public class ConstraintDif extends Constraint {
 		return false;
 	}
 	
+	public boolean violationOpt(Assignment a) {
+		for (String var : varList) {
+			if (a.containsKey(var)) { // Vérification de var dans l'assignation
+				Object valVar = a.get(var);
+				for (String otherVar : varList) {
+					if (a.containsKey(otherVar)) { // Vérification de otherVar dans l'assignation
+						Object valOtherVar = a.get(otherVar);
+						if (!otherVar.equals(var)
+								&& valOtherVar.equals(valVar))
+							return true;
+					}
+				}
+			}
+		}
+
+		return false;
+	}
+	
 	public String toString() {
 		return "\n\t Dif "+ name + " " + varList; 
 	}
