@@ -7,7 +7,7 @@ import javax.script.*;
 
 public class ConstraintExp extends Constraint {
 	protected String expression;
-	protected ScriptEngineManager manager = new ScriptEngineManager();
+	protected static ScriptEngineManager manager = new ScriptEngineManager();
 	
 	// Constructeurs
 	public ConstraintExp(ArrayList<String> var, String expression) {

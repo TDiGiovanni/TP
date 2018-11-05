@@ -1,7 +1,0 @@
-Etapes réalisées : toutes, mais pas toutes les optimisations ont été implémentées.
-
-Contraintes en intension implémentées : différence, égalité, expression (dans le cas d'expression, le temps de recherche d'une solution est trop long sur des exemples comme 8reinesExp ou ZebreExpOpt).
-
-Optimisations programmées : violation optimisée, suppression des contraintes unaires.
-
-Expérimentations réalisées : tests sur les CSP fournis, pas de résultat sur des grands CSP créés avec URBCSP (temps de résolution trop long).

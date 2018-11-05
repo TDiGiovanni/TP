@@ -6,7 +6,7 @@ import java.io.FileReader;
 public class Application {
 
 	public static void main(String[] args) throws Exception {
-		String fileName = "CSP/4reinesExp.txt" ; // Nom du fichier à récupérer ici
+		String fileName = "CSP/Coloration.txt" ; // Nom du fichier à récupérer ici
 		System.out.println("Chargement du fichier : " +
 							new java.io.File( "." ).getCanonicalPath() +
 							"/" + fileName);
