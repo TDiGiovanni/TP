@@ -6,8 +6,6 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 
 import org.mockito.Mock;
-import org.mockito.AdditionalMatchers;
-import org.mockito.ArgumentMatcher;
 import org.mockito.junit.MockitoJUnitRunner;
 import static org.mockito.Mockito.*;
 
