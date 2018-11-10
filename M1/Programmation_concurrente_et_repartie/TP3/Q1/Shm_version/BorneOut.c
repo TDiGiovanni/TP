@@ -23,29 +23,21 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    *memoryAddress = NB_PLACES;
-
-    // Attente
-    char *input;
-    do
+    //TODO
+    while (1)
     {
-        printf("Entrez n'importe quoi pour quitter \n");
-        scanf("%s", &input);
-    } while (input != NULL);
+        printf("Demande acceptée \n");
+        (*memoryAddress)++;
+        printf("Byebye \n");
+
+        sleep(5); // On simule la sortie d'une voiture toutes les 5 secondes
+    }
 
     // Détachement de la mémoire partagée
     int error = shmdt((void *)memoryAddress);
     if (error == -1)
     {
         perror("Detaching from memory");
-        return 1;
-    }
-
-    // Destruction de la mémoire partagée
-    error = shmctl(memoryId, IPC_RMID, NULL);
-    if (error == -1)
-    {
-        perror("Destroying the shared memory");
         return 1;
     }
 

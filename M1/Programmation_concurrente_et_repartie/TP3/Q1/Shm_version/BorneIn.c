@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     if (*memoryAddress > 0)
     {
       printf("Demande acceptée \n");
-      *memoryAddress--;
+      (*memoryAddress)--;
       printf("Impression ticket \n");
       printf("Nombre de places restantes : %i \n", *memoryAddress);
     }
