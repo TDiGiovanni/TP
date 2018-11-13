@@ -1,10 +1,10 @@
-#include "Headers.c"
+#include "Headers.h"
 
 int main(int argc, char **argv)
 {
     srand(time(NULL));
 
-    // Récupération de la clé
+    // Création de la clé
     key_t key = ftok("./Key.txt", 'a');
     if (key == -1)
     {
@@ -12,18 +12,22 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    // Récupération de l'ID
-    int memoryId = shmget(key, sizeof(int), IPC_CREAT | 0777);
-
+    // Création de la mémoire partagée
+    int* shmId = shmget(key, sizeof(int), IPC_CREAT | 0777);
+    if (shmId == -1)
+    {
+        perror("Creating shared memory");
+        return 1;
+    }
     // Attachement à la mémoire partagée
-    int *memoryAddress = (int *)shmat(memoryId, NULL, 0);
+    int *memoryAddress = (int *)shmat(shmId, NULL, 0);
     if (memoryAddress == -1)
     {
         perror("Attaching to memory");
         return 1;
     }
 
-    *memoryAddress = NB_PLACES;
+    *memoryAddress = ;
 
     printf("Mémoire partagée mise en place \n");
 
@@ -31,7 +35,7 @@ int main(int argc, char **argv)
     char *input;
     do
     {
-        printf("Entrez n'importe quoi pour quitter \n");
+        printf("Entrez n'importe quoi pour quitter (cela libérera la mémoire) \n");
         scanf("%s", input);
     } while (input == NULL);
 
@@ -44,10 +48,10 @@ int main(int argc, char **argv)
     }
 
     // Destruction de la mémoire partagée
-    error = shmctl(memoryId, IPC_RMID, NULL);
+    error = shmctl(shmId, IPC_RMID, NULL);
     if (error == -1)
     {
-        perror("Destroying the shared memory");
+        perror("Destroying shared memory");
         return 1;
     }
 

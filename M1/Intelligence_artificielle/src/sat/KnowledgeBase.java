@@ -6,16 +6,16 @@ import java.util.ArrayList;
 
 public class KnowledgeBase
 {
-	private FactBase initialFactBase;
-	private RuleBase ruleBase;
-	private FactBase saturatedFactBase;
+	private FactBase initialFactBase; // Base de faits initiale
+	private FactBase saturatedFactBase; // Base de faits saturée par la base de règles
+	private RuleBase ruleBase; // Base de règles
 	
 	// Constructeur par défaut
 	public KnowledgeBase()
 	{
 		this.initialFactBase = new FactBase();
-		this.ruleBase = new RuleBase();
 		this.saturatedFactBase = new FactBase();
+		this.ruleBase = new RuleBase();
 	}
 	
 	// Constructeur à partir d'un fichier texte
@@ -27,9 +27,10 @@ public class KnowledgeBase
 							+ "/" + path);
 		BufferedReader readFile = new BufferedReader(new FileReader (path));
 		
-		// Création de la base de faits initiale
+		// Création des bases de faits
 		String line = readFile.readLine(); // Représentée par la première ligne du fichier
 		this.initialFactBase = new FactBase(line);
+		this.saturatedFactBase = new FactBase(line);
 		
 		// Création de la base de règles
 		this.ruleBase = new RuleBase();		
@@ -41,9 +42,6 @@ public class KnowledgeBase
 		}
 		
 		readFile.close();
-		
-		// Création de la base de faits saturée
-		this.saturatedFactBase = new FactBase();
 	}
 	
 	// Accesseurs en lecture
@@ -66,8 +64,8 @@ public class KnowledgeBase
 	public String toString()
 	{
 		String result = "\nBF initiale : \n" + getInitialFactBase().toString() + "\n";
-		result += "BR : \n" + this.getRuleBase().toString() + "\n";
-		result += "BF saturée : \n" + this.getSaturatedFactBase().toString();
+		result += "BF saturée : \n" + this.getSaturatedFactBase().toString() + "\n";
+		result += "BR : \n" + this.getRuleBase().toString();
 		
 		return result;
 	}
@@ -81,13 +79,13 @@ public class KnowledgeBase
 	// Crée la base de faits saturée à partir de la base de règles, version naïve
 	public void forwardChaining()
 	{
-		boolean end = false;
+		boolean noNewFacts = false;
 		
 		ArrayList<Boolean> ruleApplied = new ArrayList<Boolean>();
 		for (int i = 0; i < this.ruleBase.size(); i++)
 			ruleApplied.add(false);
 		
-		while (!end)
+		while (!noNewFacts)
 		{
 			ArrayList<Atom> newFacts = new ArrayList<Atom>();
 			for (int i = 0; i < this.ruleBase.size(); i++)
@@ -95,10 +93,10 @@ public class KnowledgeBase
 				if (!ruleApplied.get(i)) // Si on n'a pas déjà appliqué la règle
 				{
 					Rule currentRule = this.ruleBase.getRule(i);
-					if (this.initialFactBase.getAtoms().containsAll(currentRule.getHypothesis())) // Si la règle est applicable
+					if (this.saturatedFactBase.getAtoms().containsAll(currentRule.getHypothesis())) // Si la règle est applicable
 					{
 						ruleApplied.set(i, true);
-						if (!this.initialFactBase.getAtoms().contains(currentRule.getConclusion())
+						if (!this.saturatedFactBase.getAtoms().contains(currentRule.getConclusion())
 								&& !newFacts.contains(currentRule.getConclusion())) // Si la règle est utile
 							newFacts.add(currentRule.getConclusion());
 					}
@@ -106,9 +104,12 @@ public class KnowledgeBase
 			}
 			
 			if (newFacts.isEmpty())
-				end = true;
+				noNewFacts = true;
 			else
-				this.initialFactBase.addAtoms(newFacts);
+			{
+				this.saturatedFactBase.addAtoms(newFacts);
+				newFacts.clear();
+			}
 		}
 	}
 	

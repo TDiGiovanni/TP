@@ -20,9 +20,13 @@ int main(int argc, char **argv)
         return 1;
     }
 
+    int nbProcs;
+    printf("Combien de processus ? \n");
+    scanf("%i", &nbProcs);
+
     // Initialisation du tableau
     union semun init;
-    init.val = NB_PLACES;
+    init.val = nbProcs;
     int error = semctl(semId, 0, SETVAL, init);
     if (error == -1)
     {
@@ -36,7 +40,7 @@ int main(int argc, char **argv)
     char *input;
     do
     {
-        printf("Entrez n'importe quoi pour quitter \n");
+        printf("Entrez n'importe quoi pour quitter (cela détruira le tableau) \n");
         scanf("%s", input);
     } while (input == NULL);
 

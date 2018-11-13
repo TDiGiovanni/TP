@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "types.h": "c"
+        "types.h": "c",
+        "sem.h": "c",
+        "unistd.h": "c",
+        "headers.h": "c"
     }
 }
