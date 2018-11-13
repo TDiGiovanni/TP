@@ -21,6 +21,9 @@
 .project
 .classpath
 
+# Visual Studio
+.vscode/
+
 # Analyse d'algorithmes
 !fonctionsMysterieuses.o
 
