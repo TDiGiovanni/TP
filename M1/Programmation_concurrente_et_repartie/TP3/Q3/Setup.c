@@ -19,6 +19,7 @@ int main(int argc, char **argv)
         perror("Creating shared memory");
         return 1;
     }
+
     // Attachement à la mémoire partagée
     int *memoryAddress = (int *)shmat(shmId, NULL, 0);
     if (memoryAddress == -1)
@@ -27,7 +28,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    *memoryAddress = ;
+    //TODO
 
     printf("Mémoire partagée mise en place \n");
 

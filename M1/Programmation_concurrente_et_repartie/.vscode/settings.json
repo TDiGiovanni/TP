@@ -3,6 +3,8 @@
         "types.h": "c",
         "sem.h": "c",
         "unistd.h": "c",
-        "headers.h": "c"
+        "headers.h": "c",
+        "stdlib.h": "c",
+        "errno.h": "c"
     }
 }
