@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+   <title>M1 prog. agent - TP5 Warbot</title>
+</head>
+<body bgcolor="white">
+
+<center>
+  <h1 align="center"><font size="5"><a href="http://www.info-ufr.univ-montp2.fr/Formations/LMD/Master/">Master
+    Informatique 1ère année</a>:</font></h1>
+  <h1 align="center"><font size="6">Programmation orientée agents </font><font size="-1">(FMIN108)</font> </h1>
+  <p align="center"><font size="4">Resp: <a href="http://www.lirmm.fr/~ferber">Jacques
+        Ferber</a></font></p>
+  <h1>TP 6 - Warbot - prise en main</h1>
+  <h1><img src="Sujet_fichiers/warbot_logo1.jpg" width="229" height="117"></h1>
+  <h3>proposé par <a href="mailto:ferber@lirmm.fr">Jacques Ferber</a> - Nov. 2017</h3>
+  <p>&nbsp;</p>
+  <table width="80%" border="1">
+    <tbody><tr>
+      <td><img src="Sujet_fichiers/warbotscreen2.jpg" width="500" height="383"></td>
+      <td><img src="Sujet_fichiers/interface-warbot3.png" width="603" height="386"></td>
+    </tr>
+    <tr>
+      <td><p>La première version de Warbot (2004)</p></td>
+      <td>L'interface actuelle de Warbot 3</td>
+    </tr>
+  </tbody></table>
+  <p>&nbsp;</p>
+</center>
+<p>Warbot est un jeu de guerre entre deux équipe.. Il est destiné à modéliser des stratégies
+  de coopération et de conflits à partir d'une vision multi-agents... </p>
+<p>La version que nous allons utiliser dans ce TP est celle qui a été 
+écrite par des suites d'étudiants de TER. La dernière version est la 
+version 3.3.x</p>
+<p>Téléchargez la documentation de <a href="http://www.lirmm.fr/~ferber/ProgAgent/Manuel_Warbot3.pdf">Warbot3 qui se trouve ici</a>.</p>
+<p>L'objectif de ce TP est de prendre en main Warbot dont la version 3.3 fonctionne sous Java.</p>
+<h2>1. Installation et lancement</h2>
+<p>Télécharger l'archive de <a href="http://www.lirmm.fr/~ferber/ProgAgent/warbot.3-3-3.zip">Warbot3, disponible ic</a>i. </p>
+<p>Pour installer Warbot3, décompresser l'archive. Il suffit ensuite de lancer Warbot en effectuant la commande:</p>
+<p><tt>	java -jar warbot&lt;num de version&gt;.jar</tt></p>
+<p>à partir d'une console de commande.</p>
+<h2>2. Créez votre équipe</h2>
+<p>Pour créez une équipe, dupliquer un des dossiers des équipes présente
+ (prenez l'équipe Python_level_0) pour commencer, et modifier le fichier
+ config.yml qui contient les caractéristiques de votre équipe. Changez 
+le nom et mettez le nom de votre équipe dans ce fichier. Sauvez le.</p>
+<p>Voilà vous avez mainteannt une nouvelle équipe. Il suffit de modifier
+ les fichiers sources déjà proposés et de définir les comportements 
+désirés.</p>
+<h2>3. Créez des comportements pour vos agents</h2>
+<h3>3.1 Exploration</h3>
+<p>a) Ecrire un agent explorateur qui avance de manière aléatoire et 
+récupère de la nourriture... (c'est déjà pratiquement fait dans les 
+sources)</p>
+<p>b) Ecrire des agents de combats qui attaquent les agents ennemis qu'ils rencontrent</p>
+<p>b) Ecrire un agent explorateur qui envoie l'information qu'il y a de la nourriture aux autres robots explorateurs.</p>
+<p>c) Faites un robot explorateur qui envoie un message à la base dès
+qu'il aperçoit la base ennemie, alors qu'il est en train de se balader.</p>
+<h3>3.2. Attaque</h3>
+<p>a) Ecrire le comportement d'un lanceur de missile qui se déplace de
+  manière aléatoire et qui qui attaque la base ennemie s'il l'aperçoit.</p>
+<p>b) Modifier le comportement de ce lanceur de missile pour
+  qu'en plus,
+  il aille attaquer une base ennemie si la base lui demande, la base 
+ayant reçue la position de la base ennemie d'où se trouve la position de
+ la base ennemie.</p>
+<h3><strong>3.3 Amusez vous</strong></h3>
+<p>Inventez d'autres comportements et regardez les conséquences collectives.</p>
+<h3>&nbsp;</h3>
+<p>&nbsp;</p>
+<h2>&nbsp;</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+
+
+
+</body></html>
