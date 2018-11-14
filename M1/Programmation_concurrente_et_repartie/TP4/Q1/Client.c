@@ -4,23 +4,30 @@ int main(int argc, char **argv)
 {
     srand(time(NULL));
 
-    char* ipAdress;
+    char ipAdress[MAX_STRING_SIZE];
     int portNumber;
     if (argc == 3) // Récupération des infos du serveur, si elles ont été renseignées
     {
-        ipAdress = argv[1];
+        int i = 0;
+        while (i < MAX_STRING_SIZE && argv[1][i] != '\0')
+        {
+            ipAdress[i] = argv[1][i];
+            i++;
+        }
         portNumber = atoi(argv[2]);
+
+        printf("Les infos du serveur ont bien été récupérées \n");
     }
     else
     {
-        char *tempIpAdress, *tempPortNumber;
-        printf("Les informations du serveur n'ont pas été renseignées \n");
+        char tempPortNumber[MAX_STRING_SIZE];
+        printf("Les informations du serveur n'ont pas été renseignées correctement \n");
 
         printf("Entrez l'adresse IP de la socket du serveur : ");
-        scanf("%s", &ipAdress);
+        scanf("%s", ipAdress);
 
         printf("Entrez le numéro de port de la socket du serveur : ");
-        scanf("%s", &tempPortNumber);
+        scanf("%s", tempPortNumber);
         portNumber = atoi(tempPortNumber);
     }
 
@@ -32,7 +39,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    // Infos de la socket recevante
+    // Infos de la socket du serveur
     struct sockaddr_in destAdress;
     destAdress.sin_family = AF_INET;
     inet_pton(AF_INET, ipAdress, &(destAdress.sin_addr));
@@ -40,11 +47,11 @@ int main(int argc, char **argv)
     socklen_t destAdressSize = sizeof(struct sockaddr_in);
 
     // Envoi du message
-    char *messageToSend;
-    printf("Ecrivez le message à envoyer : \n");
-    scanf("%s", &messageToSend);
+    char messageToSend[MAX_STRING_SIZE];
+    printf("\nEcrivez le message à envoyer : \n");
+    scanf("%s", messageToSend);
 
-    int messageLength = sendto(socketDescriptor, messageToSend, sizeof(messageToSend), 0, (struct sockaddr*)&destAdress, destAdressSize);
+    int messageLength = sendto(socketDescriptor, messageToSend, sizeof(messageToSend), 0, (struct sockaddr *)&destAdress, destAdressSize);
     if (messageLength == -1)
     {
         perror("Sending message");
@@ -56,7 +63,7 @@ int main(int argc, char **argv)
     // Réception du message
     message messageToReceive;
 
-    messageLength = recvfrom(socketDescriptor, &messageToReceive, sizeof(messageToReceive), 0, (struct sockaddr*)&destAdress, &destAdressSize);
+    messageLength = recvfrom(socketDescriptor, &messageToReceive, sizeof(messageToReceive), 0, (struct sockaddr *)&destAdress, &destAdressSize);
     if (messageLength == -1)
     {
         perror("Receiving message");

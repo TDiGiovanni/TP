@@ -9,8 +9,10 @@
 #include <time.h>
 #include <unistd.h>
 
+#define MAX_STRING_SIZE 256
+
 struct message
 {
     int firstInt, secondInt;
-    char *string;
+    char string[MAX_STRING_SIZE];
 } typedef message;

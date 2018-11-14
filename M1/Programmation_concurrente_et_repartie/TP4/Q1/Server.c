@@ -15,11 +15,11 @@ int main(int argc, char **argv)
     // Nommage de la socket
     struct sockaddr_in socketAdress;
     socketAdress.sin_family = AF_INET;         // Famille d'adresse IP (ici IPv4)
-    socketAdress.sin_addr.s_addr = INADDR_ANY; // Adresse IP utilisée (ici any)
-    socketAdress.sin_port = htons(0);          // Port utilisé (ici any)
+    socketAdress.sin_addr.s_addr = INADDR_ANY; // Adresse IP utilisée (ici 0.0.0.0)
+    socketAdress.sin_port = htons(0);          // Port utilisé (ici any disponible)
     socklen_t socketAdressSize = sizeof(struct sockaddr_in);
 
-    int socketName = bind(socketDescriptor, (struct sockaddr *)&socketAdress, sizeof(socketAdress));
+    int socketName = bind(socketDescriptor, (struct sockaddr *)&socketAdress, socketAdressSize);
     if (socketName == -1)
     {
         perror("Binding socket");
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    // Affichage des infos pour le client
+    // Affichage des infos (pour le client)
     char ipAdress[INET_ADDRSTRLEN];
     printf("Adresse IP : %s \n", inet_ntop(AF_INET, &(socketAdress.sin_addr), ipAdress, INET_ADDRSTRLEN));
     printf("Numéro de port : %i \n", ntohs(socketAdress.sin_port));
@@ -43,31 +43,31 @@ int main(int argc, char **argv)
     struct sockaddr_in destAdress;
     socklen_t destAdressSize = sizeof(struct sockaddr_in);
 
-    printf("Attente du message... \n");
+    printf("\nAttente du message... \n");
 
-    // Réception du message
-    char *messageToReceive;
-    int messageLength = recvfrom(socketDescriptor, messageToReceive, sizeof(messageToReceive), 0, (struct sockaddr *)&destAdress, &destAdressSize);
+    // Réception du message (et des infos de l'envoyeur)
+    char messageToReceive[MAX_STRING_SIZE];
+    int messageLength = recvfrom(socketDescriptor, messageToReceive, MAX_STRING_SIZE, 0, (struct sockaddr *)&destAdress, &destAdressSize);
     if (messageLength == -1)
     {
         perror("Receiving message");
         return 1;
     }
 
-    // Affichage du message reçu et des infos de l'envoyeur
+    // Affichage du message reçu (et des infos de l'envoyeur)
     printf("Message reçu : %s \n", messageToReceive);
-    printf("Infos de l'envoyeur \n");
+    printf("\nInfos de l'envoyeur \n");
     printf("Adresse IP : %s \n", inet_ntop(AF_INET, &(destAdress.sin_addr), ipAdress, INET_ADDRSTRLEN));
     printf("Numéro de port : %i \n", ntohs(destAdress.sin_port));
 
     // Création du message à envoyer
     message messageToSend;
-    printf("Entrez un premier entier : ");
+    printf("\nEntrez un premier entier : ");
     scanf("%i", &(messageToSend.firstInt));
     printf("Entrez un second entier : ");
     scanf("%i", &(messageToSend.secondInt));
     printf("Entrez une chaîne de caractères : ");
-    scanf("%s", &(messageToSend.string));
+    scanf("%s", messageToSend.string);
 
     // Envoi du message
     messageLength = sendto(socketDescriptor, &messageToSend, sizeof(messageToSend), 0, (struct sockaddr *)&destAdress, destAdressSize);
