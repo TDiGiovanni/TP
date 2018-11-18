@@ -37,7 +37,7 @@ void *communicate(void *argParameters)
             printf("Message reçu et envoyé aux autres clients \n");
         }
         else // On veut l'afficher sur le serveur
-            printf("Message d'un client reçu : %s \n", mySocketDescriptor, messageToReceive.string);
+            printf("Message d'un client reçu : %s \n", messageToReceive.string);
     }
 
     // Fin de la communication
