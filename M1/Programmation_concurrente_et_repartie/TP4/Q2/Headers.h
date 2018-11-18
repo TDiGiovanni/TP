@@ -18,10 +18,11 @@
 typedef int bool;
 
 typedef struct message {
-    char string[MAX_STRING_SIZE];
-    bool sendToOtherClient;
+    char string[MAX_STRING_SIZE]; // Le message
+    bool sendToOtherClient; // True si on veut l'envoyer aux autres clients connectés, false si on veut l'afficher sur le serveur
 } message;
 
+// Paramètres pour l'appel de la fonction "communicate"
 typedef struct paramsCommunicate {
     int mySocketDescriptor;
     int *otherSocketDescriptors;

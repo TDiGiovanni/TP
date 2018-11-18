@@ -6,30 +6,33 @@ import edu.warbot.brains.brains.WarKamikazeBrain;
 
 import java.util.List;
 
-public abstract class WarKamikazeBrainController extends WarKamikazeBrain {
+public abstract class WarKamikazeBrainController extends WarKamikazeBrain
+{
+	public WarKamikazeBrainController()
+	{
+		super();
+	}
 
-    public WarKamikazeBrainController() {
-        super();
-    }
+	@Override
+	public String action()
+	{
+		List <WarAgentPercept> percepts = getPercepts();
 
-    @Override
-    public String action() {
-        List <WarAgentPercept> percepts = getPercepts();
+		for (WarAgentPercept percept : percepts)
+			switch (percept.getType())
+			{
+			case WarBase:
+				if (isEnemy(percept))
+					broadcastMessageToAll("Enemy base found", String.valueOf(percept.getAngle()), String.valueOf(percept.getDistance()));
+				break;
 
-        for (WarAgentPercept p : percepts) {
-            switch (p.getType()) {
-                case WarBase:
-                    if (isEnemy(p)) {
-                        broadcastMessageToAll("Ennemi Base Found", String.valueOf(p.getAngle()), String.valueOf(p.getDistance()));
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
+			default:
+				break;
+			}
 
-        if (isBlocked())
-            setRandomHeading();
-        return WarExplorer.ACTION_MOVE;
-    }
+		if (isBlocked())
+			setRandomHeading();
+		
+		return WarExplorer.ACTION_MOVE;
+	}
 }

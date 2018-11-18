@@ -55,8 +55,20 @@ int main(int argc, char **argv)
     }
 
     printf("\nConnecté au serveur ! \n");
-    //TODO attendre d'avoir le bon nombre de clients sur le serveur
-    //pê while message != ce qu'on veut...
+    
+    printf("Attente du bon nombre de clients... \n");
+    int remainingClients;
+    do
+    {
+        int messageLength = recv(socketDescriptor, &remainingClients, sizeof(remainingClients), 0);
+        if (messageLength == -1)
+        {
+            perror("Receiving message");
+            return -1;
+        }
+    } while (remainingClients != MAX_CLIENTS);
+
+    printf("Tous les clients sont connectés ! \n");
 
     // Boucle infinie d'envois et réceptions de messages
     message messageToSend;

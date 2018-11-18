@@ -9,8 +9,8 @@ import edu.warbot.communications.WarMessage;
 
 import java.util.List;
 
-public abstract class WarBaseBrainController extends WarBaseBrain {
-
+public abstract class WarBaseBrainController extends WarBaseBrain
+{
     private boolean _alreadyCreated;
     private boolean _inDanger;
 
@@ -20,7 +20,6 @@ public abstract class WarBaseBrainController extends WarBaseBrain {
         _alreadyCreated = false;
         _inDanger = false;
     }
-
 
     @Override
     public String action()
@@ -59,12 +58,11 @@ public abstract class WarBaseBrainController extends WarBaseBrain {
         for (WarAgentPercept percept : getPerceptsResources())
         {
             if (percept.getType().equals(WarAgentType.WarFood))
-                broadcastMessageToAgentType(WarAgentType.WarExplorer, "I detected food",
+                broadcastMessageToAgentType(WarAgentType.WarExplorer, "Food detected",
                         String.valueOf(percept.getAngle()),
                         String.valueOf(percept.getDistance()));
         }
 
         return WarBase.ACTION_IDLE;
     }
-
 }

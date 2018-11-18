@@ -8,7 +8,7 @@ public class Application
 		System.out.println(k);
 		
 		System.out.println("\nApplication du forward chaining");
-		k.forwardChaining();
+		k.forwardChainingOpt();
 		
 		k.printSaturatedFactBase();
 	}

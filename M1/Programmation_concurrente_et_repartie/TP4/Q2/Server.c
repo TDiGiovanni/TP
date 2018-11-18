@@ -37,11 +37,11 @@ void *communicate(void *argParameters)
             printf("Message reçu et envoyé aux autres clients \n");
         }
         else // On veut l'afficher sur le serveur
-            printf("Message reçu du client %i : %s \n", mySocketDescriptor, messageToReceive.string);
+            printf("Message d'un client reçu : %s \n", mySocketDescriptor, messageToReceive.string);
     }
 
     // Fin de la communication
-    printf("Connexion terminée \n");
+    printf("Connexion du client terminée \n");
     int error = close(mySocketDescriptor);
     if (error == -1)
     {
@@ -99,17 +99,19 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    // On accepte les clients qui se connectent au serveur
-    int clientNumber = 0;
-    struct sockaddr_in destAdress[MAX_CLIENTS];
-    socklen_t destAdressSize = sizeof(struct sockaddr_in);
-    int clientSockets[MAX_CLIENTS];
+    int clientNumber = 0; // Nombre de clients déjà connectés
 
-    pthread_t idThreads[MAX_CLIENTS];
-    paramsCommunicate parameters[MAX_CLIENTS];
+    struct sockaddr_in destAdress[MAX_CLIENTS]; // Structure pour stocker les infos des clients
+    socklen_t destAdressSize = sizeof(struct sockaddr_in); // Taille de la structure (obligatoire pour l'appel de "accept" qui veut un "socklen_t")
 
-    while (clientNumber < MAX_CLIENTS)
+    int clientSockets[MAX_CLIENTS]; // tableau des sockets des clients
+
+    pthread_t idThreads[MAX_CLIENTS]; // 1 thread par client
+    paramsCommunicate parameters[MAX_CLIENTS]; // Paramètres pour l'appel de la fonction "communicate"
+
+    while (clientNumber < MAX_CLIENTS) // Tnat qu'on a pas le nombre de clients voulus
     {
+        // On accepte les clients qui se connectent au serveur
         clientSockets[clientNumber] = accept(socketDescriptor, (struct sockaddr *)&destAdress[clientNumber], &destAdressSize);
         if (clientSockets[clientNumber] == -1)
         {
@@ -120,7 +122,17 @@ int main(int argc, char **argv)
         parameters[clientNumber].mySocketDescriptor = clientSockets[clientNumber];
         parameters[clientNumber].otherSocketDescriptors = clientSockets;
 
-        clientNumber++;
+        clientNumber++; // 1 client de plus
+
+        for (int i = 0; i < clientNumber; i++)
+        {
+            int messageLength = send(clientSockets[i], &clientNumber, sizeof(clientNumber), 0); // Envoi du nombre de clients connectés
+            if (messageLength == -1)
+            {
+                perror("Sending message");
+                return -1;
+            }
+        }
 
         printf("\nNouveau client connecté ! Encore %i clients... \n", (MAX_CLIENTS - clientNumber));
     }

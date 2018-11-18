@@ -4,25 +4,25 @@ import edu.warbot.agents.enums.WarAgentType;
 import edu.warbot.agents.percepts.WarAgentPercept;
 import edu.warbot.brains.brains.WarHeavyBrain;
 
-public abstract class WarHeavyBrainController extends  WarHeavyBrain {
-
-
-    public WarHeavyBrainController() {
+public abstract class WarHeavyBrainController extends  WarHeavyBrain
+{
+    public WarHeavyBrainController()
+    {
         super();
     }
 
     @Override
-    public String action() {
+    public String action()
+    {
 
-        for (WarAgentPercept wp : getPerceptsEnemies()) {
+        for (WarAgentPercept percept : getPerceptsEnemies()) {
 
-            if (wp.getType().equals(WarAgentType.WarBase) || 
-            		wp.getType().equals(WarAgentType.WarRocketLauncher) || 
-            		wp.getType().equals(WarAgentType.WarHeavy)  ) {
-
-                setHeading(wp.getAngle());
-
-                this.setDebugString("Attaque!");
+            if (percept.getType().equals(WarAgentType.WarBase)
+            		|| percept.getType().equals(WarAgentType.WarRocketLauncher)
+            		|| percept.getType().equals(WarAgentType.WarHeavy))
+            {
+                setHeading(percept.getAngle());
+                
                 if (isReloaded())
                     return ACTION_FIRE;
                 else if (isReloading())
