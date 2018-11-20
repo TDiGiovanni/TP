@@ -1,7 +1,7 @@
 package sat;
 
-/* Un atome est un symbole propositionnel
- * Remarque : le seul attribut d'un atome est le string correspondant au symbole 
+/* Un atome est un symbole propositionnel.
+ * Remarque : le seul attribut d'un atome est le string correspondant au symbole.
  * Dans un but d'optimisation, on pourrait aussi associer à chaque symbole un entier distinct, 
  * et utiliser cet entier comme index dans diverses structures
  */
@@ -17,7 +17,9 @@ public class Atom
    		symbol = s;
 	}
 	
-	/** overrides equals from Object **/
+	/** 
+	 * overrides equals from Object
+	 */
 	public boolean equals(Object b)
 	{
 		if (!(b instanceof Atom)) return false;

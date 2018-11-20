@@ -42,6 +42,15 @@ public class RuleBase
 	}
 	
 	/**
+	 * Retourne la liste des règles
+	 * @return la liste des règles
+	 */
+	public ArrayList<Rule> getRules() 
+	{
+		return rules;
+	}
+	
+	/**
 	 * Retourne la règle de rang i
 	 * @param i le rang de la règle (débute à 0)
 	 * @return la règle de rang i

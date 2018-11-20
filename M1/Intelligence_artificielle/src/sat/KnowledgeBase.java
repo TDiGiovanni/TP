@@ -6,9 +6,11 @@ import java.util.ArrayList;
 
 public class KnowledgeBase
 {
-	private FactBase initialFactBase; // Base de faits initiale
+	private FactBase initialFactBase; 	// Base de faits initiale
 	private FactBase saturatedFactBase; // Base de faits saturée par la base de règles
-	private RuleBase ruleBase; // Base de règles
+	private RuleBase ruleBase; 			// Base de règles
+	ArrayList<Atom> alreadyProven;
+	ArrayList<Atom> alreadyFailed;
 
 	// Constructeur par défaut
 	public KnowledgeBase()
@@ -58,6 +60,27 @@ public class KnowledgeBase
 	public FactBase getSaturatedFactBase()
 	{
 		return this.saturatedFactBase;
+	}
+
+	// Renvoie une liste de tous les atomes de la base
+	public ArrayList<Atom> getAllAtoms()
+	{
+		ArrayList<Atom> result = new ArrayList<Atom>();
+
+		for (Atom currentFact : this.initialFactBase.getAtoms())
+			result.add(currentFact);
+
+		for (Rule currentRule : this.ruleBase.getRules())
+		{
+			for (Atom currentFact : currentRule.getHypothesis())
+				if (!result.contains(currentFact))
+					result.add(currentFact);
+
+			if (!result.contains(currentRule.getConclusion()))
+				result.add(currentRule.getConclusion());
+		}
+
+		return result;
 	}
 
 	@Override
@@ -146,5 +169,38 @@ public class KnowledgeBase
 				}
 			}
 		}
+	}
+
+	// Prouver un but en montrant que toutes ses hypothèses sont vraies
+	public boolean backwardChaining(Atom goal, ArrayList<Atom> alreadyChecked)
+	{
+		if (this.initialFactBase.belongsAtom(goal))
+			return true;
+
+		for (Rule currentRule : this.ruleBase.getRules())
+			if (currentRule.getConclusion().equals(goal))
+			{
+				for (Atom currentFact : currentRule.getHypothesis())
+				{
+					if (alreadyChecked.contains(currentFact)) // Pour éviter les boucles infinies
+						break; 								  // On passe à la prochaine règle si une des hypothèses a déjà été vérifiée
+
+					int factsProven = 0;
+					alreadyChecked.add(goal);
+					while (factsProven < currentRule.getHypothesis().size() && backwardChaining(currentFact, alreadyChecked))
+						factsProven++;
+
+					if (factsProven == currentRule.getHypothesis().size()) // On a prouvé toutes les hypothèses
+						return true;
+				}
+			}
+
+		return false; // Aucune des règles ne permettent de prouver le fait
+	}
+
+	// Prouver un but en montrant que toutes ses hypothèses sont vraies, version optimisée
+	public boolean backwardChainingOpt(Atom goal)
+	{
+		return false;
 	}
 }
