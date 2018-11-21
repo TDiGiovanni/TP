@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+   <title>M1 prog. agent - TP7 Warbot-Communications</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="Sujet_fichiers/netlogo.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="white">
+
+<center>
+  <h1 align="center"><font size="5"><a href="http://www.info-ufr.univ-montp2.fr/Formations/LMD/Master/">Master
+    Informatique 1ère année</a>:</font></h1>
+  <h1 align="center"><font size="6">Programmation orientée agents </font><font size="-1">(FMIN108)</font> </h1>
+  <p align="center"><font size="4">Resp: <a href="http://www.lirmm.fr/~ferber">Jacques
+        Ferber</a></font>,</p>
+  <h1>TP 7 - Warbot - communications et FSM</h1>
+  <p>&nbsp;</p>
+  <p><img src="Sujet_fichiers/warbot_logo1.jpg" width="229" height="117">
+  </p>
+  <h3>proposé par <a href="mailto:ferber@lirmm.fr">Jacques Ferber</a> - modifs nov-2019</h3>
+  <p><img src="Sujet_fichiers/warbot2-interface.png" width="449" height="223"></p>
+  <p>&nbsp;</p>
+</center>
+<p>&nbsp;</p>
+<p>Dans ce TP nous allons développer la manière de réaliser des communications sous Warbot.Voir le cours sur les communications.</p>
+<p>Dans Warbot, <a href="http://www.lirmm.fr/~ferber/ProgAgent/Manuel_Warbot2.pdf"></a>il
+ y a deux manières d'envoyer des messages, doit directement à l'agent 
+quand on connait son id, soit à tous les agents d'un certain groupe: la 
+même équipe, d'un certain type, ou tout simplement tous les agents 
+jouant un certain rôle dans un certain groupe (regarder la documentation
+ de Warbot à ce sujet).</p>
+<p><strong>Remarques: </strong></p>
+<ul>
+  <li>la fonction <tt>getMessages()</tt> retourne une liste de messages. Ceux-ci sont supprimés de la boite aux lettres.</li>
+</ul>
+<h2>1. Implémentation de messages</h2>
+<h3>1.a Appel à l'aide de la base</h3>
+<p>Si la base est attaquée, elle demande à tous les lanceurs de missiles
+ de revenir à la base. Implémentez le système de communication de 
+manière simple: tous les agents retournent à la base.</p>
+<p>Cela signifie que, automatiquement, les agents vont se tourner vers l'envoi du message de demande d'aide.</p>
+<h3>1.b Appel à l'aide de la base avec décision des receveurs</h3>
+<p>Si la base est attaquée, elle demande à tous les lanceurs de missiles
+ de revenir à la base. Mais maintenant, les lanceurs de missiles ne 
+répondent que s'ils sont à une distance inférieure à un certain rayon, 
+les autres continuent leur vie.</p>
+<h3>1.c Demande d'attaque venant des explorateurs.</h3>
+<p>Suite du précédent. Si un robot exploreur voit la base ennemie, il 
+demande à tous les lanceurs de missiles de venir attaquer la base. </p>
+<p>Observez ce qui se passe et ensuite modifier le code pour que seuls 
+les lanceurs de missiles qui sont "près" de la base ennemie (inférieurs à
+ une certaine distance)  viennent la détruire.</p>
+<h2>2. Aveugle et paralytique</h2>
+<p>On veut implémenter le principe de l'aveugle et le paralytique ou un 
+Exlorateur dispose de la "vision" tandis que des tireurs (Heavy ou 
+MissileLauncher) disposent de la possibilité d'action. Ces derniers 
+restent à distance sans voir leur objectif tout en lui tirant dessus, 
+leur objectif étant donné par un Explorateur. </p>
+<p>Pour cela, dès qu'un explorateur trouve la base, il demande à ce que 
+des tireurs viennent l'aider (comme dans l'exemple précédent), puis il 
+s'arrête se contentant de donner la position de la base, qui est ensuite
+ transposée par les tireurs, en utilisant le triangle trigonométrique 
+(besoin de rafraichir votre trigo? vous utiliserez les principes de 
+trigo vus en cours).</p>
+<p>Pour Java sur <a href="https://github.com/rascal222/TER-Warbot-2016/tree/master/src/main/java/edu/warbot/tools/geometry">https://github.com/rascal222/TER-Warbot-2016/tree/master/src/main/java/edu/warbot/tools/geometry</a> (les classes se trouvent dans l'archive Java pas besoin de recompiler quoi que ce soit)</p>
+<p>Idem pour Python: <a href="http://www.lirmm.fr/~ferber/ProgAgent/Trigo.py">Trigo.py </a>(se trouve dans l'archive de Warbot)</p>
+<h2>3. FSM</h2>
+<p>Dans cette partie du TP,
+  on vous demande d'écrire le comportement des agents sous la forme de 
+FSM avec réflexes. On a vu la définition générale des FSM dans <a href="http://www.lirmm.fr/~ferber/ProgAgent/cours%20prog_agents3.pdf">le cours sur les architectures réactives</a>.</p>
+<p>Vous trouverez une<a href="http://www.lirmm.fr/~ferber/ProgAgent/WarExplorer_FSM.py"> FSM pour Python dans le ce fichier</a> et ici un <a href="http://www.lirmm.fr/~ferber/ProgAgent/Warbot-FSM-exemple.zip">exemple de FSM en Java</a>.</p>
+<p>dans laquelle un explorateur se balade, récupère de la nourriture 
+s'il en voit. Il remplit totalement son sac avant de rentrer à la base. 
+S'il rencontre la base ennemie, il en informe immédiatement la base. 
+(comportement très simple, le travail consiste à programmer la FSM).</p>
+<p>a) A partir de ce modèle, créez des attaquants (Heavy ou 
+MissileLaunchers) qui cherchent la base ennemie et attaquent s'ils l'ont
+ trouvé où s'ils ont reçu l'information du lieu de la base par 
+l'intermédiaire d'un explorateur.</p>
+<p>b) modifiez la FSM de l'explorateur pour que votre explorateur puisse
+ diriger une attaque s'il rencontre une base ennemie. A ce moment là, il
+ ne recherche plus de nourriture et reste auprès de la base. Ecrivez 
+auparavant la FSM graphiquement sur papier avant de la programmer!</p>
+<h2>&nbsp;</h2>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+
+
+
+</body></html>
