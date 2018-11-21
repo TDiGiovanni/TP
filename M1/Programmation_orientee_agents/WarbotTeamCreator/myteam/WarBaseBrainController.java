@@ -7,6 +7,7 @@ import edu.warbot.agents.percepts.WarAgentPercept;
 import edu.warbot.brains.brains.WarBaseBrain;
 import edu.warbot.communications.WarMessage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class WarBaseBrainController extends WarBaseBrain
@@ -49,20 +50,37 @@ public abstract class WarBaseBrainController extends WarBaseBrain
 
         for (WarAgentPercept percept : getPerceptsEnemies())
         {
-            if (isEnemy(percept) && percept.getType().getCategory().equals(WarAgentCategory.Soldier))
-                broadcastMessageToAll("I'm under attack",
+        	setDebugString("Under attack");
+        	
+            if (percept.getType().getCategory().equals(WarAgentCategory.Soldier))
+                broadcastMessageToAgentType(WarAgentType.WarRocketLauncher,
+                		"I'm under attack",
                         String.valueOf(percept.getAngle()),
-                        String.valueOf(percept.getDistance()));
+                        String.valueOf(percept.getDistance())
+                        );
         }
 
-        for (WarAgentPercept percept : getPerceptsResources())
+        for (WarAgentPercept percept : getFoodPercepts())
         {
             if (percept.getType().equals(WarAgentType.WarFood))
-                broadcastMessageToAgentType(WarAgentType.WarExplorer, "Food detected",
+                broadcastMessageToAgentType(WarAgentType.WarExplorer,
+                		"Food here",
                         String.valueOf(percept.getAngle()),
-                        String.valueOf(percept.getDistance()));
+                        String.valueOf(percept.getDistance())
+                        );
         }
 
         return WarBase.ACTION_IDLE;
     }
+    
+	private ArrayList<WarAgentPercept> getFoodPercepts()
+	{
+		ArrayList<WarAgentPercept> percepts = (ArrayList<WarAgentPercept>) getPercepts();
+		ArrayList<WarAgentPercept> foodPercepts = new ArrayList<WarAgentPercept>();
+		for (WarAgentPercept percept : percepts)
+			if (percept.getType().equals(WarAgentType.WarFood))
+				foodPercepts.add(percept);
+
+		return foodPercepts;
+	}
 }
