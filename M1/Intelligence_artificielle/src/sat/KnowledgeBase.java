@@ -136,11 +136,11 @@ public class KnowledgeBase
 		}
 	}
 
-
 	// Crée la base de faits saturée à partir de la base de règles, version optimisée
+	@SuppressWarnings("unchecked")
 	public void forwardChainingOpt()
 	{
-		ArrayList<Atom> newFacts = this.initialFactBase.getAtoms();
+		ArrayList<Atom> newFacts = (ArrayList<Atom>) this.getInitialFactBase().getAtoms().clone();
 
 		ArrayList<Integer> count = new ArrayList<Integer>();
 		for (int i = 0; i < this.ruleBase.size(); i++)
@@ -180,19 +180,27 @@ public class KnowledgeBase
 		for (Rule currentRule : this.ruleBase.getRules())
 			if (currentRule.getConclusion().equals(goal))
 			{
+				boolean belongs = false;
+
 				for (Atom currentFact : currentRule.getHypothesis())
-				{
-					if (alreadyChecked.contains(currentFact)) // Pour éviter les boucles infinies
-						break; 								  // On passe à la prochaine règle si une des hypothèses a déjà été vérifiée
+					if (alreadyChecked.contains(currentFact))
+					{
+						belongs = true;
+						break;
+					}
 
-					int factsProven = 0;
-					alreadyChecked.add(goal);
-					while (factsProven < currentRule.getHypothesis().size() && backwardChaining(currentFact, alreadyChecked))
-						factsProven++;
+				if (belongs)  // Pour éviter les boucles infinies, si une des hypothèses a déjà été vérifiée
+					continue; // On passe à la prochaine règle
 
-					if (factsProven == currentRule.getHypothesis().size()) // On a prouvé toutes les hypothèses
-						return true;
-				}
+				alreadyChecked.add(goal);
+
+				int i = 0;
+				while (i < currentRule.getHypothesis().size()
+						&& backwardChaining(currentRule.getHypothesis().get(i), alreadyChecked))
+					i++;
+
+				if (i == currentRule.getHypothesis().size()) // On a prouvé toutes les hypothèses
+					return true;
 			}
 
 		return false; // Aucune des règles ne permettent de prouver le fait
