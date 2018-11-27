@@ -10,11 +10,12 @@ public class Application
 		KnowledgeBase k = new KnowledgeBase("Reunion");
 		System.out.println(k);
 
-		// Création de la BF saturée par chaînage avant
+		// Création de la BF saturée par chaînage avant et affichage
 		System.out.println("Application du forward chaining");
 		k.forwardChainingOpt();
+		k.printSaturatedFactBase();
 
-		// Recherche d'un but (recherche dans BF saturée et chaînage arrière)
+		// Recherche infinie de buts à prouver (recherche dans BF saturée et par chaînage arrière)
 		Scanner sc = new Scanner(System.in);
 		String input = "";
 		Atom goal = null;
@@ -22,7 +23,7 @@ public class Application
 		
 		while (true)
 		{
-			System.out.println("\nEntrez un but (ou quit pour quitter) :");
+			System.out.println("\nEntrez un atome à prouver (ou quit pour quitter) :");
 			input = sc.nextLine();
 			
 			if (input.equals("quit"))
@@ -48,15 +49,15 @@ public class Application
 			
 			// Recherche dans la BF saturée
 			if (k.getSaturatedFactBase().belongsAtom(goal))
-				System.out.println("Recherche dans la BF saturée : but prouvé");
+				System.out.println("Recherche dans la BF saturée : atome trouvé");
 			else
-				System.out.println("Recherche dans la BF saturée : but non prouvé");
+				System.out.println("Recherche dans la BF saturée : atome impossible à trouver");
 			
 			// Recherche par chaînage arrière
-			if (k.backwardChaining(goal, new ArrayList<Atom>()))
+			if (k.backwardChainingOpt(goal, new ArrayList<Atom>()))
 				System.out.println("Recherche par chaînage arrière : but prouvé");
 			else
-				System.out.println("Recherche par chaînage arrière : but non prouvé");
+				System.out.println("Recherche par chaînage arrière : but impossible à prouver");
 		}
 
 		sc.close();

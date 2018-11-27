@@ -22,7 +22,9 @@ public class Atom
 	 */
 	public boolean equals(Object b)
 	{
-		if (!(b instanceof Atom)) return false;
+		if (!(b instanceof Atom))
+			return false;
+		
 		return this.symbol.equals(((Atom)b).symbol);
 	}
 	
