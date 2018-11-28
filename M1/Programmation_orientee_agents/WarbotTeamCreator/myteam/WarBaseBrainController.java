@@ -13,13 +13,11 @@ import java.util.List;
 public abstract class WarBaseBrainController extends WarBaseBrain
 {
     private boolean _alreadyCreated;
-    private boolean _inDanger;
 
     public WarBaseBrainController()
     {
         super();
         _alreadyCreated = false;
-        _inDanger = false;
     }
 
     @Override
@@ -32,21 +30,17 @@ public abstract class WarBaseBrainController extends WarBaseBrain
             return WarBase.ACTION_CREATE;
         }
 
-        if (getNbElementsInBag() >= 0 && getHealth() <= 0.8 * getMaxHealth())
+        if (getNbElementsInBag() > 0 && getHealth() <= 0.8 * getMaxHealth())
             return WarBase.ACTION_EAT;
 
-        if (getMaxHealth() == getHealth())
-        {
+        if (getHealth() == getMaxHealth())
             _alreadyCreated = true;
-        }
 
         List<WarMessage> messages = getMessages();
 
         for (WarMessage message : messages)
-        {
             if (message.getMessage().equals("Where is the base"))
                 reply(message, "I'm here");
-        }
 
         for (WarAgentPercept percept : getPerceptsEnemies())
         {
@@ -61,14 +55,12 @@ public abstract class WarBaseBrainController extends WarBaseBrain
         }
 
         for (WarAgentPercept percept : getFoodPercepts())
-        {
             if (percept.getType().equals(WarAgentType.WarFood))
                 broadcastMessageToAgentType(WarAgentType.WarExplorer,
                 		"Food here",
                         String.valueOf(percept.getAngle()),
                         String.valueOf(percept.getDistance())
                         );
-        }
 
         return WarBase.ACTION_IDLE;
     }

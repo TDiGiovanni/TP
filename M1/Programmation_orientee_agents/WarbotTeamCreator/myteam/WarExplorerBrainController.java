@@ -1,16 +1,14 @@
 package myteam;
 
 
-import java.awt.Color;
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.warbot.agents.MovableWarAgent;
-import edu.warbot.agents.WarAgent;
 import edu.warbot.agents.WarResource;
 import edu.warbot.agents.agents.WarExplorer;
 import edu.warbot.agents.enums.WarAgentType;
 import edu.warbot.agents.percepts.WarAgentPercept;
-import edu.warbot.agents.percepts.WarPercept;
 import edu.warbot.brains.WarBrain;
 import edu.warbot.brains.brains.WarExplorerBrain;
 import edu.warbot.communications.WarMessage;
@@ -27,24 +25,23 @@ public abstract class WarExplorerBrainController extends WarExplorerBrain
 		}
 	};
 
-	static WTask returnFoodTask = new WTask()
+	static WTask returnFood = new WTask()
 	{
 		String exec(WarBrain bc)
 		{
 			WarExplorerBrainController me = (WarExplorerBrainController) bc;
-			
-			me.setDebugStringColor(Color.green.darker());
+
 			me.setDebugString("Returning Food");
 
 			if(me.isBagEmpty())
 			{
 				me.setHeading(me.getHeading() + 180);
 
-				me.ctask = getFoodTask;
-				return null;
+				me.ctask = explore;
+				return ACTION_MOVE;
 			}
 
-			ArrayList<WarAgentPercept> basePercepts = (ArrayList<WarAgentPercept>) me.getPerceptsAlliesByType(WarAgentType.WarBase);
+			List<WarAgentPercept> basePercepts = me.getPerceptsAlliesByType(WarAgentType.WarBase);
 
 			// Si je ne vois pas de base alliée
 			if (basePercepts == null | basePercepts.size() == 0)
@@ -74,19 +71,30 @@ public abstract class WarExplorerBrainController extends WarExplorerBrain
 		}
 	};
 
-	static WTask getFoodTask = new WTask()
+	static WTask explore = new WTask()
 	{
 		String exec(WarBrain bc)
 		{
 			WarExplorerBrainController me = (WarExplorerBrainController) bc;
 			
-			me.setDebugStringColor(Color.BLACK);
-			me.setDebugString("Searching food");
-
+			me.setDebugString("Exploring");
+			
+			for (WarAgentPercept percept : me.getPerceptsEnemies())
+			{
+				if (percept.getType().equals(WarAgentType.WarBase)) // Si on voit une base ennemie
+				{
+					me.broadcastMessageToAgentType(WarAgentType.WarRocketLauncher,
+							"Enemy base here",
+							String.valueOf(percept.getAngle()),
+							String.valueOf(percept.getDistance())
+							);
+				}
+			}
+			
 			if (me.isBagFull())
 			{
-				me.ctask = returnFoodTask;
-				return null;
+				me.ctask = returnFood;
+				return ACTION_MOVE;
 			}
 
 			ArrayList<WarAgentPercept> foodPercepts = me.getFoodPercepts();
@@ -102,12 +110,14 @@ public abstract class WarExplorerBrainController extends WarExplorerBrain
 					return MovableWarAgent.ACTION_MOVE;
 				}
 				else
-				{
 					return MovableWarAgent.ACTION_TAKE;
-				}
 			}
 			else
 			{
+				WarMessage foodMessage = me.getMessageAboutFood();
+				if (foodMessage != null)
+					;
+
 				return MovableWarAgent.ACTION_MOVE;
 			}
 		}
@@ -116,7 +126,7 @@ public abstract class WarExplorerBrainController extends WarExplorerBrain
 	public WarExplorerBrainController()
 	{
 		super();
-		ctask = getFoodTask; // Initialisation de la FSM
+		ctask = explore; // Initialisation de la FSM
 	}
 
 	@Override
@@ -126,7 +136,7 @@ public abstract class WarExplorerBrainController extends WarExplorerBrain
 		
 		if (isBlocked())
 			setRandomHeading();
-
+		
 		if (toReturn == null)
 		{
 			return WarExplorer.ACTION_MOVE;
@@ -150,20 +160,18 @@ public abstract class WarExplorerBrainController extends WarExplorerBrain
 
 	private WarMessage getMessageAboutFood()
 	{
-		for (WarMessage m : getMessages()) {
+		for (WarMessage m : getMessages())
 			if(m.getMessage().equals("Food here"))
 				return m;
-		}
+
 		return null;
 	}
 
 	private WarMessage getMessageFromBase()
 	{
 		for (WarMessage m : getMessages())
-		{
 			if(m.getSenderType().equals(WarAgentType.WarBase))
 				return m;
-		}
 
 		broadcastMessageToAgentType(WarAgentType.WarBase, "Where is the base", "");
 		return null;

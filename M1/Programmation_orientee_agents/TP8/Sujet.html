@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+<title>M1 prog. agent - TP8 Warbot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="file:///Macintosh HD/Users/ferber/Documents/Sites/MyWebPages/ProgAgent/netlogo.css" rel="stylesheet" type="text/css">
+<link href="Sujet_fichiers/netlogo.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="white">
+<center>
+  <h1 align="center"><font size="5"><a href="http://www.info-ufr.univ-montp2.fr/Formations/LMD/Master/">Université de Montpellier - Master
+    Informatique 1ère année</a></font></h1>
+  <h1 align="center"><font size="6">Programmation orientée agents (FMIN108)</font> </h1>
+  <p align="center"><font size="4">Resp: <a href="http://www.lirmm.fr/~ferber">Jacques
+    Ferber</a></font>,</p>
+  <h1>TP 8 - Réseau contractuel  et communications <br>
+    sous Warbot (2ème partie)</h1>
+</center>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>1. Le Réseau contractuel</h2>
+<p>On veut implémenter le protocole d'appel colelctif qui est présenté dans <a href="http://www.lirmm.fr/~ferber/ProgAgent/COURS%20SMA_communications.pdf">le cours qui se trouve en ligne</a>.</p>
+<p>On suppose que les managers sont des Explorer qui cherchent à 
+recruter des Tireurs (heavy ou rocket launchers) pour accomplir leur 
+mission.</p>
+<h2>1ère question</h2>
+<p>Implémenter le protocole d'appel collectif vu dans le cours 
+(simplification du réseau contractuel), en supposant que les Explorer 
+lancent un appel d'offre dès qu'ils voient la base ennemie. Ils 
+s'arrêtent devant la base et ils lancent un appel d'offre pour récupérer
+ les n Tireurs (tanks lourds ou lanceurs de missiles) les plus près 
+d'eux (ils comptent jusqu'à n. S'il n'arrivent pas à recruter n agents 
+au bout de k tours (time out) ils abandonnent la tâche, c'est à dire 
+qu'ils reommencent à se déplacer aléatoirement. Faites d'abord un 
+demi-tour et comptez h ticks avant de relancer la possibilité de faire 
+ce protocole).</p>
+<p>Pour cela l'Explorer lance un appel d'offre, avec un numéro de tâche, vers les Tireurs de son équipe (performatif: <code>cfp</code>).
+ Les Lanceurs, qui ne sont pas déjà occupés par une tâche, font une 
+proposition avec leur énergie et la distance vis à vis de l'Explorer 
+(performatif: <code>propose</code> si il ne peut pas, performatif <code>refuse</code>).
+ Les Explorateurs choisissent les Tireurs les plus proches ayant la 
+meilleure énergie (à vous de décrire et implémenter la fonction de 
+choix) et ils leur attribuent la tâche (performatif: <code>accept</code>).
+ Quand un Tireur se voit attribuer une tâche, il ne peut accepter 
+d'autres tâches. La tâche est finie pour un Tireur quand il a accompli 
+sa tâche (la base adverse est détruite) ou quand le Tireur lui dit que 
+la tâche est terminée.</p>
+<h2>Réseau contractuel avec plusieurs demandeurs</h2>
+<p>Voir ce qui se passe quand plusieurs Explorateurs demandent en même 
+temps (ou presque en même temps) de recruter un grand nombre de 
+Tireurs.Voir que l'on peut atteindre un dead-lock si les Lanceurs ont 
+une engagement trop fort.. Comment alors les "désengager" de leurs 
+tâches?</p>
+<h2>2. Défense de la base</h2>
+<p>Implémentez le réseau contractuel pour que la base soit sure d'avoir toujours n Tireurs à côté d'elle pour la défendre.</p>
+<p>C'est la base qui initie le protocole. Les Tireurs recrutés restent 
+près de la base, les autres peuvent continuer leurs activités.</p>
+<h2>3. Attaque combinées</h2>
+<p>Intégrer à la fois les attaques par Exploreurs et les défenses gérées
+ par (la ou les bases) en même temps et observez les conséquences en 
+fonction du nombre n et n' que vous déterminez.</p>
+
+
+</body></html>
