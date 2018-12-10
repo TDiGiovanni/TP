@@ -3,6 +3,7 @@ package sat;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class KnowledgeBase
 {
@@ -46,7 +47,7 @@ public class KnowledgeBase
 		}
 
 		readFile.close();
-		
+
 		this.alreadyProven = new ArrayList<Atom>();
 		this.alreadyFailed = new ArrayList<Atom>();
 	}
@@ -66,12 +67,12 @@ public class KnowledgeBase
 	{
 		return this.saturatedFactBase;
 	}
-	
+
 	public ArrayList<Atom> getAlreadyProven()
 	{
 		return this.alreadyProven;
 	}
-	
+
 	public ArrayList<Atom> getAlreadyFailed()
 	{
 		return this.alreadyFailed;
@@ -112,6 +113,29 @@ public class KnowledgeBase
 	public void printSaturatedFactBase()
 	{
 		System.out.println("\nBF saturée : " + this.saturatedFactBase.toString());
+	}
+
+	// Renvoie une map qui associe à chaque symbole la liste des règles où il apparait en hypotèse
+	public HashMap<Atom,ArrayList<Rule>> getHypothesisMap()
+	{
+		HashMap<Atom, ArrayList<Rule>> result = new HashMap<Atom, ArrayList<Rule>>();
+
+		for (Rule currentRule : this.getRuleBase().getRules())
+			for (Atom currentFact : currentRule.getHypothesis())
+			{
+				ArrayList<Rule> ruleList = result.get(currentFact);
+
+				if (ruleList == null) // Si la liste n'existe pas, on la crée
+				{
+					ruleList = new ArrayList<Rule>();
+					ruleList.add(currentRule);
+					result.put(currentFact, ruleList);
+				}
+				else // Sinon on ajoute l'élément
+					ruleList.add(currentRule);
+			}
+
+		return result;
 	}
 
 	// Crée la base de faits saturée à partir de la base de règles, version naïve
@@ -156,6 +180,7 @@ public class KnowledgeBase
 	public void forwardChainingOpt()
 	{
 		ArrayList<Atom> newFacts = (ArrayList<Atom>) this.getInitialFactBase().getAtoms().clone();
+		HashMap<Atom,ArrayList<Rule>> hypothesis = this.getHypothesisMap();
 
 		ArrayList<Integer> count = new ArrayList<Integer>();
 		for (int i = 0; i < this.ruleBase.size(); i++)
@@ -169,7 +194,8 @@ public class KnowledgeBase
 			for (int i = 0; i < this.ruleBase.size(); i++)
 			{
 				Rule currentRule = this.ruleBase.getRule(i);
-				if (currentRule.getHypothesis().contains(currentFact)) // Si la règle contient le currentFact
+				if (hypothesis.get(currentFact) != null
+						&& hypothesis.get(currentFact).contains(currentRule)) // Si la règle est concernée
 				{
 					count.set(i, count.get(i) - 1); // On décrémente le compteur
 					if (count.get(i) == 0) // Si la règle est applicable
@@ -231,7 +257,7 @@ public class KnowledgeBase
 	{
 		if (this.initialFactBase.belongsAtom(goal) || this.alreadyProven.contains(goal))
 			return true;
-		
+
 		if (this.alreadyFailed.contains(goal))
 			return false;
 
@@ -253,13 +279,13 @@ public class KnowledgeBase
 
 				ArrayList<Atom> tempAlreadyChecked = (ArrayList<Atom>) alreadyChecked.clone();
 				tempAlreadyChecked.add(goal);
-				
+
 				int i = 0;
 				while (i < currentRule.getHypothesis().size()
 						&& backwardChainingOpt(currentRule.getHypothesis().get(i), tempAlreadyChecked))
 					i++;
 
-				if (i == currentRule.getHypothesis().size()) // On a prouvé toutes les hypothèses
+				if (i == currentRule.getHypothesis().size()) // Si on a prouvé toutes les hypothèses
 				{
 					this.alreadyProven.add(goal);
 					return true;

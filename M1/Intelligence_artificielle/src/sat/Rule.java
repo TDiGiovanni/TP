@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 
 public class Rule
 {
-	private ArrayList<Atom> hypothesis; // L'hypothèse : une liste d'atomes
+	private ArrayList<Atom> hypothesis; // L'hypothèse : liste d'atomes positifs
 	private Atom conclusion; // La conclusion : un atome
 
 	/**
@@ -18,18 +18,18 @@ public class Rule
 	{
 		hypothesis = new ArrayList<Atom>();		
 		StringTokenizer st = new StringTokenizer(strRule,";");
-   		while(st.hasMoreTokens())
-   		{
-   			String s = st.nextToken(); // s represente un atome
-   			Atom a = new Atom(s);
-   			hypothesis.add(a);//ajout de a a la liste des atomes de l'hypothese (pour l'instant, on ajoute aussi celui de la conclusion)
-   		}
-   		// on a mis tous les atomes crees en hypothese
-   		// il reste a tranferer le dernier en conclusion
+		while(st.hasMoreTokens())
+		{
+			String s = st.nextToken(); // s represente un atome
+			Atom a = new Atom(s);
+			hypothesis.add(a);//ajout de a a la liste des atomes de l'hypothese (pour l'instant, on ajoute aussi celui de la conclusion)
+		}
+		// on a mis tous les atomes crees en hypothese
+		// il reste a tranferer le dernier en conclusion
 		conclusion = hypothesis.get(hypothesis.size()-1);
 		hypothesis.remove(hypothesis.size()-1);
 	}
-	
+
 	/**
 	 * accesseur a l'hypothese de la regle
 	 * @return l'hypothese de la regle
@@ -38,7 +38,7 @@ public class Rule
 	{
 		return hypothesis;
 	}
-	
+
 	/**
 	 * retourne la ieme atome de l'hypothese
 	 * @param i le rang de l'atome a retourner (debut a 0)
@@ -48,7 +48,7 @@ public class Rule
 	{
 		return hypothesis.get(i);
 	}
-	
+
 	/**
 	 * accesseur a la conclusion de la regle
 	 * @return l'atome conclusion de la regle
@@ -57,21 +57,26 @@ public class Rule
 	{
 		return conclusion;
 	}
-	
+
 	/**
 	 * retourne une description de la regle
 	 * @return la chaine decrivant la regle (suivant l'ecriture habituelle)
 	 */
 	public String toString()
 	{
-		String s="";
-		for(int i=0;i<hypothesis.size();i++)
+		String s = "";
+		
+		for (int i = 0; i < hypothesis.size(); i++)
 		{
-			s+=hypothesis.get(i);	
-			if(i<hypothesis.size()-1) s+=" ; ";
+			s += hypothesis.get(i);
+			
+			if (i < hypothesis.size() - 1)
+				s += " ; ";
 		}
-		s+=" --> ";  
-		s+=conclusion;
+		
+		s += " --> ";  
+		s += conclusion;
+
 		return s;
 	}
 }

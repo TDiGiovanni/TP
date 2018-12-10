@@ -17,9 +17,10 @@ public class Application
 
 		// Recherche infinie de buts à prouver (recherche dans BF saturée et par chaînage arrière)
 		Scanner sc = new Scanner(System.in);
-		String input = "";
-		Atom goal = null;
-		boolean goodInput = false;
+		String input = ""; 							// Input de l'utilisateur
+		Atom goal = null; 							// Résultat à prouver
+		ArrayList<Atom> allAtoms = k.getAllAtoms(); // Liste de tous les atomes
+		boolean goodInput = false; 					// True si l'input correspond à un atome existant, false sinon
 		
 		while (true)
 		{
@@ -30,7 +31,7 @@ public class Application
 				break;
 			
 			// Recherche de l'atome correspondant
-			for (Atom currentFact : k.getAllAtoms())
+			for (Atom currentFact : allAtoms)
 			{
 				if (currentFact.toString().equals(input))
 				{

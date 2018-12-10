@@ -28,6 +28,11 @@ public class Atom
 		return this.symbol.equals(((Atom)b).symbol);
 	}
 	
+	public int hashCode()
+	{
+		return this.symbol.hashCode();
+	}
+	
 	/**
 	 * @return le symbole propositionnel
 	 */
