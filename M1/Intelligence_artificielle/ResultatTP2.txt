@@ -1,0 +1,257 @@
+﻿Evaluation TP2 Intelligence artificielle – HMIN107
+NOM : DI GIOVANNI Thomas
+Parcours : AIGLE
+Encadrant de TP : Marie-Laure Mugnier
+
+Chaînage avant
+
+A. DemoFC1 sur anniversaire.txt
+
+BF initiale : 
+La base contient 2 faits : 
+B ; C
+
+BF saturée : 
+La base contient 2 faits : 
+B ; C
+
+BR : 
+La base contient 8 règles : 
+	 R1 : B ; D ; E --> F
+	 R2 : G ; D --> A
+	 R3 : C ; F --> A
+	 R4 : B --> X
+	 R5 : X ; A --> H
+	 R6 : C --> D
+	 R7 : X ; C --> A
+	 R8 : X ; B --> D
+
+Application du forward chaining
+
+BF saturée : La base contient 6 faits : 
+B ; C ; X ; D ; A ; H
+
+Application du forward chaining optimisé
+
+BF saturée : La base contient 6 faits : 
+B ; C ; X ; D ; A ; H
+	
+B. DemoFC1 sur tp2ex1.txt
+
+BF initiale : 
+La base contient 3 faits : 
+A ; B ; G
+
+BF saturée : 
+La base contient 3 faits : 
+A ; B ; G
+
+BR : 
+La base contient 11 règles : 
+	 R1 : J ; H --> I
+	 R2 : A ; J ; C --> L
+	 R3 : B ; C --> L
+	 R4 : I ; F --> H
+	 R5 : E ; J --> K
+	 R6 : G ; F --> H
+	 R7 : A ; C --> J
+	 R8 : H ; K --> D
+	 R9 : A ; B --> C
+	 R10 : I ; H --> J
+	 R11 : B ; L ; J --> F
+
+Application du forward chaining
+
+BF saturée : La base contient 9 faits : 
+A ; B ; G ; C ; L ; J ; F ; H ; I
+
+Application du forward chaining optimisé
+
+BF saturée : La base contient 9 faits : 
+A ; B ; G ; C ; L ; J ; F ; H ; I
+	
+C. DemoFC1 sur tp2ex2.txt
+
+BF initiale : 
+La base contient 2 faits : 
+a0 ; a1
+
+BF saturée : 
+La base contient 2 faits : 
+a0 ; a1
+
+BR : 
+La base contient 13 règles : 
+	 R1 : a9 ; a10 --> a11
+	 R2 : a8 ; a9 --> a10
+	 R3 : a7 ; a8 --> a9
+	 R4 : a6 ; a7 --> a8
+	 R5 : a5 ; a6 --> a7
+	 R6 : a4 ; a5 --> a6
+	 R7 : a3 ; a12 --> a5
+	 R8 : a5 ; a7 --> a5
+	 R9 : a12 --> a5
+	 R10 : a3 ; a4 --> a5
+	 R11 : a2 ; a3 --> a4
+	 R12 : a1 ; a2 --> a3
+	 R13 : a0 ; a1 --> a2
+
+Application du forward chaining
+
+BF saturée : La base contient 12 faits : 
+a0 ; a1 ; a2 ; a3 ; a4 ; a5 ; a6 ; a7 ; a8 ; a9 ; a10 ; a11
+
+Application du forward chaining optimisé
+
+BF saturée : La base contient 12 faits : 
+a0 ; a1 ; a2 ; a3 ; a4 ; a5 ; a6 ; a7 ; a8 ; a9 ; a10 ; a11
+
+D. DemoFC2 sur tp2ex1.txt
+
+Application du forward chaining
+Nombre d'étapes de largeur : 6
+	
+E. DemoFC2 sur tp2ex2.txt
+
+Application du forward chaining
+Nombre d'étapes de largeur : 11
+
+F. DemoFC3 sur tp2ex2.txt
+
+Application du forward chaining optimisé
+a0 1
+a1 2
+a2 2
+a3 3
+a4 2
+a5 3
+a6 2
+a7 3
+a8 2
+a9 2
+a10 1
+a11 0
+Total accès règles : 23
+
+G. Structures de données pour l’algorithme à base de compteurs
+
+Compteurs : ArrayList<Integer>
+aTraiter : ArrayList<Atom>
+HashMap<Atom,ArrayList<Rule>> pour trouver efficacement toutes les règles dont l'hypothèse contient F lorsque F est traité
+
+Chaînage arrière
+
+H. DemoBC sur tp2ex1.txt (prouver L, I, K, D)
+
+Entrez un atome à prouver (ou quit pour quitter) :
+L
+L
+|	A
+|	J
+|	|	A
+|	|	C
+|	|	|	A
+|	|	|	B
+|	C
+But prouvé
+
+Entrez un atome à prouver (ou quit pour quitter) :
+I
+I
+|	J
+|	|	A
+|	|	C
+|	|	|	A
+|	|	|	B
+|	H
+|	|	G
+|	|	F
+|	|	|	B
+|	|	|	L
+|	|	|	|	A
+|	|	|	|	J
+|	|	|	|	C
+|	|	|	J
+But prouvé
+
+Entrez un atome à prouver (ou quit pour quitter) :
+K
+K
+|	E
+But impossible à prouver
+
+Entrez un atome à prouver (ou quit pour quitter) :
+D
+D
+|	H
+|	|	I
+|	|	G
+|	|	F
+|	|	|	B
+|	|	|	L
+|	|	|	|	A
+|	|	|	|	J
+|	|	|	|	|	A
+|	|	|	|	|	C
+|	|	|	|	|	|	A
+|	|	|	|	|	|	B
+|	|	|	|	C
+|	|	|	J
+|	K
+|	|	E
+But impossible à prouver
+
+I. DemoBC sur tp2ex2.txt (prouver a1, a4, a5)
+
+Entrez un atome à prouver (ou quit pour quitter) :
+a1
+a1
+But prouvé
+
+Entrez un atome à prouver (ou quit pour quitter) :
+a4
+a4
+|	a2
+|	|	a0
+|	|	a1
+|	a3
+|	|	a1
+|	|	a2
+But prouvé
+
+Entrez un atome à prouver (ou quit pour quitter) :
+a5
+a5
+|	a3
+|	|	a1
+|	|	a2
+|	|	|	a0
+|	|	|	a1
+|	a12
+|	a5
+|	|	a3
+|	|	a12
+|	|	a12
+|	|	a3
+|	|	a4
+|	|	|	a2
+|	|	|	a3
+|	a7
+|	a12
+|	a3
+|	a4
+But prouvé
+
+J. Structures de données pour le chaînage arrière
+
+Toutes les règles dont la conclusion est Q : on parcourt toutes les règles
+Tester si un atome est dans BF : utilisation de belongsAtom (parcours de la liste d'atomes dans la base)
+Liste des atomes à ne pas générer, "déjà prouvé" et "déjà échec" : ArrayList<Atom>
+
+Règles avec négation du monde clos 
+
+K. DemoSP sur sempos.txt
+
+affichage
+
+[Compléments éventuels]

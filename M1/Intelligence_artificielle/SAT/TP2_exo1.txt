@@ -1,0 +1,12 @@
+A;B;G
+J;H;I
+A;J;C;L
+B;C;L
+I;F;H
+E;J;K
+G;F;H
+A;C;J
+H;K;D
+A;B;C
+I;H;J
+B;L;J;F

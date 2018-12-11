@@ -98,6 +98,13 @@ public class KnowledgeBase
 
 		return result;
 	}
+	
+	// Supprime les atomes mémorisés d'une exécution à l'autre
+	public void clear()
+	{
+		this.alreadyFailed.clear();
+		this.alreadyProven.clear();
+	}
 
 	@Override
 	public String toString()
@@ -142,6 +149,7 @@ public class KnowledgeBase
 	public void forwardChaining()
 	{
 		boolean noNewFacts = false;
+		int loopCount = 0; // Compteur de tours de la boucle
 
 		ArrayList<Boolean> ruleApplied = new ArrayList<Boolean>();
 		for (int i = 0; i < this.ruleBase.size(); i++)
@@ -172,7 +180,11 @@ public class KnowledgeBase
 				this.saturatedFactBase.addAtoms(newFacts);
 				newFacts.clear();
 			}
+			
+			loopCount++;
 		}
+		
+		System.out.println("Nombre d'étapes de largeur : " + loopCount);
 	}
 
 	// Crée la base de faits saturée à partir de la base de règles, version optimisée
@@ -186,6 +198,7 @@ public class KnowledgeBase
 		for (int i = 0; i < this.ruleBase.size(); i++)
 			count.add(this.ruleBase.getRule(i).getHypothesis().size()); // Nombre de littéraux dans l'hypothèse
 
+		int loopCount = 0, fullLoopCount = 0;
 		while (!newFacts.isEmpty())
 		{
 			Atom currentFact = newFacts.get(0);
@@ -197,7 +210,9 @@ public class KnowledgeBase
 				if (hypothesis.get(currentFact) != null
 						&& hypothesis.get(currentFact).contains(currentRule)) // Si la règle est concernée
 				{
+					loopCount++;
 					count.set(i, count.get(i) - 1); // On décrémente le compteur
+					
 					if (count.get(i) == 0) // Si la règle est applicable
 					{
 						if (!this.saturatedFactBase.getAtoms().contains(currentRule.getConclusion())
@@ -209,13 +224,23 @@ public class KnowledgeBase
 					}
 				}
 			}
+			
+			System.out.println(currentFact + " " + loopCount);
+			fullLoopCount += loopCount;
+			loopCount = 0;
 		}
+		
+		System.out.println("Total accès règles : " + fullLoopCount);
 	}
 
 	// Prouver un but en montrant que toutes ses hypothèses sont vraies
 	@SuppressWarnings("unchecked")
-	public boolean backwardChaining(Atom goal, ArrayList<Atom> alreadyChecked)
+	public boolean backwardChaining(Atom goal, ArrayList<Atom> alreadyChecked, int n)
 	{
+		for (int i = 0; i < n; i++)
+			System.out.print("|	");
+		System.out.println(goal);
+		
 		if (this.initialFactBase.belongsAtom(goal))
 			return true;
 
@@ -240,7 +265,7 @@ public class KnowledgeBase
 
 				int i = 0;
 				while (i < currentRule.getHypothesis().size()
-						&& backwardChaining(currentRule.getHypothesis().get(i), tempAlreadyChecked))
+						&& backwardChaining(currentRule.getHypothesis().get(i), tempAlreadyChecked, n+1))
 					i++;
 
 				if (i == currentRule.getHypothesis().size()) // On a prouvé toutes les hypothèses
@@ -253,8 +278,12 @@ public class KnowledgeBase
 
 	// Prouver un but en montrant que toutes ses hypothèses sont vraies, version optimisée
 	@SuppressWarnings("unchecked")
-	public boolean backwardChainingOpt(Atom goal, ArrayList<Atom> alreadyChecked)
+	public boolean backwardChainingOpt(Atom goal, ArrayList<Atom> alreadyChecked, int n)
 	{
+		for (int i = 0; i < n; i++)
+			System.out.print("|	");
+		System.out.println(goal);
+		
 		if (this.initialFactBase.belongsAtom(goal) || this.alreadyProven.contains(goal))
 			return true;
 
@@ -282,7 +311,7 @@ public class KnowledgeBase
 
 				int i = 0;
 				while (i < currentRule.getHypothesis().size()
-						&& backwardChainingOpt(currentRule.getHypothesis().get(i), tempAlreadyChecked))
+						&& backwardChainingOpt(currentRule.getHypothesis().get(i), tempAlreadyChecked, n+1))
 					i++;
 
 				if (i == currentRule.getHypothesis().size()) // Si on a prouvé toutes les hypothèses
