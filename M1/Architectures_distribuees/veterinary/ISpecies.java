@@ -1,10 +1,11 @@
-package veterinaire;
+package veterinary;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-public interface IEspece extends Remote
+public interface ISpecies extends Remote
 {
 	public String getName() throws RemoteException;
+	
 	public int getAverageLifespan() throws RemoteException;
 }
