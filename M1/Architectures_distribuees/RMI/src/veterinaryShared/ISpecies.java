@@ -1,4 +1,4 @@
-package veterinary;
+package veterinaryShared;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

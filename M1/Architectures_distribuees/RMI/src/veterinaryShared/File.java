@@ -1,4 +1,4 @@
-package veterinary;
+package veterinaryShared;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

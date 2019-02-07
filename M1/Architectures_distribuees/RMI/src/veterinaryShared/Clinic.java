@@ -1,21 +1,21 @@
-package veterinary;
+package veterinaryShared;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cabinet extends UnicastRemoteObject implements ICabinet
+public class Clinic extends UnicastRemoteObject implements IClinic
 {
 	private static final long serialVersionUID = 1L;
 	protected List<IAnimal> patients;
-	protected List<Veterinary> veterinaries;
+	protected List<IVeterinary> veterinaries;
 
-	protected Cabinet() throws RemoteException
+	public Clinic() throws RemoteException
 	{
 		super();
 		patients = new ArrayList<IAnimal>();
-		veterinaries = new ArrayList<Veterinary>();
+		veterinaries = new ArrayList<IVeterinary>();
 	}
 	
 	public IAnimal getAnimal(String name) throws RemoteException
@@ -47,14 +47,16 @@ public class Cabinet extends UnicastRemoteObject implements ICabinet
 			System.out.println(patient.print());
 	}
 	
-	public void login(Veterinary veterinary) throws RemoteException
+	public void login(IVeterinary veterinary) throws RemoteException
 	{
 		veterinaries.add(veterinary);
+		System.out.println("Veterinary " + veterinary.getName() + " logged in");
 	}
 	
-	public void logout(Veterinary veterinary) throws RemoteException
+	public void logout(IVeterinary veterinary) throws RemoteException
 	{
 		veterinaries.remove(veterinary);
+		System.out.println("Veterinary " + veterinary.getName() + " logged out");
 	}
 	
 	public void checkThreshold() throws RemoteException
@@ -62,7 +64,10 @@ public class Cabinet extends UnicastRemoteObject implements ICabinet
 		if (patients.size() == 1
 				|| patients.size() == 5
 				|| patients.size() == 10)
-			for (Veterinary veterinary : veterinaries)
+		{
+			System.out.println("Warning: " + patients +" patients currently registered");
+			for (IVeterinary veterinary : veterinaries)
 				veterinary.alert(patients.size());
+		}
 	}
 }
