@@ -4,10 +4,9 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Scanner;
 
-import veterinaryShared.Animal;
 import veterinaryShared.IAnimal;
 import veterinaryShared.IClinic;
-import veterinaryShared.Veterinary;
+import veterinaryShared.IVeterinary;
 
 public class Client
 {
@@ -21,7 +20,7 @@ public class Client
 
 		// Creation of the user
 		System.out.println("Enter your name:");
-		Veterinary veterinary = new Veterinary(sc.next());
+		IVeterinary veterinary = (IVeterinary) new Veterinary(sc.next());
 		clinic.login(veterinary);
 
 		// Main loop
@@ -33,16 +32,13 @@ public class Client
 					//+ "3- Remove a patient \n"
 					+ "4- Leave \n"
 					+ "Enter your choice:");
-			int input = sc.nextInt();
 			
-			System.out.println("Name of the patient:");
-			String patientName = sc.next();
-			
-			switch(input)
+			switch(sc.nextInt())
 			{
 			case 1: // Find
+				System.out.println("Name of the patient:");
 				
-				IAnimal patient = clinic.getAnimal(patientName);
+				IAnimal patient = clinic.getAnimal(sc.next());
 				if (patient != null)
 					System.out.println(patient.print());
 				else
@@ -50,12 +46,16 @@ public class Client
 				break;
 
 			case 2: // Add
-				clinic.add(new Animal(patientName));
+				System.out.println("Name of the patient:");
+				
+				clinic.add(new Animal(sc.next()));
 				System.out.println("Patient added \n");
 				break;
 			/*
 			case 3: // Remove
-				clinic.remove(new Animal(patientName));
+				System.out.println("Name of the patient:");
+			
+				clinic.remove(new Animal(sc.next()));
 				System.out.println("Patient removed \n");
 				break;
 			*/

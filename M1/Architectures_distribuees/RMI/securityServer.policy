@@ -4,3 +4,8 @@ grant
 	//permission java.net.SocketPermission ":80","connect";
 	permission java.security.AllPermission;
 };
+
+grant codeBase "file:.${/}bin/"
+{
+	permission java.io.FilePermission "..${/}*", "read";
+};

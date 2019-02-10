@@ -1,7 +1,11 @@
-package veterinaryShared;
+package veterinaryClient;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+
+import veterinaryShared.IAnimal;
+import veterinaryShared.IFile;
+import veterinaryShared.ISpecies;
 
 public class Animal extends UnicastRemoteObject implements IAnimal
 {

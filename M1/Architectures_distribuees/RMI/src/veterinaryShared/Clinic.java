@@ -65,7 +65,7 @@ public class Clinic extends UnicastRemoteObject implements IClinic
 				|| patients.size() == 5
 				|| patients.size() == 10)
 		{
-			System.out.println("Warning: " + patients +" patients currently registered");
+			System.out.println("Warning: " + patients.size() +" patients currently registered");
 			for (IVeterinary veterinary : veterinaries)
 				veterinary.alert(patients.size());
 		}
