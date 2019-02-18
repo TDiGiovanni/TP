@@ -15,5 +15,6 @@
     <string name="send">Envoyer</string>
     <string name="confirm">Confirmer</string>
     <string name="cancel">Annuler</string>
+    <string name="call">Appeler</string>
 
 </resources>

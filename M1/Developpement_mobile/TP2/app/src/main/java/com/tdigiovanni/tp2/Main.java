@@ -1,4 +1,4 @@
-package com.example.tdigiovanni.helloworld;
+package com.tdigiovanni.tp2;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,6 @@ import android.widget.Button;
 
 public class Main extends AppCompatActivity {
 
-    //private static final int ACTIVITY_CODE = 1;
     protected Button sendButton;
 
     @Override
@@ -20,16 +19,8 @@ public class Main extends AppCompatActivity {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(Main.this, "@string/click", Toast.LENGTH_LONG).show();
 
-                /*
-                LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-                View popupView = inflater.inflate(R.layout.popup_confirmation, null);
-                PopupWindow popupWindow = new PopupWindow(popupView);
-                popupWindow.showAtLocation(view, CENTER, 0, 0);
-                */
-
-                Intent intent = new Intent(Main.this, Empty.class);
+                Intent intent = new Intent(Main.this, Contacts.class);
                 startActivity(intent);
             }
         });

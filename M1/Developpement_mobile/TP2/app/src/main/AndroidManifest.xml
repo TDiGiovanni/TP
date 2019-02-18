@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tdigiovanni.helloworld">
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    package="com.tdigiovanni.tp2">
 
     <application
         android:allowBackup="true"
@@ -19,8 +18,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Empty"></activity>
-
-        <activity android:name=".Call"></activity>
+        <activity android:name=".Contacts"></activity>
     </application>
+
 </manifest>
