@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hello World</string>
+    <string name="app_name">TP1</string>
 
     // Texts
     <string name="name">Name</string>

@@ -16,11 +16,15 @@ public class Empty extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empty);
 
+        Intent intent = getIntent();
+        final String phoneNumber = intent.getStringExtra("Phone number");
+
         confirmButton = findViewById(R.id.confirmButton);
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Empty.this, Call.class);
+                intent.putExtra("Phone number", phoneNumber);
                 startActivity(intent);
             }
         });
