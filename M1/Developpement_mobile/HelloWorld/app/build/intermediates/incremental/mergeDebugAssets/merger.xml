@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/auto_home/tdigiovanni/Bureau/TP/M1/Developpement_mobile/HelloWorld/app/src/main/assets"/><source path="/auto_home/tdigiovanni/Bureau/TP/M1/Developpement_mobile/HelloWorld/app/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/auto_home/tdigiovanni/Bureau/TP/M1/Developpement_mobile/HelloWorld/app/src/debug/assets"/></dataSet></merger>

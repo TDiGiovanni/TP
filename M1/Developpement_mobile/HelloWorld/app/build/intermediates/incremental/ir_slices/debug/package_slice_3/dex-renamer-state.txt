@@ -1,0 +1,4 @@
+#Mon Feb 18 14:29:03 CET 2019
+base.0=/auto_home/tdigiovanni/Bureau/TP/M1/Developpement_mobile/HelloWorld/app/build/intermediates/transforms/dexMerger/debug/21
+path.0=classes.dex
+renamed.0=classes.dex
