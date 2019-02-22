@@ -4,7 +4,7 @@ import pandas
 
 def main():
     passengers = pandas.read_csv('Dataset/Titanic.csv', sep='\t')
-    
+
     print("Taille du dataframe :")
     print(passengers.shape)
 
