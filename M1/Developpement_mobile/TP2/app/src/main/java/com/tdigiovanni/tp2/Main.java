@@ -1,5 +1,6 @@
 package com.tdigiovanni.tp2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main extends AppCompatActivity {
+    private ArrayList<String> contactsInfos = new ArrayList<String>(); // Q1 only
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +37,47 @@ public class Main extends AppCompatActivity {
 
                 else {
                     Intent intent = new Intent(Main.this, Contacts.class);
-                    intent.putExtra("CONTACT_INFOS", surnameEdit.getText() + " "
+
+                    /* Q1 only*/
+                    contactsInfos.add(surnameEdit.getText() + " "
                             + nameEdit.getText() + " : "
                             + numberEdit.getText());
+
+                    intent.putStringArrayListExtra("CONTACT_INFOS", contactsInfos);
+
+                    /*
+                    String contactInfos = surnameEdit.getText() + " "
+                            + nameEdit.getText() + " : "
+                            + numberEdit.getText();
+
+                    String fileName = "contactInfos";
+                    FileOutputStream file = openFileOutput(fileName, Context.MODE_PRIVATE);
+                    file.write(contactsInfos);
+                    file.close();
+
+
+                    intent.putExtra("FILE_NAME", fileName);
+                    */
                     startActivity(intent);
                 }
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        if (!savedInstanceState.containsKey("NUMBER_CALLS"))
+            savedInstanceState.putInt("NUMBER_CALLS", 1);
+
+        else
+            savedInstanceState.putInt("NUMBER_CALLS", savedInstanceState.getInt("NUMBER_CALLS") + 1);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        int numberCalls = savedInstanceState.getInt("NUMBER_CALLS");
+        Toast.makeText(this, "Number of calls: " + numberCalls, Toast.LENGTH_SHORT).show();
     }
 }
