@@ -1,18 +1,12 @@
 package com.tdigiovanni.tp2;
 
 import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import android.widget.TextView;
 
 public class Contacts extends AppCompatActivity {
     @Override
@@ -43,11 +37,30 @@ public class Contacts extends AppCompatActivity {
         */
 
         // Q4 version
-        ContactsDatabase database = new ContactsDatabase(this);
+        ContactsDatabaseOpenHelper database = ContactsDatabaseOpenHelper.getInstance(this);
         Cursor cursor = database.getAllContacts();
-        String[] fromColumns = {};
-        int[] toViews = {};
+        String[] fromColumns = {
+                ContactsDatabaseOpenHelper.COLUMN_NAME,
+                ContactsDatabaseOpenHelper.COLUMN_LAST_NAME,
+                ContactsDatabaseOpenHelper.COLUMN_NUMBER
+        };
+        int[] toViews = {android.R.id.text1};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor, fromColumns, toViews, 0);
+        adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
+            public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
+                ((TextView) view).setText(
+                        new StringBuilder()
+                                .append(cursor.getString(cursor.getColumnIndex(ContactsDatabaseOpenHelper.COLUMN_NAME)))
+                                .append(" ")
+                                .append(cursor.getString(cursor.getColumnIndex(ContactsDatabaseOpenHelper.COLUMN_LAST_NAME)))
+                                .append(" : ")
+                                .append(cursor.getString(cursor.getColumnIndex(ContactsDatabaseOpenHelper.COLUMN_NUMBER)))
+                                .toString()
+                );
+
+                return true;
+            }
+        });
 
         contactsList.setAdapter(adapter);
     }

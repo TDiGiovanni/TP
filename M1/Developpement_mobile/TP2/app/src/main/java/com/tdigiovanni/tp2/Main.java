@@ -1,19 +1,13 @@
 package com.tdigiovanni.tp2;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main extends AppCompatActivity {
     //private ArrayList<String> contactsInfos = new ArrayList<String>(); // Q1 version
@@ -25,7 +19,7 @@ public class Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final EditText nameEdit = findViewById(R.id.nameEdit);
-        final EditText surnameEdit = findViewById(R.id.surnameEdit);
+        final EditText lastNameEdit = findViewById(R.id.lastNameEdit);
         final EditText numberEdit = findViewById(R.id.numberEdit);
         Button sendButton = findViewById(R.id.sendButton);
 
@@ -33,7 +27,7 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if ( TextUtils.isEmpty(nameEdit.getText())
-                || TextUtils.isEmpty(surnameEdit.getText())
+                || TextUtils.isEmpty(lastNameEdit.getText())
                 || TextUtils.isEmpty(numberEdit.getText()) )
                     Toast.makeText(Main.this, "You must fill out all informations", Toast.LENGTH_SHORT).show();
 
@@ -41,7 +35,7 @@ public class Main extends AppCompatActivity {
                     Intent intent = new Intent(Main.this, Contacts.class);
 
                     /* Q1 version
-                    contactsInfos.add(surnameEdit.getText() + " "
+                    contactsInfos.add(lastNameEdit.getText() + " "
                             + nameEdit.getText() + " : "
                             + numberEdit.getText());
 
@@ -49,7 +43,7 @@ public class Main extends AppCompatActivity {
                     */
 
                     /* Q3 version
-                    String contactsInfos = surnameEdit.getText() + " "
+                    String contactsInfos = lastNameEdit.getText() + " "
                             + nameEdit.getText() + " : "
                             + numberEdit.getText();
 
@@ -66,7 +60,11 @@ public class Main extends AppCompatActivity {
                     */
 
                     // Q4 version
-                    ContactsDatabase database = new ContactsDatabase(Main.this);
+                    ContactsDatabaseOpenHelper database = ContactsDatabaseOpenHelper.getInstance(Main.this);
+                    database.addContact(
+                            nameEdit.getText().toString(),
+                            lastNameEdit.getText().toString(),
+                            numberEdit.getText().toString());
 
                     startActivity(intent);
                 }

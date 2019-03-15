@@ -5,19 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    // Surname
-    <TextView
-        android:id="@+id/surnameText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/surname" />
-
-    <EditText
-        android:id="@+id/surnameEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName" />
-
     // Name
     <TextView
         android:id="@+id/nameText"
@@ -27,6 +14,19 @@
 
     <EditText
         android:id="@+id/nameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName" />
+
+    // Last name
+    <TextView
+        android:id="@+id/lastNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lastName" />
+
+    <EditText
+        android:id="@+id/lastNameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName" />

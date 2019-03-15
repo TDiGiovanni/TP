@@ -2,7 +2,7 @@
     <string name="app_name">TP2</string>
 
     <string name="name">Name</string>
-    <string name="surname">Surname</string>
+    <string name="lastName">Last name</string>
     <string name="number">Phone number</string>
     <string name="send">Send</string>
 </resources>
