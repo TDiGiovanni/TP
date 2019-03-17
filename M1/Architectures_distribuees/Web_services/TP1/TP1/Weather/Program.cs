@@ -16,11 +16,8 @@ namespace Weather
             Console.WriteLine(weather.LatLonListCityNames(""));
             //Console.WriteLine(weather.NDFDgen(0, 0, "glance", new System.DateTime(2018,12,01,12,00,00,00), new System.DateTime(2018,12,01,12,00,00,00), "m", null));
 
-            bool loop = true;
-            while (loop)
-            {
-
-            }
+            Console.WriteLine("Press anything to quit");
+            Console.ReadLine();
         }
     }
 }

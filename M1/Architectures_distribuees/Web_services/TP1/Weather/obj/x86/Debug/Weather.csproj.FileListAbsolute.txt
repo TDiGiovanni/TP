@@ -1,5 +1,0 @@
-c:\users\tdigiovanni\documents\visual studio 2010\Projects\Weather\Weather\bin\Debug\Weather.exe.config
-c:\users\tdigiovanni\documents\visual studio 2010\Projects\Weather\Weather\bin\Debug\Weather.exe
-c:\users\tdigiovanni\documents\visual studio 2010\Projects\Weather\Weather\bin\Debug\Weather.pdb
-c:\users\tdigiovanni\documents\visual studio 2010\Projects\Weather\Weather\obj\x86\Debug\Weather.exe
-c:\users\tdigiovanni\documents\visual studio 2010\Projects\Weather\Weather\obj\x86\Debug\Weather.pdb
