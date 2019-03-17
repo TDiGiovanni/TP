@@ -1,0 +1,14 @@
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.deps.json
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.runtimeconfig.json
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.runtimeconfig.dev.json
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\bin\Debug\netcoreapp2.1\TodoAPI.pdb
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.RazorAssemblyInfo.cache
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.RazorAssemblyInfo.cs
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.AssemblyInfoInputs.cache
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.AssemblyInfo.cs
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\TodoAPI\obj\Debug\netcoreapp2.1\TodoAPI.pdb
