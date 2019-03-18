@@ -1,0 +1,11 @@
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\bin\Debug\LibraryClient.exe.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\bin\Debug\LibraryClient.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\bin\Debug\LibraryClient.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.LibraryManagerForm.resources
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.Properties.Resources.resources
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.ResultsForm.resources
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.csproj.GenerateResource.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.pdb

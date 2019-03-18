@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="author" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isbn" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numberOfCopies" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="editor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBookResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddSubscriber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSubscriberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddSubscriberResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubscriber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="number" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubscriberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubscriberResult" type="tns:Subscriber" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Subscriber" />
+      <s:element name="GetAllBooks">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllBooksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllBooksResult" type="tns:ArrayOfBook" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBook">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Book" nillable="true" type="tns:Book" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Book" />
+      <s:element name="GetBookByIsbn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isbn" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookByIsbnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookByIsbnResult" type="tns:Book" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBooksByAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="author" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBooksByAuthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBooksByAuthorResult" type="tns:ArrayOfBook" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSubscribers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSubscribersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSubscribersResult" type="tns:ArrayOfSubscriber" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSubscriber">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Subscriber" nillable="true" type="tns:Subscriber" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSubscribersByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubscribersByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubscribersByNameResult" type="tns:ArrayOfSubscriber" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LeaveComment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="subscriberNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="subscriberPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isbn" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LeaveCommentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LeaveCommentResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddBookSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBook" />
+  </wsdl:message>
+  <wsdl:message name="AddBookSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSubscriberSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSubscriber" />
+  </wsdl:message>
+  <wsdl:message name="AddSubscriberSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSubscriberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubscriber" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscriberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubscriberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBooksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllBooks" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBooksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookByIsbnSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookByIsbn" />
+  </wsdl:message>
+  <wsdl:message name="GetBookByIsbnSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookByIsbnResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBooksByAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBooksByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="GetBooksByAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBooksByAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubscribersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSubscribers" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSubscribersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSubscribersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscribersByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubscribersByName" />
+  </wsdl:message>
+  <wsdl:message name="GetSubscribersByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubscribersByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="LeaveCommentSoapIn">
+    <wsdl:part name="parameters" element="tns:LeaveComment" />
+  </wsdl:message>
+  <wsdl:message name="LeaveCommentSoapOut">
+    <wsdl:part name="parameters" element="tns:LeaveCommentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LibraryWebServiceSoap">
+    <wsdl:operation name="AddBook">
+      <wsdl:input message="tns:AddBookSoapIn" />
+      <wsdl:output message="tns:AddBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSubscriber">
+      <wsdl:input message="tns:AddSubscriberSoapIn" />
+      <wsdl:output message="tns:AddSubscriberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriber">
+      <wsdl:input message="tns:GetSubscriberSoapIn" />
+      <wsdl:output message="tns:GetSubscriberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooks">
+      <wsdl:input message="tns:GetAllBooksSoapIn" />
+      <wsdl:output message="tns:GetAllBooksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookByIsbn">
+      <wsdl:input message="tns:GetBookByIsbnSoapIn" />
+      <wsdl:output message="tns:GetBookByIsbnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBooksByAuthor">
+      <wsdl:input message="tns:GetBooksByAuthorSoapIn" />
+      <wsdl:output message="tns:GetBooksByAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubscribers">
+      <wsdl:input message="tns:GetAllSubscribersSoapIn" />
+      <wsdl:output message="tns:GetAllSubscribersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscribersByName">
+      <wsdl:input message="tns:GetSubscribersByNameSoapIn" />
+      <wsdl:output message="tns:GetSubscribersByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveComment">
+      <wsdl:input message="tns:LeaveCommentSoapIn" />
+      <wsdl:output message="tns:LeaveCommentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LibraryWebServiceSoap" type="tns:LibraryWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddBook">
+      <soap:operation soapAction="http://tempuri.org/AddBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSubscriber">
+      <soap:operation soapAction="http://tempuri.org/AddSubscriber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriber">
+      <soap:operation soapAction="http://tempuri.org/GetSubscriber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooks">
+      <soap:operation soapAction="http://tempuri.org/GetAllBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookByIsbn">
+      <soap:operation soapAction="http://tempuri.org/GetBookByIsbn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBooksByAuthor">
+      <soap:operation soapAction="http://tempuri.org/GetBooksByAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubscribers">
+      <soap:operation soapAction="http://tempuri.org/GetAllSubscribers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscribersByName">
+      <soap:operation soapAction="http://tempuri.org/GetSubscribersByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveComment">
+      <soap:operation soapAction="http://tempuri.org/LeaveComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LibraryWebServiceSoap12" type="tns:LibraryWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddBook">
+      <soap12:operation soapAction="http://tempuri.org/AddBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSubscriber">
+      <soap12:operation soapAction="http://tempuri.org/AddSubscriber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscriber">
+      <soap12:operation soapAction="http://tempuri.org/GetSubscriber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooks">
+      <soap12:operation soapAction="http://tempuri.org/GetAllBooks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookByIsbn">
+      <soap12:operation soapAction="http://tempuri.org/GetBookByIsbn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBooksByAuthor">
+      <soap12:operation soapAction="http://tempuri.org/GetBooksByAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubscribers">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSubscribers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubscribersByName">
+      <soap12:operation soapAction="http://tempuri.org/GetSubscribersByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveComment">
+      <soap12:operation soapAction="http://tempuri.org/LeaveComment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LibraryWebService">
+    <wsdl:port name="LibraryWebServiceSoap" binding="tns:LibraryWebServiceSoap">
+      <soap:address location="http://localhost:64302/LibraryWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LibraryWebServiceSoap12" binding="tns:LibraryWebServiceSoap12">
+      <soap12:address location="http://localhost:64302/LibraryWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

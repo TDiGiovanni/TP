@@ -1,5 +1,4 @@
-﻿using Library.Classes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Services;
 
 namespace Library
@@ -13,41 +12,24 @@ namespace Library
     {
         private List<Book> books = new List<Book>();                    // List of books in the library
         private List<Subscriber> subscribers = new List<Subscriber>();  // List of subscribers
-        private List<Librarian> librarians = new List<Librarian>();     // List of librarians
-                         
-        // Add a book to the list
+
+        // Adds a book to the list
         [WebMethod]
-        public bool AddBook(int librarianNumber, string librarianPassword, string title, string author, int isbn, int numberOfCopies, string editor)
+        public void AddBook(string title, string author, int isbn, int numberOfCopies, string editor)
         {
-            Librarian librarian = GetLibrarian(librarianNumber, librarianPassword);
-            if (librarian != null)
-            {
-                books.Add(new Book(title, author, isbn, numberOfCopies, editor));
-                return true;
-            }
-            else
-                return false;
+            books.Add(new Book(title, author, isbn, numberOfCopies, editor));
         }
 
-        // Add a subscriber to the list, return its number
+        // Adds a subscriber to the list, return its number
         [WebMethod]
-        public int AddSubscriber(string password)
+        public int AddSubscriber(string name, string password)
         {
-            Subscriber subscriber = new Subscriber(password);
+            Subscriber subscriber = new Subscriber(name, password);
             subscribers.Add(subscriber);
             return subscriber.GetNumber();
         }
 
-        // Add a librarian to the list, return its number
-        [WebMethod]
-        public int AddLibrarian(string password)
-        {
-            Librarian librarian = new Librarian(password);
-            librarians.Add(librarian);
-            return librarian.GetNumber();
-        }
-
-        // Get the subscriber if it exists
+        // Gets the subscriber if it exists
         [WebMethod]
         public Subscriber GetSubscriber(int number, string password)
         {
@@ -58,18 +40,14 @@ namespace Library
             return null;
         }
 
-        // Get the librarian if it exists
+        // Returns the list of all the books
         [WebMethod]
-        public Librarian GetLibrarian(int number, string password)
+        public Book[] GetAllBooks()
         {
-            foreach (Librarian librarian in librarians)
-                if (librarian.GetNumber() == number && librarian.GetPassword() == password)
-                    return librarian;
-
-            return null;
+            return books.ToArray();
         }
 
-        // Return a book by its isbn, null if no book is found
+        // Returns a book by its isbn, null if no book is found
         [WebMethod]
         public Book GetBookByIsbn(int isbn)
         {
@@ -79,10 +57,10 @@ namespace Library
 
             return null;
         }
-        
-        // Return the list of books of 'author'
+
+        // Returns the list of books of 'author'
         [WebMethod]
-        public List<Book> GetBooksByAuthor(string author)
+        public Book[] GetBooksByAuthor(string author)
         {
             List<Book> books = new List<Book>();
 
@@ -90,10 +68,30 @@ namespace Library
                 if (book.GetAuthor() == author)
                     books.Add(book);
 
-            return books;
+            return books.ToArray();
         }
-        
-        // Leave a comment on a book
+
+        // Returns the list of all the subscribers
+        [WebMethod]
+        public Subscriber[] GetAllSubscribers()
+        {
+            return subscribers.ToArray();
+        }
+
+        // Searches for subcribers by name
+        [WebMethod]
+        public Subscriber[] GetSubscribersByName(string name)
+        {
+            List<Subscriber> books = new List<Subscriber>();
+
+            foreach (Subscriber subscriber in subscribers)
+                if (subscriber.GetName() == name)
+                    subscribers.Add(subscriber);
+
+            return subscribers.ToArray();
+        }
+
+        // Leaves a comment on a book
         [WebMethod]
         public bool LeaveComment(int subscriberNumber, string subscriberPassword, int isbn, string comment)
         {
@@ -105,4 +103,3 @@ namespace Library
         }
     }
 }
-

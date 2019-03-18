@@ -11,7 +11,17 @@ namespace Library
         private string editor;                              // Editor
         private Dictionary<Subscriber, string> comments;    // Key: author of comment, value: comment
 
-        // Constructor
+        // Constructors
+        public Book()
+        {
+            this.title = "Unkown";
+            this.author = "Unkown";
+            this.isbn = 0;
+            this.numberOfCopies = 0;
+            this.editor = "Unkown";
+            this.comments = new Dictionary<Subscriber, string>();
+        }
+
         public Book(string title, string author, int isbn, int numberOfCopies, string editor)
         {
             this.title = title;
