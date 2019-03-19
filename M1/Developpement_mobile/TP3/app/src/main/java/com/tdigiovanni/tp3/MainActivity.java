@@ -15,12 +15,18 @@ import android.widget.TextView;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
-    private static final float MIN_THRESHOLD = 1;
-    private static final float MAX_THRESHOLD = 10;
-    private static final float SHAKE_THRESHOLD = 1;
-    private boolean flashlightOn = false;
+    private static final float MIN_THRESHOLD = 2;
+    private static final float MAX_THRESHOLD = 8;
+    private static final float SHAKE_THRESHOLD = 500;
+    private static final long REFRESH_RATE = 300;
 
     private SensorManager sensorManager;
+    private boolean flashlightOn = false;
+    private long lastUpdate;
+    private float lastX;
+    private float lastY;
+    private float lastZ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         sensorManager.registerListener(this,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
+
+        sensorManager.registerListener(this,
+                sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),
+                SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
@@ -68,43 +78,51 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             ConstraintLayout constraintLayout = findViewById(R.id.constraintLayout);
 
-            float x = event.values[0]; // In m/s2
-            float y = event.values[1];
-            float z = event.values[2];
+            long currentTime = System.currentTimeMillis();
+            if ((currentTime - lastUpdate) > REFRESH_RATE) {
+                long timeDifference = (currentTime - lastUpdate);
+                lastUpdate = currentTime;
 
-            float speed = (x + y + z) / 10000;
+                float x = event.values[0]; // In m/s2
+                float y = event.values[1];
+                float z = event.values[2];
 
-            if (speed > SHAKE_THRESHOLD) {
-                Camera camera = Camera.open();
+                float speed = Math.abs(x + y + z - lastX - lastY - lastZ) / timeDifference * 10000;
+                if (speed > SHAKE_THRESHOLD) {
+                    Camera camera = Camera.open();
 
-                if (flashlightOn) {
-                    Camera.Parameters parameters = camera.getParameters();
-                    parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-                    camera.setParameters(parameters);
-                    camera.startPreview();
+                    if (flashlightOn) {
+                        Camera.Parameters parameters = camera.getParameters();
+                        parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                        camera.setParameters(parameters);
+                        camera.startPreview();
 
-                    flashlightOn = true;
+                        flashlightOn = true;
+                    }
+                    else {
+                        camera.stopPreview();
+                        camera.release();
+
+                        flashlightOn = false;
+                    }
                 }
-                else {
-                    camera.stopPreview();
-                    camera.release();
+                lastX = x;
+                lastY = y;
+                lastZ = z;
 
-                    flashlightOn = false;
-                }
+                if (x < MIN_THRESHOLD
+                        || y < MIN_THRESHOLD
+                        || z < MIN_THRESHOLD)
+                    constraintLayout.setBackgroundColor(Color.GREEN);
+
+                else if (x > MAX_THRESHOLD
+                        || y > MAX_THRESHOLD
+                        || z > MAX_THRESHOLD)
+                    constraintLayout.setBackgroundColor(Color.BLACK);
+
+                else
+                    constraintLayout.setBackgroundColor(Color.RED);
             }
-
-            if (x < MIN_THRESHOLD
-                    || y < MIN_THRESHOLD
-                    || z < MIN_THRESHOLD)
-                constraintLayout.setBackgroundColor(Color.GREEN);
-
-            else if (x > MAX_THRESHOLD
-                    || y > MAX_THRESHOLD
-                    || z > MAX_THRESHOLD)
-                constraintLayout.setBackgroundColor(Color.BLACK);
-
-            else
-                constraintLayout.setBackgroundColor(Color.RED);
         }
 
         if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {

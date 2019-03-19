@@ -15,7 +15,17 @@ namespace LibraryClient
         {
             InitializeComponent();
 
-            nameListBox.DataSource = results;
+            resultsListView.Columns.Add("Name");
+            resultsListView.Columns.Add("Author");
+            resultsListView.Columns.Add("ISBN");
+            resultsListView.Columns.Add("Number of copies");
+            resultsListView.Columns.Add("Editor");
+
+            foreach (Book result in results)
+                resultsListView.Items.Add("test");
+
+
+            resultsListView.Items.Add("test").SubItems.Add("subtest");
         }
     }
 }

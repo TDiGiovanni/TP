@@ -15,8 +15,9 @@ namespace LibraryClient
         public SubscriberResultsForm(List<Subscriber> results)
         {
             InitializeComponent();
-
-            nameListBox.DataSource = results;
+            
+            resultsListView.Columns.Add("Name");
+            resultsListView.Columns.Add("Password");
         }
     }
 }
