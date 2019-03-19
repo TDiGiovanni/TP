@@ -412,6 +412,75 @@ namespace LibraryClient.LibraryWebService {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Subscriber {
+        
+        private int numberField;
+        
+        private string nameField;
+        
+        private string passwordField;
+        
+        /// <remarks/>
+        public int number {
+            get {
+                return this.numberField;
+            }
+            set {
+                this.numberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string password {
+            get {
+                return this.passwordField;
+            }
+            set {
+                this.passwordField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Comment {
+        
+        private Subscriber authorField;
+        
+        private string textField;
+        
+        /// <remarks/>
+        public Subscriber author {
+            get {
+                return this.authorField;
+            }
+            set {
+                this.authorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -421,6 +490,78 @@ namespace LibraryClient.LibraryWebService {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
     public partial class Book {
+        
+        private string titleField;
+        
+        private string authorField;
+        
+        private int isbnField;
+        
+        private int numberOfCopiesField;
+        
+        private string editorField;
+        
+        private Comment[] commentsField;
+        
+        /// <remarks/>
+        public string title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string author {
+            get {
+                return this.authorField;
+            }
+            set {
+                this.authorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int isbn {
+            get {
+                return this.isbnField;
+            }
+            set {
+                this.isbnField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int numberOfCopies {
+            get {
+                return this.numberOfCopiesField;
+            }
+            set {
+                this.numberOfCopiesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string editor {
+            get {
+                return this.editorField;
+            }
+            set {
+                this.editorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Comment[] comments {
+            get {
+                return this.commentsField;
+            }
+            set {
+                this.commentsField = value;
+            }
+        }
     }
     
     /// <remarks/>

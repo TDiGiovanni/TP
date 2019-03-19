@@ -1,15 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using Library.Classes;
+using System.Collections.Generic;
 
 namespace Library
 {
     public class Book
     {
-        private string title;                               // Title
-        private string author;                              // Author
-        private int isbn;                                   // ISBN
-        private int numberOfCopies;                         // Number of copies of the book
-        private string editor;                              // Editor
-        private Dictionary<Subscriber, string> comments;    // Key: author of comment, value: comment
+        private static int COMMENT_NUMBER = 100; // Maximum number of comments
+
+        public string title;        // Title
+        public string author;       // Author
+        public int isbn;            // ISBN
+        public int numberOfCopies;  // Number of copies of the book
+        public string editor;       // Editor
+        public Comment[] comments;  // Array of all the comments on the book
+        private int commentIndex;   // Current index where the next comment should be written
 
         // Constructors
         public Book()
@@ -19,7 +23,8 @@ namespace Library
             this.isbn = 0;
             this.numberOfCopies = 0;
             this.editor = "Unkown";
-            this.comments = new Dictionary<Subscriber, string>();
+            this.comments = new Comment[COMMENT_NUMBER];
+            this.commentIndex = 0;
         }
 
         public Book(string title, string author, int isbn, int numberOfCopies, string editor)
@@ -29,27 +34,21 @@ namespace Library
             this.isbn = isbn;
             this.numberOfCopies = numberOfCopies;
             this.editor = editor;
-            this.comments = new Dictionary<Subscriber, string>();
-        }
-
-        // Read accessor of 'author'
-        public string GetAuthor()
-        {
-            return this.author;
-        }
-
-        // Read accessor of 'isbn'
-        public int GetIsbn()
-        {
-            return this.isbn;
+            this.comments = new Comment[COMMENT_NUMBER];
+            this.commentIndex = 0;
         }
 
         // Add a comment on the book
-        public bool AddComment(Subscriber subscriber, string comment)
+        public bool AddComment(Subscriber subscriber, string text)
         {
-            if (comment != null)
+            if (text != null)
             {
-                this.comments.Add(subscriber, comment);
+                this.comments[commentIndex] = new Comment(subscriber, text);
+
+                commentIndex++;
+                if (this.commentIndex == COMMENT_NUMBER)
+                    commentIndex = 0;
+
                 return true;
             }
             else

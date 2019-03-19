@@ -10,3 +10,4 @@ C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.pdb
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.BookResultsForm.resources
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.SubscriberResultsForm.resources
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Debug\LibraryClient.CommentResultsForm.resources

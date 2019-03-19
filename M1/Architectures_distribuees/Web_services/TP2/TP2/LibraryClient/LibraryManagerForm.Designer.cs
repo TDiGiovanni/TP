@@ -51,6 +51,12 @@
             this.getBookByAuthorButton = new System.Windows.Forms.Button();
             this.getBookByIsbnButton = new System.Windows.Forms.Button();
             this.getSubscriberByNameButton = new System.Windows.Forms.Button();
+            this.getAllCommentsButton = new System.Windows.Forms.Button();
+            this.leaveCommentButton = new System.Windows.Forms.Button();
+            this.commentLabel = new System.Windows.Forms.Label();
+            this.subscriberCommentTextBox = new System.Windows.Forms.TextBox();
+            this.numberLabel = new System.Windows.Forms.Label();
+            this.subscriberNumberTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label3
@@ -113,7 +119,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(526, 83);
+            this.label5.Location = new System.Drawing.Point(526, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 49;
@@ -121,7 +127,7 @@
             // 
             // subscriberPasswordTextBox
             // 
-            this.subscriberPasswordTextBox.Location = new System.Drawing.Point(607, 80);
+            this.subscriberPasswordTextBox.Location = new System.Drawing.Point(607, 106);
             this.subscriberPasswordTextBox.Name = "subscriberPasswordTextBox";
             this.subscriberPasswordTextBox.Size = new System.Drawing.Size(163, 20);
             this.subscriberPasswordTextBox.TabIndex = 48;
@@ -229,7 +235,7 @@
             this.getBookByAuthorButton.Name = "getBookByAuthorButton";
             this.getBookByAuthorButton.Size = new System.Drawing.Size(163, 32);
             this.getBookByAuthorButton.TabIndex = 59;
-            this.getBookByAuthorButton.Text = "Get a book by author";
+            this.getBookByAuthorButton.Text = "Get books by author";
             this.getBookByAuthorButton.UseVisualStyleBackColor = true;
             this.getBookByAuthorButton.Click += new System.EventHandler(this.GetBookByTitleButton_Click);
             // 
@@ -249,15 +255,73 @@
             this.getSubscriberByNameButton.Name = "getSubscriberByNameButton";
             this.getSubscriberByNameButton.Size = new System.Drawing.Size(163, 32);
             this.getSubscriberByNameButton.TabIndex = 61;
-            this.getSubscriberByNameButton.Text = "Get a subscriber by name";
+            this.getSubscriberByNameButton.Text = "Get subscribers by name";
             this.getSubscriberByNameButton.UseVisualStyleBackColor = true;
             this.getSubscriberByNameButton.Click += new System.EventHandler(this.GetSubscriberByNameButton_Click);
+            // 
+            // getAllCommentsButton
+            // 
+            this.getAllCommentsButton.Location = new System.Drawing.Point(212, 351);
+            this.getAllCommentsButton.Name = "getAllCommentsButton";
+            this.getAllCommentsButton.Size = new System.Drawing.Size(163, 32);
+            this.getAllCommentsButton.TabIndex = 62;
+            this.getAllCommentsButton.Text = "Get all comments";
+            this.getAllCommentsButton.UseVisualStyleBackColor = true;
+            this.getAllCommentsButton.Click += new System.EventHandler(this.GetAllCommentsButton_Click);
+            // 
+            // leaveCommentButton
+            // 
+            this.leaveCommentButton.Location = new System.Drawing.Point(666, 313);
+            this.leaveCommentButton.Name = "leaveCommentButton";
+            this.leaveCommentButton.Size = new System.Drawing.Size(163, 32);
+            this.leaveCommentButton.TabIndex = 63;
+            this.leaveCommentButton.Text = "Leave a comment";
+            this.leaveCommentButton.UseVisualStyleBackColor = true;
+            this.leaveCommentButton.Click += new System.EventHandler(this.LeaveCommentButton_Click);
+            // 
+            // commentLabel
+            // 
+            this.commentLabel.AutoSize = true;
+            this.commentLabel.Location = new System.Drawing.Point(526, 135);
+            this.commentLabel.Name = "commentLabel";
+            this.commentLabel.Size = new System.Drawing.Size(54, 13);
+            this.commentLabel.TabIndex = 65;
+            this.commentLabel.Text = "Comment:";
+            // 
+            // subscriberCommentTextBox
+            // 
+            this.subscriberCommentTextBox.Location = new System.Drawing.Point(607, 132);
+            this.subscriberCommentTextBox.Name = "subscriberCommentTextBox";
+            this.subscriberCommentTextBox.Size = new System.Drawing.Size(163, 20);
+            this.subscriberCommentTextBox.TabIndex = 64;
+            // 
+            // numberLabel
+            // 
+            this.numberLabel.AutoSize = true;
+            this.numberLabel.Location = new System.Drawing.Point(526, 83);
+            this.numberLabel.Name = "numberLabel";
+            this.numberLabel.Size = new System.Drawing.Size(47, 13);
+            this.numberLabel.TabIndex = 67;
+            this.numberLabel.Text = "Number:";
+            // 
+            // subscriberNumberTextBox
+            // 
+            this.subscriberNumberTextBox.Location = new System.Drawing.Point(607, 80);
+            this.subscriberNumberTextBox.Name = "subscriberNumberTextBox";
+            this.subscriberNumberTextBox.Size = new System.Drawing.Size(163, 20);
+            this.subscriberNumberTextBox.TabIndex = 66;
             // 
             // LibraryManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 416);
+            this.Controls.Add(this.numberLabel);
+            this.Controls.Add(this.subscriberNumberTextBox);
+            this.Controls.Add(this.commentLabel);
+            this.Controls.Add(this.subscriberCommentTextBox);
+            this.Controls.Add(this.leaveCommentButton);
+            this.Controls.Add(this.getAllCommentsButton);
             this.Controls.Add(this.getSubscriberByNameButton);
             this.Controls.Add(this.getBookByIsbnButton);
             this.Controls.Add(this.getBookByAuthorButton);
@@ -313,6 +377,12 @@
         private System.Windows.Forms.Button getBookByAuthorButton;
         private System.Windows.Forms.Button getBookByIsbnButton;
         private System.Windows.Forms.Button getSubscriberByNameButton;
+        private System.Windows.Forms.Button getAllCommentsButton;
+        private System.Windows.Forms.Button leaveCommentButton;
+        private System.Windows.Forms.Label commentLabel;
+        private System.Windows.Forms.TextBox subscriberCommentTextBox;
+        private System.Windows.Forms.Label numberLabel;
+        private System.Windows.Forms.TextBox subscriberNumberTextBox;
     }
 }
 

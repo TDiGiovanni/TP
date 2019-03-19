@@ -47,6 +47,18 @@ namespace LibraryClient
             ShowBookResults(result);
         }
 
+        private void GetAllCommentsButton_Click(object sender, EventArgs e)
+        {
+            List<LibraryWebService.Comment> result = new List<LibraryWebService.Comment>();
+
+            foreach (LibraryWebService.Comment comment in library.GetBookByIsbn(int.Parse(bookIsbnTextBox.Text)).comments)
+            {
+                result.Add(comment);
+            }
+
+            ShowCommentResults(result);
+        }
+
         private void AddSubscriberButton_Click(object sender, EventArgs e)
         {
             library.AddSubscriber(subscriberNameTextBox.Text,
@@ -67,9 +79,23 @@ namespace LibraryClient
             ShowSubscriberResults(result);
         }
 
+        private void LeaveCommentButton_Click(object sender, EventArgs e)
+        {
+            library.LeaveComment(int.Parse(subscriberNumberTextBox.Text),
+                subscriberPasswordTextBox.Text,
+                int.Parse(bookIsbnTextBox.Text),
+                subscriberCommentTextBox.Text);
+        }
+
         private void ShowBookResults(List<LibraryWebService.Book> bookList)
         {
             BookResultsForm results = new BookResultsForm();
+            results.Show();
+        }
+
+        private void ShowCommentResults(List<LibraryWebService.Comment> commentList)
+        {
+            CommentResultsForm results = new CommentResultsForm();
             results.Show();
         }
 

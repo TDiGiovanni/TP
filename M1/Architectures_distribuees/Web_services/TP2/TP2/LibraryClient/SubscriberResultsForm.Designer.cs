@@ -28,34 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.passwordLabel = new System.Windows.Forms.Label();
             this.resultsListView = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(12, 9);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(35, 13);
-            this.nameLabel.TabIndex = 1;
-            this.nameLabel.Text = "Name";
-            // 
-            // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(199, 9);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
-            this.passwordLabel.TabIndex = 2;
-            this.passwordLabel.Text = "Password";
-            // 
             // resultsListView
             // 
-            this.resultsListView.Location = new System.Drawing.Point(15, 25);
+            this.resultsListView.Location = new System.Drawing.Point(12, 12);
             this.resultsListView.Name = "resultsListView";
-            this.resultsListView.Size = new System.Drawing.Size(399, 329);
+            this.resultsListView.Size = new System.Drawing.Size(598, 373);
             this.resultsListView.TabIndex = 15;
             this.resultsListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -63,20 +43,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 384);
+            this.ClientSize = new System.Drawing.Size(622, 397);
             this.Controls.Add(this.resultsListView);
-            this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.nameLabel);
             this.Name = "SubscriberResultsForm";
-            this.Text = "Subscriber results";
+            this.Text = "Results";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.ListView resultsListView;
     }
 }

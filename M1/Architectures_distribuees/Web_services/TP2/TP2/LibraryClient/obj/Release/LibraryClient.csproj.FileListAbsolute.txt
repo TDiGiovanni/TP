@@ -1,0 +1,14 @@
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\bin\Release\LibraryClient.exe.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\bin\Release\LibraryClient.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\bin\Release\LibraryClient.XmlSerializers.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\bin\Release\LibraryClient.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.BookResultsForm.resources
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.LibraryManagerForm.resources
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.Properties.Resources.resources
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.SubscriberResultsForm.resources
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.csproj.GenerateResource.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.XmlSerializers.dll

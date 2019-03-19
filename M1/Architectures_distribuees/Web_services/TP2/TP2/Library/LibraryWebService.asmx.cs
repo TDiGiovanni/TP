@@ -26,7 +26,7 @@ namespace Library
         {
             Subscriber subscriber = new Subscriber(name, password);
             subscribers.Add(subscriber);
-            return subscriber.GetNumber();
+            return subscriber.number;
         }
 
         // Gets the subscriber if it exists
@@ -34,7 +34,7 @@ namespace Library
         public Subscriber GetSubscriber(int number, string password)
         {
             foreach (Subscriber subscriber in subscribers)
-                if (subscriber.GetNumber() == number && subscriber.GetPassword() == password)
+                if (subscriber.number == number && subscriber.password == password)
                     return subscriber;
 
             return null;
@@ -52,7 +52,7 @@ namespace Library
         public Book GetBookByIsbn(int isbn)
         {
             foreach (Book book in books)
-                if (book.GetIsbn() == isbn)
+                if (book.isbn == isbn)
                     return book;
 
             return null;
@@ -65,7 +65,7 @@ namespace Library
             List<Book> books = new List<Book>();
 
             foreach (Book book in books)
-                if (book.GetAuthor() == author)
+                if (book.author == author)
                     books.Add(book);
 
             return books.ToArray();
@@ -85,7 +85,7 @@ namespace Library
             List<Subscriber> books = new List<Subscriber>();
 
             foreach (Subscriber subscriber in subscribers)
-                if (subscriber.GetName() == name)
+                if (subscriber.name == name)
                     subscribers.Add(subscriber);
 
             return subscribers.ToArray();

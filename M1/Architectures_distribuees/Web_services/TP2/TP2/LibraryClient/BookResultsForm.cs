@@ -21,11 +21,16 @@ namespace LibraryClient
             resultsListView.Columns.Add("Number of copies");
             resultsListView.Columns.Add("Editor");
 
+            //resultsListView.View = View.Details;
             foreach (Book result in results)
-                resultsListView.Items.Add("test");
-
-
-            resultsListView.Items.Add("test").SubItems.Add("subtest");
+            {
+                ListViewItem book = new ListViewItem(result.title);
+                book.SubItems.Add(result.author);
+                book.SubItems.Add(result.isbn.ToString());
+                book.SubItems.Add(result.numberOfCopies.ToString());
+                book.SubItems.Add(result.editor);
+                resultsListView.Items.Add(book);
+            }
         }
     }
 }

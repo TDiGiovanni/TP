@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Book.cs" />
+    <Compile Include="Classes\Comment.cs" />
     <Compile Include="LibraryWebService.asmx.cs">
       <DependentUpon>LibraryWebService.asmx</DependentUpon>
       <SubType>Component</SubType>
