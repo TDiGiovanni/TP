@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cogui>
+<rule id="Rules/Q1.rule">
+<hypt>
+<graph id="Rules/Q1.rule_hypt" label="Q1" nature="rule" set="Rules">
+<concept id="c_b3478758-31db-4bea-96fa-2e4c771686fc" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" name="Y" x="345" y="400"/>
+<concept id="c_2f5a05ca-4609-457e-89b5-13d80177cc8c" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" name="Z" x="345" y="875"/>
+<concept id="c_2487dcd0-3401-43de-80fc-44c7a48970dc" idType="ct_e0d77b5a-67fa-4aa2-9479-533312e5ca78" name="X" x="170" y="635"/>
+<relation id="r_19ca758b-424b-4946-8a2f-f596f8f09684" idType="rt_27070009-f637-4998-adc0-67cc506f3bca" x="220" y="490"/>
+<relation id="r_f0b5f179-810f-48f8-a861-2c6a268c1f46" idType="rt_27070009-f637-4998-adc0-67cc506f3bca" x="220" y="785"/>
+<edge cid="c_2487dcd0-3401-43de-80fc-44c7a48970dc" label="1" rid="r_19ca758b-424b-4946-8a2f-f596f8f09684"/>
+<edge cid="c_b3478758-31db-4bea-96fa-2e4c771686fc" label="2" rid="r_19ca758b-424b-4946-8a2f-f596f8f09684"/>
+<edge cid="c_2487dcd0-3401-43de-80fc-44c7a48970dc" label="1" rid="r_f0b5f179-810f-48f8-a861-2c6a268c1f46"/>
+<edge cid="c_2f5a05ca-4609-457e-89b5-13d80177cc8c" label="2" rid="r_f0b5f179-810f-48f8-a861-2c6a268c1f46"/>
+</graph>
+</hypt>
+<conc>
+<graph id="Rules/Q1.rule_conc">
+<concept id="c_2466ec6d-ae7e-442b-8700-36218ed87656" idType="ct_e0d77b5a-67fa-4aa2-9479-533312e5ca78" name="X" x="645" y="635"/>
+<concept id="c_4ec50f03-cdb6-4e25-8bd8-230345f545ab" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" name="Z" x="475" y="875"/>
+<concept id="c_f664472e-f863-4fe9-aeda-99e8dc2291fd" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" name="Y" x="475" y="400"/>
+<relation id="r_6c80cfc5-8173-45cc-ba6a-213dfd9f5f5c" idType="rt_27070009-f637-4998-adc0-67cc506f3bca" x="600" y="490"/>
+<relation id="r_8a8384b3-5627-4048-8511-857a2c1db824" idType="rt_27070009-f637-4998-adc0-67cc506f3bca" x="600" y="785"/>
+<edge cid="c_2466ec6d-ae7e-442b-8700-36218ed87656" label="1" rid="r_6c80cfc5-8173-45cc-ba6a-213dfd9f5f5c"/>
+<edge cid="c_2466ec6d-ae7e-442b-8700-36218ed87656" label="1" rid="r_8a8384b3-5627-4048-8511-857a2c1db824"/>
+<edge cid="c_4ec50f03-cdb6-4e25-8bd8-230345f545ab" label="2" rid="r_8a8384b3-5627-4048-8511-857a2c1db824"/>
+<edge cid="c_f664472e-f863-4fe9-aeda-99e8dc2291fd" label="2" rid="r_6c80cfc5-8173-45cc-ba6a-213dfd9f5f5c"/>
+</graph>
+</conc>
+<conPts>
+<couple idC1="c_b3478758-31db-4bea-96fa-2e4c771686fc" idC2="c_f664472e-f863-4fe9-aeda-99e8dc2291fd"/>
+<couple idC1="c_2f5a05ca-4609-457e-89b5-13d80177cc8c" idC2="c_4ec50f03-cdb6-4e25-8bd8-230345f545ab"/>
+</conPts>
+</rule>
+</cogui>

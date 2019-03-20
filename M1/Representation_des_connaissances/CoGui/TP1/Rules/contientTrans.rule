@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cogui>
+<rule id="Rules/contientTrans.rule">
+<hypt>
+<graph id="Rules/contientTrans.rule_hypt" label="contientTrans" nature="rule" set="Rules">
+<concept id="c_21063bd6-a9fa-4814-9462-d3360f77e241" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="135" y="240"/>
+<concept id="c_5eca2c06-5e26-4933-a9eb-454144ea5857" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="325" y="420"/>
+<concept id="c_84338444-f4f0-417c-a598-ce001db63cae" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="325" y="80"/>
+<relation id="r_bc61e6d2-3e7a-4def-887c-6fd544427c3b" idType="rt_509029b3-d3e3-451a-9d31-e8dc95e98f0a" x="190" y="115"/>
+<relation id="r_8a2541d9-92a1-4f7a-ae70-318a425028f2" idType="rt_509029b3-d3e3-451a-9d31-e8dc95e98f0a" x="190" y="370"/>
+<edge cid="c_21063bd6-a9fa-4814-9462-d3360f77e241" label="2" rid="r_bc61e6d2-3e7a-4def-887c-6fd544427c3b"/>
+<edge cid="c_21063bd6-a9fa-4814-9462-d3360f77e241" label="1" rid="r_8a2541d9-92a1-4f7a-ae70-318a425028f2"/>
+<edge cid="c_5eca2c06-5e26-4933-a9eb-454144ea5857" label="2" rid="r_8a2541d9-92a1-4f7a-ae70-318a425028f2"/>
+<edge cid="c_84338444-f4f0-417c-a598-ce001db63cae" label="1" rid="r_bc61e6d2-3e7a-4def-887c-6fd544427c3b"/>
+</graph>
+</hypt>
+<conc>
+<graph id="Rules/contientTrans.rule_conc">
+<concept id="c_b8172aca-9021-4b84-ad68-99ece67482a9" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="455" y="150"/>
+<concept id="c_6db97d58-9cb3-4d26-9abe-6641c0fb64cc" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="455" y="415"/>
+<relation id="r_b03758ea-7a68-4950-9351-f7277cfcb49b" idType="rt_509029b3-d3e3-451a-9d31-e8dc95e98f0a" x="510" y="285"/>
+<edge cid="c_6db97d58-9cb3-4d26-9abe-6641c0fb64cc" label="2" rid="r_b03758ea-7a68-4950-9351-f7277cfcb49b"/>
+<edge cid="c_b8172aca-9021-4b84-ad68-99ece67482a9" label="1" rid="r_b03758ea-7a68-4950-9351-f7277cfcb49b"/>
+</graph>
+</conc>
+<conPts>
+<couple idC1="c_5eca2c06-5e26-4933-a9eb-454144ea5857" idC2="c_6db97d58-9cb3-4d26-9abe-6641c0fb64cc"/>
+<couple idC1="c_84338444-f4f0-417c-a598-ce001db63cae" idC2="c_b8172aca-9021-4b84-ad68-99ece67482a9"/>
+</conPts>
+</rule>
+</cogui>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cogui>
+<rule id="Rules/R1a.rule">
+<hypt>
+<graph id="Rules/R1a.rule_hypt" label="R1a" nature="rule" set="Rules">
+<concept id="c_7edba6bc-a3f6-40a1-b96e-feb0a955929c" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="105" y="235"/>
+<concept id="c_9e63ccbc-220a-47c1-bffb-76d5bea5225a" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="430" y="130"/>
+<relation id="r_c7ab4660-8110-4219-b59f-f49b0a63a483" idType="rt_2fe4416a-eea6-4426-8b48-af5561f8ecb5" x="260" y="180"/>
+<edge cid="c_7edba6bc-a3f6-40a1-b96e-feb0a955929c" label="1" rid="r_c7ab4660-8110-4219-b59f-f49b0a63a483"/>
+<edge cid="c_9e63ccbc-220a-47c1-bffb-76d5bea5225a" label="2" rid="r_c7ab4660-8110-4219-b59f-f49b0a63a483"/>
+</graph>
+</hypt>
+<conc>
+<graph id="Rules/R1a.rule_conc">
+<concept id="c_c4607036-9324-4406-b1dd-662664640322" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="615" y="105"/>
+<concept id="c_84904f18-edbb-4b2b-bf50-67c565b466d4" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="615" y="245"/>
+<relation id="r_78c7cc80-beba-436d-9ecc-86d4f68bb916" idType="rt_e5fb6a31-288a-4576-8850-874067a5bf62" x="695" y="175"/>
+<edge cid="c_c4607036-9324-4406-b1dd-662664640322" label="1" rid="r_78c7cc80-beba-436d-9ecc-86d4f68bb916"/>
+<edge cid="c_84904f18-edbb-4b2b-bf50-67c565b466d4" label="2" rid="r_78c7cc80-beba-436d-9ecc-86d4f68bb916"/>
+</graph>
+</conc>
+<conPts>
+<couple idC1="c_7edba6bc-a3f6-40a1-b96e-feb0a955929c" idC2="c_84904f18-edbb-4b2b-bf50-67c565b466d4"/>
+<couple idC1="c_9e63ccbc-220a-47c1-bffb-76d5bea5225a" idC2="c_c4607036-9324-4406-b1dd-662664640322"/>
+</conPts>
+</rule>
+</cogui>

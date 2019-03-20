@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cogui>
+<graph id="_2faebef3-0036-4fb5-8320-bed41b4707e2" label="graphFromF" nature="fact" set="set1">
+<concept id="c__775005ae-ce42-46a2-9ddb-d3e04d219a08" idType="ct_e0d77b5a-67fa-4aa2-9479-533312e5ca78" name="X1"/>
+<concept id="c__1e7f6704-12ad-4ef4-9da0-4b2598db5188" idType="ct_bd09c867-53c0-481e-9c8e-43811ba3fc3d" name="X2"/>
+<concept id="c__36771414-2e64-46f8-bdf4-00907a6be230" idType="ct_7e71c70d-cd26-43ab-bb40-79fcd4aaacef" name="X4"/>
+<concept id="c__542c0d7d-3743-4c48-84e1-e7cffb63a551" idType="ct_9ca05082-3c82-4884-b322-5de9f2fcdf6b" name="X3"/>
+<concept id="c__b8364b20-5a57-468a-85a6-931496f29920" idType="ct_a84b0475-80ab-413c-9222-451fa13a7b01" name="X6"/>
+<concept id="c__0f55c632-dd54-4d41-b164-c07339a5cb43" idType="ct_81d6cc34-2a02-48da-a4ed-bea1c95067a6" name="X5"/>
+<concept id="c__89f95d00-3eb9-407d-94ab-39b4c3b42bde" idType="ct_367e8163-89ee-489d-b6bd-567bbf3a4a8e" name="X8"/>
+<concept id="c__dd9cc0ec-ef13-408e-b80b-2c4307ff0adc" idType="ct_d4a4fc5c-423e-45c4-babd-7923e2c7cc5f" name="X7"/>
+<concept id="c__bfb621c4-6fa7-4939-9599-3b9368f3436a" idType="ct_f51fb506-2f5d-4e4b-9d90-f3e776f53016" name="X9"/>
+<relation id="r__6904425e-0050-4814-9782-2ed7e47d1d36" idType="rt_27070009-f637-4998-adc0-67cc506f3bca"/>
+<relation id="r__0a40ece2-015d-477a-b0a5-299ae6d6d56c" idType="rt_27070009-f637-4998-adc0-67cc506f3bca"/>
+<relation id="r__7b493700-844a-4aca-b052-4046e86f2e29" idType="rt_27070009-f637-4998-adc0-67cc506f3bca"/>
+<relation id="r__693a5643-fb6e-4c70-ad0b-88a395589324" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__cca9aafe-aaa9-43fc-819e-b09bc4944eb3" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__11db802f-51bd-44db-ab12-a3f697d68774" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__35683b20-8899-42a4-9700-952938fc66bf" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__92887c6e-eae0-4290-8479-2a2eba08e4ce" idType="rt_ffdd5d28-df1a-4cc1-a6ea-23d2710b71a8"/>
+<relation id="r__3dc60244-28b7-430b-984d-0a75d0769071" idType="rt_e5fb6a31-288a-4576-8850-874067a5bf62"/>
+<relation id="r__89b18b07-4983-47f0-8e2c-166d548a348d" idType="rt_166a1ab9-57cd-4b96-bb5e-bb404e1fb953"/>
+<relation id="r__123e2104-6e19-4e2b-a3e5-2778508bc1ea" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__2cc77a11-5697-455c-baab-5af32e8004e6" idType="rt_2fe4416a-eea6-4426-8b48-af5561f8ecb5"/>
+<edge cid="c__775005ae-ce42-46a2-9ddb-d3e04d219a08" label="1" rid="r__6904425e-0050-4814-9782-2ed7e47d1d36"/>
+<edge cid="c__1e7f6704-12ad-4ef4-9da0-4b2598db5188" label="2" rid="r__6904425e-0050-4814-9782-2ed7e47d1d36"/>
+<edge cid="c__775005ae-ce42-46a2-9ddb-d3e04d219a08" label="1" rid="r__0a40ece2-015d-477a-b0a5-299ae6d6d56c"/>
+<edge cid="c__36771414-2e64-46f8-bdf4-00907a6be230" label="2" rid="r__0a40ece2-015d-477a-b0a5-299ae6d6d56c"/>
+<edge cid="c__775005ae-ce42-46a2-9ddb-d3e04d219a08" label="1" rid="r__7b493700-844a-4aca-b052-4046e86f2e29"/>
+<edge cid="c__542c0d7d-3743-4c48-84e1-e7cffb63a551" label="2" rid="r__7b493700-844a-4aca-b052-4046e86f2e29"/>
+<edge cid="c__542c0d7d-3743-4c48-84e1-e7cffb63a551" label="1" rid="r__693a5643-fb6e-4c70-ad0b-88a395589324"/>
+<edge cid="c__b8364b20-5a57-468a-85a6-931496f29920" label="2" rid="r__693a5643-fb6e-4c70-ad0b-88a395589324"/>
+<edge cid="c__36771414-2e64-46f8-bdf4-00907a6be230" label="1" rid="r__cca9aafe-aaa9-43fc-819e-b09bc4944eb3"/>
+<edge cid="c__0f55c632-dd54-4d41-b164-c07339a5cb43" label="2" rid="r__cca9aafe-aaa9-43fc-819e-b09bc4944eb3"/>
+<edge cid="c__36771414-2e64-46f8-bdf4-00907a6be230" label="1" rid="r__11db802f-51bd-44db-ab12-a3f697d68774"/>
+<edge cid="c__89f95d00-3eb9-407d-94ab-39b4c3b42bde" label="2" rid="r__11db802f-51bd-44db-ab12-a3f697d68774"/>
+<edge cid="c__542c0d7d-3743-4c48-84e1-e7cffb63a551" label="1" rid="r__35683b20-8899-42a4-9700-952938fc66bf"/>
+<edge cid="c__dd9cc0ec-ef13-408e-b80b-2c4307ff0adc" label="2" rid="r__35683b20-8899-42a4-9700-952938fc66bf"/>
+<edge cid="c__542c0d7d-3743-4c48-84e1-e7cffb63a551" label="1" rid="r__92887c6e-eae0-4290-8479-2a2eba08e4ce"/>
+<edge cid="c__36771414-2e64-46f8-bdf4-00907a6be230" label="2" rid="r__92887c6e-eae0-4290-8479-2a2eba08e4ce"/>
+<edge cid="c__1e7f6704-12ad-4ef4-9da0-4b2598db5188" label="1" rid="r__3dc60244-28b7-430b-984d-0a75d0769071"/>
+<edge cid="c__542c0d7d-3743-4c48-84e1-e7cffb63a551" label="2" rid="r__3dc60244-28b7-430b-984d-0a75d0769071"/>
+<edge cid="c__542c0d7d-3743-4c48-84e1-e7cffb63a551" label="1" rid="r__89b18b07-4983-47f0-8e2c-166d548a348d"/>
+<edge cid="c__1e7f6704-12ad-4ef4-9da0-4b2598db5188" label="2" rid="r__89b18b07-4983-47f0-8e2c-166d548a348d"/>
+<edge cid="c__1e7f6704-12ad-4ef4-9da0-4b2598db5188" label="1" rid="r__123e2104-6e19-4e2b-a3e5-2778508bc1ea"/>
+<edge cid="c__bfb621c4-6fa7-4939-9599-3b9368f3436a" label="2" rid="r__123e2104-6e19-4e2b-a3e5-2778508bc1ea"/>
+<edge cid="c__542c0d7d-3743-4c48-84e1-e7cffb63a551" label="1" rid="r__2cc77a11-5697-455c-baab-5af32e8004e6"/>
+<edge cid="c__1e7f6704-12ad-4ef4-9da0-4b2598db5188" label="2" rid="r__2cc77a11-5697-455c-baab-5af32e8004e6"/>
+</graph>
+</cogui>
