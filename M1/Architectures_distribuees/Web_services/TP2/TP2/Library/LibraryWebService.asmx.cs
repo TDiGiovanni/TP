@@ -8,10 +8,10 @@ namespace Library
     [System.ComponentModel.ToolboxItem(false)]
     // Pour autoriser l'appel de ce service Web depuis un script à l'aide d'ASP.NET AJAX :
     //[System.Web.Script.Services.ScriptService]
-    public class LibraryWebService : System.Web.Services.WebService
+    public class LibraryWebService : WebService
     {
-        private List<Book> books = new List<Book>();                    // List of books in the library
-        private List<Subscriber> subscribers = new List<Subscriber>();  // List of subscribers
+        private static List<Book> books = new List<Book>();                    // List of books in the library
+        private static List<Subscriber> subscribers = new List<Subscriber>();  // List of subscribers
 
         // Adds a book to the list
         [WebMethod]

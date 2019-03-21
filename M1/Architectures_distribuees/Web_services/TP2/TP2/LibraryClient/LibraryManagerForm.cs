@@ -20,13 +20,15 @@ namespace LibraryClient
                 int.Parse(bookIsbnTextBox.Text),
                 int.Parse(bookNumberOfCopiesTextBox.Text),
                 bookEditorTextBox.Text);
+
+            MessageBox.Show("Book added!");
         }
 
         private void GetAllBooksButton_Click(object sender, EventArgs e)
         {
             List<LibraryWebService.Book> result = new List<LibraryWebService.Book>(library.GetAllBooks());
 
-            ShowBookResults(result);
+            ShowResults(result);
         }
 
         // Replace with GetBookByAuthorButton
@@ -34,7 +36,7 @@ namespace LibraryClient
         {
             List<LibraryWebService.Book> result = new List<LibraryWebService.Book>(library.GetBooksByAuthor(bookAuthorTextBox.Text));
 
-            ShowBookResults(result);
+            ShowResults(result);
         }
 
         private void GetBookByIsbnButton_Click(object sender, EventArgs e)
@@ -44,7 +46,7 @@ namespace LibraryClient
                 library.GetBookByIsbn(int.Parse(bookIsbnTextBox.Text))
             };
 
-            ShowBookResults(result);
+            ShowResults(result);
         }
 
         private void GetAllCommentsButton_Click(object sender, EventArgs e)
@@ -56,50 +58,57 @@ namespace LibraryClient
                 result.Add(comment);
             }
 
-            ShowCommentResults(result);
+            ShowResults(result);
         }
 
         private void AddSubscriberButton_Click(object sender, EventArgs e)
         {
-            library.AddSubscriber(subscriberNameTextBox.Text,
+            int subscriberNumber = library.AddSubscriber(subscriberNameTextBox.Text,
                 subscriberPasswordTextBox.Text);
+
+            MessageBox.Show("Subscriber (number " + subscriberNumber + ") added!");
         }
 
         private void GetAllSubscribersButton_Click(object sender, EventArgs e)
         {
             List<LibraryWebService.Subscriber> result = new List<LibraryWebService.Subscriber>(library.GetAllSubscribers());
 
-            ShowSubscriberResults(result);
+            ShowResults(result);
         }
 
         private void GetSubscriberByNameButton_Click(object sender, EventArgs e)
         {
             List<LibraryWebService.Subscriber> result = new List<LibraryWebService.Subscriber>(library.GetSubscribersByName(subscriberNameTextBox.Text));
 
-            ShowSubscriberResults(result);
+            ShowResults(result);
         }
 
         private void LeaveCommentButton_Click(object sender, EventArgs e)
         {
-            library.LeaveComment(int.Parse(subscriberNumberTextBox.Text),
+            bool commentLeft = library.LeaveComment(int.Parse(subscriberNumberTextBox.Text),
                 subscriberPasswordTextBox.Text,
                 int.Parse(bookIsbnTextBox.Text),
                 subscriberCommentTextBox.Text);
+
+            if (commentLeft)
+                MessageBox.Show("Comment added!");
+            else
+                MessageBox.Show("Error while adding the comment");
         }
 
-        private void ShowBookResults(List<LibraryWebService.Book> bookList)
+        private void ShowResults(List<LibraryWebService.Book> bookList)
         {
             BookResultsForm results = new BookResultsForm();
             results.Show();
         }
 
-        private void ShowCommentResults(List<LibraryWebService.Comment> commentList)
+        private void ShowResults(List<LibraryWebService.Comment> commentList)
         {
             CommentResultsForm results = new CommentResultsForm();
             results.Show();
         }
 
-        private void ShowSubscriberResults(List<LibraryWebService.Subscriber> subscriberList)
+        private void ShowResults(List<LibraryWebService.Subscriber> subscriberList)
         {
             SubscriberResultsForm results = new SubscriberResultsForm();
             results.Show();

@@ -12,3 +12,4 @@ C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.exe
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.pdb
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.XmlSerializers.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP2\TP2\LibraryClient\obj\Release\LibraryClient.CommentResultsForm.resources

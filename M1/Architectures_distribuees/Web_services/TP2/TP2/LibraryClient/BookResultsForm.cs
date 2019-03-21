@@ -21,7 +21,6 @@ namespace LibraryClient
             resultsListView.Columns.Add("Number of copies");
             resultsListView.Columns.Add("Editor");
 
-            //resultsListView.View = View.Details;
             foreach (Book result in results)
             {
                 ListViewItem book = new ListViewItem(result.title);
@@ -31,6 +30,8 @@ namespace LibraryClient
                 book.SubItems.Add(result.editor);
                 resultsListView.Items.Add(book);
             }
+
+            //resultsListView.View = View.Details;
         }
     }
 }
