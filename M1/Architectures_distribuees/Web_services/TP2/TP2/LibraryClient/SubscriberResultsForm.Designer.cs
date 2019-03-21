@@ -38,6 +38,7 @@
             this.resultsListView.Size = new System.Drawing.Size(598, 373);
             this.resultsListView.TabIndex = 15;
             this.resultsListView.UseCompatibleStateImageBehavior = false;
+            this.resultsListView.View = System.Windows.Forms.View.Details;
             // 
             // SubscriberResultsForm
             // 

@@ -17,7 +17,8 @@ namespace Library
         [WebMethod]
         public void AddBook(string title, string author, int isbn, int numberOfCopies, string editor)
         {
-            books.Add(new Book(title, author, isbn, numberOfCopies, editor));
+            Book book = new Book(title, author, isbn, numberOfCopies, editor);
+            books.Add(book);
         }
 
         // Adds a subscriber to the list, return its number

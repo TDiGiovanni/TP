@@ -72,7 +72,7 @@
             // 
             this.bookEditorTextBox.Location = new System.Drawing.Point(196, 158);
             this.bookEditorTextBox.Name = "bookEditorTextBox";
-            this.bookEditorTextBox.Size = new System.Drawing.Size(165, 20);
+            this.bookEditorTextBox.Size = new System.Drawing.Size(179, 20);
             this.bookEditorTextBox.TabIndex = 55;
             // 
             // label2
@@ -88,7 +88,7 @@
             // 
             this.bookNumberOfCopiesTextBox.Location = new System.Drawing.Point(196, 132);
             this.bookNumberOfCopiesTextBox.Name = "bookNumberOfCopiesTextBox";
-            this.bookNumberOfCopiesTextBox.Size = new System.Drawing.Size(165, 20);
+            this.bookNumberOfCopiesTextBox.Size = new System.Drawing.Size(179, 20);
             this.bookNumberOfCopiesTextBox.TabIndex = 53;
             // 
             // label1
@@ -104,7 +104,7 @@
             // 
             this.bookIsbnTextBox.Location = new System.Drawing.Point(196, 106);
             this.bookIsbnTextBox.Name = "bookIsbnTextBox";
-            this.bookIsbnTextBox.Size = new System.Drawing.Size(165, 20);
+            this.bookIsbnTextBox.Size = new System.Drawing.Size(179, 20);
             this.bookIsbnTextBox.TabIndex = 51;
             // 
             // label4
@@ -129,7 +129,7 @@
             // 
             this.subscriberPasswordTextBox.Location = new System.Drawing.Point(607, 106);
             this.subscriberPasswordTextBox.Name = "subscriberPasswordTextBox";
-            this.subscriberPasswordTextBox.Size = new System.Drawing.Size(163, 20);
+            this.subscriberPasswordTextBox.Size = new System.Drawing.Size(222, 20);
             this.subscriberPasswordTextBox.TabIndex = 48;
             // 
             // label6
@@ -145,7 +145,7 @@
             // 
             this.subscriberNameTextBox.Location = new System.Drawing.Point(607, 54);
             this.subscriberNameTextBox.Name = "subscriberNameTextBox";
-            this.subscriberNameTextBox.Size = new System.Drawing.Size(163, 20);
+            this.subscriberNameTextBox.Size = new System.Drawing.Size(222, 20);
             this.subscriberNameTextBox.TabIndex = 46;
             // 
             // bookLabel
@@ -170,7 +170,7 @@
             // 
             this.bookAuthorTextBox.Location = new System.Drawing.Point(196, 80);
             this.bookAuthorTextBox.Name = "bookAuthorTextBox";
-            this.bookAuthorTextBox.Size = new System.Drawing.Size(165, 20);
+            this.bookAuthorTextBox.Size = new System.Drawing.Size(179, 20);
             this.bookAuthorTextBox.TabIndex = 43;
             // 
             // bookTitleLabel
@@ -186,7 +186,7 @@
             // 
             this.bookTitleTextBox.Location = new System.Drawing.Point(196, 54);
             this.bookTitleTextBox.Name = "bookTitleTextBox";
-            this.bookTitleTextBox.Size = new System.Drawing.Size(165, 20);
+            this.bookTitleTextBox.Size = new System.Drawing.Size(179, 20);
             this.bookTitleTextBox.TabIndex = 41;
             // 
             // addBookButton
@@ -291,8 +291,9 @@
             // subscriberCommentTextBox
             // 
             this.subscriberCommentTextBox.Location = new System.Drawing.Point(607, 132);
+            this.subscriberCommentTextBox.Multiline = true;
             this.subscriberCommentTextBox.Name = "subscriberCommentTextBox";
-            this.subscriberCommentTextBox.Size = new System.Drawing.Size(163, 20);
+            this.subscriberCommentTextBox.Size = new System.Drawing.Size(222, 46);
             this.subscriberCommentTextBox.TabIndex = 64;
             // 
             // numberLabel
@@ -308,7 +309,7 @@
             // 
             this.subscriberNumberTextBox.Location = new System.Drawing.Point(607, 80);
             this.subscriberNumberTextBox.Name = "subscriberNumberTextBox";
-            this.subscriberNumberTextBox.Size = new System.Drawing.Size(163, 20);
+            this.subscriberNumberTextBox.Size = new System.Drawing.Size(222, 20);
             this.subscriberNumberTextBox.TabIndex = 66;
             // 
             // LibraryManagerForm

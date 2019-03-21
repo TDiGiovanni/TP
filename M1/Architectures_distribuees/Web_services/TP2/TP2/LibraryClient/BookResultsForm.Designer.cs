@@ -33,11 +33,13 @@
             // 
             // resultsListView
             // 
+            this.resultsListView.FullRowSelect = true;
             this.resultsListView.Location = new System.Drawing.Point(12, 12);
             this.resultsListView.Name = "resultsListView";
             this.resultsListView.Size = new System.Drawing.Size(595, 377);
             this.resultsListView.TabIndex = 16;
             this.resultsListView.UseCompatibleStateImageBehavior = false;
+            this.resultsListView.View = System.Windows.Forms.View.Details;
             // 
             // BookResultsForm
             // 

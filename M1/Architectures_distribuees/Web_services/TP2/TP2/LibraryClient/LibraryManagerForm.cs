@@ -34,13 +34,21 @@ namespace LibraryClient
         // Replace with GetBookByAuthorButton
         private void GetBookByTitleButton_Click(object sender, EventArgs e)
         {
-            List<LibraryWebService.Book> result = new List<LibraryWebService.Book>(library.GetBooksByAuthor(bookAuthorTextBox.Text));
+            string input = bookAuthorTextBox.Text;
+            if (IsEmpty(input))
+                return;
+
+            List<LibraryWebService.Book> result = new List<LibraryWebService.Book>(library.GetBooksByAuthor(input));
 
             ShowResults(result);
         }
 
         private void GetBookByIsbnButton_Click(object sender, EventArgs e)
         {
+            string input = bookIsbnTextBox.Text;
+            if (IsEmpty(input))
+                return;
+
             List<LibraryWebService.Book> result = new List<LibraryWebService.Book>
             {
                 library.GetBookByIsbn(int.Parse(bookIsbnTextBox.Text))
@@ -51,9 +59,13 @@ namespace LibraryClient
 
         private void GetAllCommentsButton_Click(object sender, EventArgs e)
         {
+            string input = bookIsbnTextBox.Text;
+            if (IsEmpty(input))
+                return;
+
             List<LibraryWebService.Comment> result = new List<LibraryWebService.Comment>();
 
-            foreach (LibraryWebService.Comment comment in library.GetBookByIsbn(int.Parse(bookIsbnTextBox.Text)).comments)
+            foreach (LibraryWebService.Comment comment in library.GetBookByIsbn(int.Parse(input)).comments)
             {
                 result.Add(comment);
             }
@@ -78,13 +90,23 @@ namespace LibraryClient
 
         private void GetSubscriberByNameButton_Click(object sender, EventArgs e)
         {
-            List<LibraryWebService.Subscriber> result = new List<LibraryWebService.Subscriber>(library.GetSubscribersByName(subscriberNameTextBox.Text));
+            string input = subscriberNameTextBox.Text;
+            if (IsEmpty(input))
+                return;
+
+            List<LibraryWebService.Subscriber> result = new List<LibraryWebService.Subscriber>(library.GetSubscribersByName(input));
 
             ShowResults(result);
         }
 
         private void LeaveCommentButton_Click(object sender, EventArgs e)
         {
+            if (IsEmpty(subscriberNumberTextBox.Text)
+                || IsEmpty(subscriberPasswordTextBox.Text)
+                || IsEmpty(bookIsbnTextBox.Text)
+                || IsEmpty(subscriberCommentTextBox.Text))
+                return;
+
             bool commentLeft = library.LeaveComment(int.Parse(subscriberNumberTextBox.Text),
                 subscriberPasswordTextBox.Text,
                 int.Parse(bookIsbnTextBox.Text),
@@ -98,20 +120,31 @@ namespace LibraryClient
 
         private void ShowResults(List<LibraryWebService.Book> bookList)
         {
-            BookResultsForm results = new BookResultsForm();
+            BookResultsForm results = new BookResultsForm(bookList);
             results.Show();
         }
 
         private void ShowResults(List<LibraryWebService.Comment> commentList)
         {
-            CommentResultsForm results = new CommentResultsForm();
+            CommentResultsForm results = new CommentResultsForm(commentList);
             results.Show();
         }
 
         private void ShowResults(List<LibraryWebService.Subscriber> subscriberList)
         {
-            SubscriberResultsForm results = new SubscriberResultsForm();
+            SubscriberResultsForm results = new SubscriberResultsForm(subscriberList);
             results.Show();
+        }
+
+        private bool IsEmpty(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                MessageBox.Show("Error: missing information");
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
