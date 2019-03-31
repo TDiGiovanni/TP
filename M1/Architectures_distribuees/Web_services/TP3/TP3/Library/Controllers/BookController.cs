@@ -1,42 +1,87 @@
-﻿using System.Collections.Generic;
+﻿using Library.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Library.Controllers
 {
-    [Route("api/[controller]")]
-    public class BookController : Controller
+    [Route("api/[book]")]
+    [ApiController]
+    public class BookController : ControllerBase
     {
-        // GET: api/<controller>
+        private readonly BookContext bookContext;
+
+        public BookController(BookContext context)
+        {
+            bookContext = context;
+
+            if (bookContext.BookItems.Count() == 0)
+            {
+                // Create a new item if collection is empty, which means you can't delete all items
+                bookContext.BookItems.Add(new BookItem());
+                bookContext.SaveChanges();
+            }
+        }
+
+        // GET: api/Book
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ActionResult<IEnumerable<BookItem>>> GetBookItems()
         {
-            return new string[] { "value1", "value2" };
+            return await bookContext.BookItems.ToListAsync();
         }
 
-        // GET api/<controller>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET: api/Book/5
+        [HttpGet("{isbn}")]
+        public async Task<ActionResult<BookItem>> GetBookItem(int isbn)
         {
-            return "value";
+            var item = await bookContext.BookItems.FindAsync(isbn);
+
+            if (item == null)
+                return NotFound();
+
+            return item;
         }
 
-        // POST api/<controller>
+        // POST: api/Book
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<ActionResult<BookItem>> PostTodoItem(BookItem item)
         {
+            bookContext.BookItems.Add(item);
+            await bookContext.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetBookItem), new { isbn = item.isbn }, item);
         }
 
-        // PUT api/<controller>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        // PUT: api/Book/5
+        [HttpPut("{isbn}")]
+        public async Task<IActionResult> PutBookItem(int isbn, BookItem item)
         {
+            if (isbn != item.isbn)
+            {
+                return BadRequest();
+            }
+
+            bookContext.Entry(item).State = EntityState.Modified;
+            await bookContext.SaveChangesAsync();
+
+            return NoContent();
         }
 
-        // DELETE api/<controller>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE: api/Book/5
+        [HttpDelete("{isbn}")]
+        public async Task<IActionResult> DeleteBookItem(int isbn)
         {
+            var item = await bookContext.BookItems.FindAsync(isbn);
+
+            if (item == null)
+                return NotFound();
+
+            bookContext.BookItems.Remove(item);
+            await bookContext.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }

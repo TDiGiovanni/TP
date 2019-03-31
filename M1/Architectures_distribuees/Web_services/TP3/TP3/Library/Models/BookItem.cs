@@ -45,7 +45,7 @@ namespace Library.Models
         {
             if (text != null)
             {
-                this.comments[commentIndex] = new Comment(subscriber, text);
+                this.comments[commentIndex] = new CommentItem(subscriber, text);
 
                 commentIndex++;
                 if (this.commentIndex == COMMENT_NUMBER)
