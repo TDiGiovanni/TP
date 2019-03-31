@@ -12,3 +12,17 @@ C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\Library\obj\Debug\net
 C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\Library\obj\Debug\netcoreapp2.1\Library.RazorTargetAssemblyInfo.cache
 C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\Library\obj\Debug\netcoreapp2.1\Library.dll
 C:\Users\Thomas\Documents\Visual Studio 2017\Solutions\TP3\Library\obj\Debug\netcoreapp2.1\Library.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\bin\Debug\netcoreapp2.1\Library.deps.json
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\bin\Debug\netcoreapp2.1\Library.runtimeconfig.json
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\bin\Debug\netcoreapp2.1\Library.runtimeconfig.dev.json
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\bin\Debug\netcoreapp2.1\Library.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\bin\Debug\netcoreapp2.1\Library.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\obj\Debug\netcoreapp2.1\Library.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\obj\Debug\netcoreapp2.1\Library.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\obj\Debug\netcoreapp2.1\Library.RazorAssemblyInfo.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\obj\Debug\netcoreapp2.1\Library.RazorAssemblyInfo.cs
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\obj\Debug\netcoreapp2.1\Library.AssemblyInfoInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\obj\Debug\netcoreapp2.1\Library.AssemblyInfo.cs
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\obj\Debug\netcoreapp2.1\Library.RazorTargetAssemblyInfo.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\obj\Debug\netcoreapp2.1\Library.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\Web_services\TP3\TP3\Library\obj\Debug\netcoreapp2.1\Library.pdb
