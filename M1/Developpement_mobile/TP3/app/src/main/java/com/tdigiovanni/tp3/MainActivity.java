@@ -9,16 +9,20 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
+import static java.lang.Math.abs;
+
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
-    private static final float MIN_THRESHOLD = 2;
-    private static final float MAX_THRESHOLD = 8;
-    private static final float SHAKE_THRESHOLD = 500;
-    private static final long REFRESH_RATE = 300;
+    private static final float MIN_THRESHOLD = 5;
+    private static final float MAX_THRESHOLD = 10;
+    private static final float SHAKE_THRESHOLD = 400;
+    private static final long REFRESH_RATE = 200;
 
     private SensorManager sensorManager;
     private boolean flashlightOn = false;
@@ -87,7 +91,36 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 float y = event.values[1];
                 float z = event.values[2];
 
-                float speed = Math.abs(x + y + z - lastX - lastY - lastZ) / timeDifference * 10000;
+                // Speed detection
+                if (x < MIN_THRESHOLD && x > -MIN_THRESHOLD
+                        && y < MIN_THRESHOLD && y > -MIN_THRESHOLD
+                        && z < MIN_THRESHOLD && z > -MIN_THRESHOLD)
+                    constraintLayout.setBackgroundColor(Color.GREEN);
+
+                else if (x > MAX_THRESHOLD || x < -MAX_THRESHOLD
+                        || y > MAX_THRESHOLD || y < -MAX_THRESHOLD
+                        || z > MAX_THRESHOLD || z < -MAX_THRESHOLD)
+                    constraintLayout.setBackgroundColor(Color.BLACK);
+
+                else
+                    constraintLayout.setBackgroundColor(Color.RED);
+
+                // Direction detection
+                ImageView directionImage = findViewById(R.id.directionImage);
+                if (y < 0 && abs(y) > abs(x))
+                    directionImage.setImageResource(R.drawable.down_arrow);
+
+                else if (y > 0 && abs(y) > abs(x))
+                    directionImage.setImageResource(R.drawable.up_arrow);
+
+                else if (x < 0 && abs(x) > abs(y))
+                    directionImage.setImageResource(R.drawable.left_arrow);
+
+                else if (x > 0 && abs(x) > abs(y))
+                    directionImage.setImageResource(R.drawable.right_arrow);
+
+                // Shake detection
+                float speed = abs(x + y + z - lastX - lastY - lastZ) / timeDifference * 10000;
                 if (speed > SHAKE_THRESHOLD) {
                     Camera camera = Camera.open();
 
@@ -109,26 +142,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 lastX = x;
                 lastY = y;
                 lastZ = z;
-
-                if (x < MIN_THRESHOLD
-                        || y < MIN_THRESHOLD
-                        || z < MIN_THRESHOLD)
-                    constraintLayout.setBackgroundColor(Color.GREEN);
-
-                else if (x > MAX_THRESHOLD
-                        || y > MAX_THRESHOLD
-                        || z > MAX_THRESHOLD)
-                    constraintLayout.setBackgroundColor(Color.BLACK);
-
-                else
-                    constraintLayout.setBackgroundColor(Color.RED);
             }
         }
 
         if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
+            ImageView closeObjectImage = findViewById(R.id.closeObjectImage);
+
             float distance = event.values[0]; // In meters
 
-            //TODO
+            //if (distance too close)
+            closeObjectImage.setVisibility(View.VISIBLE);
+            //else
+            closeObjectImage.setVisibility(View.GONE);
         }
     }
 

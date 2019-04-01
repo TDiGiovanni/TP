@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TP3</string>
+    <string name="closeObjectText">Shows if an object if close</string>
+    <string name="directionText">Arrow of the direction</string>
 </resources>

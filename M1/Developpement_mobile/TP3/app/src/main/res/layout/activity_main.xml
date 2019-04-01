@@ -14,11 +14,32 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:id="@+id/sensorLinearLayout">
-            </LinearLayout>
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/closeObjectImage"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="300dp"
+                    android:maxHeight="300dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/closeObjectText"
+                    android:visibility="gone"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/directionImage"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="300dp"
+                    android:maxHeight="300dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/directionText" />
+            </LinearLayout>
         </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
