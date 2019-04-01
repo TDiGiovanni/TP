@@ -1,0 +1,11 @@
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\bin\Debug\ClientWCF.exe.config
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\bin\Debug\ClientWCF.exe
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\bin\Debug\ClientWCF.pdb
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\obj\Debug\ClientWCF.csprojAssemblyReference.cache
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\obj\Debug\ClientWCF.csproj.CoreCompileInputs.cache
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\obj\Debug\ClientWCF.exe
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\obj\Debug\ClientWCF.pdb
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\bin\Debug\BiblioWCF.dll
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\bin\Debug\BiblioWCF.pdb
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\bin\Debug\BiblioWCF.dll.config
+C:\Users\Clement\source\repos\BiblioWCF\ClientWCF\obj\Debug\ClientWCF.csproj.CopyComplete
