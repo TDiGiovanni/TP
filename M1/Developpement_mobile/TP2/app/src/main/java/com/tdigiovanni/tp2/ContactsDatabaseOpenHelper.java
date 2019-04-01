@@ -75,4 +75,9 @@ public class ContactsDatabaseOpenHelper extends SQLiteOpenHelper {
                 null,
                 null);
     }
+
+    public boolean checkExistingContact(String name, String lastName, String number)
+    {
+
+    }
 }

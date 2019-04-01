@@ -4,5 +4,6 @@
     <string name="name">Name</string>
     <string name="lastName">Last name</string>
     <string name="number">Phone number</string>
-    <string name="send">Send</string>
+    <string name="addToFile">Add contact</string>
+    <string name="showContacts">Show contacts</string>
 </resources>

@@ -4,11 +4,17 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-public class Contacts extends AppCompatActivity {
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class ContactsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,36 +22,26 @@ public class Contacts extends AppCompatActivity {
 
         ListView contactsList = findViewById(R.id.contactsList);
 
-        /* Q1 version
+        /* Get from intent version
         ArrayList<String> contactsInfos = getIntent().getStringArrayListExtra("CONTACT_INFOS");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, contactsInfos);
         */
 
-        /* Q3 version
-        String fileName = getIntent().getStringExtra("FILE_NAME");
-        ArrayList<String> contactsInfos = new ArrayList<String>();
-        try {
-            FileInputStream file = openFileInput(fileName);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file));
-            contactsInfos.add(bufferedReader.readLine());
-            file.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, contactsInfos);
-        */
-
-        // Q4 version
+        // Get all contacts from database
         ContactsDatabaseOpenHelper database = ContactsDatabaseOpenHelper.getInstance(this);
+
         Cursor cursor = database.getAllContacts();
+
         String[] fromColumns = {
                 ContactsDatabaseOpenHelper.COLUMN_NAME,
                 ContactsDatabaseOpenHelper.COLUMN_LAST_NAME,
                 ContactsDatabaseOpenHelper.COLUMN_NUMBER
         };
+
         int[] toViews = {android.R.id.text1};
+
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor, fromColumns, toViews, 0);
+
         adapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
             public boolean setViewValue(View view, Cursor cursor, int columnIndex) {
                 ((TextView) view).setText(

@@ -1,5 +1,6 @@
 package com.tdigiovanni.tp2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Main extends AppCompatActivity {
-    //private ArrayList<String> contactsInfos = new ArrayList<String>(); // Q1 version
+import java.io.FileOutputStream;
+
+public class MainActivity extends AppCompatActivity {
+    private final static String FILE_NAME = "contactInfos";
+
+    //private ArrayList<String> contactsInfos = new ArrayList<String>(); // Array for intent version
     private int counter = 0;
 
     @Override
@@ -21,20 +26,19 @@ public class Main extends AppCompatActivity {
         final EditText nameEdit = findViewById(R.id.nameEdit);
         final EditText lastNameEdit = findViewById(R.id.lastNameEdit);
         final EditText numberEdit = findViewById(R.id.numberEdit);
-        Button sendButton = findViewById(R.id.sendButton);
+        Button addToFileButton = findViewById(R.id.addToFileButton);
+        Button showContactsButton = findViewById(R.id.showContactsButton);
 
-        sendButton.setOnClickListener(new View.OnClickListener() {
+        addToFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if ( TextUtils.isEmpty(nameEdit.getText())
                 || TextUtils.isEmpty(lastNameEdit.getText())
                 || TextUtils.isEmpty(numberEdit.getText()) )
-                    Toast.makeText(Main.this, "You must fill out all informations", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "You must fill out all informations", Toast.LENGTH_SHORT).show();
 
                 else {
-                    Intent intent = new Intent(Main.this, Contacts.class);
-
-                    /* Q1 version
+                    /* Store in intent version
                     contactsInfos.add(lastNameEdit.getText() + " "
                             + nameEdit.getText() + " : "
                             + numberEdit.getText());
@@ -42,32 +46,32 @@ public class Main extends AppCompatActivity {
                     intent.putStringArrayListExtra("CONTACT_INFOS", contactsInfos);
                     */
 
-                    /* Q3 version
                     String contactsInfos = lastNameEdit.getText() + " "
                             + nameEdit.getText() + " : "
                             + numberEdit.getText();
 
-                    String fileName = "contactInfos";
                     try {
-                        FileOutputStream file = openFileOutput(fileName, Context.MODE_PRIVATE);
+                        FileOutputStream file = openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
                         file.write(contactsInfos.getBytes());
                         file.close();
-                    } catch (Exception e) {
+                    }
+                    catch (Exception e) {
                         e.printStackTrace();
                     }
-
-                    intent.putExtra("FILE_NAME", fileName);
-                    */
-
-                    // Q4 version
-                    ContactsDatabaseOpenHelper database = ContactsDatabaseOpenHelper.getInstance(Main.this);
-                    database.addContact(
-                            nameEdit.getText().toString(),
-                            lastNameEdit.getText().toString(),
-                            numberEdit.getText().toString());
-
-                    startActivity(intent);
                 }
+            }
+        });
+
+        showContactsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    Intent intent = new Intent(MainActivity.this, CheckDatabaseService.class);
+                    intent.putExtra("FILE_NAME", FILE_NAME);
+                    intent.putExtra("CONTACT_NAME", nameEdit.getText().toString());
+                    intent.putExtra("CONTACT_LAST_NAME", lastNameEdit.getText().toString());
+                    intent.putExtra("CONTACT_NUMBER", numberEdit.getText().toString());
+
+                    startService(intent);
             }
         });
     }
