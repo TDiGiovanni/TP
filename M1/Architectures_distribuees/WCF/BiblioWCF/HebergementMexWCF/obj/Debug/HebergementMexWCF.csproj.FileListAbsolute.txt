@@ -9,3 +9,14 @@ C:\Users\Clement\source\repos\BiblioWCF\HebergementMexWCF\obj\Debug\HebergementM
 C:\Users\Clement\source\repos\BiblioWCF\HebergementMexWCF\obj\Debug\HebergementMexWCF.exe
 C:\Users\Clement\source\repos\BiblioWCF\HebergementMexWCF\obj\Debug\HebergementMexWCF.pdb
 C:\Users\Clement\source\repos\BiblioWCF\HebergementMexWCF\obj\Debug\HebergementMexWCF.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\bin\Debug\HebergementMexWCF.exe.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\bin\Debug\HebergementMexWCF.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\bin\Debug\HebergementMexWCF.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\bin\Debug\BiblioWCF.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\bin\Debug\BiblioWCF.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\bin\Debug\BiblioWCF.dll.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\obj\Debug\HebergementMexWCF.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\obj\Debug\HebergementMexWCF.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\obj\Debug\HebergementMexWCF.csproj.CopyComplete
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\obj\Debug\HebergementMexWCF.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementMexWCF\obj\Debug\HebergementMexWCF.pdb

@@ -9,3 +9,14 @@ C:\Users\Clement\source\repos\BiblioWCF\HebergementWCF\obj\Debug\HebergementWCF.
 C:\Users\Clement\source\repos\BiblioWCF\HebergementWCF\obj\Debug\HebergementWCF.exe
 C:\Users\Clement\source\repos\BiblioWCF\HebergementWCF\obj\Debug\HebergementWCF.pdb
 C:\Users\Clement\source\repos\BiblioWCF\HebergementWCF\obj\Debug\HebergementWCF.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\bin\Debug\HebergementWCF.exe.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\bin\Debug\HebergementWCF.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\bin\Debug\HebergementWCF.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\bin\Debug\BiblioWCF.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\bin\Debug\BiblioWCF.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\bin\Debug\BiblioWCF.dll.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\obj\Debug\HebergementWCF.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\obj\Debug\HebergementWCF.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\obj\Debug\HebergementWCF.csproj.CopyComplete
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\obj\Debug\HebergementWCF.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\HebergementWCF\obj\Debug\HebergementWCF.pdb

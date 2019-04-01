@@ -1,2 +1,4 @@
 C:\Users\Clement\source\repos\BiblioWCF\ClientMexWCF\obj\Debug\ClientMexWCF.csprojAssemblyReference.cache
 C:\Users\Clement\source\repos\BiblioWCF\ClientMexWCF\obj\Debug\ClientMexWCF.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\ClientMexWCF\obj\Debug\ClientMexWCF.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\ClientMexWCF\obj\Debug\ClientMexWCF.csproj.CoreCompileInputs.cache
