@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cogui>
+<rule id="Rules/R6.rule">
+<hypt>
+<graph id="Rules/R6.rule_hypt" label="R6" nature="rule" set="Rules">
+<concept id="c_eed893fc-acda-4e9a-818f-fa0971cee616" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="90" y="160"/>
+</graph>
+</hypt>
+<conc>
+<graph id="Rules/R6.rule_conc">
+<concept id="c_95e2fa71-9708-4819-8dbe-81e7f26050c5" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="575" y="130"/>
+<concept id="c_23d7392f-b568-404f-9f4b-41595330f182" idType="ct_f51fb506-2f5d-4e4b-9d90-f3e776f53016" x="580" y="350"/>
+<relation id="r_344fc7c8-55cc-46ab-970f-b6a92e6eb031" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5" x="590" y="245"/>
+<edge cid="c_95e2fa71-9708-4819-8dbe-81e7f26050c5" label="1" rid="r_344fc7c8-55cc-46ab-970f-b6a92e6eb031"/>
+<edge cid="c_23d7392f-b568-404f-9f4b-41595330f182" label="2" rid="r_344fc7c8-55cc-46ab-970f-b6a92e6eb031"/>
+</graph>
+</conc>
+<conPts>
+<couple idC1="c_eed893fc-acda-4e9a-818f-fa0971cee616" idC2="c_95e2fa71-9708-4819-8dbe-81e7f26050c5"/>
+</conPts>
+</rule>
+</cogui>

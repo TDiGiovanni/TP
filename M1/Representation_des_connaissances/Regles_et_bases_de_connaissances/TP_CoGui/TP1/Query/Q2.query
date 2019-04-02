@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cogui>
+<graph id="Query/Q2.query" label="Q2" nature="query" set="Query">
+<concept id="c_d2a955da-2e38-4973-8cdf-f2408247baeb" idType="ct_e0d77b5a-67fa-4aa2-9479-533312e5ca78" name="X" x="420" y="135"/>
+<concept id="c_8947013b-4903-4b06-8703-6daeb3cdbe65" idType="ct_bd09c867-53c0-481e-9c8e-43811ba3fc3d" name="Y" x="210" y="0"/>
+<concept id="c_da1f3d0c-dde9-420d-a120-9cf903c96e96" idType="ct_7e71c70d-cd26-43ab-bb40-79fcd4aaacef" name="Z" x="635" y="265"/>
+<relation id="r_d1ee824e-09bb-42a0-956f-e8dbabd3655a" idType="rt_27070009-f637-4998-adc0-67cc506f3bca" x="310" y="65"/>
+<relation id="r_47ec2a5f-515d-45f3-8491-87602abfc7e9" idType="rt_27070009-f637-4998-adc0-67cc506f3bca" x="535" y="205"/>
+<edge cid="c_d2a955da-2e38-4973-8cdf-f2408247baeb" label="1" rid="r_d1ee824e-09bb-42a0-956f-e8dbabd3655a"/>
+<edge cid="c_8947013b-4903-4b06-8703-6daeb3cdbe65" label="2" rid="r_d1ee824e-09bb-42a0-956f-e8dbabd3655a"/>
+<edge cid="c_d2a955da-2e38-4973-8cdf-f2408247baeb" label="1" rid="r_47ec2a5f-515d-45f3-8491-87602abfc7e9"/>
+<edge cid="c_da1f3d0c-dde9-420d-a120-9cf903c96e96" label="2" rid="r_47ec2a5f-515d-45f3-8491-87602abfc7e9"/>
+</graph>
+</cogui>

@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#"
+     xml:base="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#hasColour -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#hasColour"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Black -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Black">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Colour"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#BlackSmurf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#BlackSmurf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Smurf"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#hasColour"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Black"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Blue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Blue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Colour"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#BlueSmurf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#BlueSmurf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Smurf"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#hasColour"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Blue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Colour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Colour">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#LivingBeing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Female -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Female">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#LivingBeing"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Male"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#LivingBeing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#LivingBeing">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#hasColour"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Colour"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Male -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Male">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#LivingBeing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Red -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Red">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Colour"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Smurf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Smurf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#LivingBeing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#White -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#White">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Colour"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Deep_black -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Deep_black">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Black"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Light_blue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Light_blue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Blue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Light_red -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Light_red">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Red"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Light_white -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Light_white">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#White"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Schtroumpfette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Schtroumpfette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#BlueSmurf"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Female"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Test -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Test"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Black"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Blue"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#Red"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tdigiovanni/ontologies/2019/1/untitled-ontology-3#White"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+
