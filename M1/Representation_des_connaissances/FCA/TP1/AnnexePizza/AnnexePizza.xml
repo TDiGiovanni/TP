@@ -1,0 +1,744 @@
+<RCAExplore_Document>
+	<Step nb="0">
+		<Lattice numberObj="5" numberAtt="28" numberCpt="15" >
+			<Config algo="fca">
+			</Config>
+			<Name>Pizzas</Name>
+			<Object>Tartiflette</Object>
+			<Object>Végétarienne</Object>
+			<Object>Kebab</Object>
+			<Object>Détective</Object>
+			<Object>Koubiac</Object>
+			<Attribute>Viande</Attribute>
+			<Attribute>Viande rouge</Attribute>
+			<Attribute>Viande blanche</Attribute>
+			<Attribute>Pepperoni</Attribute>
+			<Attribute>Poulet</Attribute>
+			<Attribute>Merguez</Attribute>
+			<Attribute>Jambon</Attribute>
+			<Attribute>Lardons</Attribute>
+			<Attribute>Poisson</Attribute>
+			<Attribute>Saumon</Attribute>
+			<Attribute>Sauce</Attribute>
+			<Attribute>Kebab</Attribute>
+			<Attribute>Sauce blanche</Attribute>
+			<Attribute>Légumes</Attribute>
+			<Attribute>Pomme de terre</Attribute>
+			<Attribute>Poivrons</Attribute>
+			<Attribute>Fruits</Attribute>
+			<Attribute>Olives</Attribute>
+			<Attribute>Base rouge</Attribute>
+			<Attribute>Base blanche</Attribute>
+			<Attribute>Oignons</Attribute>
+			<Attribute>Champignons</Attribute>
+			<Attribute>Fromage</Attribute>
+			<Attribute>Reblochon</Attribute>
+			<Attribute>Fromage à raclette</Attribute>
+			<Attribute>Mozarella</Attribute>
+			<Attribute>Emmental</Attribute>
+			<Attribute>Viande hachée</Attribute>
+			<Concept>
+				<ID>Concept_Pizzas_14</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Végétarienne</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Détective</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_12</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Détective</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_14</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_6</ID>
+				<Extent>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande rouge</Attribute_Ref>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_11</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_10</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_0</ID>
+				<Extent>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande rouge</Attribute_Ref>
+					<Attribute_Ref>Fromage à raclette</Attribute_Ref>
+					<Attribute_Ref>Champignons</Attribute_Ref>
+					<Attribute_Ref>Sauce blanche</Attribute_Ref>
+					<Attribute_Ref>Saumon</Attribute_Ref>
+					<Attribute_Ref>Base blanche</Attribute_Ref>
+					<Attribute_Ref>Viande blanche</Attribute_Ref>
+					<Attribute_Ref>Merguez</Attribute_Ref>
+					<Attribute_Ref>Reblochon</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+					<Attribute_Ref>Sauce</Attribute_Ref>
+					<Attribute_Ref>Viande hachée</Attribute_Ref>
+					<Attribute_Ref>Lardons</Attribute_Ref>
+					<Attribute_Ref>Kebab</Attribute_Ref>
+					<Attribute_Ref>Jambon</Attribute_Ref>
+					<Attribute_Ref>Poivrons</Attribute_Ref>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Pomme de terre</Attribute_Ref>
+					<Attribute_Ref>Poisson</Attribute_Ref>
+					<Attribute_Ref>Poulet</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Pepperoni</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_4</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_2</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_1</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_5</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_3</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_9</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Détective</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Base blanche</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Viande blanche</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_12</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_2</ID>
+				<Extent>
+					<Object_Ref>Détective</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Poulet</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Base blanche</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Viande blanche</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_9</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_1</ID>
+				<Extent>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande rouge</Attribute_Ref>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Merguez</Attribute_Ref>
+					<Attribute_Ref>Reblochon</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+					<Attribute_Ref>Viande hachée</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_8</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_6</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_5</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Lardons</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Base blanche</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Viande blanche</Attribute_Ref>
+					<Attribute_Ref>Pomme de terre</Attribute_Ref>
+					<Attribute_Ref>Reblochon</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_9</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_8</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_3</ID>
+				<Extent>
+					<Object_Ref>Kebab</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande rouge</Attribute_Ref>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Sauce blanche</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+					<Attribute_Ref>Sauce</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Kebab</Attribute_Ref>
+					<Attribute_Ref>Poivrons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_7</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_6</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_11</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_12</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_13</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_13</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Végétarienne</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_14</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_7</ID>
+				<Extent>
+					<Object_Ref>Végétarienne</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Poivrons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_10</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_10</ID>
+				<Extent>
+					<Object_Ref>Végétarienne</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_13</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_4</ID>
+				<Extent>
+					<Object_Ref>Végétarienne</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Champignons</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Poivrons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_7</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_8</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Reblochon</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_11</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+		</Lattice>
+	</Step >
+	<Step nb="1">
+		<Lattice numberObj="5" numberAtt="28" numberCpt="15" >
+			<Config algo="fca">
+			</Config>
+			<Name>Pizzas</Name>
+			<Object>Tartiflette</Object>
+			<Object>Végétarienne</Object>
+			<Object>Kebab</Object>
+			<Object>Détective</Object>
+			<Object>Koubiac</Object>
+			<Attribute>Viande</Attribute>
+			<Attribute>Viande rouge</Attribute>
+			<Attribute>Viande blanche</Attribute>
+			<Attribute>Pepperoni</Attribute>
+			<Attribute>Poulet</Attribute>
+			<Attribute>Merguez</Attribute>
+			<Attribute>Jambon</Attribute>
+			<Attribute>Lardons</Attribute>
+			<Attribute>Poisson</Attribute>
+			<Attribute>Saumon</Attribute>
+			<Attribute>Sauce</Attribute>
+			<Attribute>Kebab</Attribute>
+			<Attribute>Sauce blanche</Attribute>
+			<Attribute>Légumes</Attribute>
+			<Attribute>Pomme de terre</Attribute>
+			<Attribute>Poivrons</Attribute>
+			<Attribute>Fruits</Attribute>
+			<Attribute>Olives</Attribute>
+			<Attribute>Base rouge</Attribute>
+			<Attribute>Base blanche</Attribute>
+			<Attribute>Oignons</Attribute>
+			<Attribute>Champignons</Attribute>
+			<Attribute>Fromage</Attribute>
+			<Attribute>Reblochon</Attribute>
+			<Attribute>Fromage à raclette</Attribute>
+			<Attribute>Mozarella</Attribute>
+			<Attribute>Emmental</Attribute>
+			<Attribute>Viande hachée</Attribute>
+			<Concept>
+				<ID>Concept_Pizzas_14</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Végétarienne</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Détective</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_12</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Détective</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_14</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_6</ID>
+				<Extent>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande rouge</Attribute_Ref>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_11</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_10</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_0</ID>
+				<Extent>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande rouge</Attribute_Ref>
+					<Attribute_Ref>Fromage à raclette</Attribute_Ref>
+					<Attribute_Ref>Champignons</Attribute_Ref>
+					<Attribute_Ref>Sauce blanche</Attribute_Ref>
+					<Attribute_Ref>Saumon</Attribute_Ref>
+					<Attribute_Ref>Base blanche</Attribute_Ref>
+					<Attribute_Ref>Viande blanche</Attribute_Ref>
+					<Attribute_Ref>Merguez</Attribute_Ref>
+					<Attribute_Ref>Reblochon</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+					<Attribute_Ref>Sauce</Attribute_Ref>
+					<Attribute_Ref>Viande hachée</Attribute_Ref>
+					<Attribute_Ref>Lardons</Attribute_Ref>
+					<Attribute_Ref>Kebab</Attribute_Ref>
+					<Attribute_Ref>Jambon</Attribute_Ref>
+					<Attribute_Ref>Poivrons</Attribute_Ref>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Pomme de terre</Attribute_Ref>
+					<Attribute_Ref>Poisson</Attribute_Ref>
+					<Attribute_Ref>Poulet</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Pepperoni</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_4</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_2</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_1</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_5</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_3</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_9</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Détective</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Base blanche</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Viande blanche</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_12</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_2</ID>
+				<Extent>
+					<Object_Ref>Détective</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Poulet</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Base blanche</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Viande blanche</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_9</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_1</ID>
+				<Extent>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande rouge</Attribute_Ref>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Merguez</Attribute_Ref>
+					<Attribute_Ref>Reblochon</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+					<Attribute_Ref>Viande hachée</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_8</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_6</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_5</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Lardons</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Base blanche</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Viande blanche</Attribute_Ref>
+					<Attribute_Ref>Pomme de terre</Attribute_Ref>
+					<Attribute_Ref>Reblochon</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_9</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_8</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_3</ID>
+				<Extent>
+					<Object_Ref>Kebab</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Viande rouge</Attribute_Ref>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Sauce blanche</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+					<Attribute_Ref>Sauce</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Kebab</Attribute_Ref>
+					<Attribute_Ref>Poivrons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_7</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_6</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_11</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_12</Concept_Ref>
+					<Concept_Ref>Concept_Pizzas_13</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_13</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Végétarienne</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_14</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_7</ID>
+				<Extent>
+					<Object_Ref>Végétarienne</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Poivrons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_10</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_10</ID>
+				<Extent>
+					<Object_Ref>Végétarienne</Object_Ref>
+					<Object_Ref>Kebab</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_13</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_4</ID>
+				<Extent>
+					<Object_Ref>Végétarienne</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Champignons</Attribute_Ref>
+					<Attribute_Ref>Base rouge</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Olives</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Poivrons</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+					<Attribute_Ref>Fruits</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_7</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Pizzas_8</ID>
+				<Extent>
+					<Object_Ref>Tartiflette</Object_Ref>
+					<Object_Ref>Koubiac</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>Légumes</Attribute_Ref>
+					<Attribute_Ref>Viande</Attribute_Ref>
+					<Attribute_Ref>Mozarella</Attribute_Ref>
+					<Attribute_Ref>Emmental</Attribute_Ref>
+					<Attribute_Ref>Oignons</Attribute_Ref>
+					<Attribute_Ref>Reblochon</Attribute_Ref>
+					<Attribute_Ref>Fromage</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Pizzas_11</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+		</Lattice>
+	</Step >
+</RCAExplore_Document>
