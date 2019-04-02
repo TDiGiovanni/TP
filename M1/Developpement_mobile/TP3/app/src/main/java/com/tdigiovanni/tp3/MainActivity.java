@@ -1,5 +1,7 @@
 package com.tdigiovanni.tp3;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.hardware.Camera;
 import android.hardware.Sensor;
@@ -8,6 +10,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,11 +23,13 @@ import java.util.List;
 import static java.lang.Math.abs;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
-    private static final float MIN_THRESHOLD = 5;
-    private static final float MAX_THRESHOLD = 10;
+    private static final float MIN_THRESHOLD = 10;
+    private static final float MAX_THRESHOLD = 15;
     private static final float SHAKE_THRESHOLD = 400;
+    private static final double DISTANCE_THRESHOLD = 0.1;
     private static final long REFRESH_RATE = 200;
 
+    private static int permissionRequest;
     private SensorManager sensorManager;
     private boolean flashlightOn = false;
     private long lastUpdate;
@@ -107,36 +113,44 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
                 // Direction detection
                 ImageView directionImage = findViewById(R.id.directionImage);
-                if (y < 0 && abs(y) > abs(x))
+                if (y > 0 && abs(y) > abs(x))
                     directionImage.setImageResource(R.drawable.down_arrow);
 
-                else if (y > 0 && abs(y) > abs(x))
+                else if (y < 0 && abs(y) > abs(x))
                     directionImage.setImageResource(R.drawable.up_arrow);
 
-                else if (x < 0 && abs(x) > abs(y))
+                else if (x > 0 && abs(x) > abs(y))
                     directionImage.setImageResource(R.drawable.left_arrow);
 
-                else if (x > 0 && abs(x) > abs(y))
+                else if (x < 0 && abs(x) > abs(y))
                     directionImage.setImageResource(R.drawable.right_arrow);
 
                 // Shake detection
                 float speed = abs(x + y + z - lastX - lastY - lastZ) / timeDifference * 10000;
                 if (speed > SHAKE_THRESHOLD) {
-                    Camera camera = Camera.open();
+                    // Ask if we don't have permission
+                    if (ContextCompat.checkSelfPermission(this,
+                            Manifest.permission.CAMERA)
+                            != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(this,
+                                new String[]{Manifest.permission.CAMERA},
+                                permissionRequest);
+                    } else { // Permission has already been granted
+                        Camera camera = Camera.open();
 
-                    if (flashlightOn) {
-                        Camera.Parameters parameters = camera.getParameters();
-                        parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-                        camera.setParameters(parameters);
-                        camera.startPreview();
+                        if (flashlightOn) {
+                            Camera.Parameters parameters = camera.getParameters();
+                            parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                            camera.setParameters(parameters);
+                            camera.startPreview();
 
-                        flashlightOn = true;
-                    }
-                    else {
-                        camera.stopPreview();
-                        camera.release();
+                            flashlightOn = true;
+                        } else {
+                            camera.stopPreview();
+                            camera.release();
 
-                        flashlightOn = false;
+                            flashlightOn = false;
+                        }
                     }
                 }
                 lastX = x;
@@ -150,15 +164,20 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             float distance = event.values[0]; // In meters
 
-            //if (distance too close)
-            closeObjectImage.setVisibility(View.VISIBLE);
-            //else
-            closeObjectImage.setVisibility(View.GONE);
+            if (distance < DISTANCE_THRESHOLD)
+                closeObjectImage.setVisibility(View.VISIBLE);
+            else
+                closeObjectImage.setVisibility(View.GONE);
         }
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 
     }
 }
