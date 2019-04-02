@@ -5,3 +5,10 @@ C:\Users\Clement\source\repos\BiblioWCF\BiblioWCF\obj\Debug\BiblioWCF.csprojAsse
 C:\Users\Clement\source\repos\BiblioWCF\BiblioWCF\obj\Debug\BiblioWCF.csproj.CoreCompileInputs.cache
 C:\Users\Clement\source\repos\BiblioWCF\BiblioWCF\obj\Debug\BiblioWCF.dll
 C:\Users\Clement\source\repos\BiblioWCF\BiblioWCF\obj\Debug\BiblioWCF.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\BiblioWCF\bin\Debug\BiblioWCF.dll.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\BiblioWCF\bin\Debug\BiblioWCF.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\BiblioWCF\bin\Debug\BiblioWCF.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\BiblioWCF\obj\Debug\BiblioWCF.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\BiblioWCF\obj\Debug\BiblioWCF.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\BiblioWCF\obj\Debug\BiblioWCF.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\BiblioWCF\obj\Debug\BiblioWCF.pdb

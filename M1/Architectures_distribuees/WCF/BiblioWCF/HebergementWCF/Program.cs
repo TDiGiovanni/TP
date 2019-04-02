@@ -17,7 +17,7 @@ namespace HebergementWCF
 
                     // The service can now be accessed
                     Console.WriteLine("The s e r v i c e is ready.");
-                    Console.WriteLine("Press <ENTER> to terminate s e r v i c e.");
+                    Console.WriteLine("Press enter to terminate s e r v i c e.");
                     Console.ReadLine();
 
                     // Close the ServiceHost
