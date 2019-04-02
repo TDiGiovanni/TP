@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Library.Models
+﻿namespace Library.Models
 {
     public class BookItem
     {
-        private static int COMMENT_NUMBER = 100; // Maximum number of comments
+        private static int COMMENT_NUMBER = 100; // Maximum number of comments on one book
 
         public string title;        // Title
         public string author;       // Author

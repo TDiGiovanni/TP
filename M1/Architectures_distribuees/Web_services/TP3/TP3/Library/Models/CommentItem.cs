@@ -2,9 +2,9 @@
 {
     public class CommentItem
     {
-        private static int idCount = 0;
+        private static int idCount = 0; // Count of comment number
 
-        public int id;
+        public int id;              // Id of the comment
         public SubscriberItem author;   // Author of the comment
         public string text;         // Actual comment
 

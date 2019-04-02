@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Controllers
 {
-    [Route("api/[subscriber]")]
+    [Route("api/subscriber")]
     [ApiController]
     public class SubscriberController : ControllerBase
     {

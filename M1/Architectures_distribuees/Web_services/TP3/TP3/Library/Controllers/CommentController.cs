@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Controllers
 {
-    [Route("api/[comment]")]
+    [Route("api/comment")]
     [ApiController]
     public class CommentController : ControllerBase
     {

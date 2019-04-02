@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Controllers
 {
-    [Route("api/[book]")]
+    [Route("api/book")]
     [ApiController]
     public class BookController : ControllerBase
     {
@@ -25,14 +25,14 @@ namespace Library.Controllers
             }
         }
 
-        // GET: api/Book
+        // GET: api/book
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BookItem>>> GetBookItems()
         {
             return await bookContext.BookItems.ToListAsync();
         }
 
-        // GET: api/Book/5
+        // GET: api/book/5
         [HttpGet("{isbn}")]
         public async Task<ActionResult<BookItem>> GetBookItem(int isbn)
         {
@@ -44,9 +44,9 @@ namespace Library.Controllers
             return item;
         }
 
-        // POST: api/Book
+        // POST: api/book
         [HttpPost]
-        public async Task<ActionResult<BookItem>> PostTodoItem(BookItem item)
+        public async Task<ActionResult<BookItem>> PostBookItem(BookItem item)
         {
             bookContext.BookItems.Add(item);
             await bookContext.SaveChangesAsync();
@@ -54,7 +54,7 @@ namespace Library.Controllers
             return CreatedAtAction(nameof(GetBookItem), new { isbn = item.isbn }, item);
         }
 
-        // PUT: api/Book/5
+        // PUT: api/book/5
         [HttpPut("{isbn}")]
         public async Task<IActionResult> PutBookItem(int isbn, BookItem item)
         {
@@ -69,7 +69,7 @@ namespace Library.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Book/5
+        // DELETE: api/book/5
         [HttpDelete("{isbn}")]
         public async Task<IActionResult> DeleteBookItem(int isbn)
         {

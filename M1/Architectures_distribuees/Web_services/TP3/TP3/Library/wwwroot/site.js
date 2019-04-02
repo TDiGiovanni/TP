@@ -1,11 +1,12 @@
-﻿const uri = "api/todo";
-let todos = null;
+﻿const uri = "api/book";
+let books = null;
+
 function getCount(data) {
     const el = $("#counter");
-    let name = "to-do";
+    let name = "Book";
     if (data) {
         if (data > 1) {
-            name = "to-dos";
+            name = "Book";
         }
         el.text(data + " " + name);
     } else {
@@ -23,7 +24,7 @@ function getData() {
         url: uri,
         cache: false,
         success: function (data) {
-            const tBody = $("#todos");
+            const tBody = $("#books");
 
             $(tBody).empty();
 
@@ -59,7 +60,7 @@ function getData() {
                 tr.appendTo(tBody);
             });
 
-            todos = data;
+            books = data;
         }
     });
 }
@@ -97,7 +98,7 @@ function deleteItem(id) {
 }
 
 function editItem(id) {
-    $.each(todos, function (key, item) {
+    $.each(books, function (key, item) {
         if (item.id === id) {
             $("#edit-name").val(item.name);
             $("#edit-id").val(item.id);
