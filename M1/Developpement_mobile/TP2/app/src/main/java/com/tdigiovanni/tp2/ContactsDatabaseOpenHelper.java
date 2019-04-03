@@ -78,6 +78,23 @@ public class ContactsDatabaseOpenHelper extends SQLiteOpenHelper {
 
     public boolean checkExistingContact(String name, String lastName, String number)
     {
+        database = this.getWritableDatabase();
 
+        String whereClause = COLUMN_NAME + " like ? AND " + COLUMN_LAST_NAME + " like ? AND " + COLUMN_NUMBER + " like ?";
+        String[] whereArgs = new String[] {
+                name,
+                lastName,
+                number
+        };
+
+        Cursor query = database.query(TABLE_CONTACT,
+                new String[]{COLUMN_ID, COLUMN_NAME, COLUMN_LAST_NAME, COLUMN_NUMBER},
+                whereClause,
+                whereArgs,
+                null,
+                null,
+                null);
+
+        return (query.getCount() != 0);
     }
 }

@@ -13,6 +13,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private static final float MIN_THRESHOLD = 10;
     private static final float MAX_THRESHOLD = 15;
     private static final float SHAKE_THRESHOLD = 400;
-    private static final double DISTANCE_THRESHOLD = 0.1;
+    private static final float DISTANCE_THRESHOLD = 1;
     private static final long REFRESH_RATE = 200;
 
     private static int permissionRequest;
@@ -50,10 +51,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         List<Sensor> sensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
         StringBuilder sensorDesc = new StringBuilder();
 
-        sensorDesc.append("All sensors available on the phone: \n\n");
-        for (Sensor sensor : sensors) {
+        sensorDesc.append("\nAll sensors available on the phone: \n\n");
+        for (Sensor sensor : sensors)
             sensorDesc.append(sensor.getName()).append("\n");
-        }
 
         TextView sensorTextView = new TextView(this);
         sensorTextView.setText(sensorDesc.toString());
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
             ImageView closeObjectImage = findViewById(R.id.closeObjectImage);
 
-            float distance = event.values[0]; // In meters
+            float distance = event.values[0]; // In m
 
             if (distance < DISTANCE_THRESHOLD)
                 closeObjectImage.setVisibility(View.VISIBLE);
@@ -173,11 +173,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
 
     }
 }

@@ -1,7 +1,6 @@
 package com.tdigiovanni.tp2;
 
 import android.app.IntentService;
-import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
@@ -35,27 +34,34 @@ public class CheckDatabaseService extends IntentService {
     {
         // Get all contacts from file
         String fileName = intent.getStringExtra("FILE_NAME");
-        ArrayList<String> allContacts = new ArrayList<String>();
-        try {
+        ArrayList<String> allContacts = new ArrayList<>();
+        try
+        {
             FileInputStream file = openFileInput(fileName);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(file));
             allContacts.add(bufferedReader.readLine());
             file.close();
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
 
+        ContactsDatabaseOpenHelper database = ContactsDatabaseOpenHelper.getInstance(this);
 
         for (String contact : allContacts)
         {
+            String[] parts = contact.split("_"); // Each element is text between commas
+            String name = parts[0];
+            String lastName = parts[1];
+            String number = parts[2];
+
             // Check if contacts are already in database
-            //if (!checkExistingContact())
+            if (!database.checkExistingContact(name, lastName, number))
                 // Add them otherwise
-                ContactsDatabaseOpenHelper database = ContactsDatabaseOpenHelper.getInstance(this);
-                database.addContact(
-                        intent.getStringExtra("CONTACT_NAME"),
-                        intent.getStringExtra("CONTACT_LAST_NAME"),
-                        intent.getStringExtra("CONTACT_NUMBER"));
+                database.addContact(name,
+                        lastName,
+                        number);
         }
     }
 }

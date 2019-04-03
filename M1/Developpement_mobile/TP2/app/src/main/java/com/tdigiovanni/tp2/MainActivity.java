@@ -32,12 +32,13 @@ public class MainActivity extends AppCompatActivity {
         addToFileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if ( TextUtils.isEmpty(nameEdit.getText())
+                if (TextUtils.isEmpty(nameEdit.getText())
                 || TextUtils.isEmpty(lastNameEdit.getText())
                 || TextUtils.isEmpty(numberEdit.getText()) )
                     Toast.makeText(MainActivity.this, "You must fill out all informations", Toast.LENGTH_SHORT).show();
 
-                else {
+                else
+                    {
                     /* Store in intent version
                     contactsInfos.add(lastNameEdit.getText() + " "
                             + nameEdit.getText() + " : "
@@ -46,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
                     intent.putStringArrayListExtra("CONTACT_INFOS", contactsInfos);
                     */
 
-                    String contactsInfos = lastNameEdit.getText() + " "
-                            + nameEdit.getText() + " : "
+                    String contactsInfos = lastNameEdit.getText() + "_"
+                            + nameEdit.getText() + "_"
                             + numberEdit.getText();
 
                     try {
@@ -65,13 +66,12 @@ public class MainActivity extends AppCompatActivity {
         showContactsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    Intent intent = new Intent(MainActivity.this, CheckDatabaseService.class);
-                    intent.putExtra("FILE_NAME", FILE_NAME);
-                    intent.putExtra("CONTACT_NAME", nameEdit.getText().toString());
-                    intent.putExtra("CONTACT_LAST_NAME", lastNameEdit.getText().toString());
-                    intent.putExtra("CONTACT_NUMBER", numberEdit.getText().toString());
+                Intent serviceIntent = new Intent(MainActivity.this, CheckDatabaseService.class);
+                serviceIntent.putExtra("FILE_NAME", FILE_NAME);
+                startService(serviceIntent);
 
-                    startService(intent);
+                Intent activityIntent = new Intent(MainActivity.this, ContactsActivity.class);
+                startActivity(activityIntent);
             }
         });
     }
