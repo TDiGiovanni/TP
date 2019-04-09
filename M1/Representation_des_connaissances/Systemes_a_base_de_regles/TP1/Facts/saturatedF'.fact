@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cogui>
+<graph id="fact__1613ce38-c85f-43c4-a5ab-fe7eb9d106e9" label="graphFromF_" nature="fact" set="Facts">
+<concept id="c__071b1b14-d1ac-4768-ab64-1d13d0531b95" idMarker="i_53ffdd1c-4812-4ab0-804e-1afd500f214b" idType="ct_e0d77b5a-67fa-4aa2-9479-533312e5ca78" referent="individual"/>
+<concept id="c__862ba831-998f-4e34-bb86-1f1fd1eb5eb9" idType="ct_bd09c867-53c0-481e-9c8e-43811ba3fc3d" name="X1"/>
+<concept id="c__1ecb4d9e-5816-4840-aec1-c769d06a7931" idType="ct_9ca05082-3c82-4884-b322-5de9f2fcdf6b" name="X2"/>
+<concept id="c__441e3906-39a0-459f-b466-22ce5501e09a" idMarker="i_dc4169af-bf34-445f-bd32-df133d49d0db" idType="ct_a178554e-5154-4500-af77-661ff1180c15" referent="individual"/>
+<concept id="c__ce081f06-c9eb-47cb-9e1b-46c1c63a1a2e" idType="ct_7e71c70d-cd26-43ab-bb40-79fcd4aaacef" name="X3"/>
+<concept id="c__b7c57d35-3430-4612-83cb-a4609adaca80" idMarker="i_a80d8bc8-8730-4f4f-b86c-a7862ac7a5b2" idType="ct_f51fb506-2f5d-4e4b-9d90-f3e776f53016" referent="individual"/>
+<concept id="c__68929169-e43d-4acd-b8c8-126fcc0390d9" idMarker="i_7bbac968-9f0b-42b7-a3c7-3532c63ac0e6" idType="ct_a178554e-5154-4500-af77-661ff1180c15" referent="individual"/>
+<concept id="c__bf3855ea-378d-4d72-8847-04262d99995c" idMarker="i_ee4ef415-13dd-4778-b025-c5643ddc5e67" idType="ct_f51fb506-2f5d-4e4b-9d90-f3e776f53016" referent="individual"/>
+<concept id="c__8778f4eb-14aa-4705-86b4-93aa9207dff4" idType="ct_f51fb506-2f5d-4e4b-9d90-f3e776f53016" name="X4"/>
+<relation id="r__046c10fe-4a49-49c2-9633-7db49c50d1ba" idType="rt_27070009-f637-4998-adc0-67cc506f3bca"/>
+<relation id="r__cfd49d58-119a-4112-b5e3-b5eae861b677" idType="rt_27070009-f637-4998-adc0-67cc506f3bca"/>
+<relation id="r__b74606b3-0bfe-40e8-8d3c-8889447edf5e" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__ca892433-1388-40e3-808a-c7cc92e835bb" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__a09d1b44-fdfc-41ae-adc1-106090fc0ec6" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__6ffd250d-df99-4bc4-b3f1-c800283a6439" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__9f80cec3-3a6f-4710-89c0-794c9d1a7d96" idType="rt_ffdd5d28-df1a-4cc1-a6ea-23d2710b71a8"/>
+<relation id="r__a5a3697a-a2d3-4978-ac67-9b3e6f74ae4a" idType="rt_e5fb6a31-288a-4576-8850-874067a5bf62"/>
+<relation id="r__67cbc3a1-af22-4620-bb35-1ceb2e5712ea" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5"/>
+<relation id="r__840f64b8-df3c-455f-aa7c-1994119b96a1" idType="rt_2fe4416a-eea6-4426-8b48-af5561f8ecb5"/>
+<edge cid="c__071b1b14-d1ac-4768-ab64-1d13d0531b95" label="1" rid="r__046c10fe-4a49-49c2-9633-7db49c50d1ba"/>
+<edge cid="c__862ba831-998f-4e34-bb86-1f1fd1eb5eb9" label="2" rid="r__046c10fe-4a49-49c2-9633-7db49c50d1ba"/>
+<edge cid="c__071b1b14-d1ac-4768-ab64-1d13d0531b95" label="1" rid="r__cfd49d58-119a-4112-b5e3-b5eae861b677"/>
+<edge cid="c__1ecb4d9e-5816-4840-aec1-c769d06a7931" label="2" rid="r__cfd49d58-119a-4112-b5e3-b5eae861b677"/>
+<edge cid="c__1ecb4d9e-5816-4840-aec1-c769d06a7931" label="1" rid="r__b74606b3-0bfe-40e8-8d3c-8889447edf5e"/>
+<edge cid="c__441e3906-39a0-459f-b466-22ce5501e09a" label="2" rid="r__b74606b3-0bfe-40e8-8d3c-8889447edf5e"/>
+<edge cid="c__ce081f06-c9eb-47cb-9e1b-46c1c63a1a2e" label="1" rid="r__ca892433-1388-40e3-808a-c7cc92e835bb"/>
+<edge cid="c__b7c57d35-3430-4612-83cb-a4609adaca80" label="2" rid="r__ca892433-1388-40e3-808a-c7cc92e835bb"/>
+<edge cid="c__ce081f06-c9eb-47cb-9e1b-46c1c63a1a2e" label="1" rid="r__a09d1b44-fdfc-41ae-adc1-106090fc0ec6"/>
+<edge cid="c__68929169-e43d-4acd-b8c8-126fcc0390d9" label="2" rid="r__a09d1b44-fdfc-41ae-adc1-106090fc0ec6"/>
+<edge cid="c__1ecb4d9e-5816-4840-aec1-c769d06a7931" label="1" rid="r__6ffd250d-df99-4bc4-b3f1-c800283a6439"/>
+<edge cid="c__bf3855ea-378d-4d72-8847-04262d99995c" label="2" rid="r__6ffd250d-df99-4bc4-b3f1-c800283a6439"/>
+<edge cid="c__1ecb4d9e-5816-4840-aec1-c769d06a7931" label="1" rid="r__9f80cec3-3a6f-4710-89c0-794c9d1a7d96"/>
+<edge cid="c__ce081f06-c9eb-47cb-9e1b-46c1c63a1a2e" label="2" rid="r__9f80cec3-3a6f-4710-89c0-794c9d1a7d96"/>
+<edge cid="c__862ba831-998f-4e34-bb86-1f1fd1eb5eb9" label="1" rid="r__a5a3697a-a2d3-4978-ac67-9b3e6f74ae4a"/>
+<edge cid="c__1ecb4d9e-5816-4840-aec1-c769d06a7931" label="2" rid="r__a5a3697a-a2d3-4978-ac67-9b3e6f74ae4a"/>
+<edge cid="c__862ba831-998f-4e34-bb86-1f1fd1eb5eb9" label="1" rid="r__67cbc3a1-af22-4620-bb35-1ceb2e5712ea"/>
+<edge cid="c__8778f4eb-14aa-4705-86b4-93aa9207dff4" label="2" rid="r__67cbc3a1-af22-4620-bb35-1ceb2e5712ea"/>
+<edge cid="c__1ecb4d9e-5816-4840-aec1-c769d06a7931" label="1" rid="r__840f64b8-df3c-455f-aa7c-1994119b96a1"/>
+<edge cid="c__862ba831-998f-4e34-bb86-1f1fd1eb5eb9" label="2" rid="r__840f64b8-df3c-455f-aa7c-1994119b96a1"/>
+</graph>
+</cogui>

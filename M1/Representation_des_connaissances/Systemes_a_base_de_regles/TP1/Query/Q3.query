@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<cogui>
+<graph id="Query/Q3.query" label="Q3" nature="query" set="Query">
+<concept id="c_36884751-0a64-4939-97c9-3274e0e136c7" idType="ct_e0d77b5a-67fa-4aa2-9479-533312e5ca78" x="310" y="185"/>
+<concept id="c_918bb5f7-f05b-418d-b449-08bcc6487712" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="370" y="455"/>
+<concept id="c_7e2b8b47-a43e-4576-ad47-08ffd063dfb3" idType="ct_79dcb22d-460c-416f-bc3f-ff443c1eacca" x="685" y="530"/>
+<concept id="c_54e2aecf-b8cf-4141-809a-55a52d428d20" idMarker="i_a80d8bc8-8730-4f4f-b86c-a7862ac7a5b2" idType="ct_f51fb506-2f5d-4e4b-9d90-f3e776f53016" referent="individual" x="150" y="630"/>
+<concept id="c_e3ea067c-8cac-4dbf-baa5-257307276e58" idType="ct_5d0ad500-04c7-4f71-8d47-e1aec3b3bea7" x="935" y="570"/>
+<relation id="r_bbcf3ecb-74e4-480e-93b6-a3af8c13f352" idType="rt_f28c3e9b-00e9-4ba2-b2be-a901c4b894a5" x="250" y="550"/>
+<relation id="r_d023b309-20ea-48dc-bf1d-4a093e532573" idType="rt_2fe4416a-eea6-4426-8b48-af5561f8ecb5" x="820" y="555"/>
+<relation id="r_ba1e6dde-660d-4064-b845-676708bb4217" idType="rt_ffdd5d28-df1a-4cc1-a6ea-23d2710b71a8" x="530" y="500"/>
+<relation id="r_e6315aae-58c8-4f58-bd06-0b4927e2ba90" idType="rt_27070009-f637-4998-adc0-67cc506f3bca" x="335" y="310"/>
+<edge cid="c_918bb5f7-f05b-418d-b449-08bcc6487712" label="1" rid="r_bbcf3ecb-74e4-480e-93b6-a3af8c13f352"/>
+<edge cid="c_54e2aecf-b8cf-4141-809a-55a52d428d20" label="2" rid="r_bbcf3ecb-74e4-480e-93b6-a3af8c13f352"/>
+<edge cid="c_7e2b8b47-a43e-4576-ad47-08ffd063dfb3" label="1" rid="r_d023b309-20ea-48dc-bf1d-4a093e532573"/>
+<edge cid="c_e3ea067c-8cac-4dbf-baa5-257307276e58" label="2" rid="r_d023b309-20ea-48dc-bf1d-4a093e532573"/>
+<edge cid="c_7e2b8b47-a43e-4576-ad47-08ffd063dfb3" label="1" rid="r_ba1e6dde-660d-4064-b845-676708bb4217"/>
+<edge cid="c_918bb5f7-f05b-418d-b449-08bcc6487712" label="2" rid="r_ba1e6dde-660d-4064-b845-676708bb4217"/>
+<edge cid="c_36884751-0a64-4939-97c9-3274e0e136c7" label="1" rid="r_e6315aae-58c8-4f58-bd06-0b4927e2ba90"/>
+<edge cid="c_918bb5f7-f05b-418d-b449-08bcc6487712" label="2" rid="r_e6315aae-58c8-4f58-bd06-0b4927e2ba90"/>
+</graph>
+</cogui>
