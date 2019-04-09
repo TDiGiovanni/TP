@@ -1,0 +1,7 @@
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\ClientMexWCF\bin\Debug\ClientMexWCF.exe.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\ClientMexWCF\bin\Debug\ClientMexWCF.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\ClientMexWCF\bin\Debug\ClientMexWCF.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\ClientMexWCF\obj\Debug\ClientMexWCF.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\ClientMexWCF\obj\Debug\ClientMexWCF.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\ClientMexWCF\obj\Debug\ClientMexWCF.exe
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\BiblioWCF\ClientMexWCF\obj\Debug\ClientMexWCF.pdb

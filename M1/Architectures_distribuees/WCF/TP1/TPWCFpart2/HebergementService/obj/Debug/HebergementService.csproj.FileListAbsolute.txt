@@ -1,0 +1,11 @@
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\bin\Debug\HebergementService.exe.config
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\bin\Debug\HebergementService.exe
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\bin\Debug\HebergementService.pdb
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\bin\Debug\share.dll
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\bin\Debug\share.pdb
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\bin\Debug\share.dll.config
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\obj\Debug\HebergementService.csprojAssemblyReference.cache
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\obj\Debug\HebergementService.csproj.CoreCompileInputs.cache
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\obj\Debug\HebergementService.csproj.CopyComplete
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\obj\Debug\HebergementService.exe
+C:\Users\Clement\source\repos\TPWCFpart2\HebergementService\obj\Debug\HebergementService.pdb
