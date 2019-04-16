@@ -1,0 +1,535 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#"
+     xml:base="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza"
+     xmlns:pizza="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#est_composee_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#est_composee_de">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#origine -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#origine">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizzaiolo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Blanche -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Blanche">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fruit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fruit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Ingredient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Ingredient"/>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Legume -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Legume">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizzaiolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizzaiolo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poisson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poisson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Rouge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Rouge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sans_viande -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sans_viande">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#est_composee_de"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Vegetarien -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Vegetarien">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#est_composee_de"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poisson"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Annexe_Pizza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Annexe_Pizza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizzaiolo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Champignon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Champignon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Legume"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Creme_fraiche -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Creme_fraiche">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Detective -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Detective">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Creme_fraiche"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Emmental"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poulet"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Annexe_Pizza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Emmental -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Emmental">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage_a_raclette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage_a_raclette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Jambon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Jambon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Blanche"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Kebab -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Kebab">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Emmental"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Oignon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Olive"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poivron"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_Tomate"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_blanche"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande_kebab"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Annexe_Pizza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Koubiac -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Koubiac">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Emmental"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Merguez"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Oignon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Olive"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Reblochon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_Tomate"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande_Hachee"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Annexe_Pizza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Lardon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Lardon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Blanche"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Merguez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Merguez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Rouge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Montagnard -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Montagnard">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Champignon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Creme_fraiche"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage_a_raclette"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Jambon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza_Hut"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Nordique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Nordique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Creme_fraiche"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Saumon"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza_Hut"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Oignon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Oignon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Legume"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Olive -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Olive">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fruit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pepperoni -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pepperoni">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Blanche"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Rouge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pepperoni_lover -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pepperoni_lover">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pepperoni"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_Tomate"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza_Hut"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza_Hut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza_Hut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizzaiolo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poivron -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poivron">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Legume"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pomme_de_terre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pomme_de_terre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Legume"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poulet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poulet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Blanche"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Queen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Queen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Champignon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Jambon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_Tomate"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza_Hut"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Raclette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Raclette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Creme_fraiche"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage_a_raclette"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Lardon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pomme_de_terre"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza_Hut"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Reblochon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Reblochon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_Tomate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_Tomate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_blanche -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_blanche">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Saumon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Saumon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poisson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Tartiflette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Tartiflette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Creme_fraiche"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Emmental"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Lardon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Oignon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pomme_de_terre"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Reblochon"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Annexe_Pizza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Vegetarienne -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Vegetarienne">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Pizza"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Champignon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Emmental"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Mozzarella"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Oignon"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Olive"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poivron"/>
+        <est_composee_de rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce_Tomate"/>
+        <origine rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Annexe_Pizza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande_Hachee -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande_Hachee">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Rouge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande_kebab -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande_kebab">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Rouge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fromage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Fruit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Legume"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Poisson"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Sauce"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduverger/ontologies/2019/3/pizza#Viande"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+
