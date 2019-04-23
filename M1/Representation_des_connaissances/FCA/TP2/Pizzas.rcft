@@ -1,0 +1,228 @@
+FormalContext Pizza
+algo fca
+|                    |Fine|Large|Petite|Moyenne|Grande|7-8€|9+€|
+|Pinocchio           |    |     |x     |       |      |    |   |
+|Marguerite          |    |     |x     |       |      |    |   |
+|Napolitaine         |    |     |x     |x      |      |    |   |
+|Rennes              |    |     |      |x      |      |    |   |
+|Silvio              |    |     |      |       |x     |    |   |
+|Delfina             |    |     |      |       |x     |    |   |
+|Mostarda            |    |     |x     |       |      |    |   |
+|Quatre saisons      |    |     |      |x      |      |    |   |
+|Pescatore           |    |     |      |x      |      |    |   |
+|Margarita           |    |     |x     |       |      |    |   |
+|Napolitaine         |    |     |x     |x      |      |    |   |
+|Venitienne          |    |     |      |x      |      |    |   |
+|Regina              |    |     |      |       |x     |    |   |
+|Seguin              |    |     |      |       |x     |    |   |
+|Tartiflette         |    |     |      |       |x     |    |   |
+|Roma                |    |     |      |       |x     |    |   |
+|Oceane              |    |     |      |       |      |x   |   |
+|Queen               |    |     |      |       |      |    |x  |
+|Pepperoni lovers    |    |     |      |       |      |x   |   |
+|Margherita          |    |     |      |       |      |    |x  |
+|Suprême             |    |     |      |       |      |x   |   |
+|Samourai            |    |     |      |       |      |    |x  |
+|Montagnarde         |    |     |      |       |      |    |x  |
+|Raclette            |    |     |      |       |      |    |x  |
+|Nordique            |    |     |      |       |      |    |x  |
+|Campagnarde         |    |     |      |       |      |    |x  |
+|Chèvre miel         |    |     |      |       |      |x   |   |
+|4 Fromages          |    |     |      |       |      |    |x  |
+|Chickenita pepperoni|    |     |      |       |      |    |x  |
+|Vegan Peppina       |    |     |      |       |      |    |x  |
+|Reine               |    |     |      |       |      |x   |   |
+|Forestiere          |    |     |      |       |      |    |x  |
+|Savoyarde           |    |     |      |       |      |    |x  |
+|Bacon Groovy        |    |     |      |       |      |    |x  |
+|Indienne            |x   |     |      |       |      |    |x  |
+|Saumon              |    |     |      |       |      |    |x  |
+|Tartiflette         |    |     |      |       |x     |    |   |
+|Végétarienne        |    |x    |      |       |      |    |   |
+|Kebab               |    |     |      |       |      |    |   |
+|Détective           |    |     |      |       |      |    |   |
+|Koubiac             |    |     |      |       |      |    |   |
+|Queen               |    |     |      |       |      |    |x  |
+|Pepperoni lovers    |    |     |      |       |      |x   |   |
+|Montagnard          |    |     |      |       |      |    |   |
+|Nordique            |    |     |      |       |      |    |x  |
+|Raclette            |    |     |      |       |      |    |x  |
+|Sétoise             |x   |     |      |       |      |    |   |
+|Américaine          |    |x    |      |       |      |    |   |
+|Bergère             |    |x    |      |       |      |    |   |
+|Fromage             |    |x    |      |       |      |    |   |
+|Végétarienne        |    |x    |      |       |      |    |   |
+|Neptune             |x   |     |      |       |      |    |   |
+|Arizona             |x   |     |      |       |      |    |   |
+|Indienne            |x   |     |      |       |      |    |x  |
+|Fromage             |    |x    |      |       |      |    |   |
+|Végétarienne        |    |x    |      |       |      |    |   |
+
+FormalContext Ingredient
+algo fca
+|                  |Viande|Légume|Fromage|Fruit|Mer|Sauce|Vegan|Végétarien|
+|Poulet            |x     |      |       |     |   |     |     |          |
+|Pepperoni         |x     |      |       |     |   |     |     |          |
+|Merguez           |x     |      |       |     |   |     |     |          |
+|Jambon            |x     |      |       |     |   |     |     |          |
+|Lardons           |x     |      |       |     |   |     |     |          |
+|Saumon            |      |      |       |     |x  |     |     |          |
+|Sauce blanche     |      |      |       |     |   |x    |     |x         |
+|Kebab             |x     |      |       |     |   |     |     |          |
+|Pomme de terre    |      |x     |       |     |   |     |x    |x         |
+|Poivrons          |      |x     |       |     |   |     |x    |x         |
+|Olives            |      |      |       |x    |   |     |x    |x         |
+|Oignons           |      |x     |       |     |   |     |x    |x         |
+|Champignons       |      |x     |       |     |   |     |x    |x         |
+|Mozarella         |      |      |x      |     |   |     |     |x         |
+|Emmental          |      |      |x      |     |   |     |     |x         |
+|Fromage à raclette|      |      |x      |     |   |     |     |x         |
+|Reblochon         |      |      |x      |     |   |     |     |x         |
+|Viande hachée     |x     |      |       |     |   |     |     |          |
+|Boeuf             |x     |      |       |     |   |     |     |          |
+|Miel              |      |      |       |     |   |x    |x    |x         |
+|Chèvre            |      |      |x      |     |   |     |     |x         |
+|Chorizo           |x     |      |       |     |   |     |     |          |
+|Thon              |      |      |       |     |x  |     |     |          |
+|Artichaut         |      |x     |       |     |   |     |x    |x         |
+|Moule             |      |      |       |     |x  |     |     |          |
+|Anchois           |      |      |       |     |x  |     |     |          |
+|Tomate            |      |x     |       |     |   |     |x    |x         |
+|Base rouge        |      |      |       |     |   |x    |x    |x         |
+|Base blanche      |      |      |       |     |   |x    |     |x         |
+
+FormalContext Restaurant
+algo fca
+|            |Montpellier|Chaine|
+|Pizza Hut   |x          |x     |
+|Annexe Pizza|x          |      |
+|Dominos     |x          |x     |
+|Fred Pizza  |x          |      |
+|Kosmos      |x          |      |
+|Gepetto     |x          |      |
+|Terrasse    |x          |      |
+
+RelationalContext HasIngredients
+source Pizza
+target Ingredient
+scaling exist 
+|                    |Poulet|Pepperoni|Merguez|Jambon|Lardons|Saumon|Sauce blanche|Kebab|Pomme de terre|Poivrons|Olives|Oignons|Champignons|Mozarella|Emmental|Fromage à raclette|Reblochon|Viande hachée|Boeuf|Miel|Chèvre|Chorizo|Thon|Artichaut|Moule|Anchois|Tomate|Base rouge|Base blanche|
+|Pinocchio           |      |         |       |x     |       |      |             |     |              |        |x     |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Marguerite          |      |         |       |      |       |      |             |     |              |        |x     |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |x     |x         |            |
+|Napolitaine         |      |         |       |      |       |      |             |     |              |        |x     |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |x      |x     |x         |            |
+|Rennes              |      |         |       |x     |       |      |             |     |              |        |      |       |x          |x        |        |                  |         |             |     |    |      |       |    |         |     |       |x     |x         |            |
+|Silvio              |      |         |       |      |x      |      |             |     |x             |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |x     |x         |            |
+|Delfina             |      |         |       |      |       |      |             |     |              |        |      |       |           |         |        |                  |         |             |     |x   |x     |       |    |         |     |       |      |          |x           |
+|Mostarda            |      |         |       |      |x      |      |             |     |              |        |      |       |x          |         |        |                  |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Quatre saisons      |      |         |       |      |       |      |             |     |              |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |x        |     |       |x     |x         |            |
+|Pescatore           |      |         |       |      |       |      |             |     |              |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |         |x    |       |x     |x         |            |
+|Margarita           |      |         |       |      |       |      |             |     |              |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |x     |x         |            |
+|Napolitaine         |      |         |       |      |       |      |             |     |              |        |x     |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |x      |x     |x         |            |
+|Venitienne          |      |         |       |x     |       |      |             |     |              |        |x     |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Regina              |      |         |       |      |       |      |             |     |              |        |      |       |           |x        |        |                  |         |             |     |x   |x     |       |    |         |     |       |      |          |x           |
+|Seguin              |      |         |       |      |x      |      |             |     |x             |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Tartiflette         |      |         |       |      |       |      |             |     |              |x       |x     |x      |x          |x        |x       |                  |         |             |     |    |      |       |    |x        |     |       |      |x         |x           |
+|Roma                |      |         |       |      |x      |      |             |     |              |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |         |x    |       |      |          |x           |
+|Oceane              |      |         |       |x     |       |      |             |     |              |        |      |       |x          |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Queen               |      |x        |       |      |       |      |             |     |              |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Pepperoni lovers    |      |         |       |      |       |x     |             |     |              |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |x           |
+|Margherita          |      |x        |       |      |       |      |             |     |              |        |      |x      |x          |x        |        |                  |         |             |x    |    |      |       |    |         |     |       |      |x         |            |
+|Suprême             |x     |         |x      |      |       |      |             |     |              |        |      |x      |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Samourai            |      |         |       |x     |       |      |             |     |              |        |      |       |x          |x        |        |x                 |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Montagnarde         |      |         |       |      |x      |      |             |     |x             |        |      |       |           |x        |        |x                 |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Raclette            |      |         |       |      |       |x     |             |     |              |        |x     |       |           |x        |x       |                  |         |             |     |    |      |       |x   |         |     |       |      |x         |x           |
+|Nordique            |      |         |       |      |x      |      |             |     |              |        |      |x      |x          |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Campagnarde         |      |         |       |      |       |      |             |     |              |        |      |       |           |x        |        |                  |         |             |     |    |x     |       |    |         |     |       |      |          |x           |
+|Chèvre miel         |      |         |x      |      |       |      |             |     |              |        |      |x      |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|4 Fromages          |      |         |       |      |       |      |             |     |              |        |      |       |           |x        |x       |                  |         |             |     |    |x     |       |    |         |     |       |      |x         |            |
+|Chickenita pepperoni|x     |x        |       |      |       |      |             |     |              |        |      |       |           |x        |x       |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Vegan Peppina       |      |         |       |      |       |      |             |     |              |        |      |x      |x          |         |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Reine               |      |         |       |x     |       |      |             |     |              |        |      |       |x          |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Forestiere          |      |         |       |x     |x      |      |             |     |              |        |      |x      |x          |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Savoyarde           |      |         |       |      |x      |      |             |     |x             |        |      |       |           |x        |        |                  |x        |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Bacon Groovy        |x     |         |       |x     |       |      |             |     |x             |        |      |x      |           |x        |        |                  |         |             |     |    |      |       |    |         |     |x      |      |          |x           |
+|Indienne            |x     |         |       |      |       |      |             |     |              |        |x     |x      |x          |x        |x       |                  |x        |             |x    |    |x     |       |    |         |     |       |      |x         |x           |
+|Saumon              |      |         |       |      |       |x     |             |     |x             |        |      |x      |           |x        |        |                  |         |             |     |    |      |       |    |         |     |x      |      |          |x           |
+|Tartiflette         |      |         |       |      |       |      |             |     |              |x       |x     |x      |x          |x        |x       |                  |         |             |     |    |      |       |    |x        |     |       |      |x         |x           |
+|Végétarienne        |      |         |       |      |       |      |x            |x    |x             |x       |x     |x      |x          |x        |x       |                  |         |             |     |    |      |       |x   |         |     |x      |      |x         |x           |
+|Kebab               |x     |         |       |      |       |      |             |     |              |        |      |       |           |x        |x       |                  |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Détective           |      |         |x      |      |       |      |             |     |              |        |x     |x      |           |x        |x       |                  |x        |x            |     |    |      |       |    |         |     |       |      |x         |            |
+|Koubiac             |      |         |       |x     |       |      |             |     |              |        |      |       |x          |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Queen               |      |x        |       |      |       |      |             |     |              |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Pepperoni lovers    |      |         |       |      |       |x     |             |     |              |        |      |       |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |x           |
+|Montagnard          |      |         |       |      |x      |      |             |     |x             |        |      |       |           |x        |        |x                 |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Nordique            |      |         |       |      |x      |      |             |     |              |        |      |x      |x          |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Raclette            |      |         |       |      |       |x     |             |     |              |        |x     |       |           |x        |x       |                  |         |             |     |    |      |       |x   |         |     |       |      |x         |x           |
+|Sétoise             |      |         |x      |      |       |      |             |     |              |        |x     |       |           |         |x       |                  |         |x            |     |    |      |x      |    |         |     |       |      |x         |            |
+|Américaine          |x     |         |x      |      |       |      |             |     |              |        |x     |       |x          |         |x       |                  |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Bergère             |      |         |       |      |       |      |             |     |              |        |x     |       |           |x        |x       |                  |x        |             |     |    |x     |       |    |         |     |       |      |          |x           |
+|Fromage             |      |         |       |x     |       |      |             |     |              |x       |x     |x      |x          |x        |x       |x                 |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Végétarienne        |      |         |       |      |       |      |x            |x    |x             |x       |x     |x      |x          |x        |x       |                  |         |             |     |    |      |       |x   |         |     |x      |      |x         |x           |
+|Neptune             |x     |         |x      |      |       |      |             |     |              |x       |x     |x      |           |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |x         |            |
+|Arizona             |x     |         |       |      |       |      |             |     |              |        |x     |       |x          |x        |        |                  |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Indienne            |x     |         |       |      |       |      |             |     |              |        |x     |x      |x          |x        |x       |                  |x        |             |x    |    |x     |       |    |         |     |       |      |x         |x           |
+|Fromage             |      |         |       |x     |       |      |             |     |              |x       |x     |x      |x          |x        |x       |x                 |         |             |     |    |      |       |    |         |     |       |      |          |x           |
+|Végétarienne        |      |         |       |      |       |      |x            |x    |x             |x       |x     |x      |x          |x        |x       |                  |         |             |     |    |      |       |x   |         |     |x      |      |x         |x           |
+
+RelationalContext IsInRestaurant
+source Pizza
+target Restaurant
+scaling exist 
+|                    |Pizza Hut|Annexe Pizza|Dominos|Fred Pizza|Kosmos|Gepetto|Terrasse|
+|Pinocchio           |         |            |       |          |      |x      |        |
+|Marguerite          |         |            |       |          |      |x      |        |
+|Napolitaine         |         |            |       |          |      |x      |x       |
+|Rennes              |         |            |       |          |      |x      |        |
+|Silvio              |         |            |       |          |      |x      |        |
+|Delfina             |         |            |       |          |      |x      |        |
+|Mostarda            |         |            |       |          |      |x      |        |
+|Quatre saisons      |         |            |       |          |      |x      |        |
+|Pescatore           |         |            |       |          |      |x      |        |
+|Margarita           |         |            |       |          |      |       |x       |
+|Napolitaine         |         |            |       |          |      |x      |x       |
+|Venitienne          |         |            |       |          |      |       |x       |
+|Regina              |         |            |       |          |      |       |x       |
+|Seguin              |         |            |       |          |      |       |x       |
+|Tartiflette         |         |x           |       |          |      |       |x       |
+|Roma                |         |            |       |          |      |       |x       |
+|Oceane              |         |            |       |          |      |       |x       |
+|Queen               |x        |            |       |          |      |       |        |
+|Pepperoni lovers    |x        |            |       |          |      |       |        |
+|Margherita          |x        |            |       |          |      |       |        |
+|Suprême             |x        |            |       |          |      |       |        |
+|Samourai            |x        |            |       |          |      |       |        |
+|Montagnarde         |x        |            |       |          |      |       |        |
+|Raclette            |x        |            |       |          |      |       |        |
+|Nordique            |x        |            |       |          |      |       |        |
+|Campagnarde         |x        |            |       |          |      |       |        |
+|Chèvre miel         |x        |            |       |          |      |       |        |
+|4 Fromages          |         |            |x      |          |      |       |        |
+|Chickenita pepperoni|         |            |x      |          |      |       |        |
+|Vegan Peppina       |         |            |x      |          |      |       |        |
+|Reine               |         |            |x      |          |      |       |        |
+|Forestiere          |         |            |x      |          |      |       |        |
+|Savoyarde           |         |            |x      |          |      |       |        |
+|Bacon Groovy        |         |            |x      |          |      |       |        |
+|Indienne            |         |            |x      |          |x     |       |        |
+|Saumon              |         |            |x      |          |      |       |        |
+|Tartiflette         |         |x           |       |          |      |       |x       |
+|Végétarienne        |         |x           |       |x         |x     |       |        |
+|Kebab               |         |x           |       |          |      |       |        |
+|Détective           |         |x           |       |          |      |       |        |
+|Koubiac             |         |x           |       |          |      |       |        |
+|Queen               |x        |            |       |          |      |       |        |
+|Pepperoni lovers    |x        |            |       |          |      |       |        |
+|Montagnard          |x        |            |       |          |      |       |        |
+|Nordique            |x        |            |       |          |      |       |        |
+|Raclette            |x        |            |       |          |      |       |        |
+|Sétoise             |         |            |       |x         |      |       |        |
+|Américaine          |         |            |       |x         |      |       |        |
+|Bergère             |         |            |       |x         |      |       |        |
+|Fromage             |         |            |       |x         |x     |       |        |
+|Végétarienne        |         |x           |       |x         |x     |       |        |
+|Neptune             |         |            |       |          |x     |       |        |
+|Arizona             |         |            |       |          |x     |       |        |
+|Indienne            |         |            |x      |          |x     |       |        |
+|Fromage             |         |            |       |x         |x     |       |        |
+|Végétarienne        |         |x           |       |x         |x     |       |        |
+

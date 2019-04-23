@@ -1,0 +1,14 @@
+FormalContext Ramzi_Fred_Kosmos
+algo fca
+|                   |Rouge|Blanche|Fine|Large|bacon|viande haché|jambon|lardons|merguez|poulet|chorizo|Viande|thon|saumon|fruit de mer|Poisson|emmental|mozzarella|reblochon|chèvre|roquefort|Fromage|champignons|pomme de terre|oignon|olives|poivrons|légumes|
+|Fred_Setoise       |x    |       |x   |     |     |            |      |       |       |      |       |      |x   |      |            |x      |x       |          |         |      |         |x      |           |              |      |x     |        |x      |
+|Fred_Americaine    |x    |       |    |x    |     |x           |      |       |x      |      |x      |x     |    |      |            |       |x       |          |         |      |         |x      |           |              |      |x     |        |x      |
+|Fred_Bergère       |     |x      |    |x    |     |            |      |       |x      |x     |       |x     |    |      |            |       |x       |          |         |      |         |x      |x          |              |      |x     |        |x      |
+|Fred_Fromage       |     |x      |    |x    |     |            |      |       |       |      |       |      |    |      |            |       |x       |x         |x        |x     |         |x      |           |              |      |x     |        |x      |
+|Fred_Végétarienne  |     |x      |    |x    |     |            |      |       |       |      |       |      |    |      |            |       |x       |          |         |      |         |x      |x          |              |x     |x     |x       |x      |
+|KOSMOS_Neptune     |     |x      |x   |     |     |            |      |       |       |      |       |      |x   |      |            |x      |        |x         |         |      |         |x      |           |              |x     |x     |        |x      |
+|KOSMOS_Arizona     |x    |       |x   |     |     |            |      |       |x      |x     |       |x     |    |      |            |       |        |x         |         |      |         |x      |           |              |x     |x     |x       |x      |
+|KOSMOS_L’indienne  |     |x      |x   |     |     |            |      |       |       |x     |       |x     |    |      |            |       |        |x         |         |      |         |x      |x          |              |      |x     |        |x      |
+|KOSMOS_Fromage     |x    |       |    |x    |     |            |      |       |       |      |       |      |    |      |            |       |x       |x         |x        |x     |x        |x      |           |              |      |x     |        |x      |
+|KOSMOS_Végétarienne|x    |       |x   |     |     |            |      |       |       |      |       |      |    |      |            |       |        |x         |         |      |         |x      |x          |x             |x     |x     |x       |x      |
+

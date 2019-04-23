@@ -1,0 +1,21 @@
+FormalContext Pizzas
+algo fca
+|                |Geppetto|Terrasse|Mozzarella|Jambon|Olives|Anchois|Champignon|Lardon|Pomme de terre|Miel|Chevre|Tomate|Artichaut|Moule|Base_tomate|Base_blanche|min6|6entre9|9entre11|sup11|
+|G_Pinocchio     |x       |        |x         |x     |x     |       |          |      |              |    |      |      |         |     |x          |            |x   |       |        |     |
+|G_Marguerite    |x       |        |x         |      |x     |       |          |      |              |    |      |x     |         |     |x          |            |    |x      |        |     |
+|G_Napolitaine   |x       |        |x         |      |x     |x      |          |      |              |    |      |x     |         |     |x          |            |    |x      |        |     |
+|G_Rennes        |x       |        |x         |x     |      |       |x         |      |              |    |      |x     |         |     |x          |            |    |       |x       |     |
+|G_Silvio        |x       |        |x         |      |      |       |          |x     |x             |    |      |x     |         |     |x          |            |    |       |        |x    |
+|G_Delfina       |x       |        |          |      |      |       |          |      |              |x   |x     |      |         |     |           |x           |    |       |        |x    |
+|G_Mostarda      |x       |        |          |      |      |       |x         |x     |              |    |      |      |         |     |           |x           |    |x      |        |     |
+|G_Quatre_saisons|x       |        |x         |      |      |       |          |      |              |    |      |x     |x        |     |x          |            |    |       |x       |     |
+|G_Pescatore     |x       |        |x         |      |      |       |          |      |              |    |      |x     |         |x    |x          |            |    |       |x       |     |
+|T_Margarita     |        |x       |x         |      |      |       |          |      |              |    |      |x     |         |     |x          |            |    |x      |        |     |
+|T_Napolitaine   |        |x       |x         |      |      |x      |          |      |              |    |      |x     |         |     |x          |            |    |       |x       |     |
+|T_Venitienne    |        |x       |x         |x     |x     |       |          |      |              |    |      |      |         |     |x          |            |    |       |x       |     |
+|T_Regina        |        |x       |x         |x     |      |       |x         |      |              |    |      |x     |         |     |x          |            |    |       |x       |     |
+|T_Seguin        |        |x       |x         |      |      |       |          |      |              |x   |x     |      |         |     |           |x           |    |       |        |x    |
+|T_Tartiflette   |        |x       |x         |      |      |       |          |x     |x             |    |      |      |         |     |           |x           |    |       |        |x    |
+|T_Roma          |        |x       |x         |      |      |       |x         |      |              |    |      |      |x        |     |           |x           |    |       |        |x    |
+|T_Oceane        |        |x       |x         |      |      |       |          |x     |              |    |      |      |         |x    |           |x           |    |       |        |x    |
+
