@@ -164,65 +164,16 @@ scaling exist
 |Fromage             |      |         |       |x     |       |      |             |     |              |x       |x     |x      |x          |x        |x       |x                 |         |             |     |    |      |       |    |         |     |       |      |          |x           |
 |Végétarienne        |      |         |       |      |       |      |x            |x    |x             |x       |x     |x      |x          |x        |x       |                  |         |             |     |    |      |       |x   |         |     |x      |      |x         |x           |
 
-RelationalContext IsInRestaurant
-source Pizza
-target Restaurant
+RelationalContext HasPizza
+source Restaurant
+target Pizza
 scaling exist 
-|                    |Pizza Hut|Annexe Pizza|Dominos|Fred Pizza|Kosmos|Gepetto|Terrasse|
-|Pinocchio           |         |            |       |          |      |x      |        |
-|Marguerite          |         |            |       |          |      |x      |        |
-|Napolitaine         |         |            |       |          |      |x      |x       |
-|Rennes              |         |            |       |          |      |x      |        |
-|Silvio              |         |            |       |          |      |x      |        |
-|Delfina             |         |            |       |          |      |x      |        |
-|Mostarda            |         |            |       |          |      |x      |        |
-|Quatre saisons      |         |            |       |          |      |x      |        |
-|Pescatore           |         |            |       |          |      |x      |        |
-|Margarita           |         |            |       |          |      |       |x       |
-|Napolitaine         |         |            |       |          |      |x      |x       |
-|Venitienne          |         |            |       |          |      |       |x       |
-|Regina              |         |            |       |          |      |       |x       |
-|Seguin              |         |            |       |          |      |       |x       |
-|Tartiflette         |         |x           |       |          |      |       |x       |
-|Roma                |         |            |       |          |      |       |x       |
-|Oceane              |         |            |       |          |      |       |x       |
-|Queen               |x        |            |       |          |      |       |        |
-|Pepperoni lovers    |x        |            |       |          |      |       |        |
-|Margherita          |x        |            |       |          |      |       |        |
-|Suprême             |x        |            |       |          |      |       |        |
-|Samourai            |x        |            |       |          |      |       |        |
-|Montagnarde         |x        |            |       |          |      |       |        |
-|Raclette            |x        |            |       |          |      |       |        |
-|Nordique            |x        |            |       |          |      |       |        |
-|Campagnarde         |x        |            |       |          |      |       |        |
-|Chèvre miel         |x        |            |       |          |      |       |        |
-|4 Fromages          |         |            |x      |          |      |       |        |
-|Chickenita pepperoni|         |            |x      |          |      |       |        |
-|Vegan Peppina       |         |            |x      |          |      |       |        |
-|Reine               |         |            |x      |          |      |       |        |
-|Forestiere          |         |            |x      |          |      |       |        |
-|Savoyarde           |         |            |x      |          |      |       |        |
-|Bacon Groovy        |         |            |x      |          |      |       |        |
-|Indienne            |         |            |x      |          |x     |       |        |
-|Saumon              |         |            |x      |          |      |       |        |
-|Tartiflette         |         |x           |       |          |      |       |x       |
-|Végétarienne        |         |x           |       |x         |x     |       |        |
-|Kebab               |         |x           |       |          |      |       |        |
-|Détective           |         |x           |       |          |      |       |        |
-|Koubiac             |         |x           |       |          |      |       |        |
-|Queen               |x        |            |       |          |      |       |        |
-|Pepperoni lovers    |x        |            |       |          |      |       |        |
-|Montagnard          |x        |            |       |          |      |       |        |
-|Nordique            |x        |            |       |          |      |       |        |
-|Raclette            |x        |            |       |          |      |       |        |
-|Sétoise             |         |            |       |x         |      |       |        |
-|Américaine          |         |            |       |x         |      |       |        |
-|Bergère             |         |            |       |x         |      |       |        |
-|Fromage             |         |            |       |x         |x     |       |        |
-|Végétarienne        |         |x           |       |x         |x     |       |        |
-|Neptune             |         |            |       |          |x     |       |        |
-|Arizona             |         |            |       |          |x     |       |        |
-|Indienne            |         |            |x      |          |x     |       |        |
-|Fromage             |         |            |       |x         |x     |       |        |
-|Végétarienne        |         |x           |       |x         |x     |       |        |
+|            |Pinocchio|Marguerite|Napolitaine|Rennes|Silvio|Delfina|Mostarda|Quatre saisons|Pescatore|Margarita|Napolitaine|Venitienne|Regina|Seguin|Tartiflette|Roma|Oceane|Queen|Pepperoni lovers|Margherita|Suprême|Samourai|Montagnarde|Raclette|Nordique|Campagnarde|Chèvre miel|4 Fromages|Chickenita pepperoni|Vegan Peppina|Reine|Forestiere|Savoyarde|Bacon Groovy|Indienne|Saumon|Tartiflette|Végétarienne|Kebab|Détective|Koubiac|Queen|Pepperoni lovers|Montagnard|Nordique|Raclette|Sétoise|Américaine|Bergère|Fromage|Végétarienne|Neptune|Arizona|Indienne|Fromage|Végétarienne|
+|Pizza Hut   |         |          |           |      |      |       |        |              |         |         |           |          |      |      |           |    |      |x    |x               |x         |x      |x       |x          |x       |x       |x          |x          |          |                    |             |     |          |         |            |        |      |           |            |     |         |       |x    |x               |x         |x       |x       |       |          |       |       |            |       |       |        |       |            |
+|Annexe Pizza|         |          |           |      |      |       |        |              |         |         |           |          |      |      |x          |    |      |     |                |          |       |        |           |        |        |           |           |          |                    |             |     |          |         |            |        |      |x          |x           |x    |x        |x      |     |                |          |        |        |       |          |       |       |x           |       |       |        |       |x           |
+|Dominos     |         |          |           |      |      |       |        |              |         |         |           |          |      |      |           |    |      |     |                |          |       |        |           |        |        |           |           |x         |x                   |x            |x    |x         |x        |x           |x       |x     |           |            |     |         |       |     |                |          |        |        |       |          |       |       |            |       |       |x       |       |            |
+|Fred Pizza  |         |          |           |      |      |       |        |              |         |         |           |          |      |      |           |    |      |     |                |          |       |        |           |        |        |           |           |          |                    |             |     |          |         |            |        |      |           |x           |     |         |       |     |                |          |        |        |x      |x         |x      |x      |x           |       |       |        |x      |x           |
+|Kosmos      |         |          |           |      |      |       |        |              |         |         |           |          |      |      |           |    |      |     |                |          |       |        |           |        |        |           |           |          |                    |             |     |          |         |            |x       |      |           |x           |     |         |       |     |                |          |        |        |       |          |       |x      |x           |x      |x      |x       |x      |x           |
+|Gepetto     |x        |x         |x          |x     |x     |x      |x       |x             |         |         |x          |          |      |      |           |    |      |     |                |          |       |        |           |        |        |           |           |          |                    |             |     |          |         |            |        |      |           |            |     |         |       |     |                |          |        |        |       |          |       |       |            |       |       |        |       |            |
+|Terrasse    |         |          |x          |      |      |       |        |              |x        |x        |x          |x         |x     |x     |x          |x   |x     |     |                |          |       |        |           |        |        |           |           |          |                    |             |     |          |         |            |        |      |x          |            |     |         |       |     |                |          |        |        |       |          |       |       |            |       |       |        |       |            |
 
