@@ -1,0 +1,11 @@
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\bin\Debug\ServiceRecettes.dll.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\bin\Debug\ServiceRecettes.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\bin\Debug\ServiceRecettes.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\bin\Debug\share.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\bin\Debug\share.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\bin\Debug\share.dll.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\obj\Debug\ServiceRecettes.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\obj\Debug\ServiceRecettes.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\obj\Debug\ServiceRecettes.csproj.CopyComplete
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\obj\Debug\ServiceRecettes.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\obj\Debug\ServiceRecettes.pdb

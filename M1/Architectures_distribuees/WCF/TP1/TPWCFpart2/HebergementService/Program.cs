@@ -1,6 +1,6 @@
-﻿using System;
+﻿using ServiceRecettes;
+using System;
 using System.ServiceModel;
-using share;
 
 namespace HebergementService
 {

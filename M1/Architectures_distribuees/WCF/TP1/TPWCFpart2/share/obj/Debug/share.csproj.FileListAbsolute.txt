@@ -12,3 +12,10 @@ C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TPWCFpart2\
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TPWCFpart2\share\obj\Debug\share.csproj.CoreCompileInputs.cache
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TPWCFpart2\share\obj\Debug\share.dll
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TPWCFpart2\share\obj\Debug\share.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\share\bin\Debug\share.dll.config
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\share\bin\Debug\share.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\share\bin\Debug\share.pdb
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\share\obj\Debug\share.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\share\obj\Debug\share.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\share\obj\Debug\share.dll
+C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\share\obj\Debug\share.pdb

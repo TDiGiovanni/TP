@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{022318CF-A28D-42C2-B54C-5439CA814D6E}</ProjectGuid>
+    <ProjectGuid>{FCAEAA5E-DE69-4ACA-990B-09E6392904E4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>HebergementService</RootNamespace>
     <AssemblyName>HebergementService</AssemblyName>
@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ServiceRecettes\ServiceRecettes.csproj">
+      <Project>{9b0deb2d-9851-4bb3-be75-ebee29c3fecc}</Project>
+      <Name>ServiceRecettes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\share\share.csproj">
       <Project>{929f88cb-0af1-4420-aaf4-ac428ba0ab5a}</Project>
       <Name>share</Name>
