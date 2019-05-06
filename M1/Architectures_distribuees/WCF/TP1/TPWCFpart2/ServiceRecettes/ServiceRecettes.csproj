@@ -48,11 +48,13 @@
     <Compile Include="Service.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\share\share.csproj">
-      <Project>{08038459-86cb-4658-93f1-adcdf34bc5c2}</Project>
+      <Project>{929f88cb-0af1-4420-aaf4-ac428ba0ab5a}</Project>
       <Name>share</Name>
     </ProjectReference>
   </ItemGroup>

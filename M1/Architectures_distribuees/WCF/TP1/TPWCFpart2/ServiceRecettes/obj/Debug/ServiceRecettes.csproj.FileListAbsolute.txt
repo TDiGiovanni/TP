@@ -9,3 +9,14 @@ C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpa
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\obj\Debug\ServiceRecettes.csproj.CopyComplete
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\obj\Debug\ServiceRecettes.dll
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\ServiceRecettes\obj\Debug\ServiceRecettes.pdb
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\bin\Debug\ServiceRecettes.dll.config
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\bin\Debug\ServiceRecettes.dll
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\bin\Debug\ServiceRecettes.pdb
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\bin\Debug\share.dll
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\bin\Debug\share.pdb
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\bin\Debug\share.dll.config
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\obj\Debug\ServiceRecettes.csprojAssemblyReference.cache
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\obj\Debug\ServiceRecettes.csproj.CoreCompileInputs.cache
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\obj\Debug\ServiceRecettes.csproj.CopyComplete
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\obj\Debug\ServiceRecettes.dll
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\ServiceRecettes\obj\Debug\ServiceRecettes.pdb

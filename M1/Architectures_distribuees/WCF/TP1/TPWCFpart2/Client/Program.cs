@@ -55,10 +55,21 @@ namespace Client
             serviceProxy.AddRecipe(r2);
 
             // Testing
-            Console.WriteLine(serviceProxy.GetRecipesByIngredient(i1.Name).ToString()); // Output should be: r1, r2
+            List<Recipe> result = serviceProxy.GetRecipesByIngredient(i1.Name);
+            Console.WriteLine("Recipes with i1:");
+            for (int i = 0; i < result.Count; i++)
+                Console.WriteLine(result[i].Title); // Output should be: r1, r2
+
+            Console.WriteLine("\nDeleting i2 from the list...");
             serviceProxy.DeleteFromCurrentRecipes(r2);
-            Console.WriteLine(serviceProxy.GetCurrentRecipes()); // Output should be: r1
-            Console.WriteLine(serviceProxy.GetRecipesByIngredient(i3.Name).ToString()); // Output should be: r2
+            result = serviceProxy.GetCurrentRecipes();
+            for (int i = 0; i < result.Count; i++)
+                Console.WriteLine(result[i].Title); // Output should be: r1
+            
+            result = serviceProxy.GetRecipesByIngredient(i3.Name);
+            Console.WriteLine("\nRecipes with i3:");
+            for (int i = 0; i < result.Count; i++)
+                Console.WriteLine(result[i].Title); // Output should be: r2
 
             // End
             Console.WriteLine("Enter anything to leave");

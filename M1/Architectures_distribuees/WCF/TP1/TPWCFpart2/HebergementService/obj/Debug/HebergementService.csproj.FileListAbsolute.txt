@@ -12,3 +12,17 @@ C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpa
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\HebergementService\obj\Debug\HebergementService.csproj.CopyComplete
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\HebergementService\obj\Debug\HebergementService.exe
 C:\Users\Thomas\Documents\GitHub\TP\M1\Architectures_distribuees\WCF\TP1\TPWCFpart2\HebergementService\obj\Debug\HebergementService.pdb
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\bin\Debug\HebergementService.exe.config
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\bin\Debug\HebergementService.exe
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\bin\Debug\HebergementService.pdb
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\bin\Debug\ServiceRecettes.dll
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\bin\Debug\share.dll
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\bin\Debug\ServiceRecettes.pdb
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\bin\Debug\ServiceRecettes.dll.config
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\bin\Debug\share.pdb
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\bin\Debug\share.dll.config
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\obj\Debug\HebergementService.csprojAssemblyReference.cache
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\obj\Debug\HebergementService.csproj.CoreCompileInputs.cache
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\obj\Debug\HebergementService.csproj.CopyComplete
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\obj\Debug\HebergementService.exe
+C:\Users\Clement\source\repos\TPWCFpart2_DiGiovanni_Manniez\HebergementService\obj\Debug\HebergementService.pdb
