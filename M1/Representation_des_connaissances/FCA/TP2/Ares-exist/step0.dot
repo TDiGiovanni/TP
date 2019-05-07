@@ -1,0 +1,52 @@
+digraph G { 
+	rankdir=BT;
+subgraph Pizza { 
+label="Pizza";
+1 [shape=record,label="{Concept_Pizza_1||Napolitaine\n}"];
+2 [shape=record,label="{Concept_Pizza_3|Fine\n|Sétoise\nNeptune\nArizona\n}"];
+3 [shape=record,label="{Concept_Pizza_2|Large\n|Végétarienne\nAméricaine\nBergère\nFromage\n}"];
+4 [shape=record,label="{Concept_Pizza_6|Petite\n|Pinocchio\nMarguerite\nMostarda\nMargarita\n}"];
+5 [shape=record,label="{Concept_Pizza_5|Moyenne\n|Rennes\nQuatre saisons\nPescatore\nVenitienne\n}"];
+6 [shape=record,label="{Concept_Pizza_4|7-8€\n|Oceane\nPepperoni lovers\nSuprême\nChèvre miel\nReine\n}"];
+7 [shape=record,label="{Concept_Pizza_7|Grande\n|Silvio\nDelfina\nRegina\nSeguin\nTartiflette\nRoma\n}"];
+8 [shape=record,label="{Concept_Pizza_9||Napolitaine\nTartiflette\nKebab\nDétective\nKoubiac\nQueen\nPepperoni lovers\nMontagnard\nNordique\nRaclette\nVégétarienne\nIndienne\nFromage\nVégétarienne\n}"];
+9 [shape=record,label="{Concept_Pizza_0||Indienne\n}"];
+10 [shape=record,label="{Concept_Pizza_8|9+€\n|Queen\nMargherita\nSamourai\nMontagnarde\nRaclette\nNordique\nCampagnarde\n4 Fromages\nChickenita pepperoni\nVegan Peppina\nForestiere\nSavoyarde\nBacon Groovy\nSaumon\n}"];
+	9 -> 2
+	1 -> 4
+	1 -> 5
+	6 -> 8
+	2 -> 8
+	4 -> 8
+	5 -> 8
+	7 -> 8
+	3 -> 8
+	10 -> 8
+	9 -> 10
+}
+subgraph Ingredient { 
+label="Ingredient";
+11 [shape=record,label="{Concept_Ingredient_0|Fruit\n|Olives\n}"];
+12 [shape=record,label="{Concept_Ingredient_1||Miel\nBase rouge\n}"];
+13 [shape=record,label="{Concept_Ingredient_3|Mer\n|Saumon\nThon\nMoule\nAnchois\n}"];
+14 [shape=record,label="{Concept_Ingredient_2|Sauce\n|Sauce blanche\nBase blanche\n}"];
+15 [shape=record,label="{Concept_Ingredient_4|Fromage\n|Mozarella\nEmmental\nFromage à raclette\nReblochon\nChèvre\n}"];
+16 [shape=record,label="{Concept_Ingredient_5|Légume\n|Pomme de terre\nPoivrons\nOignons\nChampignons\nArtichaut\nTomate\n}"];
+17 [shape=record,label="{Concept_Ingredient_7|Viande\n|Poulet\nPepperoni\nMerguez\nJambon\nLardons\nKebab\nViande hachée\nBoeuf\nChorizo\n}"];
+18 [shape=record,label="{Concept_Ingredient_6|Vegan\n|}"];
+19 [shape=record,label="{Concept_Ingredient_8|Végétarien\n|}"];
+	12 -> 14
+	16 -> 18
+	11 -> 18
+	12 -> 18
+	18 -> 19
+	14 -> 19
+	15 -> 19
+}
+subgraph Restaurant { 
+label="Restaurant";
+20 [shape=record,label="{Concept_Restaurant_1|Montpellier\n|Annexe Pizza\nFred Pizza\nKosmos\nGepetto\nTerrasse\n}"];
+21 [shape=record,label="{Concept_Restaurant_0|Chaine\n|Pizza Hut\nDominos\n}"];
+	21 -> 20
+}
+}

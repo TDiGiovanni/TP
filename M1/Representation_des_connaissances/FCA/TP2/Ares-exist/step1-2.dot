@@ -1,0 +1,42 @@
+digraph G { 
+	rankdir=BT;
+	margin=0;
+	node [margin="0.03,0.03",fontname="DejaVu Sans"];
+	ranksep=0.3;
+	nodesep=0.2;
+//graph[label="name:Restaurant,concept number:14,object number:7,attribute number:12"
+107 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_4</td></tr><tr><td><br/></td></tr><tr><td>Dominos<br/></td></tr></table>>];
+111 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_2</td></tr><tr><td><br/></td></tr><tr><td>Terrasse<br/></td></tr></table>>];
+113 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_5</td></tr><tr><td><br/></td></tr><tr><td>Annexe Pizza<br/></td></tr></table>>];
+115 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_3</td></tr><tr><td><br/></td></tr><tr><td>Kosmos<br/></td></tr></table>>];
+105 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_0</td></tr><tr><td>Chaine<br/></td></tr><tr><td>Pizza Hut<br/></td></tr></table>>];
+106 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_6</td></tr><tr><td>exist HasPizza(Concept_Pizza_1)<br/>exist HasPizza(Concept_Pizza_6)<br/>exist HasPizza(Concept_Pizza_5)<br/></td></tr><tr><td>Gepetto<br/></td></tr></table>>];
+109 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_7</td></tr><tr><td><br/></td></tr><tr><td>Fred Pizza<br/></td></tr></table>>];
+116 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_8</td></tr><tr><td>exist HasPizza(Concept_Pizza_0)<br/></td></tr><tr><td><br/></td></tr></table>>];
+108 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_9</td></tr><tr><td>exist HasPizza(Concept_Pizza_3)<br/></td></tr><tr><td><br/></td></tr></table>>];
+110 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_11</td></tr><tr><td>exist HasPizza(Concept_Pizza_2)<br/></td></tr><tr><td><br/></td></tr></table>>];
+112 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_12</td></tr><tr><td>exist HasPizza(Concept_Pizza_4)<br/></td></tr><tr><td><br/></td></tr></table>>];
+114 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_10</td></tr><tr><td>exist HasPizza(Concept_Pizza_7)<br/></td></tr><tr><td><br/></td></tr></table>>];
+104 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_1</td></tr><tr><td>Montpellier<br/>exist HasPizza(Concept_Pizza_9)<br/></td></tr><tr><td><br/></td></tr></table>>];
+117 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_13</td></tr><tr><td>exist HasPizza(Concept_Pizza_8)<br/></td></tr><tr><td><br/></td></tr></table>>];
+	107:p -> 105:p
+	111:p -> 106:p
+	115:p -> 109:p
+	115:p -> 116:p
+	107:p -> 116:p
+	116:p -> 108:p
+	109:p -> 108:p
+	113:p -> 110:p
+	109:p -> 110:p
+	105:p -> 112:p
+	111:p -> 112:p
+	113:p -> 114:p
+	106:p -> 114:p
+	117:p -> 104:p
+	110:p -> 104:p
+	112:p -> 104:p
+	114:p -> 104:p
+	108:p -> 104:p
+	105:p -> 117:p
+	116:p -> 117:p
+}

@@ -1,0 +1,13 @@
+digraph G { 
+	rankdir=BT;
+	margin=0;
+	node [margin="0.03,0.03",fontname="DejaVu Sans"];
+	ranksep=0.3;
+	nodesep=0.2;
+//graph[label="name:Restaurant,concept number:3,object number:7,attribute number:13"
+53 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_1</td></tr><tr><td>Montpellier<br/>forall HasPizza(Concept_Pizza_10)<br/></td></tr><tr><td>Annexe Pizza<br/>Fred Pizza<br/>Kosmos<br/>Gepetto<br/>Terrasse<br/></td></tr></table>>];
+54 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_0</td></tr><tr><td>Chaine<br/></td></tr><tr><td>Pizza Hut<br/>Dominos<br/></td></tr></table>>];
+55 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_2</td></tr><tr><td>forall HasPizza(Concept_Pizza_4)<br/>forall HasPizza(Concept_Pizza_0)<br/>forall HasPizza(Concept_Pizza_3)<br/>forall HasPizza(Concept_Pizza_7)<br/>forall HasPizza(Concept_Pizza_2)<br/>forall HasPizza(Concept_Pizza_6)<br/>forall HasPizza(Concept_Pizza_8)<br/>forall HasPizza(Concept_Pizza_5)<br/>forall HasPizza(Concept_Pizza_1)<br/>forall HasPizza(Concept_Pizza_9)<br/></td></tr><tr><td><br/></td></tr></table>>];
+	54:p -> 53:p
+	55:p -> 54:p
+}

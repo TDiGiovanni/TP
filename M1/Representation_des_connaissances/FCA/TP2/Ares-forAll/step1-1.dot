@@ -1,0 +1,24 @@
+digraph G { 
+	rankdir=BT;
+	margin=0;
+	node [margin="0.03,0.03",fontname="DejaVu Sans"];
+	ranksep=0.3;
+	nodesep=0.2;
+//graph[label="name:Ingredient,concept number:9,object number:29,attribute number:8"
+44 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_0</td></tr><tr><td>Fruit<br/></td></tr><tr><td>Olives<br/></td></tr></table>>];
+47 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_1</td></tr><tr><td><br/></td></tr><tr><td>Miel<br/>Base rouge<br/></td></tr></table>>];
+45 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_3</td></tr><tr><td>Mer<br/></td></tr><tr><td>Saumon<br/>Thon<br/>Moule<br/>Anchois<br/></td></tr></table>>];
+46 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_2</td></tr><tr><td>Sauce<br/></td></tr><tr><td>Sauce blanche<br/>Base blanche<br/></td></tr></table>>];
+43 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_4</td></tr><tr><td>Fromage<br/></td></tr><tr><td>Mozarella<br/>Emmental<br/>Fromage à raclette<br/>Reblochon<br/>Chèvre<br/></td></tr></table>>];
+42 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_5</td></tr><tr><td>Légume<br/></td></tr><tr><td>Pomme de terre<br/>Poivrons<br/>Oignons<br/>Champignons<br/>Artichaut<br/>Tomate<br/></td></tr></table>>];
+41 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_7</td></tr><tr><td>Viande<br/></td></tr><tr><td>Poulet<br/>Pepperoni<br/>Merguez<br/>Jambon<br/>Lardons<br/>Kebab<br/>Viande hachée<br/>Boeuf<br/>Chorizo<br/></td></tr></table>>];
+48 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_6</td></tr><tr><td>Vegan<br/></td></tr><tr><td><br/></td></tr></table>>];
+49 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_8</td></tr><tr><td>Végétarien<br/></td></tr><tr><td><br/></td></tr></table>>];
+	47:p -> 46:p
+	42:p -> 48:p
+	44:p -> 48:p
+	47:p -> 48:p
+	48:p -> 49:p
+	46:p -> 49:p
+	43:p -> 49:p
+}

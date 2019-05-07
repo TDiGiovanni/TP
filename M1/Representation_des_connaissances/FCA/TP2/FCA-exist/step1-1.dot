@@ -1,0 +1,35 @@
+digraph G { 
+	rankdir=BT;
+	margin=0;
+	node [margin="0.03,0.03",fontname="DejaVu Sans"];
+	ranksep=0.3;
+	nodesep=0.2;
+//graph[label="name:Ingredient,concept number:11,object number:29,attribute number:8"
+117 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_10</td></tr><tr><td><br/></td></tr><tr><td><br/></td></tr></table>>];
+118 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_8</td></tr><tr><td>Viande<br/></td></tr><tr><td>Poulet<br/>Pepperoni<br/>Merguez<br/>Jambon<br/>Lardons<br/>Kebab<br/>Viande hachée<br/>Boeuf<br/>Chorizo<br/></td></tr></table>>];
+119 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_0</td></tr><tr><td><br/></td></tr><tr><td><br/></td></tr></table>>];
+120 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_6</td></tr><tr><td>Légume<br/></td></tr><tr><td>Pomme de terre<br/>Poivrons<br/>Oignons<br/>Champignons<br/>Artichaut<br/>Tomate<br/></td></tr></table>>];
+121 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_5</td></tr><tr><td>Fromage<br/></td></tr><tr><td>Mozarella<br/>Emmental<br/>Fromage à raclette<br/>Reblochon<br/>Chèvre<br/></td></tr></table>>];
+122 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_1</td></tr><tr><td>Fruit<br/></td></tr><tr><td>Olives<br/></td></tr></table>>];
+123 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_4</td></tr><tr><td>Mer<br/></td></tr><tr><td>Saumon<br/>Thon<br/>Moule<br/>Anchois<br/></td></tr></table>>];
+124 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_3</td></tr><tr><td>Sauce<br/></td></tr><tr><td>Sauce blanche<br/>Base blanche<br/></td></tr></table>>];
+125 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_2</td></tr><tr><td><br/></td></tr><tr><td>Miel<br/>Base rouge<br/></td></tr></table>>];
+126 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_7</td></tr><tr><td>Vegan<br/></td></tr><tr><td><br/></td></tr></table>>];
+127 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Ingredient_9</td></tr><tr><td>Végétarien<br/></td></tr><tr><td><br/></td></tr></table>>];
+	118:p -> 117:p
+	127:p -> 117:p
+	123:p -> 117:p
+	119:p -> 118:p
+	119:p -> 120:p
+	119:p -> 121:p
+	119:p -> 122:p
+	119:p -> 123:p
+	125:p -> 124:p
+	119:p -> 125:p
+	120:p -> 126:p
+	122:p -> 126:p
+	125:p -> 126:p
+	121:p -> 127:p
+	124:p -> 127:p
+	126:p -> 127:p
+}

@@ -1,0 +1,60 @@
+digraph G { 
+	rankdir=BT;
+	margin=0;
+	node [margin="0.03,0.03",fontname="DejaVu Sans"];
+	ranksep=0.3;
+	nodesep=0.2;
+//graph[label="name:Restaurant,concept number:21,object number:7,attribute number:59"
+203 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_4</td></tr><tr><td>exist HasPizza(Concept_Pizza_11)<br/>exist HasPizza(Concept_Pizza_22)<br/></td></tr><tr><td>Dominos<br/></td></tr></table>>];
+205 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_2</td></tr><tr><td>exist HasPizza(Concept_Pizza_14)<br/>exist HasPizza(Concept_Pizza_16)<br/></td></tr><tr><td>Terrasse<br/></td></tr></table>>];
+207 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_3</td></tr><tr><td><br/></td></tr><tr><td>Kosmos<br/></td></tr></table>>];
+208 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_5</td></tr><tr><td><br/></td></tr><tr><td>Annexe Pizza<br/></td></tr></table>>];
+210 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_15</td></tr><tr><td>exist HasPizza(Concept_Pizza_12)<br/>exist HasPizza(Concept_Pizza_13)<br/></td></tr><tr><td>Pizza Hut<br/></td></tr></table>>];
+211 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_14</td></tr><tr><td>exist HasPizza(Concept_Pizza_18)<br/>exist HasPizza(Concept_Pizza_20)<br/>exist HasPizza(Concept_Pizza_17)<br/>exist HasPizza(Concept_Pizza_19)<br/></td></tr><tr><td>Gepetto<br/></td></tr></table>>];
+201 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_0</td></tr><tr><td>Chaine<br/></td></tr><tr><td><br/></td></tr></table>>];
+202 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_6</td></tr><tr><td>exist HasPizza(Concept_Pizza_1)<br/>exist HasPizza(Concept_Pizza_25)<br/>exist HasPizza(Concept_Pizza_26)<br/>exist HasPizza(Concept_Pizza_24)<br/>exist HasPizza(Concept_Pizza_32)<br/>exist HasPizza(Concept_Pizza_36)<br/>exist HasPizza(Concept_Pizza_6)<br/>exist HasPizza(Concept_Pizza_5)<br/></td></tr><tr><td><br/></td></tr></table>>];
+204 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_8</td></tr><tr><td>exist HasPizza(Concept_Pizza_0)<br/>exist HasPizza(Concept_Pizza_21)<br/>exist HasPizza(Concept_Pizza_29)<br/></td></tr><tr><td><br/></td></tr></table>>];
+206 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_16</td></tr><tr><td>exist HasPizza(Concept_Pizza_15)<br/></td></tr><tr><td><br/></td></tr></table>>];
+213 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_7</td></tr><tr><td><br/></td></tr><tr><td>Fred Pizza<br/></td></tr></table>>];
+209 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_11</td></tr><tr><td>exist HasPizza(Concept_Pizza_10)<br/>exist HasPizza(Concept_Pizza_28)<br/>exist HasPizza(Concept_Pizza_27)<br/>exist HasPizza(Concept_Pizza_2)<br/></td></tr><tr><td><br/></td></tr></table>>];
+212 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_13</td></tr><tr><td>exist HasPizza(Concept_Pizza_23)<br/>exist HasPizza(Concept_Pizza_31)<br/>exist HasPizza(Concept_Pizza_33)<br/>exist HasPizza(Concept_Pizza_38)<br/>exist HasPizza(Concept_Pizza_41)<br/>exist HasPizza(Concept_Pizza_46)<br/>exist HasPizza(Concept_Pizza_8)<br/></td></tr><tr><td><br/></td></tr></table>>];
+214 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_9</td></tr><tr><td>exist HasPizza(Concept_Pizza_30)<br/>exist HasPizza(Concept_Pizza_3)<br/></td></tr><tr><td><br/></td></tr></table>>];
+215 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_10</td></tr><tr><td>exist HasPizza(Concept_Pizza_35)<br/>exist HasPizza(Concept_Pizza_7)<br/></td></tr><tr><td><br/></td></tr></table>>];
+216 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_12</td></tr><tr><td>exist HasPizza(Concept_Pizza_34)<br/>exist HasPizza(Concept_Pizza_4)<br/></td></tr><tr><td><br/></td></tr></table>>];
+219 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_17</td></tr><tr><td>exist HasPizza(Concept_Pizza_39)<br/>exist HasPizza(Concept_Pizza_43)<br/></td></tr><tr><td><br/></td></tr></table>>];
+217 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_18</td></tr><tr><td>exist HasPizza(Concept_Pizza_37)<br/></td></tr><tr><td><br/></td></tr></table>>];
+218 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_20</td></tr><tr><td>exist HasPizza(Concept_Pizza_40)<br/>exist HasPizza(Concept_Pizza_42)<br/></td></tr><tr><td><br/></td></tr></table>>];
+220 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_19</td></tr><tr><td>exist HasPizza(Concept_Pizza_44)<br/></td></tr><tr><td><br/></td></tr></table>>];
+200 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Restaurant_1</td></tr><tr><td>Montpellier<br/>exist HasPizza(Concept_Pizza_45)<br/>exist HasPizza(Concept_Pizza_47)<br/>exist HasPizza(Concept_Pizza_48)<br/>exist HasPizza(Concept_Pizza_49)<br/>exist HasPizza(Concept_Pizza_50)<br/>exist HasPizza(Concept_Pizza_51)<br/>exist HasPizza(Concept_Pizza_53)<br/>exist HasPizza(Concept_Pizza_52)<br/>exist HasPizza(Concept_Pizza_54)<br/>exist HasPizza(Concept_Pizza_55)<br/>exist HasPizza(Concept_Pizza_56)<br/>exist HasPizza(Concept_Pizza_9)<br/></td></tr><tr><td><br/></td></tr></table>>];
+	210:p -> 201:p
+	203:p -> 201:p
+	211:p -> 202:p
+	205:p -> 202:p
+	203:p -> 204:p
+	207:p -> 204:p
+	208:p -> 206:p
+	205:p -> 206:p
+	207:p -> 213:p
+	208:p -> 209:p
+	213:p -> 209:p
+	201:p -> 212:p
+	204:p -> 212:p
+	204:p -> 214:p
+	213:p -> 214:p
+	206:p -> 215:p
+	202:p -> 215:p
+	201:p -> 216:p
+	205:p -> 216:p
+	214:p -> 219:p
+	209:p -> 219:p
+	215:p -> 217:p
+	209:p -> 217:p
+	210:p -> 218:p
+	217:p -> 218:p
+	219:p -> 220:p
+	217:p -> 220:p
+	218:p -> 200:p
+	212:p -> 200:p
+	220:p -> 200:p
+	216:p -> 200:p
+}

@@ -1,0 +1,182 @@
+digraph G { 
+	rankdir=BT;
+	margin=0;
+	node [margin="0.03,0.03",fontname="DejaVu Sans"];
+	ranksep=0.3;
+	nodesep=0.2;
+//graph[label="name:Pizza,concept number:57,object number:56,attribute number:16"
+122 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_1</td></tr><tr><td><br/></td></tr><tr><td>Napolitaine<br/></td></tr></table>>];
+126 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_0</td></tr><tr><td><br/></td></tr><tr><td>Indienne<br/></td></tr></table>>];
+130 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_15</td></tr><tr><td><br/></td></tr><tr><td>Tartiflette<br/></td></tr></table>>];
+134 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_10</td></tr><tr><td><br/></td></tr><tr><td>Végétarienne<br/></td></tr></table>>];
+140 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_12</td></tr><tr><td><br/></td></tr><tr><td>Raclette<br/></td></tr></table>>];
+142 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_13</td></tr><tr><td><br/></td></tr><tr><td>Pepperoni lovers<br/></td></tr></table>>];
+143 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_14</td></tr><tr><td><br/></td></tr><tr><td>Roma<br/></td></tr></table>>];
+173 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_16</td></tr><tr><td><br/></td></tr><tr><td>Venitienne<br/></td></tr></table>>];
+174 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_11</td></tr><tr><td><br/></td></tr><tr><td>Bacon Groovy<br/></td></tr></table>>];
+175 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_18</td></tr><tr><td><br/></td></tr><tr><td>Silvio<br/></td></tr></table>>];
+176 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_20</td></tr><tr><td><br/></td></tr><tr><td>Pinocchio<br/></td></tr></table>>];
+178 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_17</td></tr><tr><td><br/></td></tr><tr><td>Mostarda<br/></td></tr></table>>];
+179 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_19</td></tr><tr><td><br/></td></tr><tr><td>Rennes<br/></td></tr></table>>];
+141 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_25</td></tr><tr><td><br/></td></tr><tr><td>Pescatore<br/></td></tr></table>>];
+152 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_26</td></tr><tr><td><br/></td></tr><tr><td>Marguerite<br/></td></tr></table>>];
+153 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_21</td></tr><tr><td><br/></td></tr><tr><td>Neptune<br/></td></tr></table>>];
+154 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_22</td></tr><tr><td><br/></td></tr><tr><td>Saumon<br/></td></tr></table>>];
+163 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_23</td></tr><tr><td><br/></td></tr><tr><td>Margherita<br/></td></tr></table>>];
+177 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_24</td></tr><tr><td><br/></td></tr><tr><td>Seguin<br/></td></tr></table>>];
+133 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_30</td></tr><tr><td><br/></td></tr><tr><td>Sétoise<br/></td></tr></table>>];
+155 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_29</td></tr><tr><td><br/></td></tr><tr><td>Arizona<br/></td></tr></table>>];
+156 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_28</td></tr><tr><td><br/></td></tr><tr><td>Américaine<br/>Fromage<br/></td></tr></table>>];
+157 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_32</td></tr><tr><td><br/></td></tr><tr><td>Margarita<br/></td></tr></table>>];
+164 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_31</td></tr><tr><td><br/></td></tr><tr><td>Vegan Peppina<br/></td></tr></table>>];
+180 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_27</td></tr><tr><td><br/></td></tr><tr><td>Végétarienne<br/>Végétarienne<br/></td></tr></table>>];
+119 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_3</td></tr><tr><td>Fine<br/></td></tr><tr><td><br/></td></tr></table>>];
+120 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_2</td></tr><tr><td>Large<br/></td></tr><tr><td>Bergère<br/></td></tr></table>>];
+136 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_35</td></tr><tr><td><br/></td></tr><tr><td>Delfina<br/>Regina<br/></td></tr></table>>];
+160 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_36</td></tr><tr><td><br/></td></tr><tr><td>Quatre saisons<br/></td></tr></table>>];
+161 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_34</td></tr><tr><td><br/></td></tr><tr><td>Oceane<br/>Suprême<br/>Chèvre miel<br/>Reine<br/></td></tr></table>>];
+181 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_33</td></tr><tr><td><br/></td></tr><tr><td>Queen<br/>Chickenita pepperoni<br/></td></tr></table>>];
+121 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_6</td></tr><tr><td>Petite<br/></td></tr><tr><td><br/></td></tr></table>>];
+123 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_5</td></tr><tr><td>Moyenne<br/></td></tr><tr><td><br/></td></tr></table>>];
+125 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_4</td></tr><tr><td>7-8€<br/></td></tr><tr><td><br/></td></tr></table>>];
+165 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_37</td></tr><tr><td><br/></td></tr><tr><td>Napolitaine<br/></td></tr></table>>];
+124 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_7</td></tr><tr><td>Grande<br/></td></tr><tr><td><br/></td></tr></table>>];
+148 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_38</td></tr><tr><td><br/></td></tr><tr><td>4 Fromages<br/></td></tr></table>>];
+145 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_40</td></tr><tr><td><br/></td></tr><tr><td>Raclette<br/></td></tr></table>>];
+183 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_39</td></tr><tr><td><br/></td></tr><tr><td>Détective<br/>Indienne<br/></td></tr></table>>];
+182 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_41</td></tr><tr><td><br/></td></tr><tr><td>Samourai<br/>Montagnarde<br/>Nordique<br/>Forestiere<br/>Savoyarde<br/></td></tr></table>>];
+146 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_42</td></tr><tr><td><br/></td></tr><tr><td>Pepperoni lovers<br/></td></tr></table>>];
+184 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_43</td></tr><tr><td><br/></td></tr><tr><td>Fromage<br/></td></tr></table>>];
+167 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_44</td></tr><tr><td><br/></td></tr><tr><td>Tartiflette<br/></td></tr></table>>];
+147 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_45</td></tr><tr><td>exist HasIngredients(Concept_Ingredient_3)<br/></td></tr><tr><td><br/></td></tr></table>>];
+149 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_46</td></tr><tr><td><br/></td></tr><tr><td>Campagnarde<br/></td></tr></table>>];
+127 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_8</td></tr><tr><td>9+€<br/></td></tr><tr><td><br/></td></tr></table>>];
+185 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_47</td></tr><tr><td><br/></td></tr><tr><td>Koubiac<br/></td></tr></table>>];
+186 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_48</td></tr><tr><td><br/></td></tr><tr><td>Queen<br/></td></tr></table>>];
+132 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_49</td></tr><tr><td>exist HasIngredients(Concept_Ingredient_0)<br/></td></tr><tr><td><br/></td></tr></table>>];
+187 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_50</td></tr><tr><td><br/></td></tr><tr><td>Montagnard<br/>Nordique<br/></td></tr></table>>];
+188 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_51</td></tr><tr><td><br/></td></tr><tr><td>Kebab<br/></td></tr></table>>];
+139 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_53</td></tr><tr><td>exist HasIngredients(Concept_Ingredient_1)<br/></td></tr><tr><td><br/></td></tr></table>>];
+189 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_52</td></tr><tr><td>exist HasIngredients(Concept_Ingredient_7)<br/></td></tr><tr><td><br/></td></tr></table>>];
+171 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_54</td></tr><tr><td>exist HasIngredients(Concept_Ingredient_5)<br/></td></tr><tr><td><br/></td></tr></table>>];
+172 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_55</td></tr><tr><td>exist HasIngredients(Concept_Ingredient_6)<br/></td></tr><tr><td><br/></td></tr></table>>];
+151 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_56</td></tr><tr><td>exist HasIngredients(Concept_Ingredient_4)<br/></td></tr><tr><td><br/></td></tr></table>>];
+118 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_9</td></tr><tr><td>exist HasIngredients(Concept_Ingredient_2)<br/>exist HasIngredients(Concept_Ingredient_8)<br/></td></tr><tr><td><br/></td></tr></table>>];
+	122:p -> 141:p
+	122:p -> 152:p
+	126:p -> 153:p
+	174:p -> 154:p
+	126:p -> 163:p
+	175:p -> 177:p
+	153:p -> 133:p
+	153:p -> 155:p
+	134:p -> 156:p
+	152:p -> 157:p
+	163:p -> 164:p
+	134:p -> 180:p
+	133:p -> 119:p
+	155:p -> 119:p
+	156:p -> 120:p
+	130:p -> 136:p
+	175:p -> 136:p
+	141:p -> 160:p
+	179:p -> 160:p
+	163:p -> 181:p
+	176:p -> 121:p
+	157:p -> 121:p
+	178:p -> 121:p
+	160:p -> 123:p
+	173:p -> 123:p
+	161:p -> 125:p
+	142:p -> 125:p
+	122:p -> 165:p
+	180:p -> 165:p
+	136:p -> 124:p
+	143:p -> 124:p
+	177:p -> 124:p
+	181:p -> 148:p
+	140:p -> 148:p
+	140:p -> 145:p
+	165:p -> 145:p
+	180:p -> 183:p
+	153:p -> 183:p
+	174:p -> 182:p
+	163:p -> 182:p
+	145:p -> 146:p
+	142:p -> 146:p
+	141:p -> 146:p
+	156:p -> 184:p
+	183:p -> 184:p
+	155:p -> 184:p
+	130:p -> 167:p
+	165:p -> 167:p
+	183:p -> 167:p
+	152:p -> 167:p
+	154:p -> 147:p
+	143:p -> 147:p
+	146:p -> 147:p
+	148:p -> 149:p
+	154:p -> 149:p
+	182:p -> 149:p
+	149:p -> 127:p
+	164:p -> 127:p
+	161:p -> 185:p
+	175:p -> 185:p
+	183:p -> 185:p
+	179:p -> 185:p
+	163:p -> 185:p
+	185:p -> 186:p
+	173:p -> 186:p
+	176:p -> 186:p
+	181:p -> 186:p
+	133:p -> 186:p
+	145:p -> 132:p
+	173:p -> 132:p
+	176:p -> 132:p
+	119:p -> 132:p
+	184:p -> 132:p
+	120:p -> 132:p
+	167:p -> 132:p
+	184:p -> 187:p
+	185:p -> 187:p
+	177:p -> 187:p
+	182:p -> 187:p
+	187:p -> 188:p
+	143:p -> 188:p
+	119:p -> 188:p
+	186:p -> 188:p
+	136:p -> 139:p
+	125:p -> 139:p
+	157:p -> 139:p
+	123:p -> 139:p
+	146:p -> 139:p
+	186:p -> 139:p
+	148:p -> 139:p
+	167:p -> 139:p
+	164:p -> 139:p
+	188:p -> 189:p
+	178:p -> 189:p
+	178:p -> 171:p
+	157:p -> 171:p
+	187:p -> 171:p
+	154:p -> 171:p
+	167:p -> 171:p
+	164:p -> 171:p
+	160:p -> 171:p
+	171:p -> 172:p
+	139:p -> 172:p
+	132:p -> 172:p
+	121:p -> 172:p
+	149:p -> 151:p
+	125:p -> 151:p
+	157:p -> 151:p
+	123:p -> 151:p
+	124:p -> 151:p
+	188:p -> 151:p
+	147:p -> 151:p
+	132:p -> 151:p
+	172:p -> 118:p
+	189:p -> 118:p
+	127:p -> 118:p
+	151:p -> 118:p
+}

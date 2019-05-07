@@ -1,0 +1,390 @@
+digraph G { 
+	rankdir=BT;
+subgraph Pizza { 
+label="Pizza";
+1 [shape=record,label="{Concept_Pizza_10|exist HasIngredients(Concept_Ingredient_10)\nexist HasIngredients(Concept_Ingredient_3)\nexist HasIngredients(Concept_Ingredient_9)\n|}"];
+2 [shape=record,label="{Concept_Pizza_4|Fine\n|}"];
+3 [shape=record,label="{Concept_Pizza_0|exist HasIngredients(Concept_Ingredient_0)\n|}"];
+4 [shape=record,label="{Concept_Pizza_3|Large\n|Bergère\n}"];
+5 [shape=record,label="{Concept_Pizza_7|Petite\n|}"];
+6 [shape=record,label="{Concept_Pizza_2||Napolitaine\n}"];
+7 [shape=record,label="{Concept_Pizza_6|Moyenne\n|}"];
+8 [shape=record,label="{Concept_Pizza_8|Grande\n|}"];
+9 [shape=record,label="{Concept_Pizza_5|7-8€\n|}"];
+10 [shape=record,label="{Concept_Pizza_1||Indienne\n}"];
+11 [shape=record,label="{Concept_Pizza_9|9+€\n|}"];
+12 [shape=record,label="{Concept_Pizza_34||Américaine\nFromage\n}"];
+13 [shape=record,label="{Concept_Pizza_39||}"];
+14 [shape=record,label="{Concept_Pizza_62||}"];
+15 [shape=record,label="{Concept_Pizza_32||}"];
+16 [shape=record,label="{Concept_Pizza_45||Oceane\nSuprême\nChèvre miel\nReine\n}"];
+17 [shape=record,label="{Concept_Pizza_28||}"];
+18 [shape=record,label="{Concept_Pizza_87|exist HasIngredients(Concept_Ingredient_8)\n|}"];
+19 [shape=record,label="{Concept_Pizza_27||Seguin\n}"];
+20 [shape=record,label="{Concept_Pizza_40||}"];
+21 [shape=record,label="{Concept_Pizza_58||Samourai\nMontagnarde\nNordique\nForestiere\nSavoyarde\n}"];
+22 [shape=record,label="{Concept_Pizza_61||}"];
+23 [shape=record,label="{Concept_Pizza_18||Mostarda\n}"];
+24 [shape=record,label="{Concept_Pizza_48||}"];
+25 [shape=record,label="{Concept_Pizza_20||Rennes\n}"];
+26 [shape=record,label="{Concept_Pizza_35||Arizona\n}"];
+27 [shape=record,label="{Concept_Pizza_81||}"];
+28 [shape=record,label="{Concept_Pizza_47||Quatre saisons\n}"];
+29 [shape=record,label="{Concept_Pizza_89|exist HasIngredients(Concept_Ingredient_6)\n|}"];
+30 [shape=record,label="{Concept_Pizza_80||Montagnard\nNordique\n}"];
+31 [shape=record,label="{Concept_Pizza_41||Margarita\n}"];
+32 [shape=record,label="{Concept_Pizza_60||}"];
+33 [shape=record,label="{Concept_Pizza_86||}"];
+34 [shape=record,label="{Concept_Pizza_71||Campagnarde\n}"];
+35 [shape=record,label="{Concept_Pizza_21||Pinocchio\n}"];
+36 [shape=record,label="{Concept_Pizza_49||}"];
+37 [shape=record,label="{Concept_Pizza_84||Kebab\n}"];
+38 [shape=record,label="{Concept_Pizza_92|exist HasIngredients(Concept_Ingredient_5)\n|}"];
+39 [shape=record,label="{Concept_Pizza_16||Tartiflette\n}"];
+40 [shape=record,label="{Concept_Pizza_65||Fromage\n}"];
+41 [shape=record,label="{Concept_Pizza_31||Marguerite\n}"];
+42 [shape=record,label="{Concept_Pizza_74||}"];
+43 [shape=record,label="{Concept_Pizza_24||}"];
+44 [shape=record,label="{Concept_Pizza_42||}"];
+45 [shape=record,label="{Concept_Pizza_17||Venitienne\n}"];
+46 [shape=record,label="{Concept_Pizza_72||}"];
+47 [shape=record,label="{Concept_Pizza_29||}"];
+48 [shape=record,label="{Concept_Pizza_77|exist HasIngredients(Concept_Ingredient_1)\n|}"];
+49 [shape=record,label="{Concept_Pizza_15||Roma\n}"];
+50 [shape=record,label="{Concept_Pizza_11||Végétarienne\n}"];
+51 [shape=record,label="{Concept_Pizza_33||Végétarienne\nVégétarienne\n}"];
+52 [shape=record,label="{Concept_Pizza_12||Bacon Groovy\n}"];
+53 [shape=record,label="{Concept_Pizza_43||}"];
+54 [shape=record,label="{Concept_Pizza_23||Saumon\n}"];
+55 [shape=record,label="{Concept_Pizza_30||Pescatore\n}"];
+56 [shape=record,label="{Concept_Pizza_52||Napolitaine\n}"];
+57 [shape=record,label="{Concept_Pizza_59||}"];
+58 [shape=record,label="{Concept_Pizza_13||Raclette\n}"];
+59 [shape=record,label="{Concept_Pizza_37||}"];
+60 [shape=record,label="{Concept_Pizza_14||Pepperoni lovers\n}"];
+61 [shape=record,label="{Concept_Pizza_50||}"];
+62 [shape=record,label="{Concept_Pizza_57||Raclette\n}"];
+63 [shape=record,label="{Concept_Pizza_69|exist HasIngredients(Concept_Ingredient_4)\n|}"];
+64 [shape=record,label="{Concept_Pizza_22||Neptune\n}"];
+65 [shape=record,label="{Concept_Pizza_55||Détective\nIndienne\n}"];
+66 [shape=record,label="{Concept_Pizza_19||Silvio\n}"];
+67 [shape=record,label="{Concept_Pizza_25||Margherita\n}"];
+68 [shape=record,label="{Concept_Pizza_73||Koubiac\n}"];
+69 [shape=record,label="{Concept_Pizza_26||}"];
+70 [shape=record,label="{Concept_Pizza_54||}"];
+71 [shape=record,label="{Concept_Pizza_67||Tartiflette\n}"];
+72 [shape=record,label="{Concept_Pizza_78||}"];
+73 [shape=record,label="{Concept_Pizza_38||Vegan Peppina\n}"];
+74 [shape=record,label="{Concept_Pizza_79||}"];
+75 [shape=record,label="{Concept_Pizza_46||Delfina\nRegina\n}"];
+76 [shape=record,label="{Concept_Pizza_44||Queen\nChickenita pepperoni\n}"];
+77 [shape=record,label="{Concept_Pizza_53||4 Fromages\n}"];
+78 [shape=record,label="{Concept_Pizza_36||Sétoise\n}"];
+79 [shape=record,label="{Concept_Pizza_64||}"];
+80 [shape=record,label="{Concept_Pizza_76||Queen\n}"];
+81 [shape=record,label="{Concept_Pizza_75||}"];
+82 [shape=record,label="{Concept_Pizza_63||Pepperoni lovers\n}"];
+83 [shape=record,label="{Concept_Pizza_85||}"];
+84 [shape=record,label="{Concept_Pizza_56||}"];
+85 [shape=record,label="{Concept_Pizza_88|exist HasIngredients(Concept_Ingredient_2)\n|}"];
+86 [shape=record,label="{Concept_Pizza_51||}"];
+87 [shape=record,label="{Concept_Pizza_68||}"];
+88 [shape=record,label="{Concept_Pizza_82||}"];
+89 [shape=record,label="{Concept_Pizza_66||}"];
+90 [shape=record,label="{Concept_Pizza_90||}"];
+91 [shape=record,label="{Concept_Pizza_70||}"];
+92 [shape=record,label="{Concept_Pizza_83||}"];
+93 [shape=record,label="{Concept_Pizza_91|exist HasIngredients(Concept_Ingredient_7)\n|}"];
+	38 -> 1
+	93 -> 1
+	11 -> 1
+	18 -> 1
+	26 -> 2
+	78 -> 2
+	12 -> 4
+	15 -> 5
+	24 -> 5
+	36 -> 5
+	3 -> 6
+	17 -> 7
+	28 -> 7
+	47 -> 7
+	13 -> 8
+	86 -> 8
+	16 -> 9
+	60 -> 9
+	3 -> 10
+	34 -> 11
+	91 -> 11
+	50 -> 12
+	19 -> 13
+	49 -> 13
+	76 -> 14
+	21 -> 14
+	35 -> 15
+	23 -> 15
+	3 -> 16
+	25 -> 17
+	45 -> 17
+	37 -> 18
+	92 -> 18
+	66 -> 19
+	19 -> 20
+	69 -> 20
+	52 -> 21
+	67 -> 21
+	32 -> 22
+	73 -> 22
+	3 -> 23
+	31 -> 24
+	23 -> 24
+	3 -> 25
+	64 -> 26
+	23 -> 27
+	30 -> 27
+	25 -> 28
+	55 -> 28
+	27 -> 29
+	33 -> 29
+	74 -> 29
+	24 -> 29
+	22 -> 29
+	40 -> 30
+	68 -> 30
+	19 -> 30
+	53 -> 30
+	21 -> 30
+	41 -> 31
+	54 -> 32
+	21 -> 32
+	20 -> 33
+	32 -> 33
+	30 -> 33
+	57 -> 33
+	72 -> 33
+	42 -> 33
+	87 -> 34
+	3 -> 35
+	31 -> 36
+	44 -> 36
+	88 -> 37
+	13 -> 37
+	61 -> 37
+	8 -> 38
+	90 -> 38
+	34 -> 38
+	37 -> 38
+	63 -> 38
+	3 -> 39
+	12 -> 40
+	26 -> 40
+	65 -> 40
+	6 -> 41
+	40 -> 42
+	71 -> 42
+	10 -> 43
+	58 -> 43
+	35 -> 44
+	41 -> 44
+	3 -> 45
+	40 -> 46
+	79 -> 46
+	2 -> 46
+	45 -> 47
+	6 -> 47
+	4 -> 48
+	46 -> 48
+	81 -> 48
+	42 -> 48
+	3 -> 49
+	3 -> 50
+	50 -> 51
+	3 -> 52
+	52 -> 53
+	51 -> 53
+	52 -> 54
+	6 -> 55
+	51 -> 56
+	6 -> 56
+	54 -> 57
+	70 -> 57
+	53 -> 57
+	3 -> 58
+	54 -> 59
+	58 -> 59
+	3 -> 60
+	53 -> 61
+	49 -> 61
+	56 -> 62
+	58 -> 62
+	61 -> 63
+	89 -> 63
+	10 -> 64
+	64 -> 65
+	51 -> 65
+	3 -> 66
+	10 -> 67
+	16 -> 68
+	65 -> 68
+	66 -> 68
+	25 -> 68
+	67 -> 68
+	66 -> 69
+	39 -> 69
+	56 -> 70
+	55 -> 70
+	65 -> 71
+	39 -> 71
+	56 -> 71
+	41 -> 71
+	68 -> 72
+	69 -> 72
+	70 -> 72
+	31 -> 72
+	71 -> 72
+	28 -> 72
+	67 -> 73
+	72 -> 74
+	73 -> 74
+	69 -> 75
+	67 -> 76
+	76 -> 77
+	43 -> 77
+	64 -> 78
+	65 -> 79
+	45 -> 79
+	35 -> 79
+	78 -> 79
+	68 -> 80
+	17 -> 80
+	79 -> 80
+	76 -> 80
+	62 -> 81
+	79 -> 81
+	71 -> 81
+	44 -> 81
+	43 -> 81
+	47 -> 81
+	70 -> 82
+	62 -> 82
+	60 -> 82
+	75 -> 83
+	36 -> 83
+	9 -> 83
+	80 -> 83
+	82 -> 83
+	72 -> 83
+	77 -> 83
+	81 -> 83
+	7 -> 83
+	77 -> 84
+	73 -> 84
+	74 -> 85
+	83 -> 85
+	84 -> 85
+	20 -> 86
+	75 -> 86
+	59 -> 87
+	14 -> 87
+	77 -> 87
+	32 -> 87
+	30 -> 88
+	14 -> 88
+	46 -> 88
+	80 -> 88
+	57 -> 89
+	59 -> 89
+	82 -> 89
+	86 -> 90
+	33 -> 90
+	87 -> 90
+	88 -> 90
+	83 -> 90
+	48 -> 90
+	89 -> 90
+	87 -> 91
+	84 -> 91
+	22 -> 91
+	15 -> 92
+	88 -> 92
+	27 -> 92
+	92 -> 93
+	85 -> 93
+	29 -> 93
+	90 -> 93
+	91 -> 93
+	5 -> 93
+}
+subgraph Ingredient { 
+label="Ingredient";
+94 [shape=record,label="{Concept_Ingredient_10||}"];
+95 [shape=record,label="{Concept_Ingredient_8|Viande\n|Poulet\nPepperoni\nMerguez\nJambon\nLardons\nKebab\nViande hachée\nBoeuf\nChorizo\n}"];
+96 [shape=record,label="{Concept_Ingredient_0||}"];
+97 [shape=record,label="{Concept_Ingredient_6|Légume\n|Pomme de terre\nPoivrons\nOignons\nChampignons\nArtichaut\nTomate\n}"];
+98 [shape=record,label="{Concept_Ingredient_5|Fromage\n|Mozarella\nEmmental\nFromage à raclette\nReblochon\nChèvre\n}"];
+99 [shape=record,label="{Concept_Ingredient_1|Fruit\n|Olives\n}"];
+100 [shape=record,label="{Concept_Ingredient_4|Mer\n|Saumon\nThon\nMoule\nAnchois\n}"];
+101 [shape=record,label="{Concept_Ingredient_3|Sauce\n|Sauce blanche\nBase blanche\n}"];
+102 [shape=record,label="{Concept_Ingredient_2||Miel\nBase rouge\n}"];
+103 [shape=record,label="{Concept_Ingredient_7|Vegan\n|}"];
+104 [shape=record,label="{Concept_Ingredient_9|Végétarien\n|}"];
+	95 -> 94
+	104 -> 94
+	100 -> 94
+	96 -> 95
+	96 -> 97
+	96 -> 98
+	96 -> 99
+	96 -> 100
+	102 -> 101
+	96 -> 102
+	97 -> 103
+	99 -> 103
+	102 -> 103
+	98 -> 104
+	101 -> 104
+	103 -> 104
+}
+subgraph Restaurant { 
+label="Restaurant";
+105 [shape=record,label="{Concept_Restaurant_1|Montpellier\nexist HasPizza(Concept_Pizza_10)\n|}"];
+106 [shape=record,label="{Concept_Restaurant_0|Chaine\n|Pizza Hut\n}"];
+107 [shape=record,label="{Concept_Restaurant_5||Dominos\n}"];
+108 [shape=record,label="{Concept_Restaurant_10|exist HasPizza(Concept_Pizza_4)\n|}"];
+109 [shape=record,label="{Concept_Restaurant_2|exist HasPizza(Concept_Pizza_0)\n|}"];
+110 [shape=record,label="{Concept_Restaurant_8||Fred Pizza\n}"];
+111 [shape=record,label="{Concept_Restaurant_12|exist HasPizza(Concept_Pizza_3)\n|}"];
+112 [shape=record,label="{Concept_Restaurant_7|exist HasPizza(Concept_Pizza_7)\nexist HasPizza(Concept_Pizza_2)\nexist HasPizza(Concept_Pizza_6)\n|Gepetto\n}"];
+113 [shape=record,label="{Concept_Restaurant_6||Annexe Pizza\n}"];
+114 [shape=record,label="{Concept_Restaurant_11|exist HasPizza(Concept_Pizza_8)\n|}"];
+115 [shape=record,label="{Concept_Restaurant_3||Terrasse\n}"];
+116 [shape=record,label="{Concept_Restaurant_13|exist HasPizza(Concept_Pizza_5)\n|}"];
+117 [shape=record,label="{Concept_Restaurant_4||Kosmos\n}"];
+118 [shape=record,label="{Concept_Restaurant_9|exist HasPizza(Concept_Pizza_1)\n|}"];
+119 [shape=record,label="{Concept_Restaurant_14|exist HasPizza(Concept_Pizza_9)\n|}"];
+	116 -> 105
+	119 -> 105
+	111 -> 105
+	114 -> 105
+	108 -> 105
+	107 -> 106
+	109 -> 107
+	110 -> 108
+	118 -> 108
+	117 -> 110
+	113 -> 111
+	110 -> 111
+	115 -> 112
+	109 -> 113
+	113 -> 114
+	112 -> 114
+	109 -> 115
+	106 -> 116
+	115 -> 116
+	109 -> 117
+	107 -> 118
+	117 -> 118
+	106 -> 119
+	118 -> 119
+}
+}

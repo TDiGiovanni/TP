@@ -1,0 +1,57 @@
+digraph G { 
+	rankdir=BT;
+	margin=0;
+	node [margin="0.03,0.03",fontname="DejaVu Sans"];
+	ranksep=0.3;
+	nodesep=0.2;
+//graph[label="name:Pizza,concept number:18,object number:56,attribute number:18"
+24 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_10</td></tr><tr><td>forall HasIngredients(Concept_Ingredient_10)<br/></td></tr><tr><td>Napolitaine<br/>Kebab<br/>Détective<br/>Koubiac<br/>Queen<br/>Pepperoni lovers<br/>Montagnard<br/>Nordique<br/>Raclette<br/>Végétarienne<br/>Indienne<br/>Fromage<br/>Végétarienne<br/></td></tr></table>>];
+25 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_4</td></tr><tr><td>Fine<br/></td></tr><tr><td>Sétoise<br/>Neptune<br/>Arizona<br/></td></tr></table>>];
+26 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_0</td></tr><tr><td>forall HasIngredients(Concept_Ingredient_8)<br/>forall HasIngredients(Concept_Ingredient_0)<br/>forall HasIngredients(Concept_Ingredient_6)<br/>forall HasIngredients(Concept_Ingredient_5)<br/>forall HasIngredients(Concept_Ingredient_1)<br/>forall HasIngredients(Concept_Ingredient_4)<br/>forall HasIngredients(Concept_Ingredient_3)<br/>forall HasIngredients(Concept_Ingredient_2)<br/></td></tr><tr><td><br/></td></tr></table>>];
+27 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_3</td></tr><tr><td>Large<br/></td></tr><tr><td>Végétarienne<br/>Américaine<br/>Fromage<br/></td></tr></table>>];
+28 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_7</td></tr><tr><td>Petite<br/></td></tr><tr><td>Pinocchio<br/>Mostarda<br/></td></tr></table>>];
+29 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_2</td></tr><tr><td><br/></td></tr><tr><td>Napolitaine<br/></td></tr></table>>];
+30 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_6</td></tr><tr><td>Moyenne<br/></td></tr><tr><td>Rennes<br/>Pescatore<br/>Venitienne<br/></td></tr></table>>];
+31 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_8</td></tr><tr><td>Grande<br/></td></tr><tr><td>Silvio<br/>Seguin<br/>Roma<br/></td></tr></table>>];
+32 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_5</td></tr><tr><td>7-8€<br/></td></tr><tr><td>Oceane<br/>Pepperoni lovers<br/>Suprême<br/>Chèvre miel<br/>Reine<br/></td></tr></table>>];
+33 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_1</td></tr><tr><td><br/></td></tr><tr><td>Indienne<br/></td></tr></table>>];
+34 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_9</td></tr><tr><td>9+€<br/></td></tr><tr><td>Queen<br/>Margherita<br/>Samourai<br/>Montagnarde<br/>Raclette<br/>Nordique<br/>Chickenita pepperoni<br/>Forestiere<br/>Savoyarde<br/>Bacon Groovy<br/>Saumon<br/></td></tr></table>>];
+35 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_12</td></tr><tr><td>forall HasIngredients(Concept_Ingredient_7)<br/></td></tr><tr><td>Vegan Peppina<br/></td></tr></table>>];
+36 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_11</td></tr><tr><td><br/></td></tr><tr><td>Bergère<br/></td></tr></table>>];
+37 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_16</td></tr><tr><td><br/></td></tr><tr><td>Delfina<br/>Regina<br/>Tartiflette<br/></td></tr></table>>];
+38 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_15</td></tr><tr><td><br/></td></tr><tr><td>Campagnarde<br/>4 Fromages<br/></td></tr></table>>];
+39 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_14</td></tr><tr><td><br/></td></tr><tr><td>Marguerite<br/>Margarita<br/></td></tr></table>>];
+40 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_13</td></tr><tr><td><br/></td></tr><tr><td>Quatre saisons<br/></td></tr></table>>];
+41 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_17</td></tr><tr><td>forall HasIngredients(Concept_Ingredient_9)<br/></td></tr><tr><td>Tartiflette<br/></td></tr></table>>];
+	27:p -> 24:p
+	41:p -> 24:p
+	31:p -> 24:p
+	34:p -> 24:p
+	28:p -> 24:p
+	32:p -> 24:p
+	25:p -> 24:p
+	30:p -> 24:p
+	33:p -> 25:p
+	36:p -> 27:p
+	39:p -> 28:p
+	29:p -> 28:p
+	26:p -> 29:p
+	29:p -> 30:p
+	40:p -> 30:p
+	37:p -> 31:p
+	26:p -> 32:p
+	26:p -> 33:p
+	33:p -> 34:p
+	38:p -> 34:p
+	26:p -> 35:p
+	26:p -> 36:p
+	26:p -> 37:p
+	35:p -> 38:p
+	26:p -> 39:p
+	26:p -> 40:p
+	39:p -> 41:p
+	36:p -> 41:p
+	37:p -> 41:p
+	38:p -> 41:p
+	40:p -> 41:p
+}

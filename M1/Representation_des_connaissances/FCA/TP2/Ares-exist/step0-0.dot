@@ -1,0 +1,29 @@
+digraph G { 
+	rankdir=BT;
+	margin=0;
+	node [margin="0.03,0.03",fontname="DejaVu Sans"];
+	ranksep=0.3;
+	nodesep=0.2;
+//graph[label="name:Pizza,concept number:10,object number:56,attribute number:7"
+4 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_1</td></tr><tr><td><br/></td></tr><tr><td>Napolitaine<br/></td></tr></table>>];
+1 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_3</td></tr><tr><td>Fine<br/></td></tr><tr><td>Sétoise<br/>Neptune<br/>Arizona<br/></td></tr></table>>];
+2 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_2</td></tr><tr><td>Large<br/></td></tr><tr><td>Végétarienne<br/>Américaine<br/>Bergère<br/>Fromage<br/></td></tr></table>>];
+3 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_6</td></tr><tr><td>Petite<br/></td></tr><tr><td>Pinocchio<br/>Marguerite<br/>Mostarda<br/>Margarita<br/></td></tr></table>>];
+5 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_5</td></tr><tr><td>Moyenne<br/></td></tr><tr><td>Rennes<br/>Quatre saisons<br/>Pescatore<br/>Venitienne<br/></td></tr></table>>];
+7 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_4</td></tr><tr><td>7-8€<br/></td></tr><tr><td>Oceane<br/>Pepperoni lovers<br/>Suprême<br/>Chèvre miel<br/>Reine<br/></td></tr></table>>];
+6 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_7</td></tr><tr><td>Grande<br/></td></tr><tr><td>Silvio<br/>Delfina<br/>Regina<br/>Seguin<br/>Tartiflette<br/>Roma<br/></td></tr></table>>];
+0 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_9</td></tr><tr><td><br/></td></tr><tr><td>Napolitaine<br/>Tartiflette<br/>Kebab<br/>Détective<br/>Koubiac<br/>Queen<br/>Pepperoni lovers<br/>Montagnard<br/>Nordique<br/>Raclette<br/>Végétarienne<br/>Indienne<br/>Fromage<br/>Végétarienne<br/></td></tr></table>>];
+8 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_0</td></tr><tr><td><br/></td></tr><tr><td>Indienne<br/></td></tr></table>>];
+9 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_Pizza_8</td></tr><tr><td>9+€<br/></td></tr><tr><td>Queen<br/>Margherita<br/>Samourai<br/>Montagnarde<br/>Raclette<br/>Nordique<br/>Campagnarde<br/>4 Fromages<br/>Chickenita pepperoni<br/>Vegan Peppina<br/>Forestiere<br/>Savoyarde<br/>Bacon Groovy<br/>Saumon<br/></td></tr></table>>];
+	8:p -> 1:p
+	4:p -> 3:p
+	4:p -> 5:p
+	7:p -> 0:p
+	1:p -> 0:p
+	3:p -> 0:p
+	5:p -> 0:p
+	6:p -> 0:p
+	2:p -> 0:p
+	9:p -> 0:p
+	8:p -> 9:p
+}

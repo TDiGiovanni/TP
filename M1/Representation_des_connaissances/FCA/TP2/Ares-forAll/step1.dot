@@ -1,0 +1,82 @@
+digraph G { 
+	rankdir=BT;
+subgraph Pizza { 
+label="Pizza";
+1 [shape=record,label="{Concept_Pizza_10|forall HasIngredients(Concept_Ingredient_0)\nforall HasIngredients(Concept_Ingredient_1)\nforall HasIngredients(Concept_Ingredient_3)\nforall HasIngredients(Concept_Ingredient_2)\nforall HasIngredients(Concept_Ingredient_4)\nforall HasIngredients(Concept_Ingredient_5)\nforall HasIngredients(Concept_Ingredient_7)\n|}"];
+2 [shape=record,label="{Concept_Pizza_1||Napolitaine\n}"];
+3 [shape=record,label="{Concept_Pizza_0||Indienne\n}"];
+4 [shape=record,label="{Concept_Pizza_12|forall HasIngredients(Concept_Ingredient_6)\n|Vegan Peppina\n}"];
+5 [shape=record,label="{Concept_Pizza_3|Fine\n|Sétoise\nNeptune\nArizona\n}"];
+6 [shape=record,label="{Concept_Pizza_2|Large\n|Végétarienne\nAméricaine\nFromage\n}"];
+7 [shape=record,label="{Concept_Pizza_6|Petite\n|Pinocchio\nMostarda\n}"];
+8 [shape=record,label="{Concept_Pizza_5|Moyenne\n|Rennes\nPescatore\nVenitienne\n}"];
+9 [shape=record,label="{Concept_Pizza_4|7-8€\n|Oceane\nPepperoni lovers\nSuprême\nChèvre miel\nReine\n}"];
+10 [shape=record,label="{Concept_Pizza_7|Grande\n|Silvio\nSeguin\nRoma\n}"];
+11 [shape=record,label="{Concept_Pizza_8|9+€\n|Queen\nMargherita\nSamourai\nMontagnarde\nRaclette\nNordique\nChickenita pepperoni\nForestiere\nSavoyarde\nBacon Groovy\nSaumon\n}"];
+12 [shape=record,label="{Concept_Pizza_9||Napolitaine\nKebab\nDétective\nKoubiac\nQueen\nPepperoni lovers\nMontagnard\nNordique\nRaclette\nVégétarienne\nIndienne\nFromage\nVégétarienne\n}"];
+13 [shape=record,label="{Concept_Pizza_11||Bergère\n}"];
+14 [shape=record,label="{Concept_Pizza_14||Marguerite\nMargarita\n}"];
+15 [shape=record,label="{Concept_Pizza_13||Quatre saisons\n}"];
+16 [shape=record,label="{Concept_Pizza_16||Delfina\nRegina\nTartiflette\n}"];
+17 [shape=record,label="{Concept_Pizza_15||Campagnarde\n4 Fromages\n}"];
+18 [shape=record,label="{Concept_Pizza_17|forall HasIngredients(Concept_Ingredient_8)\n|Tartiflette\n}"];
+	1 -> 2
+	1 -> 3
+	1 -> 4
+	3 -> 5
+	13 -> 6
+	14 -> 7
+	2 -> 7
+	2 -> 8
+	15 -> 8
+	1 -> 9
+	16 -> 10
+	3 -> 11
+	17 -> 11
+	9 -> 12
+	5 -> 12
+	7 -> 12
+	8 -> 12
+	10 -> 12
+	6 -> 12
+	11 -> 12
+	18 -> 12
+	1 -> 13
+	1 -> 14
+	1 -> 15
+	1 -> 16
+	4 -> 17
+	14 -> 18
+	13 -> 18
+	15 -> 18
+	16 -> 18
+	17 -> 18
+}
+subgraph Ingredient { 
+label="Ingredient";
+19 [shape=record,label="{Concept_Ingredient_0|Fruit\n|Olives\n}"];
+20 [shape=record,label="{Concept_Ingredient_1||Miel\nBase rouge\n}"];
+21 [shape=record,label="{Concept_Ingredient_3|Mer\n|Saumon\nThon\nMoule\nAnchois\n}"];
+22 [shape=record,label="{Concept_Ingredient_2|Sauce\n|Sauce blanche\nBase blanche\n}"];
+23 [shape=record,label="{Concept_Ingredient_4|Fromage\n|Mozarella\nEmmental\nFromage à raclette\nReblochon\nChèvre\n}"];
+24 [shape=record,label="{Concept_Ingredient_5|Légume\n|Pomme de terre\nPoivrons\nOignons\nChampignons\nArtichaut\nTomate\n}"];
+25 [shape=record,label="{Concept_Ingredient_7|Viande\n|Poulet\nPepperoni\nMerguez\nJambon\nLardons\nKebab\nViande hachée\nBoeuf\nChorizo\n}"];
+26 [shape=record,label="{Concept_Ingredient_6|Vegan\n|}"];
+27 [shape=record,label="{Concept_Ingredient_8|Végétarien\n|}"];
+	20 -> 22
+	24 -> 26
+	19 -> 26
+	20 -> 26
+	26 -> 27
+	22 -> 27
+	23 -> 27
+}
+subgraph Restaurant { 
+label="Restaurant";
+28 [shape=record,label="{Concept_Restaurant_2|forall HasPizza(Concept_Pizza_1)\nforall HasPizza(Concept_Pizza_3)\nforall HasPizza(Concept_Pizza_2)\nforall HasPizza(Concept_Pizza_6)\nforall HasPizza(Concept_Pizza_5)\nforall HasPizza(Concept_Pizza_4)\nforall HasPizza(Concept_Pizza_7)\nforall HasPizza(Concept_Pizza_0)\nforall HasPizza(Concept_Pizza_8)\n|}"];
+29 [shape=record,label="{Concept_Restaurant_0|Chaine\n|Pizza Hut\nDominos\n}"];
+30 [shape=record,label="{Concept_Restaurant_1|Montpellier\nforall HasPizza(Concept_Pizza_9)\n|Annexe Pizza\nFred Pizza\nKosmos\nGepetto\nTerrasse\n}"];
+	28 -> 29
+	29 -> 30
+}
+}
