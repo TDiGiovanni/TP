@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TP1</string>
+
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="type">Type</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+
+    <string name="addReminder">Add reminder</string>
+    <string name="showReminders">show reminders</string>
+</resources>
