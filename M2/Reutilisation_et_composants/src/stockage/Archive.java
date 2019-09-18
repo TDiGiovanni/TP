@@ -12,7 +12,7 @@ public class Archive extends Directory implements IArchive
 		super(nom);
 	}
 	
-	public HashMap getContent()
+	public HashMap<?, ?> getContent()
 	{
 		HashMap<String,ElementStockage> map = new HashMap<String,ElementStockage>();
 		

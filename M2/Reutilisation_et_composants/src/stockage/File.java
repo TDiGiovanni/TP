@@ -9,19 +9,19 @@ public class File extends ElementStockage
 	
 	public File(String nom)
 	{
-		super(nom,0);
+		super(nom, 0);
 		this.content = "";
 	}
 	
 	public File(String nom, String contenu)
 	{
-		super(nom,0);
+		super(nom, 0);
 		this.content = contenu;
 	}
 	
 	public int size()
 	{
-		return (content.length());
+		return content.length();
 	}
 	
 	public void cat()
@@ -42,6 +42,6 @@ public class File extends ElementStockage
 
 	public void accept(Visitor v)
 	{
-		v.Visit(this);
+		v.visit(this);
 	}
 }

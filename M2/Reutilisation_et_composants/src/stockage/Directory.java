@@ -10,21 +10,25 @@ public class Directory extends ElementStockage
 {
 	// Pour la cohérence interne du dossier, il est fondamental que la collection
 	// de ses éléments soit inaccessible aux clients.
-	protected Collection<ElementStockage> elements ;
+	protected Collection<ElementStockage> elements;
 	
 	public Directory(String nom)
 	{
-		super(nom,4) ;
-		elements = new ArrayList<ElementStockage>() ;
+		super(nom, 4);
+		elements = new ArrayList<ElementStockage>();
 	}
 	
 	// Somme des tailles des différents éléments présents dans ce dossier
 	public int size()
 	{
-		int somme=basicSize ;
-		for (ElementStockage s : elements){
-			somme=somme+s.size() ;}	
-		return somme ;
+		int somme = basicSize;
+		
+		for (ElementStockage s : elements)
+		{
+			somme = somme + s.size();
+		}
+		
+		return somme;
 	}
 	
 	// Affiche  l'écran la liste des éléments qu'il contient
@@ -32,38 +36,42 @@ public class Directory extends ElementStockage
 	{
 		for (ElementStockage s : elements)
 		{
-			System.out.println(s.name) ;
+			System.out.println(s.name);
 		}
 	}
 	
 	// Retourne le nombre d'éléments du dossier
 	public int nbElm()
 	{
-		return elements.size() ;
+		return elements.size();
 	}
 	
-	public int getCount(){
+	public int getCount()
+	{
 		int count = 0;
-		for (ElementStockage s : elements){
+		
+		for (ElementStockage s : elements)
+		{
 			count = count + 1 + s.getCount();
 		}
+		
 		return count;
 	}
 	
 	// Ajoute l'élément 'e' dans le dossier
 	public boolean add(ElementStockage e)
 	{
-		e.nouveauParent(this);	// Le répertoire courant devient le pre de l'élément e
-		return elements.add(e); // Ajout de l'lment e  la collection
+		e.nouveauParent(this);	// Le répertoire courant devient le père de l'élément 'e'
+		return elements.add(e); // Ajout de l'élément 'e' à la collection
 	}
 	
-	// Supprime et retourne vrai si la suppression de l'element e s'est bien passe, faux sinon (e non prsent ou erreur)
+	// Supprime et retourne vrai si la suppression de l'élément 'e' s'est bien passé, faux sinon ('e' non présent ou erreur)
 	public boolean remove(ElementStockage e)
 	{
 		for (ElementStockage s : elements)
 		{
-			if (s.name==e.name)
-			return elements.remove(s); // suppression de l'lment e dans la collection
+			if (s.name == e.name)
+				return elements.remove(s); // Suppression de l'élément 'e' dans la collection
 		}
 			
 		return false;
@@ -80,7 +88,7 @@ public class Directory extends ElementStockage
 		for (ElementStockage s : elements)
 		{
 			if (s.name.equals(nom))
-			return s;
+				return s;
 		}
 		
 		return null;
@@ -94,7 +102,7 @@ public class Directory extends ElementStockage
 		for (ElementStockage s : elements)
 		{
 			if (s.name.equals(nom))
-			collection.add(s.absoluteAdress());
+				collection.add(s.absoluteAdress());
 		}
 			
 		return collection;
@@ -104,20 +112,20 @@ public class Directory extends ElementStockage
 	// le répertoire contient directement ou par transitivité
 	public ArrayList<String> findR(String nom)
 	{
-		ArrayList<String> collection = new ArrayList<String>() ;
+		ArrayList<String> collection = new ArrayList<String>();
 		ArrayList<String> temporaire ; // Collection temporaire servant  stocker les adresses absolues obtenues par transitivité
 			
 		for (ElementStockage s : elements)
 		{
 			if (s.name == nom)
-			collection.add(s.absoluteAdress());
+				collection.add(s.absoluteAdress());
 			
 			if (s instanceof Directory) // Si l'élément de stockage est un dossier, lance la recherche sur s (appel récursif)
 			{
 				temporaire = ((Directory) s).findR(nom);
 			
 				for (String es : temporaire)
-				collection.add(es);
+					collection.add(es);
 			}
 		}
 		return collection;
@@ -135,7 +143,7 @@ public class Directory extends ElementStockage
 		for (ElementStockage element : elements)
 			element.accept(v); // Recursive call on all the elements in the directory
 		
-		v.Visit(this);
+		v.visit(this);
 	}
 }
 	

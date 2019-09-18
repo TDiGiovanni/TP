@@ -9,13 +9,13 @@ public class SymbolicLink extends ElementStockage
 		
 		public SymbolicLink(String nom)
 		{
-			super(nom,0);
+			super(nom, 0);
 			reference = null;
 		}
 		
-		public SymbolicLink(String nom,ElementStockage e)
+		public SymbolicLink(String nom, ElementStockage e)
 		{
-			super(nom,0);
+			super(nom, 0);
 			reference = e;
 		}
 		
@@ -38,6 +38,6 @@ public class SymbolicLink extends ElementStockage
 		{
 			reference.accept(v);
 			
-			v.Visit(this);
+			v.visit(this);
 		}		
 }

@@ -5,26 +5,23 @@ import stockage.*;
 // Resets the size of all files
 public class RazVisitor extends Visitor
 {
-	public void Visit(Directory d)
+	public void visit(Directory d)
 	{
-		if (d.size() != 0)
-			System.out.println("Directory " + d.getName() + " not empty");
+		
 	}
 
-	public void Visit(File f)
+	public void visit(File f)
 	{
-		f.setContent(null);
+		f.setContent("");
 	}
 
-	public void Visit(Link l)
+	public void visit(Link l)
 	{
-		if (l.size() != 0)
-			System.out.println("Link " + l.getName() + " not empty");
+		
 	}
 
-	public void Visit(SymbolicLink sl)
+	public void visit(SymbolicLink sl)
 	{
-		if (sl.size() != 0)
-			System.out.println("Symbolic link " + sl.getName() + " not empty");
+		
 	}
 }

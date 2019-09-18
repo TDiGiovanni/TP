@@ -20,22 +20,23 @@ public class CountVisitor extends Visitor
 		return this.count;
 	}
 	
-	public void Visit(Directory d)
+	public void visit(Directory d)
 	{
 		
 	}
 
-	public void Visit(File f)
+	public void visit(File f)
+	{
+		if (f.size() > 10)
+			this.count++;
+	}
+
+	public void visit(Link l)
 	{
 		
 	}
 
-	public void Visit(Link l)
-	{
-		
-	}
-
-	public void Visit(SymbolicLink sl)
+	public void visit(SymbolicLink sl)
 	{
 		
 	}

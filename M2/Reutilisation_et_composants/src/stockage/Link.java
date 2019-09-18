@@ -8,13 +8,13 @@ public class Link extends ElementStockage
 		
 		public Link(String nom)
 		{
-			super(nom,0);
+			super(nom, 0);
 			reference = null;
 		}
 		
 		public Link(String nom, ElementStockage e)
 		{
-			super(nom,0);
+			super(nom, 0);
 			reference = e;
 		}
 		
@@ -36,6 +36,6 @@ public class Link extends ElementStockage
 		{
 			reference.accept(v);
 			
-			v.Visit(this);
+			v.visit(this);
 		}
 }

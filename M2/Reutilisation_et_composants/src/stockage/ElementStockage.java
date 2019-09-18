@@ -6,7 +6,7 @@ import visitors.Visitor;
 public abstract class ElementStockage 
 {
 	protected String name; 		// Nom
-	protected int basicSize;	// Espace de base qu'il occupe en memoire
+	protected int basicSize;	// Espace de base qu'il occupe en mémoire
 	protected Directory parent; // Dossier parent 
 	
 	public ElementStockage(String nom, int t)
@@ -46,14 +46,14 @@ public abstract class ElementStockage
 	// Méthode abstraite car spécifique aux différentes paramétrisations 
 	// (retourne la taille de l'élément de stockage)
 	public abstract int size(); 
-	
+
+	// Retourne l'adresse absolue de l'élément
 	public String absoluteAdress()
-	// Retourne l'adresse absolue de l'element.
 	{
 		if (parent != null) // S'il a un parent
 			return (parent.absoluteAdress() + "/" + name);
 		else
-			return (name); // Ici on est  la racine, on suppose que son nom est racine 
+			return (name); // Ici on est à la racine, on suppose que son nom est racine
 	}
 	
 	public void nouveauParent(Directory d)
