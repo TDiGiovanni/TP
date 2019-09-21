@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel>
+		    <properties/>
+	    <struct>
+	        <and mandatory="true" name="FeatureModel">
+	            <feature mandatory="true" name="Face"/>
+            <alt abstract="true" name="Alternative_1">
+                <feature mandatory="true" name="Hair"/>
+                <feature mandatory="true" name="Costume"/>
+            </alt>
+            <alt abstract="true" name="Alternative_2">
+                <feature mandatory="true" name="Beige_pants"/>
+                <feature mandatory="true" name="Blue_pants"/>
+            </alt>
+            <alt abstract="true" name="Alternative_3">
+                <feature mandatory="true" name="Red_shirt"/>
+                <feature mandatory="true" name="Yellow_shirt"/>
+            </alt>
+        </and>
+    </struct>
+    <constraints>
+        <rule>
+            <imp>
+                <var>Beige_pants</var>
+                <not>
+                    <var>Costume</var>
+                </not>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>Red_shirt</var>
+                <not>
+                    <var>Costume</var>
+                </not>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>Yellow_shirt</var>
+                <not>
+                    <var>Costume</var>
+                </not>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>Costume</var>
+                <not>
+                    <var>Blue_pants</var>
+                </not>
+            </imp>
+        </rule>
+    </constraints>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="false"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>

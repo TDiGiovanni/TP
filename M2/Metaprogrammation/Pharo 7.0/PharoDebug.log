@@ -23052,3 +23052,1239 @@ wait signal ] in SessionManager>>snapshot:andQuit:
 Processor terminateActive ] in BlockClosure>>newProcess
 -------------------------------------------------------------------------------
 
+THERE_BE_DRAGONS_HERE
+
+20 September 2019 2:40:57.511202 pm
+
+VM: Win32 - X64 - 6.2 - CoInterpreter VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+StackToRegisterMappingCogit VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+VM: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git Date: Sat Jan 5 20:00:11 2019 CommitHash: 7a3c6b6 Plugins: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git
+
+Image: Pharo7.0.4 [Build information: Pharo-7.0.4+build.169.sha.a2a2b23d681754955d27b7c5a47ed1e9f87ef7b8 (64 Bit)]
+
+Process>>terminate
+	Receiver: a Process in Process>>terminate
+	Arguments and temporary variables: 
+		ctxt: 	nil
+		unwindBlock: 	nil
+		oldList: 	nil
+	Receiver's instance variables: 
+		nextLink: 	nil
+		suspendedContext: 	Process>>terminate
+		priority: 	40
+		myList: 	nil
+		name: 	nil
+		env: 	nil
+		effectiveProcess: 	nil
+		terminating: 	true
+		level: 	nil
+
+
+NECController>>stopCompletionDelay
+	Receiver: a NECController
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		model: 	a RubScrolledTextModel
+		menuMorph: 	nil
+		editor: 	a ClyTextEditor
+		context: 	nil
+		inverseMapping: 	a Dictionary($"->$" $'->$' $)->$( $>->$< $]->$[ $|->$| $}->${ )...etc...
+		completionDelay: 	a Process in Process>>terminate
+
+
+NECController>>closeMenu
+	Receiver: a NECController
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		model: 	a RubScrolledTextModel
+		menuMorph: 	nil
+		editor: 	a ClyTextEditor
+		context: 	nil
+		inverseMapping: 	a Dictionary($"->$" $'->$' $)->$( $>->$< $]->$[ $|->$| $}->${ )...etc...
+		completionDelay: 	a Process in Process>>terminate
+
+
+MessageSend>>value
+	Receiver: MessageSend(#closeMenu -> a NECController)
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		receiver: 	a NECController
+		selector: 	#closeMenu
+		arguments: 	#()
+
+
+MessageSend>>cull:
+	Receiver: MessageSend(#closeMenu -> a NECController)
+	Arguments and temporary variables: 
+		arg: 	a MorphLostFocus
+	Receiver's instance variables: 
+		receiver: 	a NECController
+		selector: 	#closeMenu
+		arguments: 	#()
+
+
+MessageSend>>cull:cull:
+	Receiver: MessageSend(#closeMenu -> a NECController)
+	Arguments and temporary variables: 
+		arg1: 	a MorphLostFocus
+		arg2: 	an Announcer
+	Receiver's instance variables: 
+		receiver: 	a NECController
+		selector: 	#closeMenu
+		arguments: 	#()
+
+
+[ action cull: anAnnouncement cull: announcer ] in AnnouncementSubscription>>deliver:
+	Receiver: an AnnouncementSubscription
+	Arguments and temporary variables: 
+		anAnnouncement: 	a MorphLostFocus
+	Receiver's instance variables: 
+		announcer: 	an Announcer
+		announcementClass: 	MorphLostFocus
+		subscriber: 	a NECController
+		action: 	MessageSend(#closeMenu -> a NECController)
+
+
+BlockClosure>>on:do:
+	Receiver: [ action cull: anAnnouncement cull: announcer ]
+	Arguments and temporary variables: 
+		exception: 	UnhandledError
+		handlerAction: 	[ :ex | 
+| copy onDoCtx process handler bottom thisCtx |
+onDoCtx...etc...
+	Receiver's instance variables: 
+		outerContext: 	AnnouncementSubscription>>deliver:
+		startpc: 	83
+		numArgs: 	0
+
+
+BlockClosure>>on:fork:
+	Receiver: [ action cull: anAnnouncement cull: announcer ]
+	Arguments and temporary variables: 
+		exception: 	UnhandledError
+		handlerAction: 	[ :ex | ex pass ]
+	Receiver's instance variables: 
+		outerContext: 	AnnouncementSubscription>>deliver:
+		startpc: 	83
+		numArgs: 	0
+
+
+AnnouncementSubscription>>deliver:
+	Receiver: an AnnouncementSubscription
+	Arguments and temporary variables: 
+		anAnnouncement: 	a MorphLostFocus
+	Receiver's instance variables: 
+		announcer: 	an Announcer
+		announcementClass: 	MorphLostFocus
+		subscriber: 	a NECController
+		action: 	MessageSend(#closeMenu -> a NECController)
+
+
+[ "Ensure delivery to remaining announcements" subscription deliver: anAnnouncement ] in SubscriptionRegistry>>deliver:to:startingAt:
+	Receiver: a SubscriptionRegistry
+	Arguments and temporary variables: 
+		anAnnouncement: 	a MorphLostFocus
+		subs: 	an Array(an AnnouncementSubscription an AnnouncementSubscription an Annou...etc...
+		startIndex: 	1
+		index: 	4
+		subscription: 	an AnnouncementSubscription
+	Receiver's instance variables: 
+		subscriptions: 	an IdentitySet(an AnnouncementSubscription an AnnouncementSubscr...etc...
+		monitor: 	a Semaphore()
+
+
+BlockClosure>>ifCurtailed:
+	Receiver: [ "Ensure delivery to remaining announcements" subscription deliver: anAnnouncement ]
+	Arguments and temporary variables: 
+		aBlock: 	[ self deliver: anAnnouncement to: subs startingAt: index + 1 ]
+		complete: 	nil
+		result: 	nil
+	Receiver's instance variables: 
+		outerContext: 	SubscriptionRegistry>>deliver:to:startingAt:
+		startpc: 	82
+		numArgs: 	0
+
+
+SubscriptionRegistry>>deliver:to:startingAt:
+	Receiver: a SubscriptionRegistry
+	Arguments and temporary variables: 
+		anAnnouncement: 	a MorphLostFocus
+		subs: 	an Array(an AnnouncementSubscription an AnnouncementSubscription an Annou...etc...
+		startIndex: 	1
+		subscription: 	an AnnouncementSubscription
+		index: 	4
+	Receiver's instance variables: 
+		subscriptions: 	an IdentitySet(an AnnouncementSubscription an AnnouncementSubscr...etc...
+		monitor: 	a Semaphore()
+
+
+SubscriptionRegistry>>deliver:to:
+	Receiver: a SubscriptionRegistry
+	Arguments and temporary variables: 
+		anAnnouncement: 	a MorphLostFocus
+		subs: 	an Array(an AnnouncementSubscription an AnnouncementSubscription an Annou...etc...
+	Receiver's instance variables: 
+		subscriptions: 	an IdentitySet(an AnnouncementSubscription an AnnouncementSubscr...etc...
+		monitor: 	a Semaphore()
+
+
+SubscriptionRegistry>>deliver:
+	Receiver: a SubscriptionRegistry
+	Arguments and temporary variables: 
+		interestedSubscriptions: 	an Array(an AnnouncementSubscription an AnnouncementSu...etc...
+		anAnnouncement: 	a MorphLostFocus
+	Receiver's instance variables: 
+		subscriptions: 	an IdentitySet(an AnnouncementSubscription an AnnouncementSubscr...etc...
+		monitor: 	a Semaphore()
+
+
+Announcer>>announce:
+	Receiver: an Announcer
+	Arguments and temporary variables: 
+		anAnnouncement: 	a MorphLostFocus
+		announcement: 	a MorphLostFocus
+	Receiver's instance variables: 
+		registry: 	a SubscriptionRegistry
+
+
+RubEditingArea(Morph)>>doAnnounce:
+	Receiver: a RubEditingArea(945302016)
+	Arguments and temporary variables: 
+		anAnnouncement: 	a MorphLostFocus
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (828@107)
+		owner: 	a TransformWithLayoutMorph(607761664)
+		submorphs: 	an Array(a RubPrimarySelectionMorph(392336128) a RubCursor(148795648...etc...
+		fullBounds: 	(0@0) corner: (828@107)
+		color: 	Color transparent
+		extension: 	a MorphExtension (66167808) [other:  (announcer -> an Announcer) (km...etc...
+		model: 	a RubScrolledTextModel
+		paragraph: 	a RubShoutStylerDecorator
+		editor: 	a ClyTextEditor
+		scrollPane: 	a RubTextScrollPane(145659648)
+		editingState: 	a RubEditingState
+		textStyle: 	a TextStyle Source Code Pro
+		textColor: 	Color white
+		margins: 	a Margin top: 6 left: 6 bottom: 6 right: 6
+		readOnly: 	false
+		menuAllowed: 	nil
+		editingMode: 	a ClyTextEditingMode
+		cursor: 	a RubCursor(148795648)
+		segments: 	an OrderedCollection(a ClyCriticalTextSegmentMorph(1015838208))
+		getMenuPolicy: 	nil
+		mouseDownPoint: 	nil
+		wrapped: 	true
+		editorClass: 	ClyTextEditor
+
+
+RubEditingArea(Morph)>>announceKeyboardFocusChange:
+	Receiver: a RubEditingArea(945302016)
+	Arguments and temporary variables: 
+		gotFocus: 	false
+		announcement: 	a MorphLostFocus
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (828@107)
+		owner: 	a TransformWithLayoutMorph(607761664)
+		submorphs: 	an Array(a RubPrimarySelectionMorph(392336128) a RubCursor(148795648...etc...
+		fullBounds: 	(0@0) corner: (828@107)
+		color: 	Color transparent
+		extension: 	a MorphExtension (66167808) [other:  (announcer -> an Announcer) (km...etc...
+		model: 	a RubScrolledTextModel
+		paragraph: 	a RubShoutStylerDecorator
+		editor: 	a ClyTextEditor
+		scrollPane: 	a RubTextScrollPane(145659648)
+		editingState: 	a RubEditingState
+		textStyle: 	a TextStyle Source Code Pro
+		textColor: 	Color white
+		margins: 	a Margin top: 6 left: 6 bottom: 6 right: 6
+		readOnly: 	false
+		menuAllowed: 	nil
+		editingMode: 	a ClyTextEditingMode
+		cursor: 	a RubCursor(148795648)
+		segments: 	an OrderedCollection(a ClyCriticalTextSegmentMorph(1015838208))
+		getMenuPolicy: 	nil
+		mouseDownPoint: 	nil
+		wrapped: 	true
+		editorClass: 	ClyTextEditor
+
+
+RubEditingArea(Morph)>>keyboardFocusChange:
+	Receiver: a RubEditingArea(945302016)
+	Arguments and temporary variables: 
+		gotFocus: 	false
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (828@107)
+		owner: 	a TransformWithLayoutMorph(607761664)
+		submorphs: 	an Array(a RubPrimarySelectionMorph(392336128) a RubCursor(148795648...etc...
+		fullBounds: 	(0@0) corner: (828@107)
+		color: 	Color transparent
+		extension: 	a MorphExtension (66167808) [other:  (announcer -> an Announcer) (km...etc...
+		model: 	a RubScrolledTextModel
+		paragraph: 	a RubShoutStylerDecorator
+		editor: 	a ClyTextEditor
+		scrollPane: 	a RubTextScrollPane(145659648)
+		editingState: 	a RubEditingState
+		textStyle: 	a TextStyle Source Code Pro
+		textColor: 	Color white
+		margins: 	a Margin top: 6 left: 6 bottom: 6 right: 6
+		readOnly: 	false
+		menuAllowed: 	nil
+		editingMode: 	a ClyTextEditingMode
+		cursor: 	a RubCursor(148795648)
+		segments: 	an OrderedCollection(a ClyCriticalTextSegmentMorph(1015838208))
+		getMenuPolicy: 	nil
+		mouseDownPoint: 	nil
+		wrapped: 	true
+		editorClass: 	ClyTextEditor
+
+
+RubEditingArea(RubAbstractTextArea)>>keyboardFocusChange:
+	Receiver: a RubEditingArea(945302016)
+	Arguments and temporary variables: 
+		aBoolean: 	false
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (828@107)
+		owner: 	a TransformWithLayoutMorph(607761664)
+		submorphs: 	an Array(a RubPrimarySelectionMorph(392336128) a RubCursor(148795648...etc...
+		fullBounds: 	(0@0) corner: (828@107)
+		color: 	Color transparent
+		extension: 	a MorphExtension (66167808) [other:  (announcer -> an Announcer) (km...etc...
+		model: 	a RubScrolledTextModel
+		paragraph: 	a RubShoutStylerDecorator
+		editor: 	a ClyTextEditor
+		scrollPane: 	a RubTextScrollPane(145659648)
+		editingState: 	a RubEditingState
+		textStyle: 	a TextStyle Source Code Pro
+		textColor: 	Color white
+		margins: 	a Margin top: 6 left: 6 bottom: 6 right: 6
+		readOnly: 	false
+		menuAllowed: 	nil
+		editingMode: 	a ClyTextEditingMode
+		cursor: 	a RubCursor(148795648)
+		segments: 	an OrderedCollection(a ClyCriticalTextSegmentMorph(1015838208))
+		getMenuPolicy: 	nil
+		mouseDownPoint: 	nil
+		wrapped: 	true
+		editorClass: 	ClyTextEditor
+
+
+HandMorph>>newKeyboardFocus:
+	Receiver: a HandMorph(129251328)
+	Arguments and temporary variables: 
+		aMorphOrNil: 	nil
+		oldFocus: 	a RubEditingArea(945302016)
+	Receiver's instance variables: 
+		bounds: 	(1533@111) corner: (1549@127)
+		owner: 	a WorldMorph(929802752) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (654867456)
+		mouseFocus: 	nil
+		keyboardFocus: 	nil
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		keyboardListeners: 	nil
+		mouseClickState: 	a MouseClickState[#firstClickUp]
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(1533@111) mouseOver 257597 nil]
+		targetOffset: 	(19.0@9.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 257597 1533 111 0 0 0 1)
+		lastKeyScanCode: 	30
+		combinedChar: 	nil
+		eventSource: 	nil
+		lastSystemEvent: 	nil
+		captureBlock: 	nil
+		recentModifiers: 	0
+
+
+HandMorph>>releaseKeyboardFocus
+	Receiver: a HandMorph(129251328)
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		bounds: 	(1533@111) corner: (1549@127)
+		owner: 	a WorldMorph(929802752) [world]
+		submorphs: 	#()
+		fullBounds: 	nil
+		color: 	Color blue
+		extension: 	a MorphExtension (654867456)
+		mouseFocus: 	nil
+		keyboardFocus: 	nil
+		eventListeners: 	nil
+		mouseListeners: 	nil
+		keyboardListeners: 	nil
+		mouseClickState: 	a MouseClickState[#firstClickUp]
+		mouseOverHandler: 	a MouseOverHandler
+		lastMouseEvent: 	[(1533@111) mouseOver 257597 nil]
+		targetOffset: 	(19.0@9.0)
+		damageRecorder: 	a DamageRecorder
+		cacheCanvas: 	nil
+		cachedCanvasHasHoles: 	false
+		temporaryCursor: 	nil
+		temporaryCursorOffset: 	nil
+		hardwareCursor: 	nil
+		hasChanged: 	true
+		savedPatch: 	nil
+		lastEventBuffer: 	#(1 257597 1533 111 0 0 0 1)
+		lastKeyScanCode: 	30
+		combinedChar: 	nil
+		eventSource: 	nil
+		lastSystemEvent: 	nil
+		captureBlock: 	nil
+		recentModifiers: 	0
+
+
+[ :hand | hand releaseKeyboardFocus ] in WorldMorph>>viewBox:
+	Receiver: a WorldMorph(929802752) [world]
+	Arguments and temporary variables: 
+		newViewBox: 	(0@0) corner: (1680@1001)
+		hand: 	a HandMorph(129251328)
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (1680@1001)
+		owner: 	nil
+		submorphs: 	an Array(a MenubarMorph(1060483328) a TaskbarMorph(352435712) a Syst...etc...
+		fullBounds: 	nil
+		color: 	(Color r: 0.295 g: 0.295 b: 0.295 alpha: 1.0)
+		extension: 	a MorphExtension (495911424) [other:  (dragEnabled -> true) (dropEna...etc...
+		borderWidth: 	0
+		borderColor: 	(Color r: 0.861 g: 1.0 b: 0.722 alpha: 1.0)
+		backgroundMorph: 	nil
+		worldState: 	a WorldState
+		griddingOn: 	nil
+		osWindow: 	nil
+		osWindowMutex: 	nil
+		session: 	nil
+
+
+Array(SequenceableCollection)>>do:
+	Receiver: an Array(a HandMorph(129251328))
+	Arguments and temporary variables: 
+		aBlock: 	[ :hand | hand releaseKeyboardFocus ]
+		index: 	1
+	Receiver's instance variables: 
+an Array(a HandMorph(129251328))
+
+WorldState>>handsDo:
+	Receiver: a WorldState
+	Arguments and temporary variables: 
+		aBlock: 	[ :hand | hand releaseKeyboardFocus ]
+	Receiver's instance variables: 
+		hands: 	an Array(a HandMorph(129251328))
+		viewBox: 	(0@0) corner: (1680@1001)
+		canvas: 	nil
+		damageRecorder: 	a DamageRecorder
+		stepList: 	a Heap(StepMessage(#stepAt: -> a GLMSystemWindow(479239168) named: Pl...etc...
+		lastStepTime: 	257605
+		lastStepMessage: 	nil
+		lastCycleTime: 	257597
+		alarms: 	a Heap(MorphicAlarm(#hideShow -> a RubCursor(148795648)))
+		lastAlarmTime: 	257605
+		menuBuilder: 	a PragmaMenuBuilder ( nil ) 
+		activeHand: 	a HandMorph(129251328)
+		currentCursor: 	((CursorWithMask
+	extent: (16@16)
+	depth: 1
+	fromArray: #(
+		2r0...etc...
+
+
+WorldMorph>>viewBox:
+	Receiver: a WorldMorph(929802752) [world]
+	Arguments and temporary variables: 
+		newViewBox: 	(0@0) corner: (1680@1001)
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (1680@1001)
+		owner: 	nil
+		submorphs: 	an Array(a MenubarMorph(1060483328) a TaskbarMorph(352435712) a Syst...etc...
+		fullBounds: 	nil
+		color: 	(Color r: 0.295 g: 0.295 b: 0.295 alpha: 1.0)
+		extension: 	a MorphExtension (495911424) [other:  (dragEnabled -> true) (dropEna...etc...
+		borderWidth: 	0
+		borderColor: 	(Color r: 0.861 g: 1.0 b: 0.722 alpha: 1.0)
+		backgroundMorph: 	nil
+		worldState: 	a WorldState
+		griddingOn: 	nil
+		osWindow: 	nil
+		osWindowMutex: 	nil
+		session: 	nil
+
+
+WorldMorph(PasteUpMorph)>>restoreMorphicDisplay
+	Receiver: a WorldMorph(929802752) [world]
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		bounds: 	(0@0) corner: (1680@1001)
+		owner: 	nil
+		submorphs: 	an Array(a MenubarMorph(1060483328) a TaskbarMorph(352435712) a Syst...etc...
+		fullBounds: 	nil
+		color: 	(Color r: 0.295 g: 0.295 b: 0.295 alpha: 1.0)
+		extension: 	a MorphExtension (495911424) [other:  (dragEnabled -> true) (dropEna...etc...
+		borderWidth: 	0
+		borderColor: 	(Color r: 0.861 g: 1.0 b: 0.722 alpha: 1.0)
+		backgroundMorph: 	nil
+		worldState: 	a WorldState
+		griddingOn: 	nil
+		osWindow: 	nil
+		osWindowMutex: 	nil
+		session: 	nil
+
+
+WorldMorph class>>startUp
+	Receiver: WorldMorph
+	Arguments and temporary variables: 
+		world: 	a WorldMorph(929802752) [world]
+	Receiver's instance variables: 
+		superclass: 	PasteUpMorph
+		methodDict: 	a MethodDictionary(#acceptDroppingMorph:event:->WorldMorph>>#accept...etc...
+		format: 	65550
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{AthensWorldMorph. OSWindowWorldMorph}
+		name: 	#WorldMorph
+		classPool: 	a Dictionary(#AllowDropFiles->nil #CursorOwnerWorld->a WorldMorph(92...etc...
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'Morphic-Core-Worlds'
+		announcer: 	nil
+		displayScaleFactor: 	1
+
+
+WorldMorph class(Behavior)>>startUp:
+	Receiver: WorldMorph
+	Arguments and temporary variables: 
+		resuming: 	true
+	Receiver's instance variables: 
+		superclass: 	PasteUpMorph
+		methodDict: 	a MethodDictionary(#acceptDroppingMorph:event:->WorldMorph>>#accept...etc...
+		format: 	65550
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	{AthensWorldMorph. OSWindowWorldMorph}
+		name: 	#WorldMorph
+		classPool: 	a Dictionary(#AllowDropFiles->nil #CursorOwnerWorld->a WorldMorph(92...etc...
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#'Morphic-Core-Worlds'
+		announcer: 	nil
+		displayScaleFactor: 	1
+
+
+ClassSessionHandler>>startup:
+	Receiver: a ClassSessionHandler(WorldMorph)
+	Arguments and temporary variables: 
+		isImageStarting: 	true
+	Receiver's instance variables: 
+		registeredClassName: 	#WorldMorph
+
+
+[ :each | each startup: isImageStarting ] in WorkingSession>>runStartup:
+	Receiver: a WorkingSession
+	Arguments and temporary variables: 
+		isImageStarting: 	true
+		each: 	a ClassSessionHandler(WorldMorph)
+	Receiver's instance variables: 
+		manager: 	a SessionManager
+		deferredStartupActions: 	an OrderedCollection([ self new activate ] [ self manag...etc...
+		id: 	nil
+		creationTime: 	2019-09-20T14:40:57.269202+02:00
+
+
+[ aBlock value: each ] in [ :each | 
+[ aBlock value: each ]
+	on: Exception
+	do: [ :error | self errorHandler handleError: error ] ] in WorkingSession>>runList:do:
+	Receiver: a WorkingSession
+	Arguments and temporary variables: 
+		aList: 	an Array(a ClassSessionHandler(GlobalIdentifier) a ClassSessionHandler(S...etc...
+		aBlock: 	[ :each | each startup: isImageStarting ]
+		each: 	a ClassSessionHandler(WorldMorph)
+	Receiver's instance variables: 
+		manager: 	a SessionManager
+		deferredStartupActions: 	an OrderedCollection([ self new activate ] [ self manag...etc...
+		id: 	nil
+		creationTime: 	2019-09-20T14:40:57.269202+02:00
+
+
+BlockClosure>>on:do:
+	Receiver: [ aBlock value: each ]
+	Arguments and temporary variables: 
+		exception: 	Exception
+		handlerAction: 	[ :error | self errorHandler handleError: error ]
+	Receiver's instance variables: 
+		outerContext: 	[ :each | 
+[ aBlock value: each ]
+	on: Exception
+	do: [ :error | ...etc...
+		startpc: 	69
+		numArgs: 	0
+
+
+[ :each | 
+[ aBlock value: each ]
+	on: Exception
+	do: [ :error | self errorHandler handleError: error ] ] in WorkingSession>>runList:do:
+	Receiver: a WorkingSession
+	Arguments and temporary variables: 
+		aList: 	an Array(a ClassSessionHandler(GlobalIdentifier) a ClassSessionHandler(S...etc...
+		aBlock: 	[ :each | each startup: isImageStarting ]
+		each: 	a ClassSessionHandler(WorldMorph)
+	Receiver's instance variables: 
+		manager: 	a SessionManager
+		deferredStartupActions: 	an OrderedCollection([ self new activate ] [ self manag...etc...
+		id: 	nil
+		creationTime: 	2019-09-20T14:40:57.269202+02:00
+
+
+Array(SequenceableCollection)>>do:
+	Receiver: an Array(a ClassSessionHandler(GlobalIdentifier) a ClassSessionHandler(SmallInteger) a Cla...etc...
+	Arguments and temporary variables: 
+		aBlock: 	[ :each | 
+[ aBlock value: each ]
+	on: Exception
+	do: [ :error | self e...etc...
+		index: 	48
+	Receiver's instance variables: 
+an Array(a ClassSessionHandler(GlobalIdentifier) a ClassSessionHandler(SmallInteger) a Cla...etc...
+
+WorkingSession>>runList:do:
+	Receiver: a WorkingSession
+	Arguments and temporary variables: 
+		aList: 	an Array(a ClassSessionHandler(GlobalIdentifier) a ClassSessionHandler(S...etc...
+		aBlock: 	[ :each | each startup: isImageStarting ]
+	Receiver's instance variables: 
+		manager: 	a SessionManager
+		deferredStartupActions: 	an OrderedCollection([ self new activate ] [ self manag...etc...
+		id: 	nil
+		creationTime: 	2019-09-20T14:40:57.269202+02:00
+
+
+WorkingSession>>runStartup:
+	Receiver: a WorkingSession
+	Arguments and temporary variables: 
+		isImageStarting: 	true
+	Receiver's instance variables: 
+		manager: 	a SessionManager
+		deferredStartupActions: 	an OrderedCollection([ self new activate ] [ self manag...etc...
+		id: 	nil
+		creationTime: 	2019-09-20T14:40:57.269202+02:00
+
+
+WorkingSession>>start:
+	Receiver: a WorkingSession
+	Arguments and temporary variables: 
+		isImageStarting: 	true
+	Receiver's instance variables: 
+		manager: 	a SessionManager
+		deferredStartupActions: 	an OrderedCollection([ self new activate ] [ self manag...etc...
+		id: 	nil
+		creationTime: 	2019-09-20T14:40:57.269202+02:00
+
+
+SessionManager>>launchSnapshot:andQuit:
+	Receiver: a SessionManager
+	Arguments and temporary variables: 
+		save: 	true
+		quit: 	true
+		isImageStarting: 	true
+		snapshotResult: 	true
+	Receiver's instance variables: 
+		currentSession: 	a WorkingSession
+		categories: 	an OrderedCollection(a SessionCategory(System) a SessionCategory(Ne...etc...
+		guiCategory: 	a SessionCategory(Graphical User Interface)
+		toolsCategory: 	a SessionCategory(Tools)
+		networkCategory: 	a SessionCategory(Network)
+		systemCategory: 	a SessionCategory(System)
+		userCategory: 	a SessionCategory(User)
+
+
+
+--- The full stack ---
+Process>>terminate
+NECController>>stopCompletionDelay
+NECController>>closeMenu
+MessageSend>>value
+MessageSend>>cull:
+MessageSend>>cull:cull:
+[ action cull: anAnnouncement cull: announcer ] in AnnouncementSubscription>>deliver:
+BlockClosure>>on:do:
+BlockClosure>>on:fork:
+AnnouncementSubscription>>deliver:
+[ "Ensure delivery to remaining announcements" subscription deliver: anAnnouncement ] in SubscriptionRegistry>>deliver:to:startingAt:
+BlockClosure>>ifCurtailed:
+SubscriptionRegistry>>deliver:to:startingAt:
+SubscriptionRegistry>>deliver:to:
+SubscriptionRegistry>>deliver:
+Announcer>>announce:
+RubEditingArea(Morph)>>doAnnounce:
+RubEditingArea(Morph)>>announceKeyboardFocusChange:
+RubEditingArea(Morph)>>keyboardFocusChange:
+RubEditingArea(RubAbstractTextArea)>>keyboardFocusChange:
+HandMorph>>newKeyboardFocus:
+HandMorph>>releaseKeyboardFocus
+[ :hand | hand releaseKeyboardFocus ] in WorldMorph>>viewBox:
+Array(SequenceableCollection)>>do:
+WorldState>>handsDo:
+WorldMorph>>viewBox:
+WorldMorph(PasteUpMorph)>>restoreMorphicDisplay
+WorldMorph class>>startUp
+WorldMorph class(Behavior)>>startUp:
+ClassSessionHandler>>startup:
+[ :each | each startup: isImageStarting ] in WorkingSession>>runStartup:
+[ aBlock value: each ] in [ :each | 
+[ aBlock value: each ]
+	on: Exception
+	do: [ :error | self errorHandler handleError: error ] ] in WorkingSession>>runList:do:
+BlockClosure>>on:do:
+[ :each | 
+[ aBlock value: each ]
+	on: Exception
+	do: [ :error | self errorHandler handleError: error ] ] in WorkingSession>>runList:do:
+Array(SequenceableCollection)>>do:
+WorkingSession>>runList:do:
+WorkingSession>>runStartup:
+WorkingSession>>start:
+SessionManager>>launchSnapshot:andQuit:
+ - - - - - - - - - - - - - - -  
+			- - - - - - - - - - - - - - - - - -
+[ isImageStarting := self launchSnapshot: save andQuit: quit.
+wait signal ] in SessionManager>>snapshot:andQuit:
+[ self value.
+Processor terminateActive ] in BlockClosure>>newProcess
+-------------------------------------------------------------------------------
+
+THERE_BE_DRAGONS_HERE
+Instance of Pile class did not understand #isEmpty
+20 September 2019 2:56:32.012202 pm
+
+VM: Win32 - X64 - 6.2 - CoInterpreter VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+StackToRegisterMappingCogit VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+VM: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git Date: Sat Jan 5 20:00:11 2019 CommitHash: 7a3c6b6 Plugins: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git
+
+Image: Pharo7.0.4 [Build information: Pharo-7.0.4+build.169.sha.a2a2b23d681754955d27b7c5a47ed1e9f87ef7b8 (64 Bit)]
+
+Pile class(Object)>>doesNotUnderstand: #isEmpty
+	Receiver: Pile
+	Arguments and temporary variables: 
+		aMessage: 	isEmpty
+		exception: 	MessageNotUnderstood: Pile class>>isEmpty
+		resumeValue: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+Pile class>>example
+	Receiver: Pile
+	Arguments and temporary variables: 
+		testPile: 	Pile
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+ClyExampleScript(ClyClassScript)>>executeOn:
+	Receiver: a ClyExampleScript
+	Arguments and temporary variables: 
+THERE_BE_DRAGONS_HERE
+Instance of Pile class did not understand #isEmpty
+20 September 2019 2:57:01.765202 pm
+
+VM: Win32 - X64 - 6.2 - CoInterpreter VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+StackToRegisterMappingCogit VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+VM: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git Date: Sat Jan 5 20:00:11 2019 CommitHash: 7a3c6b6 Plugins: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git
+
+Image: Pharo7.0.4 [Build information: Pharo-7.0.4+build.169.sha.a2a2b23d681754955d27b7c5a47ed1e9f87ef7b8 (64 Bit)]
+
+Pile class(Object)>>doesNotUnderstand: #isEmpty
+	Receiver: Pile
+	Arguments and temporary variables: 
+		aMessage: 	isEmpty
+		exception: 	MessageNotUnderstood: Pile class>>isEmpty
+		resumeValue: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+Pile class>>example
+	Receiver: Pile
+	Arguments and temporary variables: 
+		testPile: 	Pile
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+ClyExampleScript(ClyClassScript)>>executeOn:
+	Receiver: a ClyExampleScript
+	Arguments and temporary variables: 
+		aClass: 	Pile
+	Receiver's instance variables: 
+		implementorMethod: 	Pile class>>#example
+
+
+ClyRunClassScriptCommand>>execute
+	Receiver: a ClyRunClassScriptCommand
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		targetClass: 	Pile
+		script: 	a ClyExampleScript
+
+
+ClyMethodContextOfFullBrowser(ClySystemBrowserContext)>>executeCommand:by:
+	Receiver: a ClyMethodContextOfFullBrowser
+	Arguments and temporary variables: 
+THERE_BE_DRAGONS_HERE
+Instance of Metaclass did not understand #initialize:
+20 September 2019 2:58:31.975202 pm
+
+VM: Win32 - X64 - 6.2 - CoInterpreter VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+StackToRegisterMappingCogit VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+VM: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git Date: Sat Jan 5 20:00:11 2019 CommitHash: 7a3c6b6 Plugins: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git
+
+Image: Pharo7.0.4 [Build information: Pharo-7.0.4+build.169.sha.a2a2b23d681754955d27b7c5a47ed1e9f87ef7b8 (64 Bit)]
+
+Metaclass(Object)>>doesNotUnderstand: #initialize:
+	Receiver: Pile class
+	Arguments and temporary variables: 
+		aMessage: 	initialize: 5
+		exception: 	MessageNotUnderstood: Metaclass>>initialize:
+		resumeValue: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object class
+		methodDict: 	a MethodDictionary(#example->Pile class>>#example #initialize->Pile...etc...
+		format: 	65547
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		thisClass: 	Pile
+
+
+Pile class>>new
+	Receiver: Pile
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+Pile class>>example
+	Receiver: Pile
+	Arguments and temporary variables: 
+		testPile: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+ClyExampleScript(ClyClassScript)>>executeOn:
+	Receiver: a ClyExampleScript
+	Arguments and temporary variables: 
+		aClass: 	Pile
+	Receiver's instance variables: 
+		implementorMethod: 	Pile class>>#example
+
+
+ClyRunClassScriptCommand>>execute
+	Receiver: a ClyRunClassScriptCommand
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		targetClass: 	Pile
+		script: 	a ClyExampleScript
+
+
+ClyMethodContextOfFullBrowser(ClySystemBrowserContext)>>executeCommand:by:
+	Receiver: a ClyMethodContextOfFullBrowser
+	Arguments and temporary variables: 
+		aCommand: 	a ClyRunClassScriptCommand
+		aCommandActivator: 	a CmdCommandActivator(a ClyRunClassScriptCommand)
+	Receiver's instance variables: 
+		tool: 	a ClyFullBrowser(517948672)
+		selectedItems: 	an Array(a ClyDataSourceItem(example))
+		metaLevelScope: 	ClyClassSideScope
+
+
+[ self prepareCommandForExecution.
+context executeCommand: command by: self.
+self applyCommandResult ] in CmdCommandActivator>>executeCommand
+	Receiver: a CmdCommandActivator(a ClyRunClassScriptCommand)
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		command: 	a ClyRunClassScriptCommand
+		context: 	a ClyMethodContextOfFullBrowser
+		activationStrategy: 	a ClyTableIconCommandActivation
+
+
+BlockClosure>>on:do:
+	Receiver: [ self prepareCommandForExecution.
+context executeCommand: command by: self.
+self applyCom...etc...
+	Arguments and temporary variables: 
+		exception: 	Exception
+		handlerAction: 	[ :exc | self processCommandFailure: exc ]
+	Receiver's instance variables: 
+		outerContext: 	CmdCommandActivator>>executeCommand
+		startpc: 	77
+		numArgs: 	0
+
+
+CmdCommandActivator>>executeCommand
+	Receiver: a CmdCommandActivator(a ClyRunClTHERE_BE_DRAGONS_HERE
+Instance of Pile class did not understand #initialize:
+20 September 2019 2:58:51.439202 pm
+
+VM: Win32 - X64 - 6.2 - CoInterpreter VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+StackToRegisterMappingCogit VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+VM: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git Date: Sat Jan 5 20:00:11 2019 CommitHash: 7a3c6b6 Plugins: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git
+
+Image: Pharo7.0.4 [Build information: Pharo-7.0.4+build.169.sha.a2a2b23d681754955d27b7c5a47ed1e9f87ef7b8 (64 Bit)]
+
+Pile class(Object)>>doesNotUnderstand: #initialize:
+	Receiver: Pile
+	Arguments and temporary variables: 
+		aMessage: 	initialize: 5
+		exception: 	MessageNotUnderstood: Pile class>>initialize:
+		resumeValue: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+Pile class>>new
+	Receiver: Pile
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+Pile class>>example
+	Receiver: Pile
+	Arguments and temporary variables: 
+		testPile: 	nil
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+ClyExampleScript(ClyClassScript)>>executeOn:
+	Receiver: a ClyExampleScript
+	Arguments and temporary variables: 
+		aClass: 	Pile
+	Receiver's instance variables: 
+		implementorMethod: 	Pile class>>#example
+
+
+ClyRunClassScriptCommand>>execute
+	Receiver: a ClyRunClassScriptCommand
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		targetClass: 	Pile
+		script: 	a ClyExampleScript
+
+
+ClyMethodContextOfFullBrowser(ClySystemBrowserContext)>>executeCommand:by:
+	Receiver: a ClyMethodContextOfFullBrowser
+	Arguments and temporary variables: 
+		aCommand: 	a ClyRunClassScriptCommand
+		aCommandActivator: 	a CmdCommandActivator(a ClyRunClassScriptCommand)
+	Receiver's instance variables: 
+		tool: 	a ClyFullBrowser(517948672)
+		selectedItems: 	an Array(a ClyDataSourceItem(example))
+		metaLevelScope: 	ClyClassSideScope
+
+
+[ self prepareCommandForExecution.
+context executeCommand: command by: self.
+self applyCommandResult ] in CmdCommandActivator>>executeCommand
+	Receiver: a CmdCommandActivator(a ClyRunClassScriptCommand)
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		command: 	a ClyRunClassScriptCommand
+		context: 	a ClyMethodContextOfFullBrowser
+		activationStrategy: 	a ClyTableIconCommandActivation
+
+
+BlockClosure>>on:do:
+	Receiver: [ self prepareCommandForExecution.
+context executeCommand: command by: self.
+self applyCom...etc...
+	Arguments and temporary variables: 
+		exception: 	Exception
+		handlerAction: 	[ :exc | self processCommandFailure: exc ]
+	Receiver's instance variables: 
+		outerContext: 	CmdCommandActivator>>executeCommand
+		startpc: 	77
+		numArgs: 	0
+
+
+CmdCommandActivator>>executeCommand
+	Receiver: a CmdCommandActivator(a ClyRunClassScriptCommand)
+	ArgumTHERE_BE_DRAGONS_HERE
+Instance of SystemWindow did not understand #nextPutAll:
+20 September 2019 3:03:04.958202 pm
+
+VM: Win32 - X64 - 6.2 - CoInterpreter VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+StackToRegisterMappingCogit VMMaker.oscog-eem.2504 uuid: a00b0fad-c04c-47a6-8a11-5dbff110ac11 Jan  5 2019
+VM: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git Date: Sat Jan 5 20:00:11 2019 CommitHash: 7a3c6b6 Plugins: 201901051900 https://github.com/OpenSmalltalk/opensmalltalk-vm.git
+
+Image: Pharo7.0.4 [Build information: Pharo-7.0.4+build.169.sha.a2a2b23d681754955d27b7c5a47ed1e9f87ef7b8 (64 Bit)]
+
+SystemWindow(Object)>>doesNotUnderstand: #nextPutAll:
+	Receiver: a SystemWindow(895961856) named: Transcript
+	Arguments and temporary variables: 
+		aMessage: 	nextPutAll: 'Pile de taille '
+		exception: 	MessageNotUnderstood: SystemWindow>>nextPutAll:
+		resumeValue: 	nil
+	Receiver's instance variables: 
+		bounds: 	(51.0@62.0) corner: (498.0@362.0)
+		owner: 	a WorldMorph(929802752) [world]
+		submorphs: 	an Array(a WindowEdgeGripMorph(277993984) a WindowEdgeGripMorph(3982...etc...
+		fullBounds: 	nil
+		color: 	Color veryDarkGray
+		extension: 	a MorphExtension (696875776) [other:  (paneColor -> Color veryDarkGr...etc...
+		borderWidth: 	1
+		borderColor: 	(Color r: 0.135 g: 0.135 b: 0.135 alpha: 1.0)
+		model: 	Transcript
+		labelString: 	'Transcript'
+		stripes: 	an Array(a Morph(19384576) a Morph(455216128))
+		label: 	a LabelMorph(411000832)'Transcript'
+		closeBox: 	a MultistateButtonMorph(312249600)
+		collapseBox: 	a MultistateButtonMorph(606766848)
+		paneMorphs: 	an Array(a RubPluggableTextMorph(606731776))
+		collapsedFrame: 	nil
+		fullFrame: 	(51.0@62.0) corner: (498.0@362.0)
+		isCollapsed: 	false
+		menuBox: 	a MultistateButtonMorph(18890240)
+		mustNotClose: 	false
+		labelWidgetAllowance: 	133
+		updatablePanes: 	#()
+		labelArea: 	an AlignmentMorph(736845568)
+		expandBox: 	a MultistateButtonMorph(703038720)
+		embeddable: 	nil
+		menuBuilder: 	nil
+		isResizeable: 	true
+
+
+Pile>>printOn:
+	Receiver: Pile de taille 5 contenant 2 objets : (1 3 nil nil nil ).
+	Arguments and temporary variables: 
+		aStream: 	a SystemWindow(895961856) named: Transcript
+	Receiver's instance variables: 
+		contenu: 	#(1 3 nil nil nil)
+		index: 	2
+		capacite: 	5
+
+
+Pile class>>example
+	Receiver: Pile
+	Arguments and temporary variables: 
+		testPile: 	Pile de taille 5 contenant 2 objets : (1 3 nil nil nil ).
+	Receiver's instance variables: 
+		superclass: 	Object
+		methodDict: 	a MethodDictionary(#grow->Pile>>#grow #initialize:->Pile>>#initiali...etc...
+		format: 	65539
+		layout: 	a FixedLayout
+		organization: 	a ClassOrganization
+		subclasses: 	nil
+		name: 	#Pile
+		classPool: 	a Dictionary(#DefaultSize->5 )
+		sharedPools: 	an OrderedCollection()
+		environment: 	a SystemDictionary(lots of globals)
+		category: 	#Metaprogrammation
+
+
+ClyExampleScript(ClyClassScript)>>executeOn:
+	Receiver: a ClyExampleScript
+	Arguments and temporary variables: 
+		aClass: 	Pile
+	Receiver's instance variables: 
+		implementorMethod: 	Pile class>>#example
+
+
+ClyRunClassScriptCommand>>execute
+	Receiver: a ClyRunClassScriptCommand
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		targetClass: 	Pile
+		script: 	a ClyExampleScript
+
+
+ClyMethodContextOfFullBrowser(ClySystemBrowserContext)>>executeCommand:by:
+	Receiver: a ClyMethodContextOfFullBrowser
+	Arguments and temporary variables: 
+		aCommand: 	a ClyRunClassScriptCommand
+		aCommandActivator: 	a CmdCommandActivator(a ClyRunClassScriptCommand)
+	Receiver's instance variables: 
+		tool: 	a ClyFullBrowser(517948672)
+		selectedItems: 	an Array(a ClyDataSourceItem(example))
+		metaLevelScope: 	ClyClassSideScope
+
+
+[ self prepareCommandForExecution.
+context executeCommand: command by: self.
+self applyCommandResult ] in CmdCommandActivator>>executeCommand
+	Receiver: a CmdCommandActivator(a ClyRunClassScriptCommand)
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		command: 	a ClyRunClassScriptCommand
+		context: 	a ClyMethodContextOfFullBrowser
+		activationStrategy: 	a ClyTableIconCommandActivation
+
+
+BlockClosure>>on:do:
+	Receiver: [ self prepareCommandForExecution.
+context executeCommand: command by: self.
+self applyCom...etc...
+	Arguments and temporary variables: 
+		exception: 	Exception
+		handlerAction: 	[ :exc | self processCommandFailure: exc ]
+	Receiver's instance variables: 
+		outerContext: 	CmdCommandActivator>>executeCommand
+		startpc: 	77
+		numArgs: 	0
+
+
+CmdCommandActivator>>executeCommand
+	Receiver: a CmdCommandActivator(a ClyRunClassScriptCommand)
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		command: 	a ClyRunClassScriptCommand
+		context: 	a ClyMethodContextOfFullBrowser
+		activationStrategy: 	a ClyTableIconCommandActivation
+
+
+[ target perform: actionSelector withArguments: arguments ] in IconicButton(SimpleButtonMorph)>>doButtonAction
+	Receiver: an IconicButton(4094720)
+	Arguments and temporary variables: 
+
+	Receiver's instance variables: 
+		bounds: 	(780.0@73.0) corner: (796.0@86.0)
+		owner: 	a ClyMainItemCellMorph(608867328)
+		submorphs: 	an Array(an ImageMorph(693912320))
+		fullBounds: 	(780.0@73.0) corner: (796.0@86.0)
+		color: 	Color transparent
+		extension: 	a MorphExtension (678445312) [balloonText] 
+		borderWidth: 	1
+		borderColor: 	Color gray
+		target: 	a CmdCommandActivator(a ClyRunClassScriptCommand)
+		actionSelector: 	#executeCommand
+		arguments: 	#()
+		actWhen: 	#buttonUp
+		oldColor: 	nil
+		label: 	nil
+		graphicalMorph: 	an ImageMorph(693912320)
+		oldBorder: 	nil
+		oldBorderStyle: 	(BorderStyle width: 0 color: Color transparent)
+		mouseOverBorderStyle: 	nil
+
+
+BlockClosure>>ensure:
+	Receiver: [ target perform: actionSelector withArguments: arguments ]
+	Arguments and temporary variables: 
+		aBlock: 	[ oldcursor show ]
+		complete: 	nil
+		returnValue: 	
