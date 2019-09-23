@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -45,7 +48,17 @@ public class showRemindersActivity extends AppCompatActivity implements Notifica
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            Intent backIntent = new Intent(showRemindersActivity.this, AddReminderActivity.class);
+            startActivity(backIntent);
+
+            new Handler(Looper.getMainLooper()).post(new Runnable()
+            {
+                @Override
+                public void run()
+                {
+                    Toast.makeText(getBaseContext(), "There are no reminders to show", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
 
         // Creates the list

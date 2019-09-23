@@ -40,20 +40,20 @@ public class AddReminderActivity extends AppCompatActivity
                         || TextUtils.isEmpty(typeEditText.getText())
                         || TextUtils.isEmpty(titleEditText.getText())
                         || TextUtils.isEmpty(descriptionEditText.getText()))
-                    Toast.makeText(AddReminderActivity.this, "You must fill out all informations", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddReminderActivity.this, "You must fill out all the informations", Toast.LENGTH_SHORT).show();
 
                 else
                     {
-                    String reminderInfos = timeEditText.getText() + " - "
-                            + dateEditText.getText() + " - "
-                            + typeEditText.getText() + " - "
-                            + titleEditText.getText() + " - "
-                            + descriptionEditText.getText();
+                    Reminder reminder = new Reminder(timeEditText.getText().toString(),
+                            dateEditText.getText().toString(),
+                            typeEditText.getText().toString(),
+                            titleEditText.getText().toString(),
+                            descriptionEditText.getText().toString());
 
                     try
                     {
                         FileOutputStream file = openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
-                        file.write(reminderInfos.getBytes());
+                        file.write(reminder.toString().getBytes());
                         file.close();
                     }
                     catch (Exception e)
@@ -78,10 +78,11 @@ public class AddReminderActivity extends AppCompatActivity
             public void onClick(View view) {
                 try
                 {
-                    PrintWriter writer = new PrintWriter(FILE_NAME);
-                    writer.close();
+                    FileOutputStream file = new FileOutputStream(FILE_NAME, false);
+                    file.write("".getBytes());
+                    file.close();
                 }
-                catch (FileNotFoundException e)
+                catch (Exception e)
                 {
                     e.printStackTrace();
                 }
