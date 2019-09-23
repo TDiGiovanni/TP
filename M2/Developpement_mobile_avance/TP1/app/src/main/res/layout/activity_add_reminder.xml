@@ -84,4 +84,10 @@
         android:layout_height="wrap_content"
         android:text="@string/showReminders" />
 
+    <Button
+        android:id="@+id/clearRemindersButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clearReminders" />
+
 </LinearLayout>

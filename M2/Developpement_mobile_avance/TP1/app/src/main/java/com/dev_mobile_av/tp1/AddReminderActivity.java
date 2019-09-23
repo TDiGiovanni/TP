@@ -10,9 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.PrintWriter;
 
-public class AddReminderActivity extends AppCompatActivity {
+public class AddReminderActivity extends AppCompatActivity
+{
     private final static String FILE_NAME = "reminderInfos";
 
     @Override
@@ -26,7 +29,8 @@ public class AddReminderActivity extends AppCompatActivity {
         final EditText titleEditText = findViewById(R.id.titleEditText);
         final EditText descriptionEditText = findViewById(R.id.descriptionEditText);
         Button addReminderButton = findViewById(R.id.addReminderButton);
-        final Button showRemindersButton = findViewById(R.id.showRemindersButton);
+        Button showRemindersButton = findViewById(R.id.showRemindersButton);
+        Button clearRemindersButton = findViewById(R.id.clearRemindersButton);
 
         addReminderButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,18 +42,22 @@ public class AddReminderActivity extends AppCompatActivity {
                         || TextUtils.isEmpty(descriptionEditText.getText()))
                     Toast.makeText(AddReminderActivity.this, "You must fill out all informations", Toast.LENGTH_SHORT).show();
 
-                else {
+                else
+                    {
                     String reminderInfos = timeEditText.getText() + " - "
                             + dateEditText.getText() + " - "
                             + typeEditText.getText() + " - "
                             + titleEditText.getText() + " - "
                             + descriptionEditText.getText();
 
-                    try {
+                    try
+                    {
                         FileOutputStream file = openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
                         file.write(reminderInfos.getBytes());
                         file.close();
-                    } catch (Exception e) {
+                    }
+                    catch (Exception e)
+                    {
                         e.printStackTrace();
                     }
                 }
@@ -62,6 +70,21 @@ public class AddReminderActivity extends AppCompatActivity {
                 Intent intent = new Intent(AddReminderActivity.this, showRemindersActivity.class);
                 intent.putExtra("FILE_NAME", FILE_NAME);
                 startActivity(intent);
+            }
+        });
+
+        clearRemindersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try
+                {
+                    PrintWriter writer = new PrintWriter(FILE_NAME);
+                    writer.close();
+                }
+                catch (FileNotFoundException e)
+                {
+                    e.printStackTrace();
+                }
             }
         });
     }

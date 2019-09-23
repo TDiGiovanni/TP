@@ -8,5 +8,6 @@
     <string name="description">Description</string>
 
     <string name="addReminder">Add reminder</string>
-    <string name="showReminders">show reminders</string>
+    <string name="showReminders">Show reminders</string>
+    <string name="clearReminders">Clear reminders</string>
 </resources>
