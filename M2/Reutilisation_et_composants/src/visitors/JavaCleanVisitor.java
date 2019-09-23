@@ -27,14 +27,22 @@ public class JavaCleanVisitor extends Visitor
 	@Override
 	public void visit(Directory d)
 	{
-		d.remove(filesToDelete.get(d));
+		for (File f : filesToDelete.get(d))
+			d.remove(f);
 	}
 
 	@Override
 	public void visit(File f)
 	{
 		if (function.apply(f.getName()))
-			f.getParent().remove(f);
+			if (filesToDelete.get(f.getParent()) != null)
+					filesToDelete.get(f.getParent()).add(f);
+			else
+			{
+				ArrayList<File> firstFile = new ArrayList<File>();
+				firstFile.add(f);
+				filesToDelete.put(f.getParent(), firstFile);
+			}
 	}
 
 	@Override
