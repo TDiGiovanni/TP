@@ -1,1 +1,1 @@
-Transcript open
+| c x1 x2 |Transcript open.c := Counter new.x1 := c create.x2 := c create.
