@@ -17,19 +17,19 @@ public class Test
 {
 	public static void main(String[] args)
 	{		
-		// Je charge l'instance map.xmi du meta-modele maps.ecore
+		// Je charge l'instance map.xmi du meta-modele Maps.ecore
 		Resource resource = loadModel("model/Maps.xmi", MapsPackage.eINSTANCE);
 		if (resource == null)
-			System.err.println(" Erreur de chargement du modÃ¨le");
+			System.err.println(" Erreur de chargement du modele");
 		
 		// Instruction recuperant le modele sous forme d'arbre a partir de la classe racine "map"
 		Map myMap = (Map) resource.getContents().get(0);
 		
-		System.out.println("List of all the streets :");
+		System.out.println("List of all the streets:");
 		for (Street street : getStreets(myMap))
 			System.out.println(street.getName());
 		
-		System.out.println("List of all the pedestrians over 1000m length :");
+		System.out.println("List of all the pedestrians over 1000m length:");
 		for (Pedestrian pedestrian : getPedestriansOver1000(myMap))
 			System.out.println(pedestrian.getName());
 		
@@ -59,7 +59,7 @@ public class Test
 		   }
 		   catch (Exception e)
 		   {
-		      System.err.println("ERREUR chargement du modèle : " + e);
+		      System.err.println("Erreur de chargement du modele : " + e);
 		      e.printStackTrace();
 		   }
 		   
@@ -84,8 +84,7 @@ public class Test
 		ArrayList<Pedestrian> result = new ArrayList<>();
 		
 		for (Road road : map.getRoads())
-			if (road instanceof Pedestrian
-					&& road.getLength() > 1000)
+			if (road instanceof Pedestrian && road.getLength() > 1000)
 				result.add((Pedestrian) road);
 				
 		return result;
@@ -95,8 +94,7 @@ public class Test
 	public static EList<Road> getAdjacentStreets(Map map, String streetName)
 	{
 		for (Road road : map.getRoads())
-			if (road instanceof Street
-					&& road.getName().equals(streetName))
+			if (road instanceof Street && road.getName().equals(streetName))
 				return road.getMeet();
 		
 		return null;
@@ -106,8 +104,7 @@ public class Test
 	public static EList<Road> getBorderingStreets(Map map, String squareName)
 	{
 		for (PublicSpace publicSpace : map.getSpaces())
-			if (publicSpace instanceof Square
-					&& publicSpace.getName().equals(squareName))
+			if (publicSpace instanceof Square && publicSpace.getName().equals(squareName))
 				return publicSpace.getBorderedBy();
 		
 		return null;

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_Uf5uYN7VEemn9PTeCvxBQQ" name="Packages">
-  <packageImport xmi:type="uml:PackageImport" xmi:id="_UiE4oN7VEemn9PTeCvxBQQ">
-    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="Packages">
+  <packageImport>
+    <importedPackage href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
-  <packagedElement xmi:type="uml:Package" xmi:id="_hM4WUN7gEemUVY9TBQQXUA" name="p">
-    <packagedElement xmi:type="uml:Class" xmi:id="_i9kQ0N7gEemUVY9TBQQXUA" name="c"/>
+  <packagedElement xsi:type="uml:Package" name="p">
+    <packagedElement xsi:type="uml:Class" name="c"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_iAdIUN7gEemUVY9TBQQXUA" name="p2"/>
+  <packagedElement xsi:type="uml:Package" name="p2"/>
 </uml:Model>

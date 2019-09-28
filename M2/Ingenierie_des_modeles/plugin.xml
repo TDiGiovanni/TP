@@ -5,11 +5,12 @@
 -->
 
 <plugin>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Maps -->
       <package
             uri="Maps"
-            class="Maps.MapsPackage"
-            genModel="model/Maps.genmodel"/>
+            class="Maps.MapsPackage"/>
    </extension>
+
 </plugin>

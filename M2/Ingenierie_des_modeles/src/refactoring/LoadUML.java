@@ -1,16 +1,16 @@
 package refactoring;
 
-import org.eclipse.emf.common.util.*;
-import org.eclipse.emf.ecore.*;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.XMLResource.XMLMap;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLMapImpl;
-
-import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.UMLPackage;
 
@@ -19,10 +19,10 @@ public class LoadUML
 	public static void main(String[] args)
 	{
 		// Instruction recuperant le modele sous forme d'arbre a partir de la classe racine "Model"
-		Model umlP = loadModel("model/Refactoring.uml");
+		Model umlP = loadModel("model/Packages.uml");
 		
 		// Modifier le modele UML		
-		
+		//TODO
 		
 		// Sauvegarder le modele avec son nouveau nom
 		saveModel("model/" + umlP.getName() + ".uml", umlP);
