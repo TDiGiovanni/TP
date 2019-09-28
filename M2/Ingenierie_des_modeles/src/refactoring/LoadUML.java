@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.xmi.impl.XMLMapImpl;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Package;
-import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.UMLPackage;
 
 public class LoadUML
@@ -73,7 +72,7 @@ public class LoadUML
 		   return (Model) resource.getContents().get(0);
 		}
 		
-		public static void setPackage(org.eclipse.uml2.uml.Class c, org.eclipse.uml2.uml.Package p)
+		public static void setPackage(Class c, Package p)
 		{
 			c.setPackage(p);
 		}
