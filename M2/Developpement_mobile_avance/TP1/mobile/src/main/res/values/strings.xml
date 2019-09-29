@@ -12,4 +12,5 @@
     <string name="clearReminders">Clear reminders</string>
 
     <string name="reply_action">Reply</string>
+    <string name="reply_indication">Enter your reply</string>
 </resources>

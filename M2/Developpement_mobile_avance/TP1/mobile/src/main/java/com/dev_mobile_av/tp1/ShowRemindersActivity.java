@@ -32,9 +32,9 @@ import com.google.android.gms.wearable.Wearable;
 
 import java.util.ArrayList;
 
-public class showRemindersActivity extends AppCompatActivity implements NotificationProvider
+public class ShowRemindersActivity extends AppCompatActivity implements NotificationProvider
 {
-    private GoogleApiClient googleApiClient;
+    protected ListView remindersList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,16 +42,12 @@ public class showRemindersActivity extends AppCompatActivity implements Notifica
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_reminders);
 
-        ListView remindersList = findViewById(R.id.remindersList);
+        remindersList = findViewById(R.id.remindersList);
 
-        Intent intent = getIntent();
-        ArrayList<Reminder> reminders = (ArrayList<Reminder>) intent.getSerializableExtra("REMINDER_LIST");
-
+        // Get the reminders to show
+        ArrayList<Reminder> reminders = (ArrayList<Reminder>) getIntent().getSerializableExtra("ReminderList");
         if (reminders == null)
-        {
             reminders = new ArrayList<>();
-            reminders.add((Reminder) intent.getSerializableExtra("REMINDER"));
-        }
 
         // Creates the list
         ReminderAdapter adapter = new ReminderAdapter(this, 0, reminders);
@@ -67,24 +63,7 @@ public class showRemindersActivity extends AppCompatActivity implements Notifica
             }
         });
 
-
-        googleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
-                    @Override
-                    public void onConnected(Bundle connectionHint) {
-                    }
-                    @Override
-                    public void onConnectionSuspended(int cause) {
-                    }
-                })
-                .addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener() {
-                    @Override
-                    public void onConnectionFailed(ConnectionResult result) {
-                    }
-                })
-                .addApi(Wearable.API)
-                .build();
-        googleApiClient.connect();
+        createNotificationChannel();
     }
 
     @Override
@@ -95,26 +74,27 @@ public class showRemindersActivity extends AppCompatActivity implements Notifica
         {
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, CHANNEL_ID, NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel);
+            if (notificationManager != null)
+                notificationManager.createNotificationChannel(channel);
         }
     }
 
     @Override
     public void createNotification(Reminder reminder)
     {
-        RemoteInput remoteInput = new RemoteInput.Builder("Result key")
-                .setLabel("Enter your reply")
-                .build();
-
         // Creates an intent towards the relevant activity for when the notification is clicked
-        Intent intent = new Intent(this, showRemindersActivity.class);
-        intent.putExtra("REMINDER", reminder);
+        Intent intent = new Intent(this, ShowReminderActivity.class);
+        intent.putExtra("Reminder", reminder);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        // Create the reply action and add the remote input
+        // Creates the reply action and adds the remote input
+        RemoteInput remoteInput = new RemoteInput.Builder("ResultReply")
+                .setLabel(getResources().getString(R.string.reply_indication))
+                .build();
+
         NotificationCompat.Action action = new NotificationCompat.Action.Builder(R.drawable.ic_launcher_foreground, getResources().getString(R.string.reply_action), pendingIntent)
                 .addRemoteInput(remoteInput)
-                .setAllowGeneratedReplies(false)
+                .setAllowGeneratedReplies(true)
                 .build();
 
         // Creates the notification
@@ -129,28 +109,17 @@ public class showRemindersActivity extends AppCompatActivity implements Notifica
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
-                .extend(new NotificationCompat.WearableExtender().addAction(action));
+                .extend(new NotificationCompat.WearableExtender().addAction(action)); // Adds the action for wearables only
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         notificationManager.notify(notificationId, builder.build());
-    }
-
-    private void syncDataItem(String reply)
-    {
-        if (googleApiClient == null)
-            return;
-
-        final PutDataMapRequest putRequest = PutDataMapRequest.create("/REPLY");
-        final DataMap map = putRequest.getDataMap();
-        map.putString("Reply", reply);
-        Wearable.DataApi.putDataItem(googleApiClient,  putRequest.asPutDataRequest());
     }
 }
 
 class ReminderAdapter extends ArrayAdapter<Reminder>
 {
-    private ArrayList<Reminder> reminders;
-    private static LayoutInflater inflater = null;
+    protected ArrayList<Reminder> reminders;
+    protected static LayoutInflater inflater = null;
 
     public ReminderAdapter (Activity activity, int textViewResourceId, ArrayList<Reminder> reminders)
     {
@@ -173,9 +142,9 @@ class ReminderAdapter extends ArrayAdapter<Reminder>
         return reminders.size();
     }
 
-    public Reminder getItem(Reminder reminder)
+    public Reminder getItem(int position)
     {
-        return reminder;
+        return reminders.get(position);
     }
 
     public long getItemId(int position)
@@ -185,8 +154,8 @@ class ReminderAdapter extends ArrayAdapter<Reminder>
 
     public static class ViewHolder
     {
-        public TextView display_title;
-        public TextView display_date;
+        protected TextView display_title;
+        protected TextView display_date;
     }
 
     @NonNull

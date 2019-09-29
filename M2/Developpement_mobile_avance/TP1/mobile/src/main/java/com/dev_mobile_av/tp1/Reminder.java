@@ -25,12 +25,7 @@ public class Reminder implements Serializable
     {
         this.time = time;
         this.date = date;
-
-        if (type.equals("Message"))
-            this.type = ReminderType.Message;
-        else if (type.equals("Media"))
-            this.type = ReminderType.Media;
-
+        this.type = ReminderType.valueOf(type);
         this.title = title;
         this.description = description;
     }
