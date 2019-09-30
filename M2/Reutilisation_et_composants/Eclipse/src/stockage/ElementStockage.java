@@ -2,11 +2,11 @@ package stockage;
 
 import visitors.Visitor;
 
-// Classe abstraite correspondant à tout élément de stockage mémoire
+// Classe abstraite correspondant a tout element de stockage memoire
 public abstract class ElementStockage 
 {
 	protected String name; 		// Nom
-	protected int basicSize;	// Espace de base qu'il occupe en mémoire
+	protected int basicSize;	// Espace de base qu'il occupe en memoire
 	protected Directory parent; // Dossier parent 
 	
 	public ElementStockage(String nom, int t)
@@ -43,26 +43,26 @@ public abstract class ElementStockage
 		return parent;
 	}
 
-	// Méthode abstraite car spécifique aux différentes paramétrisations 
-	// (retourne la taille de l'élément de stockage)
+	// Méthode abstraite car specifique aux differentes parametrisations 
+	// (retourne la taille de l'element de stockage)
 	public abstract int size(); 
 
-	// Retourne l'adresse absolue de l'élément
+	// Retourne l'adresse absolue de l'element
 	public String absoluteAdress()
 	{
 		if (parent != null) // S'il a un parent
 			return (parent.absoluteAdress() + "/" + name);
 		else
-			return (name); // Ici on est à la racine, on suppose que son nom est racine
+			return (name); // Ici on est a la racine, on suppose que son nom est racine
 	}
 	
 	public void nouveauParent(Directory d)
-	// 'd' devient le nouveau parent de l'élément de stockage
+	// 'd' devient le nouveau parent de l'element de stockage
 	{
 		parent = d;
 	}
 	
-	// Retourne la taille en bits de l'élément
+	// Retourne la taille en bits de l'element
 	public int bitSize()
 	{
 		return this.size() * 8;

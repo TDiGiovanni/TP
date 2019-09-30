@@ -8,11 +8,13 @@ import org.eclipse.jdt.core.dom.TypeDeclaration;
 
 public class TypeDeclarationVisitor extends ASTVisitor
 {
-	List<TypeDeclaration> types = new ArrayList<TypeDeclaration>();
+	protected List<TypeDeclaration> types = new ArrayList<TypeDeclaration>(); 	// All the classes declared in the file
+	protected int attributeCount = 0;											// Number of attributes declared in the file
 	
 	public boolean visit(TypeDeclaration node)
 	{
 		types.add(node);
+		attributeCount += node.getFields().length;
 		return super.visit(node);
 	}
 	
@@ -21,13 +23,20 @@ public class TypeDeclarationVisitor extends ASTVisitor
 		return types;
 	}
 	
+	public int getAttributeCount()
+	{
+		return attributeCount;
+	}
+	
 	public void print()
 	{
 		for (TypeDeclaration declaration : getTypes())
 		{
-			System.out.println("\tDeclaration of type " + declaration.getName()
+			// Type
+			System.out.println("\tDeclaration of the class " + declaration.getName()
 			+ (declaration.getSuperclassType() != null? ", its superclass is " + declaration.getSuperclassType(): ""));
-			
+
+			// Attributes
 			if (declaration.getFields().length != 0)
 			{
 				System.out.println("\tIts attributes are:");

@@ -24,12 +24,6 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.app.RemoteInput;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.wearable.DataMap;
-import com.google.android.gms.wearable.PutDataMapRequest;
-import com.google.android.gms.wearable.Wearable;
-
 import java.util.ArrayList;
 
 public class ShowRemindersActivity extends AppCompatActivity implements NotificationProvider
@@ -40,14 +34,15 @@ public class ShowRemindersActivity extends AppCompatActivity implements Notifica
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_reminders);
 
+        // Fetches layout views
+        setContentView(R.layout.activity_show_reminders);
         remindersList = findViewById(R.id.remindersList);
 
         // Get the reminders to show
         ArrayList<Reminder> reminders = (ArrayList<Reminder>) getIntent().getSerializableExtra("ReminderList");
-        if (reminders == null)
-            reminders = new ArrayList<>();
+        if (reminders != null && reminders.isEmpty())
+            reminders.add(new Reminder("00:00", "01/02/03", ReminderType.Message, "Test title", "Test description"));
 
         // Creates the list
         ReminderAdapter adapter = new ReminderAdapter(this, 0, reminders);
@@ -87,13 +82,18 @@ public class ShowRemindersActivity extends AppCompatActivity implements Notifica
         intent.putExtra("Reminder", reminder);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        // Creates the reply action and adds the remote input
-        RemoteInput remoteInput = new RemoteInput.Builder("ResultReply")
+        // Creates the reply actions
+        RemoteInput textRemoteInput = new RemoteInput.Builder("TextReply")
                 .setLabel(getResources().getString(R.string.reply_indication))
                 .build();
 
-        NotificationCompat.Action action = new NotificationCompat.Action.Builder(R.drawable.ic_launcher_foreground, getResources().getString(R.string.reply_action), pendingIntent)
-                .addRemoteInput(remoteInput)
+        RemoteInput voiceRemoteInput = new RemoteInput.Builder("VoiceReply")
+                .setLabel(getResources().getString(R.string.reply_indication))
+                .build();
+
+        NotificationCompat.Action action = new NotificationCompat.Action.Builder(R.drawable.ic_launcher_foreground, getResources().getString(R.string.reply), pendingIntent)
+                .addRemoteInput(textRemoteInput)
+                //.addRemoteInput(voiceRemoteInput)
                 .setAllowGeneratedReplies(true)
                 .build();
 

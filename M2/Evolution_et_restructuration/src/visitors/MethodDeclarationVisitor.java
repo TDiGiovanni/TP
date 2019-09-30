@@ -9,7 +9,7 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 // Navigates method information
 public class MethodDeclarationVisitor extends ASTVisitor
 {
-	List<MethodDeclaration> methods = new ArrayList<MethodDeclaration>();
+	List<MethodDeclaration> methods = new ArrayList<MethodDeclaration>(); // All methods declared in the file
 	
 	public boolean visit(MethodDeclaration node)
 	{

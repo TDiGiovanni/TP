@@ -8,9 +8,8 @@ import visitors.Visitor;
 // Classe représentant un dossier
 public class Directory extends ElementStockage
 {
-	// Pour la cohérence interne du dossier, il est fondamental que la collection
-	// de ses éléments soit inaccessible aux clients.
-	protected Collection<ElementStockage> elements;
+	protected Collection<ElementStockage> elements; // Pour la coherence interne du dossier,
+													// il est fondamental que la collection de ses elements soit inaccessible aux clients
 	
 	public Directory(String nom)
 	{
@@ -18,7 +17,7 @@ public class Directory extends ElementStockage
 		elements = new ArrayList<ElementStockage>();
 	}
 	
-	// Somme des tailles des différents éléments présents dans ce dossier
+	// Somme des tailles des differents elements presents dans ce dossier
 	public int size()
 	{
 		int somme = basicSize;
@@ -31,7 +30,7 @@ public class Directory extends ElementStockage
 		return somme;
 	}
 	
-	// Affiche  l'écran la liste des éléments qu'il contient
+	// Affiche l'ecran la liste des elements qu'il contient
 	public void ls()
 	{
 		for (ElementStockage s : elements)
@@ -40,8 +39,8 @@ public class Directory extends ElementStockage
 		}
 	}
 	
-	// Retourne le nombre d'éléments du dossier
-	public int nbElm()
+	// Retourne le nombre d'elements du dossier
+	public int numberOfElements()
 	{
 		return elements.size();
 	}
@@ -50,19 +49,17 @@ public class Directory extends ElementStockage
 	{
 		int count = 0;
 		
-		for (ElementStockage s : elements)
-		{
-			count = count + 1 + s.getCount();
-		}
+		for (ElementStockage element : elements)
+			count += 1 + element.getCount();
 		
 		return count;
 	}
 	
-	// Ajoute l'élément 'e' dans le dossier
+	// Ajoute l'element 'e' dans le dossier
 	public boolean add(ElementStockage e)
 	{
-		e.nouveauParent(this);	// Le répertoire courant devient le père de l'élément 'e'
-		return elements.add(e); // Ajout de l'élément 'e' à la collection
+		e.nouveauParent(this);	// Le repertoire courant devient le pere de l'element 'e'
+		return elements.add(e); // Ajout de l'element 'e' a la collection
 	}
 	
 	// Supprime et retourne vrai si la suppression de l'élément 'e' s'est bien passé, faux sinon ('e' non présent ou erreur)

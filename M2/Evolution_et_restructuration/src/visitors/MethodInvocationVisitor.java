@@ -4,25 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.jdt.core.dom.ASTVisitor;
+import org.eclipse.jdt.core.dom.ITypeBinding;
 import org.eclipse.jdt.core.dom.MethodInvocation;
-import org.eclipse.jdt.core.dom.SuperMethodInvocation;
 
 // Navigates methods invocation inside method
 public class MethodInvocationVisitor extends ASTVisitor
 {
 	List<MethodInvocation> methods = new ArrayList<MethodInvocation>();
-	List<SuperMethodInvocation> superMethods = new ArrayList<SuperMethodInvocation>();
 	
 	public boolean visit(MethodInvocation node)
 	{
 		methods.add(node);
-		return super.visit(node);
-	}
-	
-	@Override
-	public boolean visit(SuperMethodInvocation node)
-	{
-		superMethods.add(node);
 		return super.visit(node);
 	}
 
@@ -31,21 +23,13 @@ public class MethodInvocationVisitor extends ASTVisitor
 		return methods;
 	}
 	
-	public List<SuperMethodInvocation> getSuperMethods()
-	{
-		return superMethods;
-	}
-	
 	public void print()
 	{
 		for (MethodInvocation methodInvocation : getMethods())
 		{
-			System.out.println("\t\tCall to the method " + methodInvocation.getName());
-		}
-		
-		for (SuperMethodInvocation methodInvocation : getSuperMethods())
-		{
-			System.out.println("\t\tCall to the super method " + methodInvocation.getName());
+			ITypeBinding binding = methodInvocation.getExpression().resolveTypeBinding();
+			System.out.println("\t\tCall to the method " + methodInvocation.getName()
+			+ (binding == null? "": ", of the class " + methodInvocation.getExpression().resolveTypeBinding().getName()));
 		}
 	}
 }
