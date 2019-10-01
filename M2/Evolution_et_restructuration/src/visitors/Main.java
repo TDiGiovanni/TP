@@ -44,7 +44,7 @@ public class Main
 		
 		// Prints all the statistics for part 2
 		if (partNumber == 2)
-		{			
+		{
 			System.out.println("Number of packages: " + packageCount);
 			System.out.println("Number of classes: " + classCount);
 			System.out.println("Number of methods: " + methodCount);

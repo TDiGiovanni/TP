@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_-jQ58OOgEem5oJ0O0QfYBQ" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_-jQ58OOgEem5oJ0O0QfYBQ" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_AOPOAOOhEem5oJ0O0QfYBQ" type="Package_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_AOP1EOOhEem5oJ0O0QfYBQ" type="Package_NameLabel"/>
     <children xmi:type="notation:BasicCompartment" xmi:id="_AOP1EeOhEem5oJ0O0QfYBQ" type="Package_PackagedElementCompartment">
@@ -9,6 +9,13 @@
           <layoutConstraint xmi:type="notation:Location" xmi:id="_E5WSROOhEem5oJ0O0QfYBQ" y="15"/>
         </children>
         <children xmi:type="notation:BasicCompartment" xmi:id="_E5WSReOhEem5oJ0O0QfYBQ" type="Class_AttributeCompartment_CN">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_rerLsOPBEemcb-Cll1zGJA" source="PapyrusCSSForceValue">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_rerLsePBEemcb-Cll1zGJA" key="collapsed" value="true"/>
+          </eAnnotations>
+          <children xmi:type="notation:Shape" xmi:id="_3HrPIOPBEemcb-Cll1zGJA" type="Property_ClassAttributeLabel">
+            <element xmi:type="uml:Property" href="Packages.uml#_3Hb-kOPBEemcb-Cll1zGJA"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_3HrPIePBEemcb-Cll1zGJA"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_E5WSRuOhEem5oJ0O0QfYBQ"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_E5WSR-OhEem5oJ0O0QfYBQ"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_E5WSSOOhEem5oJ0O0QfYBQ"/>
@@ -27,13 +34,13 @@
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E5WSU-OhEem5oJ0O0QfYBQ"/>
         </children>
         <element xmi:type="uml:Class" href="Packages.uml#_E5TO8OOhEem5oJ0O0QfYBQ"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E5WSQeOhEem5oJ0O0QfYBQ" x="54" y="52" width="121" height="101"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E5WSQeOhEem5oJ0O0QfYBQ" x="54" y="12" width="161" height="141"/>
       </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_AOP1EuOhEem5oJ0O0QfYBQ"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AOP1E-OhEem5oJ0O0QfYBQ"/>
     </children>
     <element xmi:type="uml:Package" href="Packages.uml#_AOIgUOOhEem5oJ0O0QfYBQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AOPOAeOhEem5oJ0O0QfYBQ" x="140" y="100" width="281" height="201"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AOPOAeOhEem5oJ0O0QfYBQ" x="200" y="60" width="361" height="221"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_BjIkYOOhEem5oJ0O0QfYBQ" type="Package_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_BjIkYuOhEem5oJ0O0QfYBQ" type="Package_NameLabel"/>
@@ -42,7 +49,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjIkZeOhEem5oJ0O0QfYBQ"/>
     </children>
     <element xmi:type="uml:Package" href="Packages.uml#_BjH9UOOhEem5oJ0O0QfYBQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjIkYeOhEem5oJ0O0QfYBQ" x="540" y="140" width="221" height="161"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjIkYeOhEem5oJ0O0QfYBQ" x="200" y="360" width="361" height="221"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_-jQ58eOgEem5oJ0O0QfYBQ" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_-jQ58uOgEem5oJ0O0QfYBQ"/>
