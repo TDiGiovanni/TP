@@ -3,6 +3,9 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
     <Component class="concertStage.Counter" name="counter">
+      <Events>
+        <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="counterPropertyChange"/>
+      </Events>
     </Component>
   </NonVisualComponents>
   <AuxValues>
@@ -24,11 +27,11 @@
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="CleanButton" alignment="1" max="32767" attributes="0"/>
-                      <Component id="DecrementButton" alignment="1" max="32767" attributes="0"/>
-                      <Component id="StopButton" alignment="1" max="32767" attributes="0"/>
-                      <Component id="StartButton" alignment="1" max="32767" attributes="0"/>
-                      <Component id="IncrementButton" alignment="1" min="-2" pref="188" max="-2" attributes="0"/>
+                      <Component id="cleanButton" alignment="1" max="32767" attributes="0"/>
+                      <Component id="decrementButton" alignment="1" max="32767" attributes="0"/>
+                      <Component id="stopButton" alignment="1" max="32767" attributes="0"/>
+                      <Component id="startButton" alignment="1" max="32767" attributes="0"/>
+                      <Component id="incrementButton" alignment="1" min="-2" pref="188" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="counterLabel" min="-2" max="-2" attributes="0"/>
@@ -45,35 +48,35 @@
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Component id="counterLabel" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="StartButton" min="-2" max="-2" attributes="0"/>
+              <Component id="startButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="StopButton" min="-2" max="-2" attributes="0"/>
+              <Component id="stopButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="IncrementButton" min="-2" max="-2" attributes="0"/>
+              <Component id="incrementButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="DecrementButton" min="-2" max="-2" attributes="0"/>
+              <Component id="decrementButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="CleanButton" min="-2" max="-2" attributes="0"/>
+              <Component id="cleanButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="37" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="IncrementButton">
+    <Component class="javax.swing.JButton" name="incrementButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Increment"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="IncrementButtonMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="incrementButtonMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="DecrementButton">
+    <Component class="javax.swing.JButton" name="decrementButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Decrement"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="DecrementButtonMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="decrementButtonMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="counterLabel">
@@ -83,28 +86,28 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="StartButton">
+    <Component class="javax.swing.JButton" name="startButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Start"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="StartButtonMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="startButtonMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="StopButton">
+    <Component class="javax.swing.JButton" name="stopButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Stop"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="StopButtonMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="stopButtonMouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="CleanButton">
+    <Component class="javax.swing.JButton" name="cleanButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clean"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CleanButtonMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cleanButtonMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

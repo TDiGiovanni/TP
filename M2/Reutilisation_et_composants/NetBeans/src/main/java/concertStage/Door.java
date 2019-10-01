@@ -4,12 +4,13 @@ package concertStage;
  *
  * @author Thomas
  */
-public class Door extends javax.swing.JPanel {
-
+public class Door extends javax.swing.JPanel
+{
     /**
      * Creates new form Door
      */
-    public Door() {
+    public Door()
+    {
         initComponents();
     }
 
@@ -23,47 +24,53 @@ public class Door extends javax.swing.JPanel {
     private void initComponents() {
 
         counter = new concertStage.Counter();
-        IncrementButton = new javax.swing.JButton();
-        DecrementButton = new javax.swing.JButton();
+        incrementButton = new javax.swing.JButton();
+        decrementButton = new javax.swing.JButton();
         counterLabel = new javax.swing.JLabel();
-        StartButton = new javax.swing.JButton();
-        StopButton = new javax.swing.JButton();
-        CleanButton = new javax.swing.JButton();
+        startButton = new javax.swing.JButton();
+        stopButton = new javax.swing.JButton();
+        cleanButton = new javax.swing.JButton();
 
-        IncrementButton.setText("Increment");
-        IncrementButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                IncrementButtonMouseClicked(evt);
+        counter.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                counterPropertyChange(evt);
             }
         });
 
-        DecrementButton.setText("Decrement");
-        DecrementButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        incrementButton.setText("Increment");
+        incrementButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                DecrementButtonMouseClicked(evt);
+                incrementButtonMouseClicked(evt);
+            }
+        });
+
+        decrementButton.setText("Decrement");
+        decrementButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                decrementButtonMouseClicked(evt);
             }
         });
 
         counterLabel.setText(Integer.toString(counter.getCount()));
 
-        StartButton.setText("Start");
-        StartButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        startButton.setText("Start");
+        startButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                StartButtonMouseClicked(evt);
+                startButtonMouseClicked(evt);
             }
         });
 
-        StopButton.setText("Stop");
-        StopButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        stopButton.setText("Stop");
+        stopButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                StopButtonMouseClicked(evt);
+                stopButtonMouseClicked(evt);
             }
         });
 
-        CleanButton.setText("Clean");
-        CleanButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        cleanButton.setText("Clean");
+        cleanButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CleanButtonMouseClicked(evt);
+                cleanButtonMouseClicked(evt);
             }
         });
 
@@ -75,11 +82,11 @@ public class Door extends javax.swing.JPanel {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(CleanButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(DecrementButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(StopButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(StartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(IncrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cleanButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(decrementButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(stopButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(startButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(incrementButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(counterLabel)
                         .addGap(64, 64, 64)))
@@ -91,47 +98,59 @@ public class Door extends javax.swing.JPanel {
                 .addGap(23, 23, 23)
                 .addComponent(counterLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(StartButton)
+                .addComponent(startButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(StopButton)
+                .addComponent(stopButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(IncrementButton)
+                .addComponent(incrementButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DecrementButton)
+                .addComponent(decrementButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CleanButton)
+                .addComponent(cleanButton)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IncrementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IncrementButtonMouseClicked
+    private void incrementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incrementButtonMouseClicked
         counter.increment();
-    }//GEN-LAST:event_IncrementButtonMouseClicked
+        this.firePropertyChange("counter", counter.getCount() - 1, counter.getCount());
+    }//GEN-LAST:event_incrementButtonMouseClicked
 
-    private void DecrementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DecrementButtonMouseClicked
+    private void decrementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decrementButtonMouseClicked
         counter.decrement();
-    }//GEN-LAST:event_DecrementButtonMouseClicked
+        this.firePropertyChange("counter", counter.getCount() + 1, counter.getCount());
+    }//GEN-LAST:event_decrementButtonMouseClicked
 
-    private void StartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StartButtonMouseClicked
+    private void startButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startButtonMouseClicked
         counter.start();
-    }//GEN-LAST:event_StartButtonMouseClicked
+    }//GEN-LAST:event_startButtonMouseClicked
 
-    private void StopButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StopButtonMouseClicked
+    private void stopButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stopButtonMouseClicked
         counter.stop();
-    }//GEN-LAST:event_StopButtonMouseClicked
+    }//GEN-LAST:event_stopButtonMouseClicked
 
-    private void CleanButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CleanButtonMouseClicked
+    private void cleanButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cleanButtonMouseClicked
+        int oldCounter = counter.getCount();
         counter.clean();
-    }//GEN-LAST:event_CleanButtonMouseClicked
+        this.firePropertyChange("counter", oldCounter, counter.getCount());
+    }//GEN-LAST:event_cleanButtonMouseClicked
 
+    private void counterPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_counterPropertyChange
+        counterLabel.setText(Integer.toString(counter.getCount()));
+    }//GEN-LAST:event_counterPropertyChange
+
+    public int getCount()
+    {
+        return counter.getCount();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CleanButton;
-    private javax.swing.JButton DecrementButton;
-    private javax.swing.JButton IncrementButton;
-    private javax.swing.JButton StartButton;
-    private javax.swing.JButton StopButton;
+    private javax.swing.JButton cleanButton;
     private concertStage.Counter counter;
     private javax.swing.JLabel counterLabel;
+    private javax.swing.JButton decrementButton;
+    private javax.swing.JButton incrementButton;
+    private javax.swing.JButton startButton;
+    private javax.swing.JButton stopButton;
     // End of variables declaration//GEN-END:variables
 }

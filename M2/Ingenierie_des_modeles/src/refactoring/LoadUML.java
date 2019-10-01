@@ -1,6 +1,5 @@
 package refactoring;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -11,12 +10,10 @@ import org.eclipse.emf.ecore.xmi.XMLResource.XMLMap;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLMapImpl;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
-import org.eclipse.uml2.uml.VisibilityKind;
 
 public class LoadUML
 {
@@ -30,7 +27,7 @@ public class LoadUML
 		
 		// Modification du modele
 		setPackage(c, p2);
-		setPrivate(c, "a1",EInt);
+		//setPrivate(c, "a1",EInt);
 		setSuperclass(c, "m1");
 		
 		// Sauvegarde du nouveau modele
@@ -88,7 +85,7 @@ public class LoadUML
 		
 	public static void setPrivate(Class c, String attributeName, Type attributeType)
 	{
-		c.getAttribute(attributeName, attributeType).setVisibility(VisibilityKind.PRIVATE);	
+		//c.getAttribute(attributeName, attributeType).setVisibility(VisibilityKind.PRIVATE);	
 	}
 		
 	public static void setSuperclass(Class c, String methodName)
