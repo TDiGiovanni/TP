@@ -2,7 +2,7 @@ package stockage;
 
 import visitors.*;
 
-public class Main
+public class StockageApp
 {
 	public static void main(String[] args) 
 	{		
