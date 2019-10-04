@@ -1,1 +1,1 @@
-| p l x1 x2 |p := Pile new initialize: 2.Inspecter new inspect: Pile new.Pile compiledMethodAt: #push:.l := List new addFirst: 1.l addFirst: 2.l do: [ :each | x := x + 1 ].x1 := Counter create.x2 := Counter create.x1 value.x2 value.
+| p l x1 x2 |p := Pile new initialize: 2.p push: 3.p push: 4.p grow.Inspecter new inspect: p.Pile compiledMethodAt: #push:.l := List new addFirst: 1.l addFirst: 2.l do: [ :each | each + 1 ].x1 := Counter create.x2 := Counter create.x1 value.x2 value.IDM idmPile.
