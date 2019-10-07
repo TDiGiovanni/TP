@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.xmi.XMLResource.XMLMap;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLMapImpl;
 
-public class Test
+public class MapsApp
 {
 	public static void main(String[] args)
 	{		

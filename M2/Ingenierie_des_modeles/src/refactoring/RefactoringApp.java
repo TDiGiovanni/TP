@@ -1,5 +1,7 @@
 package refactoring;
 
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -14,21 +16,22 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.VisibilityKind;
 
-public class LoadUML
+public class RefactoringApp
 {
 	public static void main(String[] args)
 	{
 		// Recuperation du modele
-		Model model = loadModel("model\\Packages.uml");
-		Package p = (Package) model.getOwnedType("p");
-		Package p2 = (Package) model.getOwnedType("p2");
-		Class c = (Class) p.getOwnedType("c");
+		Model model = loadModel("model/Packages.uml");
+		Package p1 = (Package) model.getMember("p1");
+		Package p2 = (Package) model.getMember("p2");
+		Class c = (Class) p1.getMember("c");
 		
 		// Modification du modele
 		setPackage(c, p2);
-		//setPrivate(c, "a1",EInt);
-		setSuperclass(c, "m1");
+		//setPrivate(c, "a1", );
+		//setSuperclass(c, "m1", "superc");
 		
 		// Sauvegarde du nouveau modele
 		saveModel("model/Result.uml", model);
@@ -78,17 +81,31 @@ public class LoadUML
 		}
 	}
 	
+	// Sets the package of 'c' to 'p'
 	public static void setPackage(Class c, Package p)
 	{
 		c.setPackage(p);
 	}
-		
+	
+	// Sets a given attribute of 'c' to private and creates a getter and setter for it
 	public static void setPrivate(Class c, String attributeName, Type attributeType)
 	{
-		//c.getAttribute(attributeName, attributeType).setVisibility(VisibilityKind.PRIVATE);	
-	}
+		c.getAttribute(attributeName, attributeType).setVisibility(VisibilityKind.PRIVATE_LITERAL);
 		
-	public static void setSuperclass(Class c, String methodName)
+		c.createOwnedOperation("get" + attributeName, null, null, attributeType);
+		
+		EList<String> parameterNames = new BasicEList<>();
+		EList<Type> parametersTypes = new BasicEList<>();
+		parameterNames.add(attributeName);
+		parametersTypes.add(attributeType);
+		c.createOwnedOperation("set" + attributeName, parameterNames, parametersTypes);
+	}
+	
+	// Pulls back up a method of 'c' to its superclass
+	// Fails if: - the given method doesn't exist in 'c'
+	//			 - the given superclass is not a superclass of 'c'
+	//			 - the given method already exists in the given superclass
+	public static void setSuperclass(Class c, String methodName, String superclassName)
 	{
 		
 	}

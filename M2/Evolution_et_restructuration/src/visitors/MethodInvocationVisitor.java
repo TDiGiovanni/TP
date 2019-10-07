@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.jdt.core.dom.ASTVisitor;
+import org.eclipse.jdt.core.dom.Expression;
 import org.eclipse.jdt.core.dom.ITypeBinding;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 
@@ -27,9 +28,17 @@ public class MethodInvocationVisitor extends ASTVisitor
 	{
 		for (MethodInvocation methodInvocation : getMethods())
 		{
-			ITypeBinding binding = methodInvocation.getExpression().resolveTypeBinding();
-			System.out.println("\t\tCall to the method " + methodInvocation.getName()
-			+ (binding == null? "": ", of the class " + methodInvocation.getExpression().resolveTypeBinding().getName()));
+			String addedString = "";
+			Expression expression = methodInvocation.getExpression();
+			ITypeBinding binding = null;
+			
+			if (expression != null)
+				binding = expression.resolveTypeBinding();
+			
+			if (binding != null)
+				addedString = ", of the class " + binding.getName();
+			
+			System.out.println("\t\tCall to the method " + methodInvocation.getName() + addedString);
 		}
 	}
 }

@@ -2,9 +2,9 @@ package stockage;
 
 import java.util.HashMap;
 
-// Classe représentant une archive
-// Elle hérite de Directory car elle possède toutes les caractéristiques d'un dossier
-// Surtout la manipulation de collection qui permet la réutilisation de méthodes
+// Classe representant une archive
+// Elle herite de Directory car elle possede toutes les caracteristiques d'un dossier
+// Surtout la manipulation de collection qui permet la reutilisation de methodes
 public class Archive extends Directory implements IArchive
 {
 	public Archive(String nom)

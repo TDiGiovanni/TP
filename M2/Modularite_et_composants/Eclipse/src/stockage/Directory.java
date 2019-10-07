@@ -5,7 +5,7 @@ import java.util.Collection;
 
 import visitors.Visitor;
 
-// Classe représentant un dossier
+// Classe representant un dossier
 public class Directory extends ElementStockage
 {
 	protected Collection<ElementStockage> elements; // Pour la coherence interne du dossier,
@@ -62,13 +62,13 @@ public class Directory extends ElementStockage
 		return elements.add(e); // Ajout de l'element 'e' a la collection
 	}
 	
-	// Supprime et retourne vrai si la suppression de l'élément 'e' s'est bien passé, faux sinon ('e' non présent ou erreur)
+	// Supprime et retourne vrai si la suppression de l'élément 'e' s'est bien passé, faux sinon ('e' non present ou erreur)
 	public boolean remove(ElementStockage e)
 	{
 		for (ElementStockage s : elements)
 		{
 			if (s.name == e.name)
-				return elements.remove(s); // Suppression de l'élément 'e' dans la collection
+				return elements.remove(s); // Suppression de l'element 'e' dans la collection
 		}
 			
 		return false;
@@ -91,7 +91,7 @@ public class Directory extends ElementStockage
 		return null;
 	}
 	
-	// Rend la collection des adresses absolues de nom "nom" que le répertoire contient
+	// Rend la collection des adresses absolues de nom "nom" que le repertoire contient
 	public ArrayList<String> find(String nom)
 	{
 		ArrayList<String> collection = new ArrayList<String>();
@@ -106,18 +106,18 @@ public class Directory extends ElementStockage
 	}
 	
 	// Rend la collection des adresses absolues de nom "nom" que 
-	// le répertoire contient directement ou par transitivité
+	// le repertoire contient directement ou par transitivite
 	public ArrayList<String> findR(String nom)
 	{
 		ArrayList<String> collection = new ArrayList<String>();
-		ArrayList<String> temporaire ; // Collection temporaire servant  stocker les adresses absolues obtenues par transitivité
+		ArrayList<String> temporaire ; // Collection temporaire servant  stocker les adresses absolues obtenues par transitivite
 			
 		for (ElementStockage s : elements)
 		{
 			if (s.name == nom)
 				collection.add(s.absoluteAdress());
 			
-			if (s instanceof Directory) // Si l'élément de stockage est un dossier, lance la recherche sur s (appel récursif)
+			if (s instanceof Directory) // Si l'element de stockage est un dossier, lance la recherche sur 's' (appel recursif)
 			{
 				temporaire = ((Directory) s).findR(nom);
 			

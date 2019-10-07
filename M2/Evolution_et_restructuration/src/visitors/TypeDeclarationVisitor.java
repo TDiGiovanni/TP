@@ -33,7 +33,7 @@ public class TypeDeclarationVisitor extends ASTVisitor
 		for (TypeDeclaration declaration : getTypes())
 		{
 			// Type
-			System.out.println("\tDeclaration of the class " + declaration.getName()
+			System.out.println("\nDeclaration of the class " + declaration.getName()
 			+ (declaration.getSuperclassType() != null? ", its superclass is " + declaration.getSuperclassType(): ""));
 
 			// Attributes
