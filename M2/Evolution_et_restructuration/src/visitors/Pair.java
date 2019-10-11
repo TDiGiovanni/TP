@@ -6,6 +6,13 @@ public class Pair
 	protected String second;
 	protected int value;
 	
+	public Pair(String newFirst, String newSecond, int newValue)
+	{
+		this.first = newFirst;
+		this.second = newSecond;
+		this.value = newValue;
+	}
+	
 	public Pair(String newFirst, String newSecond)
 	{
 		this.first = newFirst;

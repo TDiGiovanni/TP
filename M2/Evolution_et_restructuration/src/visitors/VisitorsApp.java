@@ -2,6 +2,7 @@ package visitors;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -73,12 +74,12 @@ public class VisitorsApp
 		 {
 			 if (f.isFile()) // Parse if it's a file
 			 {
-				 lineCount += FileUtils.readLines(f).size();
+				 lineCount += FileUtils.readLines(f, Charset.defaultCharset()).size();
 				 
 				 if (partNumber == 1)
-					 firstParse(path, FileUtils.readFileToString(f));
+					 firstParse(path, FileUtils.readFileToString(f, Charset.defaultCharset()));
 				 else if (partNumber == 2)
-					 secondParse(path, FileUtils.readFileToString(f));
+					 secondParse(path, FileUtils.readFileToString(f, Charset.defaultCharset()));
 			 }
 			 else if (f.isDirectory()) // Call the method again if it's a directory
 			 {
@@ -91,6 +92,7 @@ public class VisitorsApp
 	// Sets up the parser
 	public static CompilationUnit setUpParser(String sourcePath, String sourceFile)
 	{
+		@SuppressWarnings("deprecation")
 		ASTParser parser = ASTParser.newParser(AST.JLS4);
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		String[] classpath = {"C:\\Program Files\\Java\\jdk-12.0.2\\lib\\jrt-fs.jar"};
@@ -266,8 +268,8 @@ public class VisitorsApp
 			if (classType.getMethods().length > maxMethods)
 				System.out.println(classType.getName());
 		
-		System.out.println("10% of methods with the most lines of code: TODO");
-		//TODO
+		System.out.println("10% of methods with the most lines of code: ");
+		//TODO: Calculate lines of code
 		
 		System.out.println("Method with the most parameters: " + mostParametersMethod.getName());
 	}
@@ -328,5 +330,42 @@ public class VisitorsApp
 		for (Pair pair : pairs)
 			if (pair.getValue() != 0)
 				System.out.println(pair.getFirst() + " - " + pair.getValue() + " - " + pair.getSecond());
+	}
+	
+	// Sorts the array given as a parameter
+	public static List<Pair> sortPairs(List<Pair> pairs)
+	{
+		Collections.sort(pairs, new Comparator<Pair>()
+		{
+			@Override
+		    public int compare(Pair pair2, Pair pair1)
+		    {
+		        return Integer.compare(pair1.getValue(), pair2.getValue());
+		    }
+		});
+		
+		List<Pair> resultPairs = new ArrayList<>();
+		for (int i = 0; i < (pairs.size() / 10); i++)
+			resultPairs.add(pairs.get(i));
+			
+		return resultPairs;
+	}
+	
+	// Creates a clustering of classes
+	public static void cluster()
+	{
+		List<Pair> sortedPairs = sortPairs(pairs);
+		Pair firstPair = null,
+				secondPair = null,
+				newPair = null;
+		
+		while (!sortedPairs.isEmpty())
+		{
+			firstPair = sortedPairs.get(0);
+			secondPair = sortedPairs.get(1);
+			newPair = new Pair(firstPair.getFirst() + "-" +firstPair.getSecond(),
+					secondPair.getFirst() + "-" +secondPair.getSecond(),
+					firstPair.getValue() + secondPair.getValue());
+		}
 	}
 }

@@ -26,12 +26,17 @@ public class RefactoringApp
 		Model model = loadModel("model/Packages.uml");
 		Package p1 = (Package) model.getMember("p1");
 		Package p2 = (Package) model.getMember("p2");
-		Class c = (Class) p1.getMember("c");
+		Class c = (Class) p1.getMember("C");
+		Class superc = (Class) p1.getMember("Superc");
 		
 		// Modification du modele
 		setPackage(c, p2);
+		
 		//setPrivate(c, "a1", );
-		//setSuperclass(c, "m1", "superc");
+		
+		EList<String> attributesNames = new BasicEList<>();
+		EList<Type> attributesTypes = new BasicEList<>();
+		setSuperclass(c, "m1", attributesNames, attributesTypes, superc);
 		
 		// Sauvegarde du nouveau modele
 		saveModel("model/Result.uml", model);
@@ -90,23 +95,26 @@ public class RefactoringApp
 	// Sets a given attribute of 'c' to private and creates a getter and setter for it
 	public static void setPrivate(Class c, String attributeName, Type attributeType)
 	{
+		// Switches the attribute to private
 		c.getAttribute(attributeName, attributeType).setVisibility(VisibilityKind.PRIVATE_LITERAL);
 		
+		// Creates the getter
 		c.createOwnedOperation("get" + attributeName, null, null, attributeType);
 		
+		// Creates the setter
 		EList<String> parameterNames = new BasicEList<>();
 		EList<Type> parametersTypes = new BasicEList<>();
 		parameterNames.add(attributeName);
 		parametersTypes.add(attributeType);
-		c.createOwnedOperation("set" + attributeName, parameterNames, parametersTypes);
+		c.createOwnedOperation("set" + attributeName, parameterNames, parametersTypes, null);
 	}
 	
 	// Pulls back up a method of 'c' to its superclass
 	// Fails if: - the given method doesn't exist in 'c'
 	//			 - the given superclass is not a superclass of 'c'
 	//			 - the given method already exists in the given superclass
-	public static void setSuperclass(Class c, String methodName, String superclassName)
-	{
-		
+	public static void setSuperclass(Class c, String methodName, EList<String> methodAttributesNames, EList<Type> methodAttributesTypes, Class superclass)
+	{		
+		superclass.createOwnedOperation(methodName, methodAttributesNames, methodAttributesTypes);
 	}
 }
