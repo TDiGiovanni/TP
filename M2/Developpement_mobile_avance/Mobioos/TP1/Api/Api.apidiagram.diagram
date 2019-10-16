@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<apiDslDiagram dslVersion="1.0.0.0" Id="3d04146a-4c3c-4296-bc5e-74bf1fe4cc51" absoluteBounds="0, 0, 11, 8.5" name="Api">
+  <apiModelMoniker Id="5d85b247-e310-440d-9285-4adb1480eff2" />
+  <nestedChildShapes>
+    <apiShape Id="1a9551eb-18b5-4c93-b78d-77ae08b16974" absoluteBounds="5.25, 2.625, 1.9375, 1.1041666269302368">
+      <apiMoniker Id="d8b30564-66dc-4d69-9ef3-3b11957247b0" />
+    </apiShape>
+    <actionShape Id="34a4f7ad-8ca6-4b00-aab6-fbaf8172cc2f" absoluteBounds="1.75, 0.5, 1.5, 1.4704703776041668">
+      <actionMoniker Id="1c2e9474-5845-467f-896e-3f83b9125879" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9bd8661-9ee8-4b79-b97b-00ffe1da9741" absoluteBounds="1.7649999999999997, 0.91000000000000014, 1.4700000000000002, 0.2493896484375" name="Roles" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="abedc109-6675-490d-9491-a77ec357fd86" absoluteBounds="1.7649999999999997, 1.1693896484375, 1.4700000000000002, 0.2493896484375" name="ParametresSimples" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="11848f30-c68c-418a-a351-ca194c267add" absoluteBounds="1.7649999999999997, 1.4287792968750002, 1.4700000000000002, 0.44169108072916663" name="ParametresReferences" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </actionShape>
+    <actionShape Id="58369f8e-b9fd-40b3-892e-ba7041da19fd" absoluteBounds="5.5, 4.75, 1.5, 1.2781689453124994">
+      <actionMoniker Id="685ad4f1-a6fd-4f61-8140-9f124fbf43ae" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e989830-0a1e-4a3d-ba26-c43528fedbec" absoluteBounds="5.515, 5.16, 1.4700000000000002, 0.2493896484375" name="Roles" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="26e2504d-e868-4241-ae5e-a553fbf91fd7" absoluteBounds="5.515, 5.4193896484375, 1.4700000000000002, 0.2493896484375" name="ParametresSimples" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="707f4ec6-ac74-49a4-b98e-2d64308f2f34" absoluteBounds="5.515, 5.678779296875, 1.4700000000000002, 0.24938964843750011" name="ParametresReferences" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </actionShape>
+    <actionShape Id="da6b4ea9-99e4-4b5e-9a0d-33bbead318af" absoluteBounds="5.5, 0.5, 1.5, 1.4704703776041668">
+      <actionMoniker Id="995aaa8e-4f5b-4c7c-8d68-59e9b9298398" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a429cacb-b0e6-4d6d-ae49-6e128cd21d33" absoluteBounds="5.5150000000000006, 0.91000000000000014, 1.4700000000000002, 0.2493896484375" name="Roles" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="29930b2e-bf74-4613-bc3d-4089b8483991" absoluteBounds="5.5150000000000006, 1.1693896484375, 1.4700000000000002, 0.44169108072916663" name="ParametresSimples" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7f938789-37d4-4e03-9d77-de0b7ea5f1b8" absoluteBounds="5.515, 1.6210807291666667, 1.4700000000000002, 0.2493896484375" name="ParametresReferences" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </actionShape>
+    <actionShape Id="b6d9fb4d-0c47-4067-8807-7f0fce40ed42" absoluteBounds="9.25, 0.5, 1.5, 1.4704703776041668">
+      <actionMoniker Id="53c3a12e-7de3-4560-a526-229a8f9637cc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ebdfbd5-6844-4056-809e-ee6a17abcb6d" absoluteBounds="9.265, 0.91000000000000014, 1.4700000000000002, 0.2493896484375" name="Roles" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3aa33c46-79eb-4649-8b8a-3fd2fd5ddd6a" absoluteBounds="9.265, 1.1693896484375, 1.4700000000000002, 0.2493896484375" name="ParametresSimples" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0236f230-22d9-4fba-875a-2baaa19b6360" absoluteBounds="9.265, 1.4287792968750002, 1.4700000000000002, 0.44169108072916663" name="ParametresReferences" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </actionShape>
+    <actionShape Id="6fc072d5-f82a-4ccc-a992-784f4bb6fd6f" absoluteBounds="1.75, 4.75, 1.5, 1.4704703776041663">
+      <actionMoniker Id="394cf465-7d78-44e1-8451-100202103065" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d76a1be-876f-4b08-b35f-57d62d5b0aa9" absoluteBounds="1.7649999999999997, 5.16, 1.4700000000000002, 0.2493896484375" name="Roles" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5e07db00-1759-46ba-ae59-17e7260b3071" absoluteBounds="1.7649999999999997, 5.4193896484375, 1.4700000000000002, 0.44169108072916663" name="ParametresSimples" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bfccd9f5-b995-4c9a-97e1-48266aa9e1d5" absoluteBounds="1.765, 5.8710807291666667, 1.4700000000000002, 0.2493896484375" name="ParametresReferences" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </actionShape>
+    <actionShape Id="b70ab3bb-1ab1-46de-bdc9-a98d5dad15c8" absoluteBounds="9.25, 4.75, 1.5, 1.4704703776041663">
+      <actionMoniker Id="b9da89d7-024f-479a-a238-bf01299721ea" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02680d19-ffb5-44b2-a9ef-556d9b907f03" absoluteBounds="9.265, 5.16, 1.4700000000000002, 0.2493896484375" name="Roles" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2788f0d9-1065-4765-a7af-f86de4784b40" absoluteBounds="9.265, 5.4193896484375, 1.4700000000000002, 0.44169108072916663" name="ParametresSimples" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e9f3a487-5601-46ae-9491-4ccf9416d139" absoluteBounds="9.265, 5.8710807291666667, 1.4700000000000002, 0.2493896484375" name="ParametresReferences" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </actionShape>
+    <actionRelation Id="ef330b78-7467-4007-8694-d8287861c7dc" edgePoints="[(5.25 : 3.02343623509884); (2.71875 : 3.02343623509884); (2.71875 : 1.97047037760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <apiReferencesActionMoniker Id="0c4f53c2-0dac-46f0-b17e-57e733fec65e" />
+      <nodes>
+        <apiShapeMoniker Id="1a9551eb-18b5-4c93-b78d-77ae08b16974" />
+        <actionShapeMoniker Id="34a4f7ad-8ca6-4b00-aab6-fbaf8172cc2f" />
+      </nodes>
+    </actionRelation>
+    <actionRelation Id="7cbe1234-13e3-416e-b269-f5cd5a4a3b85" edgePoints="[(6.25 : 2.625); (6.25 : 1.97047037760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <apiReferencesActionMoniker Id="a17cdbc5-9298-44dd-a8ab-1830e90c936b" />
+      <nodes>
+        <apiShapeMoniker Id="1a9551eb-18b5-4c93-b78d-77ae08b16974" />
+        <actionShapeMoniker Id="da6b4ea9-99e4-4b5e-9a0d-33bbead318af" />
+      </nodes>
+    </actionRelation>
+    <actionRelation Id="e1764650-aeaa-45ee-aaed-eb235cfa72f1" edgePoints="[(7.1875 : 2.98502446550727); (10.25 : 2.98502446550727); (10.25 : 1.97047037760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <apiReferencesActionMoniker Id="9569a51d-fdaa-4b70-9aa4-0007d9afcde1" />
+      <nodes>
+        <apiShapeMoniker Id="1a9551eb-18b5-4c93-b78d-77ae08b16974" />
+        <actionShapeMoniker Id="b6d9fb4d-0c47-4067-8807-7f0fce40ed42" />
+      </nodes>
+    </actionRelation>
+    <actionRelation Id="d65edf6e-ded8-41c5-841a-45fa4689801b" edgePoints="[(6.25 : 3.72916662693024); (6.25 : 4.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <apiReferencesActionMoniker Id="fe295571-7b6c-461c-badd-fb0b689f78ba" />
+      <nodes>
+        <apiShapeMoniker Id="1a9551eb-18b5-4c93-b78d-77ae08b16974" />
+        <actionShapeMoniker Id="58369f8e-b9fd-40b3-892e-ba7041da19fd" />
+      </nodes>
+    </actionRelation>
+    <actionRelation Id="6e207829-30dd-4b2b-8cf2-cdb17b3a57d4" edgePoints="[(7.1875 : 3.40755393101454); (9.75 : 3.40755393101454); (9.75 : 4.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <apiReferencesActionMoniker Id="804eefc5-c342-4ef5-b8e9-458f133ceca0" />
+      <nodes>
+        <apiShapeMoniker Id="1a9551eb-18b5-4c93-b78d-77ae08b16974" />
+        <actionShapeMoniker Id="b70ab3bb-1ab1-46de-bdc9-a98d5dad15c8" />
+      </nodes>
+    </actionRelation>
+    <actionRelation Id="79196cf4-bbee-43b6-85b7-dd796c5e0007" edgePoints="[(5.25 : 3.40755393101454); (2.234375 : 3.40755393101454); (2.234375 : 4.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <apiReferencesActionMoniker Id="b5e8b84d-1fcd-44f7-a1dd-3507429da8ef" />
+      <nodes>
+        <apiShapeMoniker Id="1a9551eb-18b5-4c93-b78d-77ae08b16974" />
+        <actionShapeMoniker Id="6fc072d5-f82a-4ccc-a992-784f4bb6fd6f" />
+      </nodes>
+    </actionRelation>
+  </nestedChildShapes>
+</apiDslDiagram>

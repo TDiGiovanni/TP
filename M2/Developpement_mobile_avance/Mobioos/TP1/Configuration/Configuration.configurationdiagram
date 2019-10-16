@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/CommonDSL" dslVersion="1.0.0.0" Id="c89edf08-7d1c-47d8-8f2d-0b8e143277c3" xmlns="http://schemas.microsoft.com/dsltools/ConfigurationDSL">
+  <configuration>
+    <configuration Id="7ad77543-e355-439b-a073-9f3f242c6097" identifier="TodoConfiguration" isRestricted="false" isNullable="false" title="TodoConfiguration" defaultValue="TodoConfiguration" value="TodoConfiguration" key="TodoConfiguration" />
+  </configuration>
+</configurationModel>

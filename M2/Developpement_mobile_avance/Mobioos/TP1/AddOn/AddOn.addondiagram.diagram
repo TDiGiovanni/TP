@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<addOnDslDiagram dslVersion="1.0.0.0" Id="e47fdbb5-8e8d-4f9f-9f18-8208a2e168da" absoluteBounds="0, 0, 11, 8.5" name="AddOn">
+  <addOnModelMoniker Id="bceae6ab-2bab-40fe-8278-5fa4ebdd1bb5" />
+  <nestedChildShapes>
+    <addOnShape Id="ab85b6f8-0ee5-495b-82c0-f145516a815a" absoluteBounds="3.125, 2.375, 1.9375, 1.1041666269302368">
+      <addOnMoniker Id="b0aa688d-d5f4-4f1c-8178-a59e45ba4e7e" />
+    </addOnShape>
+    <configurationShape Id="8239328c-e9d1-4b08-807a-00ec8be585a0" absoluteBounds="7, 2.375, 1.9375, 1.1041666269302368">
+      <configurationMoniker Id="c246294a-87c7-4046-913a-5d57477a48a3" />
+    </configurationShape>
+    <configurationRelation Id="c2d7f400-0524-4a66-8094-083ff3fcf1ad" edgePoints="[(5.0625 : 2.92708331346512); (7 : 2.92708331346512)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <addOnReferencesConfigurationMoniker Id="0dbbc2ae-9dfe-4401-9fae-68b56eca8f96" />
+      <nodes>
+        <addOnShapeMoniker Id="ab85b6f8-0ee5-495b-82c0-f145516a815a" />
+        <configurationShapeMoniker Id="8239328c-e9d1-4b08-807a-00ec8be585a0" />
+      </nodes>
+    </configurationRelation>
+  </nestedChildShapes>
+</addOnDslDiagram>

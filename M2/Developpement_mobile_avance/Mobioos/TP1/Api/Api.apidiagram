@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<apiModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/CommonDSL" dslVersion="1.0.0.0" Id="5d85b247-e310-440d-9285-4adb1480eff2" xmlns="http://schemas.microsoft.com/dsltools/ApiDsl">
+  <action>
+    <action Id="1c2e9474-5845-467f-896e-3f83b9125879" identifier="create" isRestricted="false" isNullable="false" type="DataCreate" url="/api/createTodo" allowAnonymous="false" returnType="">
+      <parametreReference>
+        <actionHasParametreReference Id="b3f8c8e7-fc02-457d-9b55-7eeec8f93d67">
+          <parametreReference Id="48f50b31-d821-446a-9779-f771a8775abc" identifier="todo" isRestricted="false" isNullable="false" type="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/CreateTodo/..\Data\Data.datamodeldiagram%2fdcae559b-72a2-476b-9f45-570a7bbe0d12" />
+        </actionHasParametreReference>
+      </parametreReference>
+    </action>
+    <action Id="685ad4f1-a6fd-4f61-8140-9f124fbf43ae" identifier="list" isRestricted="false" isNullable="false" type="DataList" url="/api/listTodo" allowAnonymous="false" returnType="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/Todo/..\Data\Data.datamodeldiagram%2ff0aed121-7b55-4621-9876-ad74b2cd9c5f" />
+    <action Id="995aaa8e-4f5b-4c7c-8d68-59e9b9298398" identifier="get" isRestricted="false" isNullable="false" url="/api/getTodo" allowAnonymous="false" returnType="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/Todo/..\Data\Data.datamodeldiagram%2ff0aed121-7b55-4621-9876-ad74b2cd9c5f">
+      <parametreSimple>
+        <actionHasParametreSimple Id="9cffa1aa-ca21-4ac4-b7b0-fe89bec3f674">
+          <parametreSimple Id="7c99e43e-325c-462f-9040-f57593a329f4" identifier="id" isRestricted="false" isNullable="false" type="Integer" />
+        </actionHasParametreSimple>
+      </parametreSimple>
+    </action>
+    <action Id="53c3a12e-7de3-4560-a526-229a8f9637cc" identifier="update" isRestricted="false" isNullable="false" type="DataUpdate" url="/api/updateTodo" allowAnonymous="false" returnType="">
+      <parametreReference>
+        <actionHasParametreReference Id="8b5a1072-f470-4261-8e6d-05306c2ba452">
+          <parametreReference Id="7b73d2cb-6ed0-485b-b5e3-411d2a1006f6" identifier="todo" isRestricted="false" isNullable="false" type="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/EditTodo/..\Data\Data.datamodeldiagram%2f5d4526d8-e7f2-4e14-a3c9-ff97b320972c" />
+        </actionHasParametreReference>
+      </parametreReference>
+    </action>
+    <action Id="394cf465-7d78-44e1-8451-100202103065" identifier="delete" isRestricted="false" isNullable="false" type="DataDelete" url="/api/deleteTodo" allowAnonymous="false" returnType="">
+      <parametreSimple>
+        <actionHasParametreSimple Id="4f18b846-427c-47b2-9db0-f9cacf4dba3b">
+          <parametreSimple Id="91abd716-0334-4cda-bd7b-e442648a11b7" identifier="id" isRestricted="false" isNullable="false" type="Integer" />
+        </actionHasParametreSimple>
+      </parametreSimple>
+    </action>
+    <action Id="b9da89d7-024f-479a-a238-bf01299721ea" identifier="check" isRestricted="false" isNullable="false" type="DataUpdate" url="/api/checkTodo" allowAnonymous="false" returnType="">
+      <parametreSimple>
+        <actionHasParametreSimple Id="9ffb3191-8ebe-433b-b9ad-2c11acd70dee">
+          <parametreSimple Id="ac19cc08-45ca-4efb-8373-7190b00eca6b" identifier="id" isRestricted="false" isNullable="false" type="Integer" />
+        </actionHasParametreSimple>
+      </parametreSimple>
+    </action>
+  </action>
+  <api>
+    <apiModelHasApi Id="ae0df6e2-fe7e-4169-85fe-4d78b59c8bef">
+      <api Id="d8b30564-66dc-4d69-9ef3-3b11957247b0" identifier="Todo" isRestricted="false" isNullable="false" description="The Todo API">
+        <action>
+          <apiReferencesAction Id="0c4f53c2-0dac-46f0-b17e-57e733fec65e">
+            <actionMoniker Id="1c2e9474-5845-467f-896e-3f83b9125879" />
+          </apiReferencesAction>
+          <apiReferencesAction Id="a17cdbc5-9298-44dd-a8ab-1830e90c936b">
+            <actionMoniker Id="995aaa8e-4f5b-4c7c-8d68-59e9b9298398" />
+          </apiReferencesAction>
+          <apiReferencesAction Id="9569a51d-fdaa-4b70-9aa4-0007d9afcde1">
+            <actionMoniker Id="53c3a12e-7de3-4560-a526-229a8f9637cc" />
+          </apiReferencesAction>
+          <apiReferencesAction Id="fe295571-7b6c-461c-badd-fb0b689f78ba">
+            <actionMoniker Id="685ad4f1-a6fd-4f61-8140-9f124fbf43ae" />
+          </apiReferencesAction>
+          <apiReferencesAction Id="804eefc5-c342-4ef5-b8e9-458f133ceca0">
+            <actionMoniker Id="b9da89d7-024f-479a-a238-bf01299721ea" />
+          </apiReferencesAction>
+          <apiReferencesAction Id="b5e8b84d-1fcd-44f7-a1dd-3507429da8ef">
+            <actionMoniker Id="394cf465-7d78-44e1-8451-100202103065" />
+          </apiReferencesAction>
+        </action>
+      </api>
+    </apiModelHasApi>
+  </api>
+</apiModel>

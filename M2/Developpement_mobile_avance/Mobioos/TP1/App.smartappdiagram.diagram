@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<smartAppModelingLanguageDiagram dslVersion="1.0.0.0" Id="52bc0f52-35e6-484a-bb87-b34f7286cafb" absoluteBounds="0, 0, 11, 8.5" name="SmartAppDSL">
+  <exampleModelMoniker Id="51358306-ea12-40b7-8bb5-d167aa04eff6" />
+  <nestedChildShapes>
+    <smartAppShape Id="c48aef2a-db75-47c8-93ea-eec7220e55f6" absoluteBounds="5.125, 1.75, 1.5, 2.9507568359374989">
+      <exampleElementMoniker Id="3109b64e-bf95-4d16-a1a0-2fb1bc434c54" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43349e01-88a2-4932-9c1d-a4c874fb5c1d" absoluteBounds="5.14, 2.16, 1.4700000000000002, 0.63399251302083326" name="Attributes" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="392a8b65-2205-4cb1-89a0-5ad287f46449" absoluteBounds="5.14, 2.803992513020833, 1.4700000000000002, 0.44169108072916663" name="Concerns" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9d9c27cc-ddea-45ee-860a-345fbfdd07ec" absoluteBounds="5.14, 3.2556835937499997, 1.4700000000000002, 0.44169108072916663" name="Configurations" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="837ae53c-6386-4f72-8ae4-35dad24045d9" absoluteBounds="5.14, 3.7073746744791665, 1.4700000000000002, 0.44169108072916663" name="Api" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1f5cb755-2d02-4ba9-be8d-db25eeefd9a0" absoluteBounds="5.14, 4.1590657552083332, 1.4700000000000002, 0.44169108072916663" name="DataModel" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </smartAppShape>
+    <themeShape Id="7f1446e0-13f8-419e-8ea4-a9063ea84dff" absoluteBounds="4.625, 0.625, 1, 0.5">
+      <themeMoniker Id="a86211e3-9127-43d5-860d-61bc6eecda66" />
+    </themeShape>
+    <themeShape Id="ae328b26-7394-42e2-9201-0e98e9acc450" absoluteBounds="6.125, 0.625, 1, 0.5">
+      <themeMoniker Id="16438710-e3c9-414d-95fb-f63daa27c1ec" />
+    </themeShape>
+    <connectionBuilderConnector Id="522b7993-c2c6-4c9d-924a-f963e2f1e88e" edgePoints="[(6.375 : 1.75); (6.375 : 1.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <smartAppReferencesThemeMoniker Id="79869788-e4c7-45e8-b289-db9df1ef1db3" />
+      <nodes>
+        <smartAppShapeMoniker Id="c48aef2a-db75-47c8-93ea-eec7220e55f6" />
+        <themeShapeMoniker Id="ae328b26-7394-42e2-9201-0e98e9acc450" />
+      </nodes>
+    </connectionBuilderConnector>
+    <connectionBuilderConnector Id="aaf101bb-a918-4294-b833-d1c66c5478c8" edgePoints="[(5.375 : 1.75); (5.375 : 1.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <smartAppReferencesThemeMoniker Id="b4a85674-b984-46cc-bd65-0d04823d353e" />
+      <nodes>
+        <smartAppShapeMoniker Id="c48aef2a-db75-47c8-93ea-eec7220e55f6" />
+        <themeShapeMoniker Id="7f1446e0-13f8-419e-8ea4-a9063ea84dff" />
+      </nodes>
+    </connectionBuilderConnector>
+    <languageShape Id="2d3a5480-7dec-4df6-89d3-8c29f5885cf4" absoluteBounds="2.5, 2.125, 1, 0.5">
+      <languageMoniker Id="3e1e7a9a-2911-46b3-9947-3d768f8a1fff" />
+    </languageShape>
+    <languageShape Id="4c445e40-e72a-4090-a6a3-2286df451fe4" absoluteBounds="2.5, 2.875, 1, 0.5">
+      <languageMoniker Id="5be85140-d493-48f0-b481-2f8037f4312f" />
+    </languageShape>
+    <connectionBuilderConnector Id="40831d8d-4158-44fa-ad08-3f3dfbd1ffbd" edgePoints="[(5.125 : 2.375); (3.5 : 2.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <smartAppReferencesLanguageMoniker Id="a181b4f7-7762-4ab0-9407-11c4b9c3924a" />
+      <nodes>
+        <smartAppShapeMoniker Id="c48aef2a-db75-47c8-93ea-eec7220e55f6" />
+        <languageShapeMoniker Id="2d3a5480-7dec-4df6-89d3-8c29f5885cf4" />
+      </nodes>
+    </connectionBuilderConnector>
+    <connectionBuilderConnector Id="b4429265-b6e4-43df-aedb-18a59fbbe853" edgePoints="[(5.125 : 3.125); (3.5 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <smartAppReferencesLanguageMoniker Id="84e4e748-2793-4ba7-9f57-9aeec97844d3" />
+      <nodes>
+        <smartAppShapeMoniker Id="c48aef2a-db75-47c8-93ea-eec7220e55f6" />
+        <languageShapeMoniker Id="4c445e40-e72a-4090-a6a3-2286df451fe4" />
+      </nodes>
+    </connectionBuilderConnector>
+    <platformShape Id="ac64a7e6-e10b-4b35-a50d-9c247745dcf9" absoluteBounds="8.375, 2.125, 1, 0.5">
+      <platformMoniker Id="f506ecfc-c3a4-492e-af7d-ec0cbff155e5" />
+    </platformShape>
+    <platformShape Id="7471e3d5-b9ec-418b-89ba-a5dbe2fcf507" absoluteBounds="8.375, 2.875, 1, 0.5">
+      <platformMoniker Id="11a5047e-324f-473a-9acd-f1427290691a" />
+    </platformShape>
+    <connectionBuilderConnector Id="592a060b-bc12-4fdf-89a5-5381935bfaa1" edgePoints="[(6.625 : 2.375); (8.375 : 2.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <smartAppReferencesPlatformMoniker Id="7448b8f1-1d81-4a9d-9aa6-302f344ceb4c" />
+      <nodes>
+        <smartAppShapeMoniker Id="c48aef2a-db75-47c8-93ea-eec7220e55f6" />
+        <platformShapeMoniker Id="ac64a7e6-e10b-4b35-a50d-9c247745dcf9" />
+      </nodes>
+    </connectionBuilderConnector>
+    <connectionBuilderConnector Id="a32dea19-4ddb-43e7-81dd-732e899a59ee" edgePoints="[(6.625 : 3.125); (8.375 : 3.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <smartAppReferencesPlatformMoniker Id="e9133339-cdda-40bb-9695-d7fc98cb6959" />
+      <nodes>
+        <smartAppShapeMoniker Id="c48aef2a-db75-47c8-93ea-eec7220e55f6" />
+        <platformShapeMoniker Id="7471e3d5-b9ec-418b-89ba-a5dbe2fcf507" />
+      </nodes>
+    </connectionBuilderConnector>
+  </nestedChildShapes>
+</smartAppModelingLanguageDiagram>

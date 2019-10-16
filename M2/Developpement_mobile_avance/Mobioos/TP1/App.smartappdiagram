@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<exampleModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/CommonDSL" dslVersion="1.0.0.0" Id="51358306-ea12-40b7-8bb5-d167aa04eff6" xmlns="http://schemas.microsoft.com/dsltools/SmartAppDSL">
+  <smartApp>
+    <exampleElement Id="3109b64e-bf95-4d16-a1a0-2fb1bc434c54" identifier="TodoApp" isRestricted="false" isNullable="false" schema="http://www.TodoApp.com" version="1.0.0.0" addons="modelbus://Mobioos.Forge.AddOnDsl.AddOnDslAdapter/AddOn//.\AddOn\AddOn.addondiagram" title="TodoApp">
+      <language>
+        <smartAppReferencesLanguage Id="a181b4f7-7762-4ab0-9407-11c4b9c3924a">
+          <languageMoniker Id="3e1e7a9a-2911-46b3-9947-3d768f8a1fff" />
+        </smartAppReferencesLanguage>
+        <smartAppReferencesLanguage Id="84e4e748-2793-4ba7-9f57-9aeec97844d3">
+          <languageMoniker Id="5be85140-d493-48f0-b481-2f8037f4312f" />
+        </smartAppReferencesLanguage>
+      </language>
+      <theme>
+        <smartAppReferencesTheme Id="79869788-e4c7-45e8-b289-db9df1ef1db3">
+          <themeMoniker Id="16438710-e3c9-414d-95fb-f63daa27c1ec" />
+        </smartAppReferencesTheme>
+        <smartAppReferencesTheme Id="b4a85674-b984-46cc-bd65-0d04823d353e">
+          <themeMoniker Id="a86211e3-9127-43d5-860d-61bc6eecda66" />
+        </smartAppReferencesTheme>
+      </theme>
+      <platform>
+        <smartAppReferencesPlatform Id="7448b8f1-1d81-4a9d-9aa6-302f344ceb4c">
+          <platformMoniker Id="f506ecfc-c3a4-492e-af7d-ec0cbff155e5" />
+        </smartAppReferencesPlatform>
+        <smartAppReferencesPlatform Id="e9133339-cdda-40bb-9695-d7fc98cb6959">
+          <platformMoniker Id="11a5047e-324f-473a-9acd-f1427290691a" />
+        </smartAppReferencesPlatform>
+      </platform>
+      <attribute>
+        <smartAppHasAttribute Id="ee7a5002-5c84-4d1a-8c40-8d6915abbf42">
+          <attribute Id="f5aef87a-9c6b-47af-b8de-29cbbb4a2f9a" name="Small title" value="TodoApp" />
+        </smartAppHasAttribute>
+        <smartAppHasAttribute Id="c73dd8a1-d81c-4221-9d7e-08003828ac43">
+          <attribute Id="58eef37d-cb2d-45ed-98fd-b99c5c469a5c" name="Description" value="Todo application with Mobioos Forge" />
+        </smartAppHasAttribute>
+      </attribute>
+      <concern>
+        <smartAppHasConcern Id="166c7bff-8493-4f2b-90dd-40d51424c1bd">
+          <concern Id="d9735b35-15af-4558-900c-f0eb51588292" concernFile="modelbus://Mobioos.Forge.Concern.ConcernDSLAdapter/Concern//.\Concern\Concern.concerndiagram" identifier="TodoConcern" />
+        </smartAppHasConcern>
+      </concern>
+      <configuration>
+        <smartAppHasConfiguration Id="34ca6c1a-0bfb-4c12-b478-461c0a440374">
+          <configuration Id="15ccfdab-3248-47c8-a099-bb505afe9238" configurationFile="modelbus://Mobioos.Forge.Configuration.ConfigurationDSLAdapter/Configuration//.\Configuration\Configuration.configurationdiagram" identifier="TodoConfiguration" />
+        </smartAppHasConfiguration>
+      </configuration>
+      <api>
+        <smartAppHasApi Id="9eec4ff0-d95d-4ab0-adf0-9f81518cf6b0">
+          <api Id="69d26819-eddd-4dc5-98c9-0f6e29b8bf77" identifier="TodoApi" apiFile="modelbus://Mobioos.Forge.ApiDsl.ApiDslAdapter/Api//.\Api\Api.apidiagram" />
+        </smartAppHasApi>
+      </api>
+      <dataModel>
+        <smartAppHasDataModel Id="4eabeefb-93f3-4fe7-9b6d-c28bfc1fb309">
+          <dataModel Id="55ec5951-d7bf-4836-8c61-f06d6d77f4c5" identifier="TodoData" dataFile="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data//.\Data\Data.datamodeldiagram" />
+        </smartAppHasDataModel>
+      </dataModel>
+    </exampleElement>
+  </smartApp>
+  <language>
+    <smartAppModelHasLanguage Id="f5160ae1-fd55-42d9-89ab-2b37010a2bf8">
+      <language Id="3e1e7a9a-2911-46b3-9947-3d768f8a1fff" identifier="En" isRestricted="false" isNullable="false" />
+    </smartAppModelHasLanguage>
+    <smartAppModelHasLanguage Id="7c8fe85e-089a-412f-9453-367709fa2324">
+      <language Id="5be85140-d493-48f0-b481-2f8037f4312f" identifier="Fr" isRestricted="false" isNullable="false" />
+    </smartAppModelHasLanguage>
+  </language>
+  <theme>
+    <smartAppModelHasTheme Id="463bee35-31c7-42d8-a8c2-9ad7d9bd1e10">
+      <theme Id="a86211e3-9127-43d5-860d-61bc6eecda66" identifier="Light" isRestricted="false" isNullable="false" />
+    </smartAppModelHasTheme>
+    <smartAppModelHasTheme Id="94290f3c-047e-4037-96cb-076c942b9eda">
+      <theme Id="16438710-e3c9-414d-95fb-f63daa27c1ec" identifier="Dark" isRestricted="false" isNullable="false" />
+    </smartAppModelHasTheme>
+  </theme>
+  <platform>
+    <smartAppModelHasPlatform Id="9542b477-6a1b-44f7-9b6a-ffdfb94885ee">
+      <platform Id="f506ecfc-c3a4-492e-af7d-ec0cbff155e5" identifier="Android" isRestricted="false" isNullable="false" />
+    </smartAppModelHasPlatform>
+    <smartAppModelHasPlatform Id="f3576a26-fb91-4559-8fba-7b1e2fdb1cb7">
+      <platform Id="11a5047e-324f-473a-9acd-f1427290691a" identifier="iOs" isRestricted="false" isNullable="false" />
+    </smartAppModelHasPlatform>
+  </platform>
+</exampleModel>

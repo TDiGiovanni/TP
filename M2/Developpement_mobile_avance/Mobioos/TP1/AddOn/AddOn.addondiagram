@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<addOnModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/CommonDSL" dslVersion="1.0.0.0" Id="bceae6ab-2bab-40fe-8278-5fa4ebdd1bb5" xmlns="http://schemas.microsoft.com/dsltools/AddOnDsl">
+  <addOn>
+    <addOn Id="b0aa688d-d5f4-4f1c-8178-a59e45ba4e7e" identifier="TodoAddOn" isRestricted="false" isNullable="false" title="TodoAddOn">
+      <configuration>
+        <addOnReferencesConfiguration Id="0dbbc2ae-9dfe-4401-9fae-68b56eca8f96">
+          <configurationMoniker Id="c246294a-87c7-4046-913a-5d57477a48a3" />
+        </addOnReferencesConfiguration>
+      </configuration>
+    </addOn>
+  </addOn>
+  <configuration>
+    <addOnModelHasConfiguration Id="22ae44c8-0b3c-4870-9708-01a4ae79ecdd">
+      <configuration Id="c246294a-87c7-4046-913a-5d57477a48a3" identifier="TodoConfiguration" isRestricted="false" isNullable="false" configurationElement="modelbus://Mobioos.Forge.Configuration.ConfigurationDSLAdapter/Configuration/TodoConfiguration/..\Configuration\Configuration.configurationdiagram%2f7ad77543-e355-439b-a073-9f3f242c6097" />
+    </addOnModelHasConfiguration>
+  </configuration>
+</addOnModel>

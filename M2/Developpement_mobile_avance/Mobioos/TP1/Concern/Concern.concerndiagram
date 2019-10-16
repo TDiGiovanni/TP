@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<concernModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/CommonDSL" dslVersion="1.0.0.0" Id="da087e3b-3b30-4edc-9419-12d74e69ddc5" xmlns="http://schemas.microsoft.com/dsltools/ConcernDSL">
+  <concern>
+    <concern Id="aa4b1f52-c1cf-4d73-a112-5d64e123c753" identifier="Todo" isRestricted="false" isNullable="false" title="Todo" description="TodoConcern">
+      <layout>
+        <concernReferencesLayout Id="70cc1e9d-deb9-4882-864c-2e6d2739cafe">
+          <layoutMoniker Id="e8aa9d50-6666-4bd5-958e-e13ee5905d67" />
+        </concernReferencesLayout>
+        <concernReferencesLayout Id="b4383c5a-0b80-4231-963b-fcb7de6f139a">
+          <layoutMoniker Id="56ae886e-4486-42d7-8f15-b7198f2f2a78" />
+        </concernReferencesLayout>
+        <concernReferencesLayout Id="e461282b-9730-4531-b670-53b3ded7bd4e">
+          <layoutMoniker Id="66d3f1d8-2a3a-4138-9767-33c4b55c1455" />
+        </concernReferencesLayout>
+      </layout>
+    </concern>
+  </concern>
+  <layout>
+    <concernModelHasLayout Id="6063ffa1-2040-4b47-a6da-0d81fb1e5af7">
+      <layout Id="e8aa9d50-6666-4bd5-958e-e13ee5905d67" identifier="todoList" isRestricted="false" isNullable="false" title="todoList" description="todoList" isVisibleInMenu="false" isRoot="true">
+        <action>
+          <layoutReferencesAction Id="01ab5868-f34d-4c15-97cf-b8f9ef0b43b8">
+            <actionMoniker Id="01fff740-682a-4e8a-b1ab-921fdd8fe3b5" />
+          </layoutReferencesAction>
+          <layoutReferencesAction Id="cade3eaf-9504-463d-b0bc-bba26582d44e">
+            <actionMoniker Id="ef76dea9-244a-4deb-a4cf-9adb4a7c77c8" />
+          </layoutReferencesAction>
+          <layoutReferencesAction Id="fdc62ae7-6b7f-4787-ae12-9f9e3b0662da">
+            <actionMoniker Id="0b282412-69e7-460a-9f87-dc2b609beb74" />
+          </layoutReferencesAction>
+        </action>
+        <dataModel>
+          <layoutReferencesDataModel Id="4e733407-5ec7-44a8-9a2d-22fb22087335">
+            <dataModelMoniker Id="b367e391-c18a-4bb7-90c1-04ef19684078" />
+          </layoutReferencesDataModel>
+        </dataModel>
+      </layout>
+    </concernModelHasLayout>
+    <concernModelHasLayout Id="70b7b8cc-4ab8-4db1-8585-a4f08632acf0">
+      <layout Id="56ae886e-4486-42d7-8f15-b7198f2f2a78" identifier="createTodo" isRestricted="false" isNullable="false" title="createTodo" description="createTodo" isVisibleInMenu="false" isRoot="false">
+        <action>
+          <layoutReferencesAction Id="b9fc4374-1c29-4fc8-b3f3-a47a27b50842">
+            <actionMoniker Id="658ba365-3d20-41ab-b39c-55cfe1e14eb5" />
+          </layoutReferencesAction>
+          <layoutReferencesAction Id="9721e698-06a1-4403-85f0-9671960cc27d">
+            <actionMoniker Id="adf925a6-5802-488f-8160-dba691800945" />
+          </layoutReferencesAction>
+        </action>
+        <dataModel>
+          <layoutReferencesDataModel Id="c0ba81e5-6a1c-432d-9159-66369eceab94">
+            <dataModelMoniker Id="2a91492a-ee66-4794-9b65-c8e47264f356" />
+          </layoutReferencesDataModel>
+        </dataModel>
+      </layout>
+    </concernModelHasLayout>
+    <concernModelHasLayout Id="94650b4e-786b-4e72-bcd4-57f411d05fad">
+      <layout Id="66d3f1d8-2a3a-4138-9767-33c4b55c1455" identifier="editTodo" isRestricted="false" isNullable="false" title="editTodo" description="editTodo" isVisibleInMenu="false" isRoot="false">
+        <action>
+          <layoutReferencesAction Id="d07cba54-c0f9-4be8-b2e0-7c7a323be8e8">
+            <actionMoniker Id="6dd68b18-bdcb-401d-8eef-f25ece016e4a" />
+          </layoutReferencesAction>
+          <layoutReferencesAction Id="da9c9264-f3a1-474b-9b7f-78c64771dc86">
+            <actionMoniker Id="4c89d5db-d073-4617-979e-a6c979692ef3" />
+          </layoutReferencesAction>
+        </action>
+        <dataModel>
+          <layoutReferencesDataModel Id="94702a3b-bff4-43b0-bda5-2272aa3358bc">
+            <dataModelMoniker Id="0e2e8eaf-5bbc-4e79-87ae-4674d2c25236" />
+          </layoutReferencesDataModel>
+        </dataModel>
+      </layout>
+    </concernModelHasLayout>
+  </layout>
+  <action>
+    <concernModelHasAction Id="7f62caa7-02e6-4950-ba01-0fe29ba273ba">
+      <action Id="01fff740-682a-4e8a-b1ab-921fdd8fe3b5" identifier="toCreateTodo" isRestricted="false" isNullable="false" type="Navigation" target="modelbus://Mobioos.Forge.Concern.ConcernDSLAdapter/Concern/createTodo/.\Concern.concerndiagram%2f56ae886e-4486-42d7-8f15-b7198f2f2a78" api="" />
+    </concernModelHasAction>
+    <concernModelHasAction Id="774c2acd-d72a-4708-911f-7c900de87289">
+      <action Id="ef76dea9-244a-4deb-a4cf-9adb4a7c77c8" identifier="toEditTodo" isRestricted="false" isNullable="false" type="Navigation" target="modelbus://Mobioos.Forge.Concern.ConcernDSLAdapter/Concern/editTodo/.\Concern.concerndiagram%2f66d3f1d8-2a3a-4138-9767-33c4b55c1455" api="" />
+    </concernModelHasAction>
+    <concernModelHasAction Id="32d4876c-5c02-46d4-8876-bc51bc943996">
+      <action Id="0b282412-69e7-460a-9f87-dc2b609beb74" identifier="checkTodo" isRestricted="false" isNullable="false" type="DataUpdate" target="" api="modelbus://Mobioos.Forge.ApiDsl.ApiDslAdapter/Api/check/..\Api\Api.apidiagram%2fb9da89d7-024f-479a-a238-bf01299721ea" />
+    </concernModelHasAction>
+    <concernModelHasAction Id="3dcf10e0-d8b2-4448-8a72-7ffde429458f">
+      <action Id="658ba365-3d20-41ab-b39c-55cfe1e14eb5" identifier="return" isRestricted="false" isNullable="false" type="Navigation" target="modelbus://Mobioos.Forge.Concern.ConcernDSLAdapter/Concern/createTodo/.\Concern.concerndiagram%2f56ae886e-4486-42d7-8f15-b7198f2f2a78" api="" />
+    </concernModelHasAction>
+    <concernModelHasAction Id="94626799-b0d1-4a50-9c55-7213f41d1c6c">
+      <action Id="adf925a6-5802-488f-8160-dba691800945" identifier="createTodo" isRestricted="false" isNullable="false" type="DataCreate" target="" api="modelbus://Mobioos.Forge.ApiDsl.ApiDslAdapter/Api/create/..\Api\Api.apidiagram%2f1c2e9474-5845-467f-896e-3f83b9125879" />
+    </concernModelHasAction>
+    <concernModelHasAction Id="127c3191-ae54-4998-b16d-d46d15aad67b">
+      <action Id="6dd68b18-bdcb-401d-8eef-f25ece016e4a" identifier="return" isRestricted="false" isNullable="false" type="Navigation" target="modelbus://Mobioos.Forge.Concern.ConcernDSLAdapter/Concern/editTodo/.\Concern.concerndiagram%2f66d3f1d8-2a3a-4138-9767-33c4b55c1455" api="" />
+    </concernModelHasAction>
+    <concernModelHasAction Id="78392f7c-de82-4562-8bc5-5493da29787e">
+      <action Id="4c89d5db-d073-4617-979e-a6c979692ef3" identifier="editTodo" isRestricted="false" isNullable="false" type="DataUpdate" target="" api="modelbus://Mobioos.Forge.ApiDsl.ApiDslAdapter/Api/update/..\Api\Api.apidiagram%2f53c3a12e-7de3-4560-a526-229a8f9637cc" />
+    </concernModelHasAction>
+  </action>
+  <dataModel>
+    <concernModelHasDataModel Id="f48bfe1a-0d62-490e-8ec1-95b698b33cb5">
+      <dataModel Id="b367e391-c18a-4bb7-90c1-04ef19684078" identifier="Todos" isRestricted="false" isNullable="false" viewModel="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/Todo/..\Data\Data.datamodeldiagram%2ff0aed121-7b55-4621-9876-ad74b2cd9c5f" />
+    </concernModelHasDataModel>
+    <concernModelHasDataModel Id="422bf007-5c48-4ac3-a787-d635c6244df5">
+      <dataModel Id="2a91492a-ee66-4794-9b65-c8e47264f356" identifier="CreateTodo" isRestricted="false" isNullable="false" viewModel="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/CreateTodo/..\Data\Data.datamodeldiagram%2fdcae559b-72a2-476b-9f45-570a7bbe0d12" />
+    </concernModelHasDataModel>
+    <concernModelHasDataModel Id="ee01489c-4f27-426d-a159-2e4ee625975d">
+      <dataModel Id="0e2e8eaf-5bbc-4e79-87ae-4674d2c25236" identifier="EditTodo" isRestricted="false" isNullable="false" viewModel="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/EditTodo/..\Data\Data.datamodeldiagram%2f5d4526d8-e7f2-4e14-a3c9-ff97b320972c" />
+    </concernModelHasDataModel>
+  </dataModel>
+</concernModel>

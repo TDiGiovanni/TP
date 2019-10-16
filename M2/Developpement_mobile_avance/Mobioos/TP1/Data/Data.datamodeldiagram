@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/CommonDSL" dslVersion="1.0.0.0" Id="7b213412-5faf-4cce-8635-c1e149043975" xmlns="http://schemas.microsoft.com/dsltools/DataModelingLanguage">
+  <entity>
+    <entity Id="d55a6411-c5e2-438d-bd10-4daff7971234" identifier="Identifier" isRestricted="false" isNullable="false" isAbstract="true">
+      <property>
+        <entityHasProperty Id="1bc00a01-3791-48f5-bf99-3ac5c711cd0a">
+          <property Id="e80c02b7-aaf6-424e-b3fd-f5364b64dfdb" identifier="id" isRestricted="false" isNullable="false" type="Integer" isKey="true" isCollection="false" isRequired="false" minimum="0" maximum="0" model="" />
+        </entityHasProperty>
+      </property>
+    </entity>
+    <entity Id="d605ceec-c956-463c-aa26-eed39d5cd278" identifier="Todo" isRestricted="false" isNullable="false" isAbstract="false">
+      <property>
+        <entityHasProperty Id="e6576c93-4309-40c5-b4b7-e9520552e3bf">
+          <property Id="b0f1c92d-fc9a-444a-8f02-71081abf6dc3" identifier="content" isRestricted="false" isNullable="false" isKey="false" isCollection="false" isRequired="false" minimum="0" maximum="0" model="" />
+        </entityHasProperty>
+        <entityHasProperty Id="04312bb0-6064-434f-8226-9a7715b4f3f3">
+          <property Id="15e2dd23-b2bf-4aa4-a963-7c2d82c89404" identifier="done" isRestricted="false" isNullable="false" type="Boolean" isKey="false" isCollection="false" isRequired="false" minimum="0" maximum="0" model="" />
+        </entityHasProperty>
+      </property>
+      <targetEntityHeritage>
+        <entityHeritageTargetEntity Id="cbe19e04-6e96-46e4-8e6e-6dfbe62457e3">
+          <entityMoniker Id="d55a6411-c5e2-438d-bd10-4daff7971234" />
+        </entityHeritageTargetEntity>
+      </targetEntityHeritage>
+    </entity>
+  </entity>
+  <viewModel>
+    <dataModelHasViewModel Id="d815fa76-8b80-481e-9f80-a06633bfeacb">
+      <viewModel Id="f0aed121-7b55-4621-9876-ad74b2cd9c5f" identifier="Todo" isRestricted="false" isNullable="false">
+        <property>
+          <viewModelHasProperty Id="21de9947-07e1-435f-8397-3ce2a643557f">
+            <property Id="6eea7fe2-b149-47a0-8c7c-5fbbd5269e68" identifier="id" isRestricted="false" isNullable="false" isKey="false" isCollection="false" isRequired="false" minimum="0" maximum="0" model="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/Todo/.\Data.datamodeldiagram%2fd605ceec-c956-463c-aa26-eed39d5cd278" modelProperty="Todo.id" />
+          </viewModelHasProperty>
+          <viewModelHasProperty Id="ee8de125-8527-4441-8bf0-46b1cedb579e">
+            <property Id="13fa77ef-7bdd-42f9-9339-76610a911eb5" identifier="content" isRestricted="false" isNullable="false" isKey="false" isCollection="false" isRequired="false" minimum="0" maximum="0" model="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/Todo/.\Data.datamodeldiagram%2fd605ceec-c956-463c-aa26-eed39d5cd278" modelProperty="Todo.content" />
+          </viewModelHasProperty>
+          <viewModelHasProperty Id="ade714fa-b70c-4c04-9c00-25663afdf198">
+            <property Id="db257a10-c065-479b-82c0-bc4386dde6d3" identifier="done" isRestricted="false" isNullable="false" isKey="false" isCollection="false" isRequired="false" minimum="0" maximum="0" model="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/Todo/.\Data.datamodeldiagram%2fd605ceec-c956-463c-aa26-eed39d5cd278" modelProperty="Todo.done" />
+          </viewModelHasProperty>
+        </property>
+      </viewModel>
+    </dataModelHasViewModel>
+    <dataModelHasViewModel Id="b61edfc3-a95e-4a98-98f3-dd0f441f00a6">
+      <viewModel Id="dcae559b-72a2-476b-9f45-570a7bbe0d12" identifier="CreateTodo" isRestricted="false" isNullable="false">
+        <property>
+          <viewModelHasProperty Id="4c848135-a312-48c2-85a1-2acda3621881">
+            <property Id="1f349e7b-d808-4fd1-b56a-58a86600d607" identifier="content" isRestricted="false" isNullable="false" isKey="false" isCollection="false" isRequired="false" minimum="0" maximum="0" model="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/Todo/.\Data.datamodeldiagram%2fd605ceec-c956-463c-aa26-eed39d5cd278" modelProperty="Todo.content" />
+          </viewModelHasProperty>
+        </property>
+      </viewModel>
+    </dataModelHasViewModel>
+    <dataModelHasViewModel Id="a109c2f6-0ba3-4506-b8ab-86139b812a05">
+      <viewModel Id="5d4526d8-e7f2-4e14-a3c9-ff97b320972c" identifier="EditTodo" isRestricted="false" isNullable="false">
+        <property>
+          <viewModelHasProperty Id="91238c96-2d16-4d3d-ab0a-55cc4bc73f67">
+            <property Id="b282b2fd-a3f8-453b-ad8c-797236fb0542" identifier="id" isRestricted="false" isNullable="false" isKey="false" isCollection="false" isRequired="false" minimum="0" maximum="0" model="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/Todo/.\Data.datamodeldiagram%2fd605ceec-c956-463c-aa26-eed39d5cd278" modelProperty="Todo.id" />
+          </viewModelHasProperty>
+          <viewModelHasProperty Id="f2a16cd3-8d31-41f8-a9ec-1a5071312500">
+            <property Id="1d2de873-ba12-4351-84bc-6884182968bd" identifier="newContent" isRestricted="false" isNullable="false" isKey="false" isCollection="false" isRequired="false" minimum="0" maximum="0" model="modelbus://Mobioos.Forge.DataModel.DataModelingLanguageAdapter/Data/Todo/.\Data.datamodeldiagram%2fd605ceec-c956-463c-aa26-eed39d5cd278" modelProperty="Todo.content" />
+          </viewModelHasProperty>
+        </property>
+      </viewModel>
+    </dataModelHasViewModel>
+  </viewModel>
+</dataModel>
