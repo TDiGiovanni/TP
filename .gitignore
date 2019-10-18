@@ -12,6 +12,7 @@
 # Compiled files
 *.o
 *.class
+*.fasl
 
 # Executables
 *.out
