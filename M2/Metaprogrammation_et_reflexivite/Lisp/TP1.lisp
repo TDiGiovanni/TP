@@ -14,7 +14,7 @@
   ())
 
 ;; Defining the toString method
-(defgeneric toString(object)
+(defgeneric toString (object)
   (:documentation "Says hello to an object"))
 
 (defmethod toString ((p person))
@@ -33,13 +33,27 @@
 
 
 ;; The animal and abstract-class example
-;; Defining the class animal
-(defclass animal (standard-object)
-  ())
-
 ;; Defining the class abstract-class
 (defclass abstract-class (standard-class)
   ())
 
-;; Testing
+;; Defining the class animal
+(unintern 'animal)
 
+(defclass animal (standard-object)
+  ()
+  (:metaclass abstract-class))
+
+;; Defining the subclasses
+(defclass cat (animal)
+  ())
+
+(defclass dog (animal)
+  ())
+
+;; Testing
+(defparameter animalo (make-instance 'animal))
+
+(defparameter catto (make-instance 'cat))
+
+(defparameter doggo (make-instance 'dog))
