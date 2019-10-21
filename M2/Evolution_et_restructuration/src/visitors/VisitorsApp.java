@@ -17,6 +17,8 @@ import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 
+import spoon.Launcher;
+
 public class VisitorsApp
 {
 	protected static Tracker tracker = new Tracker();
@@ -30,8 +32,21 @@ public class VisitorsApp
 		if (path.equals("default"))
 			path = "C:\\Users\\Thomas\\Documents\\Repositories\\GitHub\\TP\\M2\\Modularite_et_composants\\Eclipse\\Others\\src";
 		
+		System.out.println("With Spoon? (y/n)");
+		String spoon = null;
+		do
+		{
+			spoon = s.next();
+			if (path.equals("default"))
+				path = "C:\\Users\\Thomas\\Documents\\Repositories\\GitHub\\TP\\M2\\Modularite_et_composants\\Eclipse\\Others\\src";
+		}
+		while (!spoon.equals("y") && !spoon.equals("n"));
+		
 		// Parse the files based on the user input
-		parseFilesInDirectory(path);
+		if (spoon.equals("y"))
+			spoonParse(path);
+		else
+			parseFilesInDirectory(path);
 		
 		// Print everything
 		tracker.print();
@@ -172,5 +187,15 @@ public class VisitorsApp
 				}
 			}
 		}
+	}
+	
+	// Spoon usage
+	protected static void spoonParse(String sourcePath)
+	{
+		Launcher launcher = new Launcher();
+
+		launcher.addInputResource(sourcePath);
+
+		launcher.buildModel();
 	}
 }

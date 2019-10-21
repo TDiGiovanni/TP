@@ -37,6 +37,10 @@
 (defclass abstract-class (standard-class)
   ())
 
+(defmethod closer-mop:validate-superclass ((class abstract-class)
+                                           (superclass standard-class))
+  t)
+
 ;; Defining the class animal
 (unintern 'animal)
 

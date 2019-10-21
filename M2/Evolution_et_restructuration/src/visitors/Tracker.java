@@ -292,9 +292,9 @@ public class Tracker
 		
 		while (!stack.isEmpty())
 		{
-			Cluster root = stack.pop(),
-					leftChild = root.getFirstCluster(),
-					rightChild = root.getSecondCluster();
+			Cluster parent = stack.pop(),
+					leftChild = parent.getFirstCluster(),
+					rightChild = parent.getSecondCluster();
 			
 			if (true)
 				;
