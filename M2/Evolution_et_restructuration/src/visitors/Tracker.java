@@ -284,9 +284,11 @@ public class Tracker
 		clusters.get(0).toString();
 	}
 	
-	//
-	public void selectClusters()
+	// Identifies groups of classes (seen as components/services/modules)
+	public List<Cluster> selectClusters()
 	{
+		List<Cluster> partition = new ArrayList<>();
+		
 		Stack<Cluster> stack = new Stack<>();
 		stack.push(clusters.get(0));
 		
@@ -297,7 +299,7 @@ public class Tracker
 					rightChild = parent.getSecondCluster();
 			
 			if (true)
-				;
+				partition.add(parent);
 			else
 			{
 				stack.push(leftChild);
@@ -305,6 +307,6 @@ public class Tracker
 			}
 		}
 		
-		return;
+		return partition;
 	}
 }

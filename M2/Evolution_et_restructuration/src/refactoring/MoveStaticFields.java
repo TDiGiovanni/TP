@@ -10,7 +10,7 @@ public class MoveStaticFields
 	}
 }
 
-// Il faut déplacer les champs statiques "COMDEY_EXAMPLE" et "HORROR_EXAMPLE" dans la classe "Movie"
+// Il faut déplacer les champs statiques "COMEDY_EXAMPLE" et "HORROR_EXAMPLE" dans la classe "Movie"
 class Cinema
 {
 	public static String HORROR_EXAMPLE = "It";

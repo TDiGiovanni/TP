@@ -5,8 +5,8 @@ public class ExtractClass
 {
 	public static void main(String[] args)
 	{
-		Computer Y540 = new Computer("Lenovo", "China", 1, 1);
-		System.out.println(Y540.toString());
+		Computer legion_y540 = new Computer("Lenovo", "China", 15.6, 2.3);
+		System.out.println(legion_y540.toString());
 	}
 }
 
