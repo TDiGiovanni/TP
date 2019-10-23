@@ -28,7 +28,7 @@
 			double amount = Double.parseDouble(request.getParameter("amount"));
 			String currency = request.getParameter("currency");
 			amount = converterBean.euroToOtherCurrency(amount, currency);
-			System.out.println("<h4>Le montant converti est : " + amount + "</h4>");
+			out.println("<h4>The converted amount is: " + amount + "</h4>");
 		}
 	%>
 </body>

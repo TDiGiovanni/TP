@@ -1,19 +1,12 @@
 package converter;
 
-import java.net.URL;
-import java.util.List;
-
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
-import javax.net.ssl.HttpsURLConnection;
-
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.Namespace;
-import org.jdom2.input.SAXBuilder;
 
 /**
  * Session Bean implementation class ConverterBean
  */
+@Remote
 @Stateless
 public class ConverterBean implements IConverter
 {
@@ -28,6 +21,8 @@ public class ConverterBean implements IConverter
 	@Override
 	public double euroToOtherCurrency(double amount, String currencyCode)
 	{
+		return amount * 2;
+		/*
 		SAXBuilder builder = new SAXBuilder();
 		Document document;
 		
@@ -42,22 +37,25 @@ public class ConverterBean implements IConverter
 			e.printStackTrace();
 			return 0;
 		}
-		
-		Element root = document.getRootElement();
+
 		Namespace namespace = Namespace.getNamespace("http://www.ecb.int/vocabulary/2002-08-01/eurofxref");
+		Element root = document.getRootElement();
 		Element cube = root.getChild("Cube", namespace);
 		Element cube2 = cube.getChild("Cube", namespace);
-		List<Element> values = cube2.getChildren("Cube", namespace);
+		List<Element> currencies = cube2.getChildren();
 		
-		for (Element value : values)
+		for (Element currency : currencies)
 		{
-			String currencyValue = value.getAttribute("currency", namespace).toString();
-			
-			if (currencyValue.equals(currencyCode))
-				return amount * Integer.parseInt(currencyValue);
+			String currencyName = currency.getAttributeValue("currency", namespace);
+			if (currencyName.equals(currencyCode))
+			{
+				double currencyRate = Double.parseDouble(currency.getAttributeValue("rate", namespace));
+				return amount * currencyRate;
+			}
 		}
 		
 		return 0;
+		*/
 	}
 
 }
