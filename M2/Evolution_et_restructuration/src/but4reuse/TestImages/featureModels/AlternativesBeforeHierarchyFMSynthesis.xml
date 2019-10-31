@@ -9,19 +9,19 @@
                 <feature mandatory="true" name="Costume"/>
             </alt>
             <alt abstract="true" name="Alternative_2">
-                <feature mandatory="true" name="Beige_pants"/>
-                <feature mandatory="true" name="Blue_pants"/>
-            </alt>
-            <alt abstract="true" name="Alternative_3">
                 <feature mandatory="true" name="Red_shirt"/>
                 <feature mandatory="true" name="Yellow_shirt"/>
+            </alt>
+            <alt abstract="true" name="Alternative_3">
+                <feature mandatory="true" name="Beige_pants"/>
+                <feature mandatory="true" name="Blue_pants"/>
             </alt>
         </and>
     </struct>
     <constraints>
         <rule>
             <imp>
-                <var>Beige_pants</var>
+                <var>Red_shirt</var>
                 <not>
                     <var>Costume</var>
                 </not>
@@ -29,7 +29,7 @@
         </rule>
         <rule>
             <imp>
-                <var>Red_shirt</var>
+                <var>Beige_pants</var>
                 <not>
                     <var>Costume</var>
                 </not>

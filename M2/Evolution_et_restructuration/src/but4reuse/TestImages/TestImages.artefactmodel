@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.but4reuse.artefact.model:ArtefactModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.but4reuse.artefact.model="http://org.but4reuse.artefact.model">
+  <ownedArtefacts name="1.png" artefactURI="platform:/resource/Evolution_et_restructuration/src%2Fbut4reuse%2FTestImages%2F1.png" date="2019-09-21T16:17:55.344+0200"/>
+  <ownedArtefacts name="2.png" artefactURI="platform:/resource/Evolution_et_restructuration/src%2Fbut4reuse%2FTestImages%2F2.png" date="2019-09-21T16:17:53.348+0200"/>
+  <ownedArtefacts name="3.png" artefactURI="platform:/resource/Evolution_et_restructuration/src%2Fbut4reuse%2FTestImages%2F3.png" date="2019-09-21T16:17:51.704+0200"/>
+  <ownedArtefacts name="4.png" artefactURI="platform:/resource/Evolution_et_restructuration/src%2Fbut4reuse%2FTestImages%2F4.png" date="2019-09-21T16:17:49.677+0200"/>
+</org.but4reuse.artefact.model:ArtefactModel>

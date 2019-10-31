@@ -35,15 +35,13 @@
 ;; The animal and abstract-class example
 ;; Defining the class abstract-class
 (defclass abstract-class (standard-class)
+  ((instance :initform nil)))
+
+(defmethod validate-superclass ((class abstract-class)
+                                (superclass standard-class))
   ())
 
-(defmethod closer-mop:validate-superclass ((class abstract-class)
-                                           (superclass standard-class))
-  t)
-
 ;; Defining the class animal
-(unintern 'animal)
-
 (defclass animal (standard-object)
   ()
   (:metaclass abstract-class))
@@ -56,8 +54,8 @@
   ())
 
 ;; Testing
-(defparameter animalo (make-instance 'animal))
+(defparameter anAnimal (make-instance 'animal))
 
-(defparameter catto (make-instance 'cat))
+(defparameter aCat (make-instance 'cat))
 
-(defparameter doggo (make-instance 'dog))
+(defparameter aDog (make-instance 'dog))
