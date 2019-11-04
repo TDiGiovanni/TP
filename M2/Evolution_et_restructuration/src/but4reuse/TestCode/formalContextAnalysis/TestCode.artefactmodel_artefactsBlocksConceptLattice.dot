@@ -1,0 +1,31 @@
+digraph G { 
+	rankdir=BT;
+1 [shape=record,style=filled,fillcolor=lightblue,label="{Block 00\n|}"];
+2 [shape=record,style=filled,fillcolor=lightblue,label="{Block 03\n|}"];
+3 [shape=record,style=filled,fillcolor=lightblue,label="{Block 02\n|}"];
+4 [shape=record,style=filled,fillcolor=lightblue,label="{Block 01\n|}"];
+5 [shape=record,style=filled,fillcolor=yellow,label="{Block 04\n|Notepad_4\n}"];
+6 [shape=record,style=filled,fillcolor=yellow,label="{Block 05\n|Notepad_5\n}"];
+7 [shape=record,style=filled,fillcolor=yellow,label="{Block 09\n|Notepad_1\n}"];
+8 [shape=record,style=filled,fillcolor=yellow,label="{Block 11\n|Notepad_3\n}"];
+9 [shape=record,style=filled,fillcolor=yellow,label="{Block 08\n|Notepad_8\n}"];
+10 [shape=record,style=filled,fillcolor=yellow,label="{Block 10\n|Notepad_2\n}"];
+11 [shape=record,style=filled,fillcolor=yellow,label="{Block 06\n|Notepad_6\n}"];
+12 [shape=record,style=filled,fillcolor=yellow,label="{Block 07\n|Notepad_7\n}"];
+	2 -> 1
+	3 -> 1
+	4 -> 1
+	5 -> 4
+	5 -> 3
+	6 -> 2
+	7 -> 1
+	8 -> 3
+	9 -> 2
+	9 -> 4
+	9 -> 3
+	10 -> 4
+	11 -> 2
+	11 -> 4
+	12 -> 2
+	12 -> 3
+}

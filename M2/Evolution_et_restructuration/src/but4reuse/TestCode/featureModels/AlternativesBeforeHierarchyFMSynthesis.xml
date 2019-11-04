@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel>
+		    <properties/>
+	    <struct>
+	        <and mandatory="true" name="FeatureModel">
+	            <and mandatory="true" name="Block_00">
+	                <feature name="Block_01"/>
+                <feature name="Block_02"/>
+                <feature name="Block_03"/>
+                <alt abstract="true" name="Alternative_1">
+                    <feature mandatory="true" name="Block_04"/>
+                    <feature mandatory="true" name="Block_05"/>
+                    <feature mandatory="true" name="Block_06"/>
+                    <feature mandatory="true" name="Block_07"/>
+                    <feature mandatory="true" name="Block_08"/>
+                    <feature mandatory="true" name="Block_09"/>
+                    <feature mandatory="true" name="Block_10"/>
+                    <feature mandatory="true" name="Block_11"/>
+                </alt>
+            </and>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="false"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>

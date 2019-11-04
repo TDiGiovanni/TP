@@ -1,0 +1,33 @@
+{
+  "id": "TodoApp",
+  "title": "TodoApp",
+  "description": "Todo application with Mobioos Forge",
+  "platforms": [
+    "Android",
+    "iOs"
+  ],
+  "version": "1.0.0.0",
+  "themes": [
+    "Dark",
+    "Light"
+  ],
+  "languages": [
+    "En",
+    "Fr"
+  ],
+  "$schema": "http://www.TodoApp.com",
+  "addons": "addons.json",
+  "api": [
+    "api/Todo.json"
+  ],
+  "concerns": [
+    "concerns/Todo.json"
+  ],
+  "configurations": [
+    {
+      "type": "dev",
+      "Path": "configurations\\configuration.dev.json"
+    }
+  ],
+  "data": "data.json"
+}

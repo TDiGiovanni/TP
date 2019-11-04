@@ -193,7 +193,7 @@ public class VisitorsApp
 	protected static void spoonParse(String sourcePath)
 	{
 		Launcher launcher = new Launcher();
-
+		
 		launcher.addInputResource(sourcePath);
 
 		launcher.buildModel();

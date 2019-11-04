@@ -1,0 +1,53 @@
+{
+  "entities": [
+    {
+      "id": "Identifier",
+      "isAbstract": true,
+      "isEnum": false,
+      "properties": [
+        {
+          "id": "id",
+          "type": "integer",
+          "isKey": true,
+          "isCollection": false,
+          "isRequired": false,
+          "minimum": 0,
+          "maximum": 0,
+          "modelProperty": ""
+        }
+      ],
+      "references": [],
+      "values": []
+    },
+    {
+      "id": "Todo",
+      "extends": "Identifier",
+      "isAbstract": false,
+      "isEnum": false,
+      "properties": [
+        {
+          "id": "content",
+          "type": "string",
+          "isKey": false,
+          "isCollection": false,
+          "isRequired": false,
+          "minimum": 0,
+          "maximum": 0,
+          "modelProperty": ""
+        },
+        {
+          "id": "done",
+          "type": "boolean",
+          "isKey": false,
+          "isCollection": false,
+          "isRequired": false,
+          "minimum": 0,
+          "maximum": 0,
+          "modelProperty": ""
+        }
+      ],
+      "references": [],
+      "values": []
+    }
+  ]
+}

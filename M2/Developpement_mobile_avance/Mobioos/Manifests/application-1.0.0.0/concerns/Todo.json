@@ -1,0 +1,164 @@
+{
+  "id": "Todo",
+  "title": "Todo",
+  "description": "TodoConcern",
+  "mandatory": false,
+  "layouts": [
+    {
+      "id": "todoList",
+      "title": "todoList",
+      "description": "todoList",
+      "isVisibleInMenu": false,
+      "isRoot": true,
+      "actions": [
+        {
+          "id": "toCreateTodo",
+          "type": "Navigation",
+          "target": "Todo.createTodo",
+          "api": ""
+        },
+        {
+          "id": "toEditTodo",
+          "type": "Navigation",
+          "target": "Todo.editTodo",
+          "api": ""
+        },
+        {
+          "id": "checkTodo",
+          "type": "DataUpdate",
+          "target": "",
+          "api": "Todo.check"
+        }
+      ],
+      "dataModel": {
+        "id": "Todo",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "id",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.content"
+          },
+          {
+            "id": "done",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.done"
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "createTodo",
+      "title": "createTodo",
+      "description": "createTodo",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "return",
+          "type": "Navigation",
+          "target": "Todo.createTodo",
+          "api": ""
+        },
+        {
+          "id": "createTodo",
+          "type": "DataCreate",
+          "target": "",
+          "api": "Todo.create"
+        }
+      ],
+      "dataModel": {
+        "id": "CreateTodo",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.content"
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "editTodo",
+      "title": "editTodo",
+      "description": "editTodo",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "return",
+          "type": "Navigation",
+          "target": "Todo.editTodo",
+          "api": ""
+        },
+        {
+          "id": "editTodo",
+          "type": "DataUpdate",
+          "target": "",
+          "api": "Todo.update"
+        }
+      ],
+      "dataModel": {
+        "id": "EditTodo",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "id",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.id"
+          },
+          {
+            "id": "newContent",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.content"
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    }
+  ]
+}

@@ -37,9 +37,16 @@
 (defclass abstract-class (standard-class)
   ((instance :initform nil)))
 
-(defmethod validate-superclass ((class abstract-class)
+(defmethod sb-mop:validate-superclass ((class abstract-class)
                                 (superclass standard-class))
-  ())
+  t)
+
+(defmethod sb-mop:validate-superclass ((class standard-class)
+                                (superclass abstract-class))
+  t)
+
+(defmethod make-instance((newClass abstract-class) &rest args)
+  (format t "Error: cannot instanciate an abstract class"))
 
 ;; Defining the class animal
 (defclass animal (standard-object)

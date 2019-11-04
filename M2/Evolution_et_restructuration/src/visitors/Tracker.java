@@ -281,7 +281,7 @@ public class Tracker
 	// Prints the cluster tree
 	public void printClusterTree()
 	{
-		clusters.get(0).toString();
+		clusters.get(0).print("", false);
 	}
 	
 	// Identifies groups of classes (seen as components/services/modules)

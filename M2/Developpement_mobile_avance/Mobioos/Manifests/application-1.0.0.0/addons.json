@@ -1,0 +1,11 @@
+[
+  {
+    "id": "TodoAddOn",
+    "title": "TodoAddOn",
+    "configuration": {
+      "key": "TodoConfiguration",
+      "title": "TodoConfiguration",
+      "defaultValue": "TodoConfiguration"
+    }
+  }
+]

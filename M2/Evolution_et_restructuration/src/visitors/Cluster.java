@@ -88,21 +88,18 @@ public class Cluster
 	}
 	
 	// Prints the tree
-    public String toString()
+    public void print(String prefix, boolean isTail)
     {
-        StringBuilder builder = new StringBuilder(10000);
-        print(builder, "", "");
-        return builder.toString();
-    }
+        System.out.println(prefix + (isTail ? "└── " : "├── ") + this.getName());
 
-    protected void print(StringBuilder builder, String prefix, String childrenPrefix)
-    {
-    	builder.append(prefix);
-    	builder.append(getName());
-    	builder.append('\n');
         if (firstCluster != null)
-        	firstCluster.print(builder, childrenPrefix + "|-- ", childrenPrefix + "|   ");
+        {
+        	firstCluster.print(prefix + (isTail ? "    " : "│   "), (secondCluster == null ? true : false));
+        }
+
         if (secondCluster != null)
-        	secondCluster.print(builder, childrenPrefix + "|__ ", childrenPrefix + "    ");
+        {
+        	secondCluster.print(prefix + (isTail ?"    " : "│   "), true);
+        }
     }
 }

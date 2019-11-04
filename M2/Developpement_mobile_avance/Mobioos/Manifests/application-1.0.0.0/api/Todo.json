@@ -1,0 +1,205 @@
+{
+  "id": "Todo",
+  "description": "The Todo API",
+  "actions": [
+    {
+      "id": "create",
+      "parameters": [
+        {
+          "id": "todo",
+          "type": "CreateTodo",
+          "dataModel": {
+            "id": "CreateTodo",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [
+              {
+                "id": "content",
+                "type": "string",
+                "isKey": false,
+                "isCollection": false,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": "Todo.content"
+              }
+            ],
+            "references": [],
+            "values": []
+          }
+        }
+      ],
+      "type": "datacreate",
+      "url": "/api/createTodo",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "get",
+      "parameters": [
+        {
+          "id": "id",
+          "type": "integer"
+        }
+      ],
+      "type": "dataget",
+      "url": "/api/getTodo",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Todo",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "id",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.content"
+          },
+          {
+            "id": "done",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.done"
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "update",
+      "parameters": [
+        {
+          "id": "todo",
+          "type": "EditTodo",
+          "dataModel": {
+            "id": "EditTodo",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [
+              {
+                "id": "id",
+                "type": "string",
+                "isKey": false,
+                "isCollection": false,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": "Todo.id"
+              },
+              {
+                "id": "newContent",
+                "type": "string",
+                "isKey": false,
+                "isCollection": false,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": "Todo.content"
+              }
+            ],
+            "references": [],
+            "values": []
+          }
+        }
+      ],
+      "type": "dataupdate",
+      "url": "/api/updateTodo",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "list",
+      "parameters": [],
+      "type": "datalist",
+      "url": "/api/listTodo",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Todo",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "id",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.content"
+          },
+          {
+            "id": "done",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Todo.done"
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "check",
+      "parameters": [
+        {
+          "id": "id",
+          "type": "integer"
+        }
+      ],
+      "type": "dataupdate",
+      "url": "/api/checkTodo",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "delete",
+      "parameters": [
+        {
+          "id": "id",
+          "type": "integer"
+        }
+      ],
+      "type": "datadelete",
+      "url": "/api/deleteTodo",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    }
+  ]
+}

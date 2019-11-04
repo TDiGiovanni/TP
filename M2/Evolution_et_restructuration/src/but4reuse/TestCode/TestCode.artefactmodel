@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<org.but4reuse.artefact.model:ArtefactModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.but4reuse.artefact.model="http://org.but4reuse.artefact.model"/>
+<org.but4reuse.artefact.model:ArtefactModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.but4reuse.artefact.model="http://org.but4reuse.artefact.model">
+  <ownedArtefacts name="Notepad_4" artefactURI="file:/C:/Users/Thomas/Downloads/example_Notepad/variants/Notepad_4/" date="2019-11-03T14:15:18.410+0100"/>
+  <ownedArtefacts name="Notepad_5" artefactURI="file:/C:/Users/Thomas/Downloads/example_Notepad/variants/Notepad_5/" date="2019-11-03T14:15:18.434+0100"/>
+  <ownedArtefacts name="Notepad_6" artefactURI="file:/C:/Users/Thomas/Downloads/example_Notepad/variants/Notepad_6/" date="2019-11-03T14:15:18.460+0100"/>
+  <ownedArtefacts name="Notepad_7" artefactURI="file:/C:/Users/Thomas/Downloads/example_Notepad/variants/Notepad_7/" date="2019-11-03T14:15:18.486+0100"/>
+  <ownedArtefacts name="Notepad_8" artefactURI="file:/C:/Users/Thomas/Downloads/example_Notepad/variants/Notepad_8/" date="2019-11-03T14:15:18.513+0100"/>
+  <ownedArtefacts name="Notepad_1" artefactURI="file:/C:/Users/Thomas/Downloads/example_Notepad/variants/Notepad_1/" date="2019-11-03T14:15:18.342+0100"/>
+  <ownedArtefacts name="Notepad_2" artefactURI="file:/C:/Users/Thomas/Downloads/example_Notepad/variants/Notepad_2/" date="2019-11-03T14:15:18.363+0100"/>
+  <ownedArtefacts name="Notepad_3" artefactURI="file:/C:/Users/Thomas/Downloads/example_Notepad/variants/Notepad_3/" date="2019-11-03T14:15:18.385+0100"/>
+</org.but4reuse.artefact.model:ArtefactModel>
