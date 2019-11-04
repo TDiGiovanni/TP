@@ -66,7 +66,7 @@ public class VisitorsApp
 			 {
 				 tracker.lineCount += FileUtils.readLines(f, Charset.defaultCharset()).size();
 				 
-				 parse(path, FileUtils.readFileToString(f, Charset.defaultCharset()));
+				 manualParse(path, FileUtils.readFileToString(f, Charset.defaultCharset()));
 			 }
 			 else if (f.isDirectory()) // Call the method again if it's a directory
 			 {
@@ -94,7 +94,7 @@ public class VisitorsApp
 	}
 	
 	// Uses ASTParse to parse the source file, also prints the relevant informations
-	protected static void parse(String sourcePath, String sourceFile)
+	protected static void manualParse(String sourcePath, String sourceFile)
 	{
 		CompilationUnit cu = setUpParser(sourcePath, sourceFile);
 
@@ -189,7 +189,7 @@ public class VisitorsApp
 		}
 	}
 	
-	// Spoon usage
+	// Uses Spoon to parse the AST
 	protected static void spoonParse(String sourcePath)
 	{
 		Launcher launcher = new Launcher();

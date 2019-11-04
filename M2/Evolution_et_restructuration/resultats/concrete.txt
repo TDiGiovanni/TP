@@ -1,0 +1,3 @@
+com.google.common.collect.EnumMultiset
+com.google.common.collect.LinkedHashMultiset
+com.google.common.collect.ConcurrentHashMultiset
