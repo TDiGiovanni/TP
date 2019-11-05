@@ -315,16 +315,20 @@ public class extractionInterface2019
 	public static ArrayList<String> signatures(String className) throws SecurityException, ClassNotFoundException
 	{
 		ArrayList<String> liste = new ArrayList<>();
+		
 		//for (String c: classNameList)
 		for (Method m : Class.forName(className).getMethods())
 		{
 			String result = "";
 			result += m.getReturnType() + " ";
 			result += m.getName() + "(";
+			
 			for (Class<?> paramClass : m.getParameterTypes())
 				result += paramClass.getName() + ", ";
+			
 			if (m.getParameterTypes().length != 0)
 				result = result.substring(0, result.length() - 2);
+			
 			result += ") ";
 			/*
 			 * for (Class exceptionType : m.getExceptionTypes()) result +=
@@ -334,6 +338,7 @@ public class extractionInterface2019
 
 			liste.add(result);
 		}
+		
 		return liste;
 	}
 
@@ -370,11 +375,13 @@ public class extractionInterface2019
 	private static ArrayList<String> interfaceList(String[] nameList) throws ClassNotFoundException
 	{
 		ArrayList<String> liste = new ArrayList<>();
+		
 		for (String c : nameList)
 			if (Class.forName(c).isInterface())
 			{
 				liste.add(c);
 			}
+			
 		return liste;
 	}
 	*/
@@ -451,11 +458,7 @@ public class extractionInterface2019
 
 	public static void main(String[] args) throws SecurityException, ClassNotFoundException, IOException, IllegalArgumentException, IllegalAccessException
 	{
-		// on se concentre sur quelques classes
-		// les deux premières viennent de l'API Guava
-		// qui a été au préalable ajoutée dans les librairies du projet sous eclipse
-		// par le java build path
-		// les autres sont des classes de l'API Java
+		// On se concentre sur les classes Multiset de l'API Guava
 		String[] listeDesClassesInterfaces = { "com.google.common.collect.Multiset",
 				"com.google.common.collect.SortedMultiset",
 				"com.google.common.collect.EnumMultiset",
@@ -478,7 +481,7 @@ public class extractionInterface2019
 		// DataExtractionClassSet dFile = new DataExtractionClassSet();
 		extractionInterface2019 dFile = new extractionInterface2019();
 		dFile.setEntityList(concreteClassList(listeDesClassesInterfaces));
-		createFileFromList("resultats/concrete.txt", dFile.getEntityList());
+		createFileFromList("results/concrete.txt", dFile.getEntityList());
 
 		/* Create table for concrete classes signatures */
 		// cette table peut aider à comprendre quelle classe contient quelle signature
@@ -496,7 +499,7 @@ public class extractionInterface2019
 		d4.setCharacteristicList(signatureSet(d4.getEntityList()));
 		d4.createTable(2);
 		d4.afficheTable();
-		d4.ecrireTable("resultats/formatConc.rcft");
-		d4.ecrireTable("resultats/formatConc.csv");
+		d4.ecrireTable("results/formatConc.rcft");
+		d4.ecrireTable("results/formatConc.csv");
 	}
 }
