@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.widget.Toast;
 
 import com.dev_mobile_av.shared.Reminder;
+import com.dev_mobile_av.shared.ReminderType;
 import com.google.android.gms.wearable.DataEvent;
 import com.google.android.gms.wearable.DataEventBuffer;
 import com.google.android.gms.wearable.DataMap;
@@ -33,7 +34,7 @@ public class WearListenerService extends WearableListenerService
                     double latitude = map.getDouble("Latitude");
                     double longitude = map.getDouble("Longitude");
 
-                    Reminder reminder = new Reminder("", "", "", "", "");
+                    Reminder reminder = new Reminder("", "", ReminderType.Default, "", "");
 
                     Intent intent = new Intent(this, ShowReminderActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

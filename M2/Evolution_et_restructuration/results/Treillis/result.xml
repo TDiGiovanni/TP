@@ -1,10 +1,12 @@
 <RCAExplore_Document>
 	<Step nb="0">
-		<Lattice numberObj="7" numberAtt="99" numberCpt="8" >
+		<Lattice numberObj="9" numberAtt="105" numberCpt="10" >
 			<Config algo="fca">
 			</Config>
 			<Name>Collections</Name>
 			<Object>com.google.common.collect.EnumMultiset</Object>
+			<Object>com.google.common.collect.HashMultiset</Object>
+			<Object>com.google.common.collect.TreeMultiset</Object>
 			<Object>com.google.common.collect.ImmutableMultiset</Object>
 			<Object>com.google.common.collect.ImmutableSortedMultiset</Object>
 			<Object>com.google.common.collect.LinkedHashMultiset</Object>
@@ -25,9 +27,9 @@
 			<Attribute>class com.google.common.collect.EnumMultiset create(java.lang.Iterable)</Attribute>
 			<Attribute>class com.google.common.collect.EnumMultiset create(java.lang.Iterable, java.lang.Class)</Attribute>
 			<Attribute>void forEachEntry(java.util.function.ObjIntConsumer)</Attribute>
-			<Attribute>interface java.util.Set elementSet()</Attribute>
 			<Attribute>int setCount(java.lang.Object, int)</Attribute>
 			<Attribute>int setCount(java.lang.Enum, int)</Attribute>
+			<Attribute>interface java.util.Set elementSet()</Attribute>
 			<Attribute>boolean add(java.lang.Object)</Attribute>
 			<Attribute>boolean remove(java.lang.Object)</Attribute>
 			<Attribute>boolean addAll(java.util.Collection)</Attribute>
@@ -43,55 +45,63 @@
 			<Attribute>boolean removeIf(java.util.function.Predicate)</Attribute>
 			<Attribute>interface java.util.stream.Stream parallelStream()</Attribute>
 			<Attribute>void forEach(java.util.function.Consumer)</Attribute>
+			<Attribute>class com.google.common.collect.HashMultiset create()</Attribute>
+			<Attribute>class com.google.common.collect.HashMultiset create(int)</Attribute>
+			<Attribute>class com.google.common.collect.HashMultiset create(java.lang.Iterable)</Attribute>
+			<Attribute>class com.google.common.collect.TreeMultiset create()</Attribute>
+			<Attribute>class com.google.common.collect.TreeMultiset create(java.lang.Iterable)</Attribute>
+			<Attribute>class com.google.common.collect.TreeMultiset create(java.util.Comparator)</Attribute>
+			<Attribute>interface java.util.Comparator comparator()</Attribute>
+			<Attribute>interface com.google.common.collect.Multiset$Entry pollFirstEntry()</Attribute>
+			<Attribute>interface com.google.common.collect.Multiset$Entry pollLastEntry()</Attribute>
+			<Attribute>interface com.google.common.collect.Multiset$Entry firstEntry()</Attribute>
+			<Attribute>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute>
+			<Attribute>interface com.google.common.collect.SortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute>
+			<Attribute>interface com.google.common.collect.SortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>interface com.google.common.collect.SortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>interface java.util.NavigableSet elementSet()</Attribute>
+			<Attribute>interface java.util.SortedSet elementSet()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset copyOf(java.lang.Iterable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset copyOf(java.util.Iterator)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset copyOf([Ljava.lang.Object;)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset$Builder builder()</Attribute>
 			<Attribute>class com.google.common.collect.UnmodifiableIterator iterator()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, [Ljava.lang.Object;)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of()</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, [Ljava.lang.Object;)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSet entrySet()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableList asList()</Attribute>
-			<Attribute>interface java.util.stream.Collector toImmutableMultiset()</Attribute>
-			<Attribute>interface java.util.stream.Collector toImmutableMultiset(java.util.function.Function, java.util.function.ToIntFunction)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSet elementSet()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.util.Iterator)</Attribute>
+			<Attribute>interface java.util.stream.Collector toImmutableMultiset(java.util.function.Function, java.util.function.ToIntFunction)</Attribute>
+			<Attribute>interface java.util.stream.Collector toImmutableMultiset()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Iterator)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf([Ljava.lang.Comparable;)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.lang.Iterable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.lang.Iterable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf([Ljava.lang.Comparable;)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.util.Iterator)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.lang.Iterable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of()</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, [Ljava.lang.Comparable;)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder reverseOrder()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder naturalOrder()</Attribute>
-			<Attribute>interface java.util.Comparator comparator()</Attribute>
-			<Attribute>interface com.google.common.collect.Multiset$Entry pollFirstEntry()</Attribute>
-			<Attribute>interface com.google.common.collect.Multiset$Entry pollLastEntry()</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset descendingMultiset()</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedSet elementSet()</Attribute>
 			<Attribute>interface java.util.stream.Collector toImmutableSortedMultiset(java.util.Comparator, java.util.function.Function, java.util.function.ToIntFunction)</Attribute>
 			<Attribute>interface java.util.stream.Collector toImmutableSortedMultiset(java.util.Comparator)</Attribute>
-			<Attribute>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset descendingMultiset()</Attribute>
-			<Attribute>interface java.util.SortedSet elementSet()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedSet elementSet()</Attribute>
-			<Attribute>interface java.util.NavigableSet elementSet()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>interface com.google.common.collect.SortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>interface com.google.common.collect.SortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>interface com.google.common.collect.SortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder orderedBy(java.util.Comparator)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOfSorted(com.google.common.collect.SortedMultiset)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder orderedBy(java.util.Comparator)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf([Ljava.lang.Object;)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder builder()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object)</Attribute>
@@ -100,20 +110,20 @@
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, [Ljava.lang.Object;)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object)</Attribute>
-			<Attribute>interface com.google.common.collect.Multiset$Entry firstEntry()</Attribute>
-			<Attribute>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute>
 			<Attribute>class com.google.common.collect.LinkedHashMultiset create()</Attribute>
 			<Attribute>class com.google.common.collect.LinkedHashMultiset create(int)</Attribute>
 			<Attribute>class com.google.common.collect.LinkedHashMultiset create(java.lang.Iterable)</Attribute>
-			<Attribute>class com.google.common.collect.ConcurrentHashMultiset create()</Attribute>
 			<Attribute>class com.google.common.collect.ConcurrentHashMultiset create(java.lang.Iterable)</Attribute>
 			<Attribute>class com.google.common.collect.ConcurrentHashMultiset create(java.util.concurrent.ConcurrentMap)</Attribute>
+			<Attribute>class com.google.common.collect.ConcurrentHashMultiset create()</Attribute>
 			<Attribute>interface java.util.Set createEntrySet()</Attribute>
 			<Attribute>boolean removeExactly(java.lang.Object, int)</Attribute>
 			<Concept>
-				<ID>Concept_Collections_7</ID>
+				<ID>Concept_Collections_9</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.EnumMultiset</Object_Ref>
+					<Object_Ref>com.google.common.collect.HashMultiset</Object_Ref>
+					<Object_Ref>com.google.common.collect.TreeMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ImmutableMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ImmutableSortedMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.LinkedHashMultiset</Object_Ref>
@@ -154,8 +164,9 @@
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_6</ID>
+				<ID>Concept_Collections_8</ID>
 				<Extent>
+					<Object_Ref>com.google.common.collect.TreeMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ImmutableSortedMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ForwardingSortedMultiset</Object_Ref>
 				</Extent>
@@ -186,8 +197,8 @@
 					<Attribute_Ref>int setCount(java.lang.Object, int)</Attribute_Ref>
 					<Attribute_Ref>class [Ljava.lang.Object; toArray([Ljava.lang.Object;)</Attribute_Ref>
 					<Attribute_Ref>interface java.util.Set elementSet()</Attribute_Ref>
-					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>interface java.util.stream.Stream parallelStream()</Attribute_Ref>
 					<Attribute_Ref>boolean removeAll(java.util.Collection)</Attribute_Ref>
 					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
@@ -200,11 +211,11 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_5</ID>
+				<ID>Concept_Collections_7</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.ImmutableMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ImmutableSortedMultiset</Object_Ref>
@@ -256,11 +267,11 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_4</ID>
+				<ID>Concept_Collections_6</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.ConcurrentHashMultiset</Object_Ref>
 				</Extent>
@@ -275,8 +286,8 @@
 					<Attribute_Ref>class [Ljava.lang.Object; toArray(java.util.function.IntFunction)</Attribute_Ref>
 					<Attribute_Ref>int remove(java.lang.Object, int)</Attribute_Ref>
 					<Attribute_Ref>boolean addAll(java.util.Collection)</Attribute_Ref>
-					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create(java.util.concurrent.ConcurrentMap)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create()</Attribute_Ref>
 					<Attribute_Ref>boolean isEmpty()</Attribute_Ref>
 					<Attribute_Ref>void clear()</Attribute_Ref>
 					<Attribute_Ref>boolean setCount(java.lang.Object, int, int)</Attribute_Ref>
@@ -299,11 +310,11 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_3</ID>
+				<ID>Concept_Collections_5</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.LinkedHashMultiset</Object_Ref>
 				</Extent>
@@ -340,11 +351,11 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_2</ID>
+				<ID>Concept_Collections_4</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.ImmutableSortedMultiset</Object_Ref>
 				</Extent>
@@ -377,8 +388,8 @@
 					<Attribute_Ref>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object)</Attribute_Ref>
-					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableMultiset copyOf(java.util.Iterator)</Attribute_Ref>
 					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
@@ -437,8 +448,101 @@
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of()</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_5</Concept_Ref>
-					<Concept_Ref>Concept_Collections_6</Concept_Ref>
+					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_8</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Collections_3</ID>
+				<Extent>
+					<Object_Ref>com.google.common.collect.TreeMultiset</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>interface java.util.Spliterator spliterator()</Attribute_Ref>
+					<Attribute_Ref>void forEachEntry(java.util.function.ObjIntConsumer)</Attribute_Ref>
+					<Attribute_Ref>boolean removeIf(java.util.function.Predicate)</Attribute_Ref>
+					<Attribute_Ref>void forEach(java.util.function.Consumer)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Set entrySet()</Attribute_Ref>
+					<Attribute_Ref>int size()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create(java.lang.Iterable)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray(java.util.function.IntFunction)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create(java.util.Comparator)</Attribute_Ref>
+					<Attribute_Ref>int remove(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>boolean addAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>boolean isEmpty()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create()</Attribute_Ref>
+					<Attribute_Ref>interface java.util.NavigableSet elementSet()</Attribute_Ref>
+					<Attribute_Ref>interface java.util.SortedSet elementSet()</Attribute_Ref>
+					<Attribute_Ref>void clear()</Attribute_Ref>
+					<Attribute_Ref>boolean setCount(java.lang.Object, int, int)</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry firstEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry pollFirstEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>int add(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Iterator iterator()</Attribute_Ref>
+					<Attribute_Ref>boolean retainAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry pollLastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>int setCount(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray([Ljava.lang.Object;)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Set elementSet()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
+					<Attribute_Ref>interface java.util.stream.Stream parallelStream()</Attribute_Ref>
+					<Attribute_Ref>boolean removeAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray()</Attribute_Ref>
+					<Attribute_Ref>int count(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>boolean remove(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.stream.Stream stream()</Attribute_Ref>
+					<Attribute_Ref>boolean containsAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Comparator comparator()</Attribute_Ref>
+					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Collections_8</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Collections_2</ID>
+				<Extent>
+					<Object_Ref>com.google.common.collect.HashMultiset</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>interface java.util.Spliterator spliterator()</Attribute_Ref>
+					<Attribute_Ref>void forEachEntry(java.util.function.ObjIntConsumer)</Attribute_Ref>
+					<Attribute_Ref>boolean removeIf(java.util.function.Predicate)</Attribute_Ref>
+					<Attribute_Ref>void forEach(java.util.function.Consumer)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Set entrySet()</Attribute_Ref>
+					<Attribute_Ref>int size()</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray(java.util.function.IntFunction)</Attribute_Ref>
+					<Attribute_Ref>int remove(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>boolean addAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>boolean isEmpty()</Attribute_Ref>
+					<Attribute_Ref>void clear()</Attribute_Ref>
+					<Attribute_Ref>boolean setCount(java.lang.Object, int, int)</Attribute_Ref>
+					<Attribute_Ref>int add(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Iterator iterator()</Attribute_Ref>
+					<Attribute_Ref>boolean retainAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create(int)</Attribute_Ref>
+					<Attribute_Ref>int setCount(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray([Ljava.lang.Object;)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Set elementSet()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create()</Attribute_Ref>
+					<Attribute_Ref>interface java.util.stream.Stream parallelStream()</Attribute_Ref>
+					<Attribute_Ref>boolean removeAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create(java.lang.Iterable)</Attribute_Ref>
+					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray()</Attribute_Ref>
+					<Attribute_Ref>int count(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>boolean remove(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.stream.Stream stream()</Attribute_Ref>
+					<Attribute_Ref>boolean containsAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
@@ -481,7 +585,7 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
@@ -501,8 +605,8 @@
 					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry pollLastEntry()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.SortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
-					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>class [Ljava.lang.Object; toArray()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset$Builder builder()</Attribute_Ref>
@@ -518,12 +622,13 @@
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset copyOf([Ljava.lang.Object;)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset$Builder orderedBy(java.util.Comparator)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create(java.util.concurrent.ConcurrentMap)</Attribute_Ref>
-					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create()</Attribute_Ref>
 					<Attribute_Ref>interface java.util.NavigableSet elementSet()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.EnumMultiset create(java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>int add(java.lang.Object, int)</Attribute_Ref>
-					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable)</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.SortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable)</Attribute_Ref>
 					<Attribute_Ref>boolean retainAll(java.util.Collection)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.LinkedHashMultiset create(int)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create(java.lang.Iterable)</Attribute_Ref>
@@ -534,6 +639,7 @@
 					<Attribute_Ref>interface java.util.Set createEntrySet()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>boolean removeAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create(java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.UnmodifiableIterator iterator()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset copyOfSorted(com.google.common.collect.SortedMultiset)</Attribute_Ref>
@@ -548,6 +654,7 @@
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, [Ljava.lang.Comparable;)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create(java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>boolean addAll(java.util.Collection)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset$Builder reverseOrder()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.SortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
@@ -569,6 +676,7 @@
 					<Attribute_Ref>interface java.util.Set entrySet()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSet entrySet()</Attribute_Ref>
 					<Attribute_Ref>boolean removeExactly(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create(java.util.Comparator)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedSet elementSet()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object)</Attribute_Ref>
@@ -579,9 +687,11 @@
 					<Attribute_Ref>interface java.util.Iterator iterator()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create(int)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>int setCount(java.lang.Object, int)</Attribute_Ref>
 					<Attribute_Ref>interface java.util.Set elementSet()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create()</Attribute_Ref>
 					<Attribute_Ref>interface java.util.stream.Stream parallelStream()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>int count(java.lang.Object)</Attribute_Ref>
@@ -594,16 +704,20 @@
 					<Concept_Ref>Concept_Collections_2</Concept_Ref>
 					<Concept_Ref>Concept_Collections_3</Concept_Ref>
 					<Concept_Ref>Concept_Collections_4</Concept_Ref>
+					<Concept_Ref>Concept_Collections_5</Concept_Ref>
+					<Concept_Ref>Concept_Collections_6</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 		</Lattice>
 	</Step >
 	<Step nb="1">
-		<Lattice numberObj="7" numberAtt="99" numberCpt="8" >
+		<Lattice numberObj="9" numberAtt="105" numberCpt="10" >
 			<Config algo="fca">
 			</Config>
 			<Name>Collections</Name>
 			<Object>com.google.common.collect.EnumMultiset</Object>
+			<Object>com.google.common.collect.HashMultiset</Object>
+			<Object>com.google.common.collect.TreeMultiset</Object>
 			<Object>com.google.common.collect.ImmutableMultiset</Object>
 			<Object>com.google.common.collect.ImmutableSortedMultiset</Object>
 			<Object>com.google.common.collect.LinkedHashMultiset</Object>
@@ -624,9 +738,9 @@
 			<Attribute>class com.google.common.collect.EnumMultiset create(java.lang.Iterable)</Attribute>
 			<Attribute>class com.google.common.collect.EnumMultiset create(java.lang.Iterable, java.lang.Class)</Attribute>
 			<Attribute>void forEachEntry(java.util.function.ObjIntConsumer)</Attribute>
-			<Attribute>interface java.util.Set elementSet()</Attribute>
 			<Attribute>int setCount(java.lang.Object, int)</Attribute>
 			<Attribute>int setCount(java.lang.Enum, int)</Attribute>
+			<Attribute>interface java.util.Set elementSet()</Attribute>
 			<Attribute>boolean add(java.lang.Object)</Attribute>
 			<Attribute>boolean remove(java.lang.Object)</Attribute>
 			<Attribute>boolean addAll(java.util.Collection)</Attribute>
@@ -642,55 +756,63 @@
 			<Attribute>boolean removeIf(java.util.function.Predicate)</Attribute>
 			<Attribute>interface java.util.stream.Stream parallelStream()</Attribute>
 			<Attribute>void forEach(java.util.function.Consumer)</Attribute>
+			<Attribute>class com.google.common.collect.HashMultiset create()</Attribute>
+			<Attribute>class com.google.common.collect.HashMultiset create(int)</Attribute>
+			<Attribute>class com.google.common.collect.HashMultiset create(java.lang.Iterable)</Attribute>
+			<Attribute>class com.google.common.collect.TreeMultiset create()</Attribute>
+			<Attribute>class com.google.common.collect.TreeMultiset create(java.lang.Iterable)</Attribute>
+			<Attribute>class com.google.common.collect.TreeMultiset create(java.util.Comparator)</Attribute>
+			<Attribute>interface java.util.Comparator comparator()</Attribute>
+			<Attribute>interface com.google.common.collect.Multiset$Entry pollFirstEntry()</Attribute>
+			<Attribute>interface com.google.common.collect.Multiset$Entry pollLastEntry()</Attribute>
+			<Attribute>interface com.google.common.collect.Multiset$Entry firstEntry()</Attribute>
+			<Attribute>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute>
+			<Attribute>interface com.google.common.collect.SortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute>
+			<Attribute>interface com.google.common.collect.SortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>interface com.google.common.collect.SortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>interface java.util.NavigableSet elementSet()</Attribute>
+			<Attribute>interface java.util.SortedSet elementSet()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset copyOf(java.lang.Iterable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset copyOf(java.util.Iterator)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset copyOf([Ljava.lang.Object;)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset$Builder builder()</Attribute>
 			<Attribute>class com.google.common.collect.UnmodifiableIterator iterator()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, [Ljava.lang.Object;)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of()</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, [Ljava.lang.Object;)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSet entrySet()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableList asList()</Attribute>
-			<Attribute>interface java.util.stream.Collector toImmutableMultiset()</Attribute>
-			<Attribute>interface java.util.stream.Collector toImmutableMultiset(java.util.function.Function, java.util.function.ToIntFunction)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSet elementSet()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.util.Iterator)</Attribute>
+			<Attribute>interface java.util.stream.Collector toImmutableMultiset(java.util.function.Function, java.util.function.ToIntFunction)</Attribute>
+			<Attribute>interface java.util.stream.Collector toImmutableMultiset()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Iterator)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf([Ljava.lang.Comparable;)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.lang.Iterable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.lang.Iterable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf([Ljava.lang.Comparable;)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.util.Iterator)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.lang.Iterable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of()</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, [Ljava.lang.Comparable;)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder reverseOrder()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder naturalOrder()</Attribute>
-			<Attribute>interface java.util.Comparator comparator()</Attribute>
-			<Attribute>interface com.google.common.collect.Multiset$Entry pollFirstEntry()</Attribute>
-			<Attribute>interface com.google.common.collect.Multiset$Entry pollLastEntry()</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset descendingMultiset()</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedSet elementSet()</Attribute>
 			<Attribute>interface java.util.stream.Collector toImmutableSortedMultiset(java.util.Comparator, java.util.function.Function, java.util.function.ToIntFunction)</Attribute>
 			<Attribute>interface java.util.stream.Collector toImmutableSortedMultiset(java.util.Comparator)</Attribute>
-			<Attribute>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset descendingMultiset()</Attribute>
-			<Attribute>interface java.util.SortedSet elementSet()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedSet elementSet()</Attribute>
-			<Attribute>interface java.util.NavigableSet elementSet()</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>interface com.google.common.collect.SortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>interface com.google.common.collect.SortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>interface com.google.common.collect.SortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute>
-			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder orderedBy(java.util.Comparator)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOfSorted(com.google.common.collect.SortedMultiset)</Attribute>
+			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder orderedBy(java.util.Comparator)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset copyOf([Ljava.lang.Object;)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset$Builder builder()</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object)</Attribute>
@@ -699,20 +821,20 @@
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, [Ljava.lang.Object;)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute>
 			<Attribute>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object)</Attribute>
-			<Attribute>interface com.google.common.collect.Multiset$Entry firstEntry()</Attribute>
-			<Attribute>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute>
 			<Attribute>class com.google.common.collect.LinkedHashMultiset create()</Attribute>
 			<Attribute>class com.google.common.collect.LinkedHashMultiset create(int)</Attribute>
 			<Attribute>class com.google.common.collect.LinkedHashMultiset create(java.lang.Iterable)</Attribute>
-			<Attribute>class com.google.common.collect.ConcurrentHashMultiset create()</Attribute>
 			<Attribute>class com.google.common.collect.ConcurrentHashMultiset create(java.lang.Iterable)</Attribute>
 			<Attribute>class com.google.common.collect.ConcurrentHashMultiset create(java.util.concurrent.ConcurrentMap)</Attribute>
+			<Attribute>class com.google.common.collect.ConcurrentHashMultiset create()</Attribute>
 			<Attribute>interface java.util.Set createEntrySet()</Attribute>
 			<Attribute>boolean removeExactly(java.lang.Object, int)</Attribute>
 			<Concept>
-				<ID>Concept_Collections_7</ID>
+				<ID>Concept_Collections_9</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.EnumMultiset</Object_Ref>
+					<Object_Ref>com.google.common.collect.HashMultiset</Object_Ref>
+					<Object_Ref>com.google.common.collect.TreeMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ImmutableMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ImmutableSortedMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.LinkedHashMultiset</Object_Ref>
@@ -753,8 +875,9 @@
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_6</ID>
+				<ID>Concept_Collections_8</ID>
 				<Extent>
+					<Object_Ref>com.google.common.collect.TreeMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ImmutableSortedMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ForwardingSortedMultiset</Object_Ref>
 				</Extent>
@@ -785,8 +908,8 @@
 					<Attribute_Ref>int setCount(java.lang.Object, int)</Attribute_Ref>
 					<Attribute_Ref>class [Ljava.lang.Object; toArray([Ljava.lang.Object;)</Attribute_Ref>
 					<Attribute_Ref>interface java.util.Set elementSet()</Attribute_Ref>
-					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>interface java.util.stream.Stream parallelStream()</Attribute_Ref>
 					<Attribute_Ref>boolean removeAll(java.util.Collection)</Attribute_Ref>
 					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
@@ -799,11 +922,11 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_5</ID>
+				<ID>Concept_Collections_7</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.ImmutableMultiset</Object_Ref>
 					<Object_Ref>com.google.common.collect.ImmutableSortedMultiset</Object_Ref>
@@ -855,11 +978,11 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_4</ID>
+				<ID>Concept_Collections_6</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.ConcurrentHashMultiset</Object_Ref>
 				</Extent>
@@ -874,8 +997,8 @@
 					<Attribute_Ref>class [Ljava.lang.Object; toArray(java.util.function.IntFunction)</Attribute_Ref>
 					<Attribute_Ref>int remove(java.lang.Object, int)</Attribute_Ref>
 					<Attribute_Ref>boolean addAll(java.util.Collection)</Attribute_Ref>
-					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create(java.util.concurrent.ConcurrentMap)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create()</Attribute_Ref>
 					<Attribute_Ref>boolean isEmpty()</Attribute_Ref>
 					<Attribute_Ref>void clear()</Attribute_Ref>
 					<Attribute_Ref>boolean setCount(java.lang.Object, int, int)</Attribute_Ref>
@@ -898,11 +1021,11 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_3</ID>
+				<ID>Concept_Collections_5</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.LinkedHashMultiset</Object_Ref>
 				</Extent>
@@ -939,11 +1062,11 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
-				<ID>Concept_Collections_2</ID>
+				<ID>Concept_Collections_4</ID>
 				<Extent>
 					<Object_Ref>com.google.common.collect.ImmutableSortedMultiset</Object_Ref>
 				</Extent>
@@ -976,8 +1099,8 @@
 					<Attribute_Ref>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object)</Attribute_Ref>
-					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.util.Comparator, java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableMultiset copyOf(java.util.Iterator)</Attribute_Ref>
 					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
@@ -1036,8 +1159,101 @@
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of()</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_5</Concept_Ref>
-					<Concept_Ref>Concept_Collections_6</Concept_Ref>
+					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_8</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Collections_3</ID>
+				<Extent>
+					<Object_Ref>com.google.common.collect.TreeMultiset</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>interface java.util.Spliterator spliterator()</Attribute_Ref>
+					<Attribute_Ref>void forEachEntry(java.util.function.ObjIntConsumer)</Attribute_Ref>
+					<Attribute_Ref>boolean removeIf(java.util.function.Predicate)</Attribute_Ref>
+					<Attribute_Ref>void forEach(java.util.function.Consumer)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Set entrySet()</Attribute_Ref>
+					<Attribute_Ref>int size()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create(java.lang.Iterable)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray(java.util.function.IntFunction)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create(java.util.Comparator)</Attribute_Ref>
+					<Attribute_Ref>int remove(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>boolean addAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>boolean isEmpty()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create()</Attribute_Ref>
+					<Attribute_Ref>interface java.util.NavigableSet elementSet()</Attribute_Ref>
+					<Attribute_Ref>interface java.util.SortedSet elementSet()</Attribute_Ref>
+					<Attribute_Ref>void clear()</Attribute_Ref>
+					<Attribute_Ref>boolean setCount(java.lang.Object, int, int)</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry firstEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry pollFirstEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>int add(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Iterator iterator()</Attribute_Ref>
+					<Attribute_Ref>boolean retainAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry pollLastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>int setCount(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray([Ljava.lang.Object;)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Set elementSet()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
+					<Attribute_Ref>interface java.util.stream.Stream parallelStream()</Attribute_Ref>
+					<Attribute_Ref>boolean removeAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray()</Attribute_Ref>
+					<Attribute_Ref>int count(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>boolean remove(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.stream.Stream stream()</Attribute_Ref>
+					<Attribute_Ref>boolean containsAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Comparator comparator()</Attribute_Ref>
+					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Collections_8</Concept_Ref>
+				</UpperCovers>
+			</Concept>
+			<Concept>
+				<ID>Concept_Collections_2</ID>
+				<Extent>
+					<Object_Ref>com.google.common.collect.HashMultiset</Object_Ref>
+				</Extent>
+				<Intent>
+					<Attribute_Ref>interface java.util.Spliterator spliterator()</Attribute_Ref>
+					<Attribute_Ref>void forEachEntry(java.util.function.ObjIntConsumer)</Attribute_Ref>
+					<Attribute_Ref>boolean removeIf(java.util.function.Predicate)</Attribute_Ref>
+					<Attribute_Ref>void forEach(java.util.function.Consumer)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Set entrySet()</Attribute_Ref>
+					<Attribute_Ref>int size()</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray(java.util.function.IntFunction)</Attribute_Ref>
+					<Attribute_Ref>int remove(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>boolean addAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>boolean isEmpty()</Attribute_Ref>
+					<Attribute_Ref>void clear()</Attribute_Ref>
+					<Attribute_Ref>boolean setCount(java.lang.Object, int, int)</Attribute_Ref>
+					<Attribute_Ref>int add(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Iterator iterator()</Attribute_Ref>
+					<Attribute_Ref>boolean retainAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create(int)</Attribute_Ref>
+					<Attribute_Ref>int setCount(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray([Ljava.lang.Object;)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.Set elementSet()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create()</Attribute_Ref>
+					<Attribute_Ref>interface java.util.stream.Stream parallelStream()</Attribute_Ref>
+					<Attribute_Ref>boolean removeAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create(java.lang.Iterable)</Attribute_Ref>
+					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>class [Ljava.lang.Object; toArray()</Attribute_Ref>
+					<Attribute_Ref>int count(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>boolean remove(java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>interface java.util.stream.Stream stream()</Attribute_Ref>
+					<Attribute_Ref>boolean containsAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
+				</Intent>
+				<UpperCovers>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
@@ -1080,7 +1296,7 @@
 					<Attribute_Ref>boolean contains(java.lang.Object)</Attribute_Ref>
 				</Intent>
 				<UpperCovers>
-					<Concept_Ref>Concept_Collections_7</Concept_Ref>
+					<Concept_Ref>Concept_Collections_9</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 			<Concept>
@@ -1100,8 +1316,8 @@
 					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry pollLastEntry()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.SortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
-					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.Multiset$Entry lastEntry()</Attribute_Ref>
+					<Attribute_Ref>interface com.google.common.collect.SortedMultiset descendingMultiset()</Attribute_Ref>
 					<Attribute_Ref>boolean add(java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>class [Ljava.lang.Object; toArray()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset$Builder builder()</Attribute_Ref>
@@ -1117,12 +1333,13 @@
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset copyOf([Ljava.lang.Object;)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset$Builder orderedBy(java.util.Comparator)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create(java.util.concurrent.ConcurrentMap)</Attribute_Ref>
-					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create()</Attribute_Ref>
 					<Attribute_Ref>interface java.util.NavigableSet elementSet()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset tailMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.EnumMultiset create(java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>int add(java.lang.Object, int)</Attribute_Ref>
-					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable)</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.SortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable)</Attribute_Ref>
 					<Attribute_Ref>boolean retainAll(java.util.Collection)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.LinkedHashMultiset create(int)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ConcurrentHashMultiset create(java.lang.Iterable)</Attribute_Ref>
@@ -1133,6 +1350,7 @@
 					<Attribute_Ref>interface java.util.Set createEntrySet()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>boolean removeAll(java.util.Collection)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create(java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset headMultiset(java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.UnmodifiableIterator iterator()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset copyOfSorted(com.google.common.collect.SortedMultiset)</Attribute_Ref>
@@ -1147,6 +1365,7 @@
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset copyOf(java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, [Ljava.lang.Comparable;)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create(java.lang.Iterable)</Attribute_Ref>
 					<Attribute_Ref>boolean addAll(java.util.Collection)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset$Builder reverseOrder()</Attribute_Ref>
 					<Attribute_Ref>interface com.google.common.collect.SortedMultiset subMultiset(java.lang.Object, com.google.common.collect.BoundType, java.lang.Object, com.google.common.collect.BoundType)</Attribute_Ref>
@@ -1168,6 +1387,7 @@
 					<Attribute_Ref>interface java.util.Set entrySet()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSet entrySet()</Attribute_Ref>
 					<Attribute_Ref>boolean removeExactly(java.lang.Object, int)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.TreeMultiset create(java.util.Comparator)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedSet elementSet()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object)</Attribute_Ref>
@@ -1178,9 +1398,11 @@
 					<Attribute_Ref>interface java.util.Iterator iterator()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Comparable, java.lang.Comparable, java.lang.Comparable)</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create(int)</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableMultiset of(java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>int setCount(java.lang.Object, int)</Attribute_Ref>
 					<Attribute_Ref>interface java.util.Set elementSet()</Attribute_Ref>
+					<Attribute_Ref>class com.google.common.collect.HashMultiset create()</Attribute_Ref>
 					<Attribute_Ref>interface java.util.stream.Stream parallelStream()</Attribute_Ref>
 					<Attribute_Ref>class com.google.common.collect.ImmutableSortedMultiset of(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)</Attribute_Ref>
 					<Attribute_Ref>int count(java.lang.Object)</Attribute_Ref>
@@ -1193,6 +1415,8 @@
 					<Concept_Ref>Concept_Collections_2</Concept_Ref>
 					<Concept_Ref>Concept_Collections_3</Concept_Ref>
 					<Concept_Ref>Concept_Collections_4</Concept_Ref>
+					<Concept_Ref>Concept_Collections_5</Concept_Ref>
+					<Concept_Ref>Concept_Collections_6</Concept_Ref>
 				</UpperCovers>
 			</Concept>
 		</Lattice>

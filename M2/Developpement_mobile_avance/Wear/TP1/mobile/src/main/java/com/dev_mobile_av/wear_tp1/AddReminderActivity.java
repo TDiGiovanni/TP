@@ -61,9 +61,11 @@ public class AddReminderActivity extends AppCompatActivity
             }
         });
 
-        showRemindersButton.setOnClickListener(new View.OnClickListener() {
+        showRemindersButton.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Intent intent = new Intent(AddReminderActivity.this, ShowRemindersActivity.class);
                 intent.putExtra("ReminderList", reminders);
                 startActivity(intent);

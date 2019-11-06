@@ -6,8 +6,6 @@ import android.support.wearable.activity.WearableActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -95,6 +93,7 @@ public class MainActivity extends WearableActivity
         setAmbientEnabled();
     }
 
+    // Sends coordinates to the phone
     private void sendCoordinates()
     {
         if (googleApiClient == null)

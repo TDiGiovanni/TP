@@ -12,23 +12,37 @@
 
 <body>
 	<jsp:useBean class="converter.ConverterBean" id="converterBean"/>
-	<%
-		if (request.getParameter("amount") == null)
-		{
-	%>
 	<form name="convert" action="index.jsp">
-		<input type="number" name="amount" placeholder="Enter your amount">
-		<input type="text" name="currency" placeholder="Enter the currency code">
+		<input type="text" name="email" placeholder="Enter your email address">
+		<br/><br/>
+		<input type="number" name="amount" placeholder="Enter the amount">
+		<p>to</p>
+		<select name="currency">
+		<%
+			for (converter.Currency currency : converterBean.getAvailableCurrencies())
+			{
+				out.println("<option value=" + currency.getCode() + ">" + currency.getFullName() + "</option>");
+			}
+		%>
+		</select>
+		<br/><br/>
 		<input type="submit" value="Convert">
+		<input type="submit" value="Convert to all currencies">
 	</form>	
 	<%
-		}
-		else
+		String anyParameter = request.getParameter("amount");
+		if (anyParameter != null)
 		{
+			String email = request .getParameter("email");
+			if (email != null && email.length() != 0)
+			{
+				// Demander...
+			}
+			
 			double amount = Double.parseDouble(request.getParameter("amount"));
 			String currency = request.getParameter("currency");
-			amount = converterBean.euroToOtherCurrency(amount, currency);
-			out.println("<h4>The converted amount is: " + amount + "</h4>");
+			double newAmount = converterBean.euroToOtherCurrency(amount, currency);
+			out.println("<p>" + amount + " EUR is equivalent to " + newAmount + " " + currency + ".</p>");
 		}
 	%>
 </body>

@@ -425,6 +425,7 @@ public class extractionInterface2019
 	private static ArrayList<String> concreteClassList(String[] classNameList) throws ClassNotFoundException, IOException
 	{
 		ArrayList<String> liste = new ArrayList<>();
+		
 		for (String c : classNameList)
 			if (!Modifier.isAbstract(Class.forName(c).getModifiers()))
 			{
