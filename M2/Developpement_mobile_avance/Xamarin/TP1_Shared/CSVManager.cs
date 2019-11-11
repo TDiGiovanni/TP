@@ -6,7 +6,7 @@ namespace TP1_Shared
 {
     public class CSVManager
     {
-        public void loadCSV(AssetManager assets)
+        public void ReadCSV(AssetManager assets)
         {
             string fileName = "HorairesTram.csv";
 
@@ -30,7 +30,7 @@ namespace TP1_Shared
                     TamCSVTpsReel t = (TamCSVTpsReel)item;
                     a.Add(t);
 #if __ANDROID__
-                    Log.Debug("TYPE_MESSAGE", "Contenu du message");
+                    Log.Debug("TYPE_MESSAGE", "Message content");
                     Log.Debug("DEBUG", t.stop_code);
 #endif 
                 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/MemoMetaclass/src-gen" creationIcons="false" editDirectory="/MemoMetaclass.edit/src-gen"
+    editorDirectory="/MemoMetaclass.editor/src-gen" modelPluginID="MemoMetaclass"
+    modelName="MemoMetaclass" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>memoMetaclass.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="MemoMetaclass" disposableProviderFactory="true" ecorePackage="memoMetaclass.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="memoMetaclass.ecore#//AutomobileType">
+      <genEnumLiterals ecoreEnumLiteral="memoMetaclass.ecore#//AutomobileType/Audi"/>
+      <genEnumLiterals ecoreEnumLiteral="memoMetaclass.ecore#//AutomobileType/BMW"/>
+      <genEnumLiterals ecoreEnumLiteral="memoMetaclass.ecore#//AutomobileType/Citroen"/>
+      <genEnumLiterals ecoreEnumLiteral="memoMetaclass.ecore#//AutomobileType/Mercedes"/>
+      <genEnumLiterals ecoreEnumLiteral="memoMetaclass.ecore#//AutomobileType/Renault"/>
+    </genEnums>
+    <genClasses ecoreClass="memoMetaclass.ecore#//MemoObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute memoMetaclass.ecore#//MemoObject/instances"/>
+    </genClasses>
+    <genClasses ecoreClass="memoMetaclass.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute memoMetaclass.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="memoMetaclass.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute memoMetaclass.ecore#//Person/age"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference memoMetaclass.ecore#//Person/automobiles"/>
+      <genOperations ecoreOperation="memoMetaclass.ecore#//Person/birthday"/>
+    </genClasses>
+    <genClasses ecoreClass="memoMetaclass.ecore#//Automobile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute memoMetaclass.ecore#//Automobile/type"/>
+    </genClasses>
+    <genClasses ecoreClass="memoMetaclass.ecore#//World">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference memoMetaclass.ecore#//World/population"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference memoMetaclass.ecore#//World/automobiles"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

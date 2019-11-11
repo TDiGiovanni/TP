@@ -32,6 +32,32 @@
 (toString lisa)
 
 
+;; The memo-class example
+;; Defining the meta-class
+(defclass memo-class(standard-class)
+  ((instances :accessor getInstances
+              :initform nil))
+  (:metaclass standard-class))
+
+(defmethod make-instance ((newClass memo-class) &rest args)
+  )
+
+(defmethod sb-mop:validate-superclass ((class memo-class)
+                                       (superclass standard-class))
+  )
+
+(defmethod sb-mop:validate-superclass ((class standard-class)
+                                       (superclass memo-class))
+  )
+
+;; Defining a memo-class, for example a stack
+(defclass stack(standard-object)
+  ()
+  (:metaclass memo-class))
+
+;; Testing
+(defparameter firstInstance (make-instance 'stack))
+
 ;; The animal and abstract-class example
 ;; Defining the class abstract-class
 (defclass abstract-class (standard-class)
@@ -45,7 +71,7 @@
                                 (superclass abstract-class))
   t)
 
-(defmethod make-instance((newClass abstract-class) &rest args)
+(defmethod make-instance ((newClass abstract-class) &rest args)
   (format t "Error: cannot instanciate an abstract class"))
 
 ;; Defining the class animal

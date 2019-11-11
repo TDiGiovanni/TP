@@ -11,5 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CSVManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TamCSVRealTime.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TamSchedule.cs" />
   </ItemGroup>
 </Project>
