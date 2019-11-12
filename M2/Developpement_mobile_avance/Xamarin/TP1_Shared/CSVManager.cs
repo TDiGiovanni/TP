@@ -1,41 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿#pragma warning disable CS0436 // Le type est en conflit avec le type importé
+
+using CsvHelper;
+using System.Collections;
+using System.IO;
 
 namespace TP1_Shared
 {
     public class CSVManager
     {
-        public void ReadCSV(AssetManager assets)
+        private ArrayList ReadData(StreamReader reader)
         {
-            string fileName = "HorairesTram.csv";
-
             ArrayList a = new ArrayList();
-            
-#if __ANDROID__
-            AssetManager assets = Assets;
-            using (StreamReader reader = new StreamReader(assets.Open(Filename)))
-#elif __IOS__
-            using (var reader = new StreamReader(Filename))
-#endif
 
             using (var csv = new CsvReader(reader))
             {
-                var records = csv.GetRecords<TamCSVTpsReel>();
+                csv.Configuration.Delimiter = ";";
+
+                var records = csv.GetRecords<TamCSVRealTime>();
                 IEnumerator enumerator = records.GetEnumerator();
 
                 while (enumerator.MoveNext())
                 {
                     object item = enumerator.Current;
-                    TamCSVTpsReel t = (TamCSVTpsReel)item;
+                    TamCSVRealTime t = (TamCSVRealTime)item;
                     a.Add(t);
-#if __ANDROID__
-                    Log.Debug("TYPE_MESSAGE", "Message content");
-                    Log.Debug("DEBUG", t.stop_code);
-#endif 
                 }
             }
+
             return a;
+        }
+
+        public ArrayList DownloadCSVFile(Stream stream)
+        {
+            return this.ReadData(new StreamReader(stream));
         }
     }
 }

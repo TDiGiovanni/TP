@@ -9,6 +9,7 @@
     <Import_RootNamespace>TP1_Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CSVFile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CSVManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TamCSVRealTime.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TamSchedule.cs" />

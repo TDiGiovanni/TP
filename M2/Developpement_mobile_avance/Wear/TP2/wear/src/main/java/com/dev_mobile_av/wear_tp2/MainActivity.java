@@ -102,7 +102,7 @@ public class MainActivity extends WearableActivity
         putRequest.setUrgent();
         final DataMap map = putRequest.getDataMap();
 
-        //TODO: send reminder infos
+        //TODO: send message infos
 
         // Put the GPS coordinates
         fusedLocationClient.getLastLocation()
