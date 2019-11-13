@@ -67,8 +67,8 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <toolSections name="S1">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreationFormation" nodeMappings="//@ownedViewpoints[name='VP1']/@ownedRepresentations[name='DD1']/@defaultLayer/@nodeMappings[name='NodeFormation']">
+        <toolSections name="University">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Formation" nodeMappings="//@ownedViewpoints[name='VP1']/@ownedRepresentations[name='DD1']/@defaultLayer/@nodeMappings[name='NodeFormation']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -77,7 +77,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="CreationSemestreUE">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Association Semestre-UE">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>

@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">TP2</string>
+    <string name="appName">TP2</string>
+
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+
+    <string name="fillInfos">You must fill out all the informations</string>
+
+    <string name="sendMessage">Send message</string>
+    <string name="sentMessage">Message sent!</string>
+
+    <string name="coordinates">GPS coordinates</string>
 </resources>

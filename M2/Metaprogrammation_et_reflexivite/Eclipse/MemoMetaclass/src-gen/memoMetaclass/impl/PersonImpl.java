@@ -123,8 +123,7 @@ public class PersonImpl extends NamedElementImpl implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void birthday()
-	{
+	public void birthday() {
 		age++;
 	}
 

@@ -6,32 +6,30 @@ import java.io.Serializable;
 
 public class Message implements Serializable
 {
-    private String time;
-    private String date;
-    private String title;
-    private String description;
+    private String content;
+    private double latitude;
+    private double longitude;
 
-    public Message(String time, String date, String title, String content)
+    public Message(String content, float latitude, float longitude)
     {
-        this.time = time;
-        this.date = date;
-        this.title = title;
-        this.description = content;
+        this.content = content;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
-    public String getFullDate()
+    public String getContent()
     {
-        return this.date + " - " + this.time;
+        return this.content;
     }
 
-    public String getTitle()
+    public double getLatitude()
     {
-        return this.title;
+        return this.latitude;
     }
 
-    public String getDescription()
+    public double getLongitude()
     {
-        return this.description;
+        return this.longitude;
     }
 
     @NonNull
@@ -39,10 +37,9 @@ public class Message implements Serializable
     {
         String result = "";
 
-        result += title
-                + " - " + date
-                + " - " + time
-                + " - " + description;
+        result += "(" + latitude
+                + " - " + longitude + ")"
+                + ": " + content;
 
         return result;
     }

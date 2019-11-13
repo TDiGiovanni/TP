@@ -30,4 +30,5 @@ dependencies {
     implementation 'androidx.palette:palette:1.0.0'
     compileOnly 'com.google.android.wearable:wearable:2.5.0'
     implementation project(path: ':shared')
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

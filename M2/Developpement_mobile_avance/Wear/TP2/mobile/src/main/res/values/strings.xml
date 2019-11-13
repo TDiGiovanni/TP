@@ -1,15 +1,3 @@
 <resources>
-    <string name="date">Date</string>
-    <string name="time">Time</string>
-    <string name="title">Title</string>
-    <string name="content">Content</string>
 
-    <string name="addMessage">Add message</string>
-    <string name="showMessages">Show messages</string>
-
-    <string name="reply">Reply</string>
-    <string name="reply_indication">Enter your reply</string>
-    <string name="replied">Replied!</string>
-
-    <string name="coordinates">GPS coordinates</string>
 </resources>

@@ -27,16 +27,11 @@ public class WearListenerService extends WearableListenerService
 
                 if (Objects.requireNonNull(path).equals("/Coordinates"))
                 {
-                    double latitude = map.getDouble("Latitude");
-                    double longitude = map.getDouble("Longitude");
+                    Message message = new Message("", map.getDouble("Latitude"), map.getDouble("Longitude"));
 
-                    Message message = new Message("", "", "", "");
-
-                    Intent intent = new Intent(this, ShowMessagesActivity.class);
+                    Intent intent = new Intent(this, SendMessageActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("Message", message);
-                    intent.putExtra("Latitude", latitude);
-                    intent.putExtra("Longitude", longitude);
                     startActivity(intent);
                 }
             }
