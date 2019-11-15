@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <maquette:Formations xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:maquette="fs://maquette">
   <formations nbSemestres="2" nom="F1">
-    <semestres numero="1" ues="//@formations.0/@uesPotentielles.0 //@formations.0/@uesPotentielles.1 //@formations.0/@uesPotentielles.2 //@formations.0/@uesPotentielles.3"/>
+    <semestres numero="1" ues="//@formations.0/@uesPotentielles.2 //@formations.0/@uesPotentielles.3 //@formations.0/@uesPotentielles.0 //@formations.0/@uesPotentielles.1"/>
     <compétencesEnseignées nom="C1" ues="//@formations.0/@uesPotentielles.0 //@formations.0/@uesPotentielles.1"/>
     <compétencesEnseignées nom="C2" ues="//@formations.0/@uesPotentielles.2"/>
     <compétencesEnseignées nom="C3" ues="//@formations.0/@uesPotentielles.3"/>
     <uesPotentielles nbECTS="5" compétence="//@formations.0/@compétencesEnseignées.0" nom="UE1"/>
     <uesPotentielles nbECTS="5" compétence="//@formations.0/@compétencesEnseignées.0" nom="UE2"/>
-    <uesPotentielles nbECTS="10" compétence="//@formations.0/@compétencesEnseignées.1" nom="UE3" disciplinaire="false"/>
-    <uesPotentielles nbECTS="10" compétence="//@formations.0/@compétencesEnseignées.2" nom="UE4"/>
+    <uesPotentielles nbECTS="10" compétence="//@formations.0/@compétencesEnseignées.1" nom="UE3"/>
+    <uesPotentielles nbECTS="10" compétence="//@formations.0/@compétencesEnseignées.2" nom="UE4" disciplinaire="false"/>
   </formations>
-  <formations nom="F2"/>
 </maquette:Formations>
