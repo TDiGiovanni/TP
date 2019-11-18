@@ -1,12 +1,26 @@
 package com.dev_mobile_av.wear_tp2;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.hardware.Camera;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.dev_mobile_av.shared.Coordinates;
 import com.dev_mobile_av.shared.Message;
@@ -20,14 +34,29 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class ShowMessagesActivity extends WearableActivity
+import static java.lang.Math.abs;
+
+public class ShowMessagesActivity extends WearableActivity implements SensorEventListener
 {
+    // All attributes used for the shaking detection
+    private static final float SHAKE_THRESHOLD = 400;
+    private static final long REFRESH_RATE = 200;
+    private SensorManager sensorManager;
+    private long lastUpdate;
+    private float lastX;
+    private float lastY;
+    private float lastZ;
+
+    // Layout views
     protected ListView messagesListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        // Initialise the sensor manager
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
         // Fetches layout views
         setContentView(R.layout.activity_show_messages);
@@ -51,6 +80,70 @@ public class ShowMessagesActivity extends WearableActivity
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+
+        sensorManager.unregisterListener(this);
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+
+        sensorManager.registerListener(this,
+                sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
+
+        sensorManager.registerListener(this,
+                sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),
+                SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event)
+    {
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
+        {
+            long currentTime = System.currentTimeMillis();
+            if ((currentTime - lastUpdate) > REFRESH_RATE)
+            {
+                long timeDifference = (currentTime - lastUpdate);
+                lastUpdate = currentTime;
+
+                float x = event.values[0]; // In m/s2
+                float y = event.values[1];
+                float z = event.values[2];
+
+                // Shake detection
+                float speed = abs(x + y + z - lastX - lastY - lastZ) / timeDifference * 10000;
+                if (speed > SHAKE_THRESHOLD)
+                {
+                    // Fetches messages from the server
+                    List<Message> messagesList = getMessages();
+
+                    // Converts the list of messages to items displayed in the app
+                    MessageAdapter adapter = new MessageAdapter(this, 0, messagesList);
+                    messagesListView.setAdapter(adapter);
+
+                    Toast.makeText(this, getResources().getString(R.string.fetchedMessages), Toast.LENGTH_LONG).show();
+                }
+
+                lastX = x;
+                lastY = y;
+                lastZ = z;
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy)
+    {
+
     }
 
     // Return the list of messages form the server //TODO: recall it when shaking the wearable or when back in active mode
@@ -94,7 +187,7 @@ public class ShowMessagesActivity extends WearableActivity
                 }
                 catch (JSONException e)
                 {
-                    Toast.makeText(ShowMessagesActivity.this, getResources().getString(R.string.errorGeneric), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getResources().getString(R.string.errorGeneric), Toast.LENGTH_LONG).show();
                 }
             }
         }

@@ -1,0 +1,17 @@
+,Client (library),Server (library),Self-Hosted Server,Text message support,Binary message support,Message-based API,Frame-based API,Streaming API input/output,Flow-control framework,Automatic pongs for pings,Automatic heartbeat pings,Manual pings/pongs,Protocol RFC 6455,Protocol Autres,Implementation C++,Implementation Java,Implementation .NET,API C++,API Java,API Javascript,API .NET,Licence complex,Licence MPL,Licence GPL,Licence LGPL,Licence BSD,Licence APL2,Licence Commercial,Licence Freeware,Licence Boos,Licence MIT
+Google Chrome 15,X, ,,X,,X,,,,X,,,,X,X,,,,,X,,X,,,,,,,,,
+Google Chrome 16,X, ,,X,,X,,,,X,,,X,X,X,,,,,X,,X,,,,,,,,,
+Mozilla Firefox 7,X,,,X,,X,,,,X,,,,X,X,,,,,X,,,X,X,X,,,,,,
+Mozilla Firefox 11,X,,,X,X,X,,,,X,,,X,X,X,,,,,X,,,X,X,X,,,,,,
+Achex WS,X,X,X,X,X,X,X,X,X,,,X,X,,X,,,X,,X,,,,,,X,,,,,
+Kaazing WebSocket Gateway,X,X,X,X,X,X,,X,X,X,X,,X,,,X,,,X,X,X,,,,,,X,X,,,
+Lightstreamer,X,X,X,X,,X,,,X,X,X,,X,,,X,,,X,X,X,,,,,,,X,X,,
+MigratoryData,X,X,,X,X,X,,,X,X,X,,X,,,X,,X,X,X,X,,,,,,,X,,,
+POCO C++ Libraries,X,X,X,X,X,,X,X,,,,X,X,,X,,,X,,,,,,,,,,,,X,
+PowerWebSockets,X,X,X,X,X,X,,X,X,X,X,X,X,,,,X,,,,X,,,,,,,X,,,
+Push Technology Diffusion,X,X,X,X,X,X,,X,X,X,X,,X,,,X,,X,X,X,,,,,,,,X,,,
+QtWebSockets,X,X,X,X,X,X,X,,X,X,X,X,X,,X,,,X,,,,,,,X,,,,,,
+Resin,,X,,X,X,X,,X,,X,,,X,,,X,,,X,,,,,X,,,,X,,,
+WebSocketListener,,X,X,X,X,X,,X,X,X,X,,X,,,,X,,,,X,,,,,,,,,,X
+Wt (web toolkit),,X,,X,X,,,,X,X,X,,,X,X,,,X,,,,,,X,,,,X,,,
+XSockets.NET,X ,X,X,X,X,X,,X,X,X,X,X,X,,,,X,,,X,X,,,,,,,X,,,

@@ -1,0 +1,143 @@
+digraph G { 
+	rankdir=BT;
+	margin=0;
+	node [margin="0.03,0.03",fontname="DejaVu Sans"];
+	ranksep=0.3;
+	nodesep=0.2;
+//graph[label="name:WebSockets,concept number:39,object number:16,attribute number:31"
+78 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_34</td></tr><tr><td>Client (library)<br/></td></tr><tr><td><br/></td></tr></table>>];
+80 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_33</td></tr><tr><td>Server (library)<br/></td></tr><tr><td><br/></td></tr></table>>];
+82 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_28</td></tr><tr><td>Self-Hosted Server<br/></td></tr><tr><td><br/></td></tr></table>>];
+83 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_38</td></tr><tr><td>Text message support<br/></td></tr><tr><td><br/></td></tr></table>>];
+89 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_32</td></tr><tr><td>Binary message support<br/></td></tr><tr><td><br/></td></tr></table>>];
+97 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_36</td></tr><tr><td>Message-based API<br/></td></tr><tr><td><br/></td></tr></table>>];
+99 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_17</td></tr><tr><td>Frame-based API<br/></td></tr><tr><td><br/></td></tr></table>>];
+100 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_2</td></tr><tr><td>Licence BSD<br/></td></tr><tr><td>Achex WS<br/></td></tr></table>>];
+105 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_26</td></tr><tr><td>Streaming API input/output<br/></td></tr><tr><td><br/></td></tr></table>>];
+107 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_31</td></tr><tr><td>Flow-control framework<br/></td></tr><tr><td><br/></td></tr></table>>];
+108 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_8</td></tr><tr><td><br/></td></tr><tr><td>QtWebSockets<br/></td></tr></table>>];
+117 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_37</td></tr><tr><td>Automatic pongs for pings<br/></td></tr><tr><td><br/></td></tr></table>>];
+118 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_29</td></tr><tr><td>Automatic heartbeat pings<br/></td></tr><tr><td><br/></td></tr></table>>];
+119 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_15</td></tr><tr><td><br/></td></tr><tr><td>PowerWebSockets<br/></td></tr></table>>];
+120 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_22</td></tr><tr><td>Manual pings/pongs<br/></td></tr><tr><td><br/></td></tr></table>>];
+122 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_35</td></tr><tr><td>Protocol RFC 6455<br/></td></tr><tr><td><br/></td></tr></table>>];
+123 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_1</td></tr><tr><td><br/></td></tr><tr><td>Mozilla Firefox 11<br/></td></tr></table>>];
+124 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_11</td></tr><tr><td><br/></td></tr><tr><td>Wt (web toolkit)<br/></td></tr></table>>];
+127 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_21</td></tr><tr><td>Protocol Autres<br/></td></tr><tr><td><br/></td></tr></table>>];
+128 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_25</td></tr><tr><td>Implementation C++<br/></td></tr><tr><td><br/></td></tr></table>>];
+133 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_20</td></tr><tr><td>Implementation Java<br/>API Java<br/></td></tr><tr><td><br/></td></tr></table>>];
+134 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_18</td></tr><tr><td>Implementation .NET<br/></td></tr><tr><td><br/></td></tr></table>>];
+135 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_7</td></tr><tr><td><br/></td></tr><tr><td>Push Technology Diffusion<br/></td></tr></table>>];
+137 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_23</td></tr><tr><td>API C++<br/></td></tr><tr><td><br/></td></tr></table>>];
+138 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_12</td></tr><tr><td><br/></td></tr><tr><td>XSockets.NET<br/></td></tr></table>>];
+139 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_30</td></tr><tr><td>API Javascript<br/></td></tr><tr><td><br/></td></tr></table>>];
+140 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_3</td></tr><tr><td>Licence APL2<br/></td></tr><tr><td>Kaazing WebSocket Gateway<br/></td></tr></table>>];
+141 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_5</td></tr><tr><td><br/></td></tr><tr><td>MigratoryData<br/></td></tr></table>>];
+143 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_24</td></tr><tr><td>API .NET<br/></td></tr><tr><td><br/></td></tr></table>>];
+144 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_0</td></tr><tr><td><br/></td></tr><tr><td>Google Chrome 16<br/></td></tr></table>>];
+145 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_13</td></tr><tr><td>Licence complex<br/></td></tr><tr><td>Google Chrome 15<br/></td></tr></table>>];
+146 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_14</td></tr><tr><td>Licence MPL<br/></td></tr><tr><td>Mozilla Firefox 7<br/></td></tr></table>>];
+147 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_9</td></tr><tr><td><br/></td></tr><tr><td>Resin<br/></td></tr></table>>];
+148 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_19</td></tr><tr><td>Licence GPL<br/></td></tr><tr><td><br/></td></tr></table>>];
+149 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_16</td></tr><tr><td>Licence LGPL<br/></td></tr><tr><td><br/></td></tr></table>>];
+150 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_27</td></tr><tr><td>Licence Commercial<br/></td></tr><tr><td><br/></td></tr></table>>];
+151 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_4</td></tr><tr><td>Licence Freeware<br/></td></tr><tr><td>Lightstreamer<br/></td></tr></table>>];
+152 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_6</td></tr><tr><td>Licence Boos<br/></td></tr><tr><td>POCO C++ Libraries<br/></td></tr></table>>];
+153 [shape=none,label=<<table border="0" cellborder="1" cellspacing="0" port="p"><tr><td>Concept_WebSockets_10</td></tr><tr><td>Licence MIT<br/></td></tr><tr><td>WebSocketListener<br/></td></tr></table>>];
+	149:p -> 78:p
+	120:p -> 78:p
+	139:p -> 78:p
+	137:p -> 80:p
+	105:p -> 80:p
+	150:p -> 80:p
+	82:p -> 80:p
+	107:p -> 80:p
+	140:p -> 82:p
+	151:p -> 82:p
+	135:p -> 82:p
+	134:p -> 82:p
+	120:p -> 82:p
+	128:p -> 83:p
+	89:p -> 83:p
+	80:p -> 83:p
+	78:p -> 83:p
+	122:p -> 83:p
+	97:p -> 83:p
+	117:p -> 83:p
+	123:p -> 89:p
+	120:p -> 89:p
+	137:p -> 89:p
+	105:p -> 89:p
+	149:p -> 97:p
+	133:p -> 97:p
+	143:p -> 97:p
+	139:p -> 97:p
+	100:p -> 99:p
+	152:p -> 99:p
+	108:p -> 99:p
+	100:p -> 105:p
+	140:p -> 105:p
+	152:p -> 105:p
+	135:p -> 105:p
+	147:p -> 105:p
+	134:p -> 105:p
+	100:p -> 107:p
+	118:p -> 107:p
+	149:p -> 117:p
+	148:p -> 117:p
+	127:p -> 117:p
+	150:p -> 117:p
+	118:p -> 117:p
+	135:p -> 118:p
+	108:p -> 118:p
+	124:p -> 118:p
+	143:p -> 118:p
+	138:p -> 119:p
+	119:p -> 120:p
+	99:p -> 120:p
+	144:p -> 122:p
+	123:p -> 122:p
+	133:p -> 122:p
+	143:p -> 122:p
+	105:p -> 122:p
+	82:p -> 122:p
+	124:p -> 127:p
+	145:p -> 127:p
+	146:p -> 127:p
+	149:p -> 128:p
+	99:p -> 128:p
+	127:p -> 128:p
+	140:p -> 133:p
+	151:p -> 133:p
+	141:p -> 133:p
+	135:p -> 133:p
+	147:p -> 133:p
+	153:p -> 134:p
+	119:p -> 134:p
+	141:p -> 137:p
+	135:p -> 137:p
+	124:p -> 137:p
+	99:p -> 137:p
+	100:p -> 139:p
+	140:p -> 139:p
+	151:p -> 139:p
+	141:p -> 139:p
+	135:p -> 139:p
+	138:p -> 139:p
+	145:p -> 139:p
+	146:p -> 139:p
+	140:p -> 143:p
+	151:p -> 143:p
+	141:p -> 143:p
+	134:p -> 143:p
+	144:p -> 145:p
+	123:p -> 146:p
+	147:p -> 148:p
+	124:p -> 148:p
+	146:p -> 148:p
+	108:p -> 149:p
+	146:p -> 149:p
+	124:p -> 150:p
+	119:p -> 150:p
+	133:p -> 150:p
+}

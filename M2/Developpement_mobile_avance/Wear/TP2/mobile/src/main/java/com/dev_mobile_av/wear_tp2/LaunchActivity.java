@@ -18,7 +18,7 @@ public class LaunchActivity extends AppCompatActivity
         // Start the listener service
         Intent intent = new Intent(this, WearableListenerService.class);
         startService(intent);
-        Toast.makeText(this, getResources().getString(R.string.startService), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.startedService), Toast.LENGTH_SHORT).show();
 
         // End the activity
         finish();

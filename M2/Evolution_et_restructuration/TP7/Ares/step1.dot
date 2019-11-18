@@ -1,0 +1,141 @@
+digraph G { 
+	rankdir=BT;
+subgraph WebSockets { 
+label="WebSockets";
+78 [shape=record,label="{Concept_WebSockets_34|Client (library)\n|}"];
+80 [shape=record,label="{Concept_WebSockets_33|Server (library)\n|}"];
+82 [shape=record,label="{Concept_WebSockets_28|Self-Hosted Server\n|}"];
+83 [shape=record,label="{Concept_WebSockets_38|Text message support\n|}"];
+89 [shape=record,label="{Concept_WebSockets_32|Binary message support\n|}"];
+97 [shape=record,label="{Concept_WebSockets_36|Message-based API\n|}"];
+99 [shape=record,label="{Concept_WebSockets_17|Frame-based API\n|}"];
+100 [shape=record,label="{Concept_WebSockets_2|Licence BSD\n|Achex WS\n}"];
+105 [shape=record,label="{Concept_WebSockets_26|Streaming API input/output\n|}"];
+107 [shape=record,label="{Concept_WebSockets_31|Flow-control framework\n|}"];
+108 [shape=record,label="{Concept_WebSockets_8||QtWebSockets\n}"];
+117 [shape=record,label="{Concept_WebSockets_37|Automatic pongs for pings\n|}"];
+118 [shape=record,label="{Concept_WebSockets_29|Automatic heartbeat pings\n|}"];
+119 [shape=record,label="{Concept_WebSockets_15||PowerWebSockets\n}"];
+120 [shape=record,label="{Concept_WebSockets_22|Manual pings/pongs\n|}"];
+122 [shape=record,label="{Concept_WebSockets_35|Protocol RFC 6455\n|}"];
+123 [shape=record,label="{Concept_WebSockets_1||Mozilla Firefox 11\n}"];
+124 [shape=record,label="{Concept_WebSockets_11||Wt (web toolkit)\n}"];
+127 [shape=record,label="{Concept_WebSockets_21|Protocol Autres\n|}"];
+128 [shape=record,label="{Concept_WebSockets_25|Implementation C++\n|}"];
+133 [shape=record,label="{Concept_WebSockets_20|Implementation Java\nAPI Java\n|}"];
+134 [shape=record,label="{Concept_WebSockets_18|Implementation .NET\n|}"];
+135 [shape=record,label="{Concept_WebSockets_7||Push Technology Diffusion\n}"];
+137 [shape=record,label="{Concept_WebSockets_23|API C++\n|}"];
+138 [shape=record,label="{Concept_WebSockets_12||XSockets.NET\n}"];
+139 [shape=record,label="{Concept_WebSockets_30|API Javascript\n|}"];
+140 [shape=record,label="{Concept_WebSockets_3|Licence APL2\n|Kaazing WebSocket Gateway\n}"];
+141 [shape=record,label="{Concept_WebSockets_5||MigratoryData\n}"];
+143 [shape=record,label="{Concept_WebSockets_24|API .NET\n|}"];
+144 [shape=record,label="{Concept_WebSockets_0||Google Chrome 16\n}"];
+145 [shape=record,label="{Concept_WebSockets_13|Licence complex\n|Google Chrome 15\n}"];
+146 [shape=record,label="{Concept_WebSockets_14|Licence MPL\n|Mozilla Firefox 7\n}"];
+147 [shape=record,label="{Concept_WebSockets_9||Resin\n}"];
+148 [shape=record,label="{Concept_WebSockets_19|Licence GPL\n|}"];
+149 [shape=record,label="{Concept_WebSockets_16|Licence LGPL\n|}"];
+150 [shape=record,label="{Concept_WebSockets_27|Licence Commercial\n|}"];
+151 [shape=record,label="{Concept_WebSockets_4|Licence Freeware\n|Lightstreamer\n}"];
+152 [shape=record,label="{Concept_WebSockets_6|Licence Boos\n|POCO C++ Libraries\n}"];
+153 [shape=record,label="{Concept_WebSockets_10|Licence MIT\n|WebSocketListener\n}"];
+	149 -> 78
+	120 -> 78
+	139 -> 78
+	137 -> 80
+	105 -> 80
+	150 -> 80
+	82 -> 80
+	107 -> 80
+	140 -> 82
+	151 -> 82
+	135 -> 82
+	134 -> 82
+	120 -> 82
+	128 -> 83
+	89 -> 83
+	80 -> 83
+	78 -> 83
+	122 -> 83
+	97 -> 83
+	117 -> 83
+	123 -> 89
+	120 -> 89
+	137 -> 89
+	105 -> 89
+	149 -> 97
+	133 -> 97
+	143 -> 97
+	139 -> 97
+	100 -> 99
+	152 -> 99
+	108 -> 99
+	100 -> 105
+	140 -> 105
+	152 -> 105
+	135 -> 105
+	147 -> 105
+	134 -> 105
+	100 -> 107
+	118 -> 107
+	149 -> 117
+	148 -> 117
+	127 -> 117
+	150 -> 117
+	118 -> 117
+	135 -> 118
+	108 -> 118
+	124 -> 118
+	143 -> 118
+	138 -> 119
+	119 -> 120
+	99 -> 120
+	144 -> 122
+	123 -> 122
+	133 -> 122
+	143 -> 122
+	105 -> 122
+	82 -> 122
+	124 -> 127
+	145 -> 127
+	146 -> 127
+	149 -> 128
+	99 -> 128
+	127 -> 128
+	140 -> 133
+	151 -> 133
+	141 -> 133
+	135 -> 133
+	147 -> 133
+	153 -> 134
+	119 -> 134
+	141 -> 137
+	135 -> 137
+	124 -> 137
+	99 -> 137
+	100 -> 139
+	140 -> 139
+	151 -> 139
+	141 -> 139
+	135 -> 139
+	138 -> 139
+	145 -> 139
+	146 -> 139
+	140 -> 143
+	151 -> 143
+	141 -> 143
+	134 -> 143
+	144 -> 145
+	123 -> 146
+	147 -> 148
+	124 -> 148
+	146 -> 148
+	108 -> 149
+	146 -> 149
+	124 -> 150
+	119 -> 150
+	133 -> 150
+}
+}

@@ -482,7 +482,7 @@ public class extractionInterface2019
 		// DataExtractionClassSet dFile = new DataExtractionClassSet();
 		extractionInterface2019 dFile = new extractionInterface2019();
 		dFile.setEntityList(concreteClassList(listeDesClassesInterfaces));
-		createFileFromList("results/concrete.txt", dFile.getEntityList());
+		createFileFromList("TP6/concrete.txt", dFile.getEntityList());
 
 		/* Create table for concrete classes signatures */
 		// cette table peut aider à comprendre quelle classe contient quelle signature
@@ -500,7 +500,7 @@ public class extractionInterface2019
 		d4.setCharacteristicList(signatureSet(d4.getEntityList()));
 		d4.createTable(2);
 		d4.afficheTable();
-		d4.ecrireTable("results/formatConc.rcft");
-		d4.ecrireTable("results/formatConc.csv");
+		d4.ecrireTable("TP6/formatConc.rcft");
+		d4.ecrireTable("TP6/formatConc.csv");
 	}
 }

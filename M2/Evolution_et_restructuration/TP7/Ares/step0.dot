@@ -1,0 +1,141 @@
+digraph G { 
+	rankdir=BT;
+subgraph WebSockets { 
+label="WebSockets";
+1 [shape=record,label="{Concept_WebSockets_34|Client (library)\n|}"];
+3 [shape=record,label="{Concept_WebSockets_33|Server (library)\n|}"];
+5 [shape=record,label="{Concept_WebSockets_28|Self-Hosted Server\n|}"];
+6 [shape=record,label="{Concept_WebSockets_38|Text message support\n|}"];
+12 [shape=record,label="{Concept_WebSockets_32|Binary message support\n|}"];
+20 [shape=record,label="{Concept_WebSockets_36|Message-based API\n|}"];
+22 [shape=record,label="{Concept_WebSockets_17|Frame-based API\n|}"];
+23 [shape=record,label="{Concept_WebSockets_2|Licence BSD\n|Achex WS\n}"];
+28 [shape=record,label="{Concept_WebSockets_26|Streaming API input/output\n|}"];
+30 [shape=record,label="{Concept_WebSockets_31|Flow-control framework\n|}"];
+31 [shape=record,label="{Concept_WebSockets_8||QtWebSockets\n}"];
+40 [shape=record,label="{Concept_WebSockets_37|Automatic pongs for pings\n|}"];
+41 [shape=record,label="{Concept_WebSockets_29|Automatic heartbeat pings\n|}"];
+42 [shape=record,label="{Concept_WebSockets_15||PowerWebSockets\n}"];
+43 [shape=record,label="{Concept_WebSockets_22|Manual pings/pongs\n|}"];
+45 [shape=record,label="{Concept_WebSockets_35|Protocol RFC 6455\n|}"];
+46 [shape=record,label="{Concept_WebSockets_1||Mozilla Firefox 11\n}"];
+47 [shape=record,label="{Concept_WebSockets_11||Wt (web toolkit)\n}"];
+50 [shape=record,label="{Concept_WebSockets_21|Protocol Autres\n|}"];
+51 [shape=record,label="{Concept_WebSockets_25|Implementation C++\n|}"];
+56 [shape=record,label="{Concept_WebSockets_20|Implementation Java\nAPI Java\n|}"];
+57 [shape=record,label="{Concept_WebSockets_18|Implementation .NET\n|}"];
+58 [shape=record,label="{Concept_WebSockets_7||Push Technology Diffusion\n}"];
+60 [shape=record,label="{Concept_WebSockets_23|API C++\n|}"];
+61 [shape=record,label="{Concept_WebSockets_12||XSockets.NET\n}"];
+62 [shape=record,label="{Concept_WebSockets_30|API Javascript\n|}"];
+63 [shape=record,label="{Concept_WebSockets_3|Licence APL2\n|Kaazing WebSocket Gateway\n}"];
+64 [shape=record,label="{Concept_WebSockets_5||MigratoryData\n}"];
+66 [shape=record,label="{Concept_WebSockets_24|API .NET\n|}"];
+67 [shape=record,label="{Concept_WebSockets_0||Google Chrome 16\n}"];
+68 [shape=record,label="{Concept_WebSockets_13|Licence complex\n|Google Chrome 15\n}"];
+69 [shape=record,label="{Concept_WebSockets_14|Licence MPL\n|Mozilla Firefox 7\n}"];
+70 [shape=record,label="{Concept_WebSockets_9||Resin\n}"];
+71 [shape=record,label="{Concept_WebSockets_19|Licence GPL\n|}"];
+72 [shape=record,label="{Concept_WebSockets_16|Licence LGPL\n|}"];
+73 [shape=record,label="{Concept_WebSockets_27|Licence Commercial\n|}"];
+74 [shape=record,label="{Concept_WebSockets_4|Licence Freeware\n|Lightstreamer\n}"];
+75 [shape=record,label="{Concept_WebSockets_6|Licence Boos\n|POCO C++ Libraries\n}"];
+76 [shape=record,label="{Concept_WebSockets_10|Licence MIT\n|WebSocketListener\n}"];
+	72 -> 1
+	43 -> 1
+	62 -> 1
+	60 -> 3
+	28 -> 3
+	73 -> 3
+	5 -> 3
+	30 -> 3
+	63 -> 5
+	74 -> 5
+	58 -> 5
+	57 -> 5
+	43 -> 5
+	51 -> 6
+	12 -> 6
+	3 -> 6
+	1 -> 6
+	45 -> 6
+	20 -> 6
+	40 -> 6
+	46 -> 12
+	43 -> 12
+	60 -> 12
+	28 -> 12
+	72 -> 20
+	56 -> 20
+	66 -> 20
+	62 -> 20
+	23 -> 22
+	75 -> 22
+	31 -> 22
+	23 -> 28
+	63 -> 28
+	75 -> 28
+	58 -> 28
+	70 -> 28
+	57 -> 28
+	23 -> 30
+	41 -> 30
+	72 -> 40
+	71 -> 40
+	50 -> 40
+	73 -> 40
+	41 -> 40
+	58 -> 41
+	31 -> 41
+	47 -> 41
+	66 -> 41
+	61 -> 42
+	42 -> 43
+	22 -> 43
+	67 -> 45
+	46 -> 45
+	56 -> 45
+	66 -> 45
+	28 -> 45
+	5 -> 45
+	47 -> 50
+	68 -> 50
+	69 -> 50
+	72 -> 51
+	22 -> 51
+	50 -> 51
+	63 -> 56
+	74 -> 56
+	64 -> 56
+	58 -> 56
+	70 -> 56
+	76 -> 57
+	42 -> 57
+	64 -> 60
+	58 -> 60
+	47 -> 60
+	22 -> 60
+	23 -> 62
+	63 -> 62
+	74 -> 62
+	64 -> 62
+	58 -> 62
+	61 -> 62
+	68 -> 62
+	69 -> 62
+	63 -> 66
+	74 -> 66
+	64 -> 66
+	57 -> 66
+	67 -> 68
+	46 -> 69
+	70 -> 71
+	47 -> 71
+	69 -> 71
+	31 -> 72
+	69 -> 72
+	47 -> 73
+	42 -> 73
+	56 -> 73
+}
+}
