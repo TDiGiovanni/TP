@@ -11,13 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MessageAdapter extends ArrayAdapter<Message>
 {
-    private ArrayList<Message> messages;
+    private List<Message> messages;
     private static LayoutInflater inflater = null;
 
-    public MessageAdapter(Activity activity, int textViewResourceId, ArrayList<Message> messages)
+    public MessageAdapter(Activity activity, int textViewResourceId, List<Message> messages)
     {
         super(activity, textViewResourceId, messages);
 
@@ -77,7 +78,7 @@ public class MessageAdapter extends ArrayAdapter<Message>
             }
 
             holder.contentDisplay.setText(messages.get(position).getContent());
-            holder.coordinatesDisplay.setText(messages.get(position).getCoordinates());
+            holder.coordinatesDisplay.setText(messages.get(position).getCoordinates().toString());
         }
         catch (Exception e)
         {

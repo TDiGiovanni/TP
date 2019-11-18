@@ -8,13 +8,17 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.dev_mobile_av.shared.Coordinates;
 import com.dev_mobile_av.shared.Message;
 import com.dev_mobile_av.shared.MessageAdapter;
 import com.dev_mobile_av.shared.ServerTask;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class ShowMessagesActivity extends WearableActivity
 {
@@ -30,23 +34,9 @@ public class ShowMessagesActivity extends WearableActivity
         messagesListView = findViewById(R.id.messagesListView);
 
         // Fetches messages from the server
-        String serverUri = "https://hmin309-embedded-systems.herokuapp.com/message-exchange/messages/";
-        ServerTask serverTask = new ServerTask(serverUri, false, this);
-        JSONObject result = null;
+        List<Message> messagesList = getMessages();
 
-        try
-        {
-            result = serverTask.execute().get();
-        }
-        catch (Exception e)
-        {
-            Toast.makeText(ShowMessagesActivity.this, getResources().getString(R.string.errorGeneric), Toast.LENGTH_LONG).show();
-        }
-
-        //TODO: convert result to messagesList
-
-        // Creates the list of messages
-        ArrayList<Message> messagesList = new ArrayList<>();
+        // Converts the list of messages to items displayed in the app
         MessageAdapter adapter = new MessageAdapter(this, 0, messagesList);
         messagesListView.setAdapter(adapter);
 
@@ -61,5 +51,54 @@ public class ShowMessagesActivity extends WearableActivity
                 startActivity(intent);
             }
         });
+    }
+
+    // Return the list of messages form the server //TODO: recall it when shaking the wearable or when back in active mode
+    public List<Message> getMessages()
+    {
+        String serverUri = "https://hmin309-embedded-systems.herokuapp.com/message-exchange/messages/";
+        ServerTask serverTask = new ServerTask(serverUri, false, this);
+        JSONObject result = null;
+
+        try
+        {
+            result = serverTask.execute().get();
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(ShowMessagesActivity.this, getResources().getString(R.string.errorGeneric), Toast.LENGTH_LONG).show();
+        }
+
+        // Populate the message list with the result from the server
+        List<Message> messagesList = new ArrayList<>();
+
+        if (result != null)
+        {
+            Iterator<String> keys = result.keys();
+
+            while(keys.hasNext())
+            {
+                String key = keys.next();
+                try
+                {
+                    if (result.get(key) instanceof JSONObject)
+                    {
+                        JSONObject currentJsonMessage = (JSONObject) result.get(key);
+                        String studentId = currentJsonMessage.getString("student_id");
+                        String content = currentJsonMessage.getString("student_message");
+                        double latitude = currentJsonMessage.getDouble("gps_lat");
+                        double longitude = currentJsonMessage.getDouble("gps_long");
+
+                        messagesList.add(new Message(studentId, content, new Coordinates(latitude, longitude)));
+                    }
+                }
+                catch (JSONException e)
+                {
+                    Toast.makeText(ShowMessagesActivity.this, getResources().getString(R.string.errorGeneric), Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+
+        return messagesList;
     }
 }

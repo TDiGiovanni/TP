@@ -12,16 +12,22 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
+        <activity android:name=".LaunchActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
         <service
             android:name=".WearListenerService"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <data android:scheme="wear" android:host="*" android:pathPrefix="/Coordinates" />
-                <action android:name="com.google.android.gms.wearable.DATA_CHANGED"/>
+                <data
+                    android:host="*"
+                    android:pathPrefix="/Coordinates"
+                    android:scheme="wear" />
+
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>
