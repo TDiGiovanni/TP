@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MessageAdapter extends ArrayAdapter<Message>
@@ -65,7 +64,7 @@ public class MessageAdapter extends ArrayAdapter<Message>
         {
             if (convertView == null)
             {
-                view = inflater.inflate(R.layout.message_item, null);
+                view = inflater.inflate(R.layout.message_item, parent, false);
                 holder = new ViewHolder();
 
                 holder.contentDisplay = view.findViewById(R.id.messageContent);

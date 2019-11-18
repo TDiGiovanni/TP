@@ -13,7 +13,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.dev_mobile_av.shared.Coordinates;
-import com.dev_mobile_av.shared.Message;
 import com.dev_mobile_av.shared.ServerTask;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -24,17 +23,16 @@ import com.google.android.gms.wearable.DataMap;
 import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.Wearable;
 
-import org.json.JSONObject;
-
-public class WearSendMessageActivity extends WearableActivity
+public class SendMessageActivity extends WearableActivity
 {
-    protected GoogleApiClient googleApiClient;
-    protected FusedLocationProviderClient fusedLocationClient;
+    protected GoogleApiClient googleApiClient;                  // Client to communicate with the phone
+    protected FusedLocationProviderClient fusedLocationClient;  // Client to get coordinates
 
+    // Layout views
     protected EditText studentIdEditText;
     protected EditText contentEditText;
     protected Button sendMessageButton;
-    protected Button seeMessageButton;
+    protected Button seeMessagesButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,7 +44,7 @@ public class WearSendMessageActivity extends WearableActivity
         studentIdEditText = findViewById(R.id.studentIdEditText);
         contentEditText = findViewById(R.id.contentEditText);
         sendMessageButton = findViewById(R.id.sendMessageButton);
-        seeMessageButton = findViewById(R.id.seeMessageButton);
+        seeMessagesButton = findViewById(R.id.seeMessagesButton);
 
         // Creates the Google client to communicate with the wearable
         googleApiClient = new GoogleApiClient.Builder(this)
@@ -84,7 +82,7 @@ public class WearSendMessageActivity extends WearableActivity
             public void onClick(View view) {
                 if (TextUtils.isEmpty(studentIdEditText.getText())
                 || TextUtils.isEmpty(contentEditText.getText()))
-                    Toast.makeText(WearSendMessageActivity.this, getResources().getString(R.string.fillInfos), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SendMessageActivity.this, getResources().getString(R.string.fillInfos), Toast.LENGTH_LONG).show();
 
                 else
                 {
@@ -92,17 +90,17 @@ public class WearSendMessageActivity extends WearableActivity
                     messageContent = contentEditText.getText().toString();
 
                     //TODO: if connected to phone
-                    sendMessageToPhone(messageStudentId, messageContent);
+                    //sendMessageToPhone(messageStudentId, messageContent);
                     //else
                     sendMessageToServer(messageStudentId, messageContent);
                 }
             }
         });
 
-        seeMessageButton.setOnClickListener(new View.OnClickListener() {
+        seeMessagesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WearSendMessageActivity.this, ShowMessagesActivity.class);
+                Intent intent = new Intent(SendMessageActivity.this, ShowMessagesActivity.class);
                 startActivity(intent);
             }
         });
@@ -117,10 +115,11 @@ public class WearSendMessageActivity extends WearableActivity
         // Fetch the last location
         Coordinates coordinates = getLastCoordinates();
 
-
+        // Initialise the server task
         String serverUri = "https://hmin309-embedded-systems.herokuapp.com/message-exchange/messages/";
-        ServerTask serverTask = new ServerTask(serverUri, true, this);
+        ServerTask serverTask = new ServerTask(serverUri, true, null, this);
 
+        // Execute the server task
         try
         {
             serverTask.execute(messageStudentId,
@@ -130,10 +129,10 @@ public class WearSendMessageActivity extends WearableActivity
         }
         catch (Exception e)
         {
-            Toast.makeText(WearSendMessageActivity.this, getResources().getString(R.string.errorGeneric), Toast.LENGTH_LONG).show();
+            Toast.makeText(SendMessageActivity.this, getResources().getString(R.string.errorGeneric), Toast.LENGTH_LONG).show();
         }
 
-        Toast.makeText(WearSendMessageActivity.this, getResources().getString(R.string.sentMessage), Toast.LENGTH_LONG).show();
+        Toast.makeText(SendMessageActivity.this, getResources().getString(R.string.sentMessage), Toast.LENGTH_LONG).show();
     }
 
     // Sends the message to the phone

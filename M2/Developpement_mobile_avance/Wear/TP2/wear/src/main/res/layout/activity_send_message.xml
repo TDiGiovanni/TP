@@ -1,55 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:gravity="center"
-        android:text="@string/appName"
-        android:textSize="24sp" />
-
-    <!-- Student Id -->
-    <TextView
-        android:id="@+id/studentIdTextView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/studentId" />
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/studentIdEditText"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:inputType="text" />
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:gravity="center"
+            android:text="@string/appName"
+            android:textSize="24sp" />
 
-    <!-- Content -->
-    <TextView
-        android:id="@+id/contentTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/content" />
+        <!-- Student Id -->
+        <TextView
+            android:id="@+id/studentIdTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/studentId" />
 
-    <EditText
-        android:id="@+id/contentEditText"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:inputType="text" />
+        <EditText
+            android:id="@+id/studentIdEditText"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:inputType="text" />
 
-    <!-- Buttons -->
-    <Button
-        android:id="@+id/sendMessageButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sendMessage" />
+        <!-- Content -->
+        <TextView
+            android:id="@+id/contentTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/content" />
 
-    <Button
-        android:id="@+id/seeMessageButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/sendMessage" />
+        <EditText
+            android:id="@+id/contentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:inputType="text" />
 
-</LinearLayout>
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/sendMessageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sendMessage" />
+
+        <Button
+            android:id="@+id/seeMessagesButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/seeMessages" />
+
+    </LinearLayout>
+
+</ScrollView>
