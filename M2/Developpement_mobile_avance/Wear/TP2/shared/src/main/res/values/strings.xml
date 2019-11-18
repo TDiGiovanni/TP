@@ -1,15 +1,15 @@
 <resources>
     <string name="appName">TP2</string>
 
-    <string name="date">Date</string>
-    <string name="time">Time</string>
-    <string name="title">Title</string>
+    <string name="studentId">Student Id</string>
     <string name="content">Content</string>
+    <string name="coordinates">GPS coordinates</string>
 
     <string name="fillInfos">You must fill out all the informations</string>
 
+    <string name="seeMessages">See messages</string>
     <string name="sendMessage">Send message</string>
-    <string name="sentMessage">Message sent!</string>
+    <string name="sentMessage">Message sent</string>
 
-    <string name="coordinates">GPS coordinates</string>
+    <string name="errorGeneric">An error occurred</string>
 </resources>

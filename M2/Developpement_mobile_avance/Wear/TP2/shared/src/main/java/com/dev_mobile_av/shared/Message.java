@@ -6,15 +6,20 @@ import java.io.Serializable;
 
 public class Message implements Serializable
 {
+    private String studentId;
     private String content;
-    private double latitude;
-    private double longitude;
+    private Coordinates coordinates;
 
-    public Message(String content, float latitude, float longitude)
+    public Message(String studentId, String content, Coordinates coordinates)
     {
+        this.studentId = studentId;
         this.content = content;
-        this.latitude = latitude;
-        this.longitude = longitude;
+        this.coordinates = coordinates;
+    }
+
+    public String getStudentId()
+    {
+        return studentId;
     }
 
     public String getContent()
@@ -22,24 +27,19 @@ public class Message implements Serializable
         return this.content;
     }
 
-    public double getLatitude()
+    public Coordinates getCoordinates()
     {
-        return this.latitude;
-    }
-
-    public double getLongitude()
-    {
-        return this.longitude;
+        return this.coordinates;
     }
 
     @NonNull
     public String toString()
     {
-        String result = "";
+        String result = getStudentId() + ": ";
 
-        result += "(" + latitude
-                + " - " + longitude + ")"
-                + ": " + content;
+        result += "(" + coordinates.getLatitude()
+                + " - " + coordinates.getLongitude() + ")"
+                + ": " + getContent();
 
         return result;
     }
