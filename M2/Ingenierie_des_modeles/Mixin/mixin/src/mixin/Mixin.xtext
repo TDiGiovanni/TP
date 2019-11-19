@@ -6,21 +6,13 @@ Model:
 	instructions += Instruction*;
 
 Instruction:
-	Take | Clean | Mix | Exit
+	Move | Clean
 ;
 
-Take:
-	"take" quantity = INT "mL" "from" inputCup = INT
-;
-
-Mix:
-	"mix" quantity = INT "mL" "in" destinationCup = INT
+Move:
+	"move" quantity = INT "mL" "from" "cup" sourceCup = INT "to" "cup" destinationCup = INT
 ;
 
 Clean: {Clean}
 	"clean"
-;
-
-Exit:
-	"exit" "cup" cup = INT
 ;

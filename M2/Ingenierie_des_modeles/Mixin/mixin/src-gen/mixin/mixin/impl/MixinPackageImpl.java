@@ -4,13 +4,11 @@
 package mixin.mixin.impl;
 
 import mixin.mixin.Clean;
-import mixin.mixin.Exit;
 import mixin.mixin.Instruction;
-import mixin.mixin.Mix;
 import mixin.mixin.MixinFactory;
 import mixin.mixin.MixinPackage;
 import mixin.mixin.Model;
-import mixin.mixin.Take;
+import mixin.mixin.Move;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -46,14 +44,7 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass takeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass mixEClass = null;
+  private EClass moveEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -61,13 +52,6 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
    * @generated
    */
   private EClass cleanEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass exitEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -171,9 +155,9 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
    * @generated
    */
   @Override
-  public EClass getTake()
+  public EClass getMove()
   {
-    return takeEClass;
+    return moveEClass;
   }
 
   /**
@@ -182,9 +166,9 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
    * @generated
    */
   @Override
-  public EAttribute getTake_Quantity()
+  public EAttribute getMove_Quantity()
   {
-    return (EAttribute)takeEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)moveEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -193,9 +177,9 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
    * @generated
    */
   @Override
-  public EAttribute getTake_InputCup()
+  public EAttribute getMove_SourceCup()
   {
-    return (EAttribute)takeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)moveEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -204,31 +188,9 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
    * @generated
    */
   @Override
-  public EClass getMix()
+  public EAttribute getMove_DestinationCup()
   {
-    return mixEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getMix_Quantity()
-  {
-    return (EAttribute)mixEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getMix_DestinationCup()
-  {
-    return (EAttribute)mixEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)moveEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -240,28 +202,6 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
   public EClass getClean()
   {
     return cleanEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getExit()
-  {
-    return exitEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getExit_Cup()
-  {
-    return (EAttribute)exitEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -300,18 +240,12 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
 
     instructionEClass = createEClass(INSTRUCTION);
 
-    takeEClass = createEClass(TAKE);
-    createEAttribute(takeEClass, TAKE__QUANTITY);
-    createEAttribute(takeEClass, TAKE__INPUT_CUP);
-
-    mixEClass = createEClass(MIX);
-    createEAttribute(mixEClass, MIX__QUANTITY);
-    createEAttribute(mixEClass, MIX__DESTINATION_CUP);
+    moveEClass = createEClass(MOVE);
+    createEAttribute(moveEClass, MOVE__QUANTITY);
+    createEAttribute(moveEClass, MOVE__SOURCE_CUP);
+    createEAttribute(moveEClass, MOVE__DESTINATION_CUP);
 
     cleanEClass = createEClass(CLEAN);
-
-    exitEClass = createEClass(EXIT);
-    createEAttribute(exitEClass, EXIT__CUP);
   }
 
   /**
@@ -343,10 +277,8 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    takeEClass.getESuperTypes().add(this.getInstruction());
-    mixEClass.getESuperTypes().add(this.getInstruction());
+    moveEClass.getESuperTypes().add(this.getInstruction());
     cleanEClass.getESuperTypes().add(this.getInstruction());
-    exitEClass.getESuperTypes().add(this.getInstruction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -354,18 +286,12 @@ public class MixinPackageImpl extends EPackageImpl implements MixinPackage
 
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(takeEClass, Take.class, "Take", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTake_Quantity(), ecorePackage.getEInt(), "quantity", null, 0, 1, Take.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTake_InputCup(), ecorePackage.getEInt(), "inputCup", null, 0, 1, Take.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(mixEClass, Mix.class, "Mix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMix_Quantity(), ecorePackage.getEInt(), "quantity", null, 0, 1, Mix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMix_DestinationCup(), ecorePackage.getEInt(), "destinationCup", null, 0, 1, Mix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(moveEClass, Move.class, "Move", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMove_Quantity(), ecorePackage.getEInt(), "quantity", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMove_SourceCup(), ecorePackage.getEInt(), "sourceCup", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMove_DestinationCup(), ecorePackage.getEInt(), "destinationCup", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(cleanEClass, Clean.class, "Clean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(exitEClass, Exit.class, "Exit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExit_Cup(), ecorePackage.getEInt(), "cup", null, 0, 1, Exit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -105,14 +105,14 @@ public interface MixinPackage extends EPackage
   int INSTRUCTION_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link mixin.mixin.impl.TakeImpl <em>Take</em>}' class.
+   * The meta object id for the '{@link mixin.mixin.impl.MoveImpl <em>Move</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see mixin.mixin.impl.TakeImpl
-   * @see mixin.mixin.impl.MixinPackageImpl#getTake()
+   * @see mixin.mixin.impl.MoveImpl
+   * @see mixin.mixin.impl.MixinPackageImpl#getMove()
    * @generated
    */
-  int TAKE = 2;
+  int MOVE = 2;
 
   /**
    * The feature id for the '<em><b>Quantity</b></em>' attribute.
@@ -121,44 +121,16 @@ public interface MixinPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TAKE__QUANTITY = INSTRUCTION_FEATURE_COUNT + 0;
+  int MOVE__QUANTITY = INSTRUCTION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Input Cup</b></em>' attribute.
+   * The feature id for the '<em><b>Source Cup</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TAKE__INPUT_CUP = INSTRUCTION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Take</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TAKE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link mixin.mixin.impl.MixImpl <em>Mix</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see mixin.mixin.impl.MixImpl
-   * @see mixin.mixin.impl.MixinPackageImpl#getMix()
-   * @generated
-   */
-  int MIX = 3;
-
-  /**
-   * The feature id for the '<em><b>Quantity</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MIX__QUANTITY = INSTRUCTION_FEATURE_COUNT + 0;
+  int MOVE__SOURCE_CUP = INSTRUCTION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Destination Cup</b></em>' attribute.
@@ -167,16 +139,16 @@ public interface MixinPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MIX__DESTINATION_CUP = INSTRUCTION_FEATURE_COUNT + 1;
+  int MOVE__DESTINATION_CUP = INSTRUCTION_FEATURE_COUNT + 2;
 
   /**
-   * The number of structural features of the '<em>Mix</em>' class.
+   * The number of structural features of the '<em>Move</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MIX_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+  int MOVE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link mixin.mixin.impl.CleanImpl <em>Clean</em>}' class.
@@ -186,7 +158,7 @@ public interface MixinPackage extends EPackage
    * @see mixin.mixin.impl.MixinPackageImpl#getClean()
    * @generated
    */
-  int CLEAN = 4;
+  int CLEAN = 3;
 
   /**
    * The number of structural features of the '<em>Clean</em>' class.
@@ -196,34 +168,6 @@ public interface MixinPackage extends EPackage
    * @ordered
    */
   int CLEAN_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link mixin.mixin.impl.ExitImpl <em>Exit</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see mixin.mixin.impl.ExitImpl
-   * @see mixin.mixin.impl.MixinPackageImpl#getExit()
-   * @generated
-   */
-  int EXIT = 5;
-
-  /**
-   * The feature id for the '<em><b>Cup</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXIT__CUP = INSTRUCTION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Exit</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXIT_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
 
   /**
@@ -258,68 +202,47 @@ public interface MixinPackage extends EPackage
   EClass getInstruction();
 
   /**
-   * Returns the meta object for class '{@link mixin.mixin.Take <em>Take</em>}'.
+   * Returns the meta object for class '{@link mixin.mixin.Move <em>Move</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Take</em>'.
-   * @see mixin.mixin.Take
+   * @return the meta object for class '<em>Move</em>'.
+   * @see mixin.mixin.Move
    * @generated
    */
-  EClass getTake();
+  EClass getMove();
 
   /**
-   * Returns the meta object for the attribute '{@link mixin.mixin.Take#getQuantity <em>Quantity</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Quantity</em>'.
-   * @see mixin.mixin.Take#getQuantity()
-   * @see #getTake()
-   * @generated
-   */
-  EAttribute getTake_Quantity();
-
-  /**
-   * Returns the meta object for the attribute '{@link mixin.mixin.Take#getInputCup <em>Input Cup</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Input Cup</em>'.
-   * @see mixin.mixin.Take#getInputCup()
-   * @see #getTake()
-   * @generated
-   */
-  EAttribute getTake_InputCup();
-
-  /**
-   * Returns the meta object for class '{@link mixin.mixin.Mix <em>Mix</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Mix</em>'.
-   * @see mixin.mixin.Mix
-   * @generated
-   */
-  EClass getMix();
-
-  /**
-   * Returns the meta object for the attribute '{@link mixin.mixin.Mix#getQuantity <em>Quantity</em>}'.
+   * Returns the meta object for the attribute '{@link mixin.mixin.Move#getQuantity <em>Quantity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Quantity</em>'.
-   * @see mixin.mixin.Mix#getQuantity()
-   * @see #getMix()
+   * @see mixin.mixin.Move#getQuantity()
+   * @see #getMove()
    * @generated
    */
-  EAttribute getMix_Quantity();
+  EAttribute getMove_Quantity();
 
   /**
-   * Returns the meta object for the attribute '{@link mixin.mixin.Mix#getDestinationCup <em>Destination Cup</em>}'.
+   * Returns the meta object for the attribute '{@link mixin.mixin.Move#getSourceCup <em>Source Cup</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Source Cup</em>'.
+   * @see mixin.mixin.Move#getSourceCup()
+   * @see #getMove()
+   * @generated
+   */
+  EAttribute getMove_SourceCup();
+
+  /**
+   * Returns the meta object for the attribute '{@link mixin.mixin.Move#getDestinationCup <em>Destination Cup</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Destination Cup</em>'.
-   * @see mixin.mixin.Mix#getDestinationCup()
-   * @see #getMix()
+   * @see mixin.mixin.Move#getDestinationCup()
+   * @see #getMove()
    * @generated
    */
-  EAttribute getMix_DestinationCup();
+  EAttribute getMove_DestinationCup();
 
   /**
    * Returns the meta object for class '{@link mixin.mixin.Clean <em>Clean</em>}'.
@@ -330,27 +253,6 @@ public interface MixinPackage extends EPackage
    * @generated
    */
   EClass getClean();
-
-  /**
-   * Returns the meta object for class '{@link mixin.mixin.Exit <em>Exit</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Exit</em>'.
-   * @see mixin.mixin.Exit
-   * @generated
-   */
-  EClass getExit();
-
-  /**
-   * Returns the meta object for the attribute '{@link mixin.mixin.Exit#getCup <em>Cup</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cup</em>'.
-   * @see mixin.mixin.Exit#getCup()
-   * @see #getExit()
-   * @generated
-   */
-  EAttribute getExit_Cup();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -404,14 +306,14 @@ public interface MixinPackage extends EPackage
     EClass INSTRUCTION = eINSTANCE.getInstruction();
 
     /**
-     * The meta object literal for the '{@link mixin.mixin.impl.TakeImpl <em>Take</em>}' class.
+     * The meta object literal for the '{@link mixin.mixin.impl.MoveImpl <em>Move</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see mixin.mixin.impl.TakeImpl
-     * @see mixin.mixin.impl.MixinPackageImpl#getTake()
+     * @see mixin.mixin.impl.MoveImpl
+     * @see mixin.mixin.impl.MixinPackageImpl#getMove()
      * @generated
      */
-    EClass TAKE = eINSTANCE.getTake();
+    EClass MOVE = eINSTANCE.getMove();
 
     /**
      * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
@@ -419,33 +321,15 @@ public interface MixinPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TAKE__QUANTITY = eINSTANCE.getTake_Quantity();
+    EAttribute MOVE__QUANTITY = eINSTANCE.getMove_Quantity();
 
     /**
-     * The meta object literal for the '<em><b>Input Cup</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Source Cup</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TAKE__INPUT_CUP = eINSTANCE.getTake_InputCup();
-
-    /**
-     * The meta object literal for the '{@link mixin.mixin.impl.MixImpl <em>Mix</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see mixin.mixin.impl.MixImpl
-     * @see mixin.mixin.impl.MixinPackageImpl#getMix()
-     * @generated
-     */
-    EClass MIX = eINSTANCE.getMix();
-
-    /**
-     * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MIX__QUANTITY = eINSTANCE.getMix_Quantity();
+    EAttribute MOVE__SOURCE_CUP = eINSTANCE.getMove_SourceCup();
 
     /**
      * The meta object literal for the '<em><b>Destination Cup</b></em>' attribute feature.
@@ -453,7 +337,7 @@ public interface MixinPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute MIX__DESTINATION_CUP = eINSTANCE.getMix_DestinationCup();
+    EAttribute MOVE__DESTINATION_CUP = eINSTANCE.getMove_DestinationCup();
 
     /**
      * The meta object literal for the '{@link mixin.mixin.impl.CleanImpl <em>Clean</em>}' class.
@@ -464,24 +348,6 @@ public interface MixinPackage extends EPackage
      * @generated
      */
     EClass CLEAN = eINSTANCE.getClean();
-
-    /**
-     * The meta object literal for the '{@link mixin.mixin.impl.ExitImpl <em>Exit</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see mixin.mixin.impl.ExitImpl
-     * @see mixin.mixin.impl.MixinPackageImpl#getExit()
-     * @generated
-     */
-    EClass EXIT = eINSTANCE.getExit();
-
-    /**
-     * The meta object literal for the '<em><b>Cup</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXIT__CUP = eINSTANCE.getExit_Cup();
 
   }
 

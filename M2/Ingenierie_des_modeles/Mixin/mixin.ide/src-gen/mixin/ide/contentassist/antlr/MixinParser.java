@@ -32,16 +32,12 @@ public class MixinParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MixinGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getInstructionAccess().getAlternatives(), "rule__Instruction__Alternatives");
-			builder.put(grammarAccess.getTakeAccess().getGroup(), "rule__Take__Group__0");
-			builder.put(grammarAccess.getMixAccess().getGroup(), "rule__Mix__Group__0");
+			builder.put(grammarAccess.getMoveAccess().getGroup(), "rule__Move__Group__0");
 			builder.put(grammarAccess.getCleanAccess().getGroup(), "rule__Clean__Group__0");
-			builder.put(grammarAccess.getExitAccess().getGroup(), "rule__Exit__Group__0");
 			builder.put(grammarAccess.getModelAccess().getInstructionsAssignment(), "rule__Model__InstructionsAssignment");
-			builder.put(grammarAccess.getTakeAccess().getQuantityAssignment_1(), "rule__Take__QuantityAssignment_1");
-			builder.put(grammarAccess.getTakeAccess().getInputCupAssignment_4(), "rule__Take__InputCupAssignment_4");
-			builder.put(grammarAccess.getMixAccess().getQuantityAssignment_1(), "rule__Mix__QuantityAssignment_1");
-			builder.put(grammarAccess.getMixAccess().getDestinationCupAssignment_4(), "rule__Mix__DestinationCupAssignment_4");
-			builder.put(grammarAccess.getExitAccess().getCupAssignment_2(), "rule__Exit__CupAssignment_2");
+			builder.put(grammarAccess.getMoveAccess().getQuantityAssignment_1(), "rule__Move__QuantityAssignment_1");
+			builder.put(grammarAccess.getMoveAccess().getSourceCupAssignment_5(), "rule__Move__SourceCupAssignment_5");
+			builder.put(grammarAccess.getMoveAccess().getDestinationCupAssignment_8(), "rule__Move__DestinationCupAssignment_8");
 		}
 	}
 	

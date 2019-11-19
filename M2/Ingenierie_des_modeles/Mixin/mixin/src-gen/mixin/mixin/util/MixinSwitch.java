@@ -87,19 +87,11 @@ public class MixinSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MixinPackage.TAKE:
+      case MixinPackage.MOVE:
       {
-        Take take = (Take)theEObject;
-        T result = caseTake(take);
-        if (result == null) result = caseInstruction(take);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MixinPackage.MIX:
-      {
-        Mix mix = (Mix)theEObject;
-        T result = caseMix(mix);
-        if (result == null) result = caseInstruction(mix);
+        Move move = (Move)theEObject;
+        T result = caseMove(move);
+        if (result == null) result = caseInstruction(move);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -108,14 +100,6 @@ public class MixinSwitch<T> extends Switch<T>
         Clean clean = (Clean)theEObject;
         T result = caseClean(clean);
         if (result == null) result = caseInstruction(clean);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MixinPackage.EXIT:
-      {
-        Exit exit = (Exit)theEObject;
-        T result = caseExit(exit);
-        if (result == null) result = caseInstruction(exit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -156,33 +140,17 @@ public class MixinSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Take</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Move</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Take</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Move</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTake(Take object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Mix</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Mix</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMix(Mix object)
+  public T caseMove(Move object)
   {
     return null;
   }
@@ -199,22 +167,6 @@ public class MixinSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseClean(Clean object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Exit</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Exit</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExit(Exit object)
   {
     return null;
   }

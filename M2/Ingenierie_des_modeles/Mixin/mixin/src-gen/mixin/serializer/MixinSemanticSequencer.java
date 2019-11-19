@@ -6,11 +6,9 @@ package mixin.serializer;
 import com.google.inject.Inject;
 import java.util.Set;
 import mixin.mixin.Clean;
-import mixin.mixin.Exit;
-import mixin.mixin.Mix;
 import mixin.mixin.MixinPackage;
 import mixin.mixin.Model;
-import mixin.mixin.Take;
+import mixin.mixin.Move;
 import mixin.services.MixinGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -39,17 +37,11 @@ public class MixinSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MixinPackage.CLEAN:
 				sequence_Clean(context, (Clean) semanticObject); 
 				return; 
-			case MixinPackage.EXIT:
-				sequence_Exit(context, (Exit) semanticObject); 
-				return; 
-			case MixinPackage.MIX:
-				sequence_Mix(context, (Mix) semanticObject); 
-				return; 
 			case MixinPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case MixinPackage.TAKE:
-				sequence_Take(context, (Take) semanticObject); 
+			case MixinPackage.MOVE:
+				sequence_Move(context, (Move) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -71,47 +63,6 @@ public class MixinSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Instruction returns Exit
-	 *     Exit returns Exit
-	 *
-	 * Constraint:
-	 *     cup=INT
-	 */
-	protected void sequence_Exit(ISerializationContext context, Exit semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MixinPackage.Literals.EXIT__CUP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MixinPackage.Literals.EXIT__CUP));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getExitAccess().getCupINTTerminalRuleCall_2_0(), semanticObject.getCup());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Instruction returns Mix
-	 *     Mix returns Mix
-	 *
-	 * Constraint:
-	 *     (quantity=INT destinationCup=INT)
-	 */
-	protected void sequence_Mix(ISerializationContext context, Mix semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MixinPackage.Literals.MIX__QUANTITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MixinPackage.Literals.MIX__QUANTITY));
-			if (transientValues.isValueTransient(semanticObject, MixinPackage.Literals.MIX__DESTINATION_CUP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MixinPackage.Literals.MIX__DESTINATION_CUP));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMixAccess().getQuantityINTTerminalRuleCall_1_0(), semanticObject.getQuantity());
-		feeder.accept(grammarAccess.getMixAccess().getDestinationCupINTTerminalRuleCall_4_0(), semanticObject.getDestinationCup());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
@@ -124,22 +75,25 @@ public class MixinSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Instruction returns Take
-	 *     Take returns Take
+	 *     Instruction returns Move
+	 *     Move returns Move
 	 *
 	 * Constraint:
-	 *     (quantity=INT inputCup=INT)
+	 *     (quantity=INT sourceCup=INT destinationCup=INT)
 	 */
-	protected void sequence_Take(ISerializationContext context, Take semanticObject) {
+	protected void sequence_Move(ISerializationContext context, Move semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MixinPackage.Literals.TAKE__QUANTITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MixinPackage.Literals.TAKE__QUANTITY));
-			if (transientValues.isValueTransient(semanticObject, MixinPackage.Literals.TAKE__INPUT_CUP) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MixinPackage.Literals.TAKE__INPUT_CUP));
+			if (transientValues.isValueTransient(semanticObject, MixinPackage.Literals.MOVE__QUANTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MixinPackage.Literals.MOVE__QUANTITY));
+			if (transientValues.isValueTransient(semanticObject, MixinPackage.Literals.MOVE__SOURCE_CUP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MixinPackage.Literals.MOVE__SOURCE_CUP));
+			if (transientValues.isValueTransient(semanticObject, MixinPackage.Literals.MOVE__DESTINATION_CUP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MixinPackage.Literals.MOVE__DESTINATION_CUP));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTakeAccess().getQuantityINTTerminalRuleCall_1_0(), semanticObject.getQuantity());
-		feeder.accept(grammarAccess.getTakeAccess().getInputCupINTTerminalRuleCall_4_0(), semanticObject.getInputCup());
+		feeder.accept(grammarAccess.getMoveAccess().getQuantityINTTerminalRuleCall_1_0(), semanticObject.getQuantity());
+		feeder.accept(grammarAccess.getMoveAccess().getSourceCupINTTerminalRuleCall_5_0(), semanticObject.getSourceCup());
+		feeder.accept(grammarAccess.getMoveAccess().getDestinationCupINTTerminalRuleCall_8_0(), semanticObject.getDestinationCup());
 		feeder.finish();
 	}
 	

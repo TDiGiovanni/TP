@@ -10,17 +10,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Mixin.ecore#//Model/instructions"/>
     </genClasses>
     <genClasses ecoreClass="Mixin.ecore#//Instruction"/>
-    <genClasses ecoreClass="Mixin.ecore#//Take">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mixin.ecore#//Take/quantity"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mixin.ecore#//Take/inputCup"/>
-    </genClasses>
-    <genClasses ecoreClass="Mixin.ecore#//Mix">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mixin.ecore#//Mix/quantity"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mixin.ecore#//Mix/destinationCup"/>
+    <genClasses ecoreClass="Mixin.ecore#//Move">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mixin.ecore#//Move/quantity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mixin.ecore#//Move/sourceCup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mixin.ecore#//Move/destinationCup"/>
     </genClasses>
     <genClasses ecoreClass="Mixin.ecore#//Clean"/>
-    <genClasses ecoreClass="Mixin.ecore#//Exit">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Mixin.ecore#//Exit/cup"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>

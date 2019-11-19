@@ -46,10 +46,10 @@ public class VisitorsApp
 		if (spoon.equals("y"))
 			spoonParse(path);
 		else
+		{
 			parseFilesInDirectory(path);
-		
-		// Print everything
-		tracker.print();
+			tracker.print();
+		}
 		
 		s.close();
 	}
@@ -193,9 +193,10 @@ public class VisitorsApp
 	protected static void spoonParse(String sourcePath)
 	{
 		Launcher launcher = new Launcher();
-		
 		launcher.addInputResource(sourcePath);
-
+		launcher.getEnvironment().setAutoImports(true);
 		launcher.buildModel();
+		
+		
 	}
 }

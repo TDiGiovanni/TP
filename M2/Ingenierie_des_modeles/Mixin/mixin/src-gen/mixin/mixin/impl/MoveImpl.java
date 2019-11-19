@@ -3,8 +3,8 @@
  */
 package mixin.mixin.impl;
 
-import mixin.mixin.Mix;
 import mixin.mixin.MixinPackage;
+import mixin.mixin.Move;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,20 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Mix</b></em>'.
+ * An implementation of the model object '<em><b>Move</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link mixin.mixin.impl.MixImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link mixin.mixin.impl.MixImpl#getDestinationCup <em>Destination Cup</em>}</li>
+ *   <li>{@link mixin.mixin.impl.MoveImpl#getQuantity <em>Quantity</em>}</li>
+ *   <li>{@link mixin.mixin.impl.MoveImpl#getSourceCup <em>Source Cup</em>}</li>
+ *   <li>{@link mixin.mixin.impl.MoveImpl#getDestinationCup <em>Destination Cup</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MixImpl extends InstructionImpl implements Mix
+public class MoveImpl extends InstructionImpl implements Move
 {
   /**
    * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
@@ -47,6 +48,26 @@ public class MixImpl extends InstructionImpl implements Mix
    * @ordered
    */
   protected int quantity = QUANTITY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSourceCup() <em>Source Cup</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSourceCup()
+   * @generated
+   * @ordered
+   */
+  protected static final int SOURCE_CUP_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getSourceCup() <em>Source Cup</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSourceCup()
+   * @generated
+   * @ordered
+   */
+  protected int sourceCup = SOURCE_CUP_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDestinationCup() <em>Destination Cup</em>}' attribute.
@@ -73,7 +94,7 @@ public class MixImpl extends InstructionImpl implements Mix
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MixImpl()
+  protected MoveImpl()
   {
     super();
   }
@@ -86,7 +107,7 @@ public class MixImpl extends InstructionImpl implements Mix
   @Override
   protected EClass eStaticClass()
   {
-    return MixinPackage.Literals.MIX;
+    return MixinPackage.Literals.MOVE;
   }
 
   /**
@@ -111,7 +132,32 @@ public class MixImpl extends InstructionImpl implements Mix
     int oldQuantity = quantity;
     quantity = newQuantity;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MixinPackage.MIX__QUANTITY, oldQuantity, quantity));
+      eNotify(new ENotificationImpl(this, Notification.SET, MixinPackage.MOVE__QUANTITY, oldQuantity, quantity));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int getSourceCup()
+  {
+    return sourceCup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSourceCup(int newSourceCup)
+  {
+    int oldSourceCup = sourceCup;
+    sourceCup = newSourceCup;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MixinPackage.MOVE__SOURCE_CUP, oldSourceCup, sourceCup));
   }
 
   /**
@@ -136,7 +182,7 @@ public class MixImpl extends InstructionImpl implements Mix
     int oldDestinationCup = destinationCup;
     destinationCup = newDestinationCup;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MixinPackage.MIX__DESTINATION_CUP, oldDestinationCup, destinationCup));
+      eNotify(new ENotificationImpl(this, Notification.SET, MixinPackage.MOVE__DESTINATION_CUP, oldDestinationCup, destinationCup));
   }
 
   /**
@@ -149,9 +195,11 @@ public class MixImpl extends InstructionImpl implements Mix
   {
     switch (featureID)
     {
-      case MixinPackage.MIX__QUANTITY:
+      case MixinPackage.MOVE__QUANTITY:
         return getQuantity();
-      case MixinPackage.MIX__DESTINATION_CUP:
+      case MixinPackage.MOVE__SOURCE_CUP:
+        return getSourceCup();
+      case MixinPackage.MOVE__DESTINATION_CUP:
         return getDestinationCup();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -167,10 +215,13 @@ public class MixImpl extends InstructionImpl implements Mix
   {
     switch (featureID)
     {
-      case MixinPackage.MIX__QUANTITY:
+      case MixinPackage.MOVE__QUANTITY:
         setQuantity((Integer)newValue);
         return;
-      case MixinPackage.MIX__DESTINATION_CUP:
+      case MixinPackage.MOVE__SOURCE_CUP:
+        setSourceCup((Integer)newValue);
+        return;
+      case MixinPackage.MOVE__DESTINATION_CUP:
         setDestinationCup((Integer)newValue);
         return;
     }
@@ -187,10 +238,13 @@ public class MixImpl extends InstructionImpl implements Mix
   {
     switch (featureID)
     {
-      case MixinPackage.MIX__QUANTITY:
+      case MixinPackage.MOVE__QUANTITY:
         setQuantity(QUANTITY_EDEFAULT);
         return;
-      case MixinPackage.MIX__DESTINATION_CUP:
+      case MixinPackage.MOVE__SOURCE_CUP:
+        setSourceCup(SOURCE_CUP_EDEFAULT);
+        return;
+      case MixinPackage.MOVE__DESTINATION_CUP:
         setDestinationCup(DESTINATION_CUP_EDEFAULT);
         return;
     }
@@ -207,9 +261,11 @@ public class MixImpl extends InstructionImpl implements Mix
   {
     switch (featureID)
     {
-      case MixinPackage.MIX__QUANTITY:
+      case MixinPackage.MOVE__QUANTITY:
         return quantity != QUANTITY_EDEFAULT;
-      case MixinPackage.MIX__DESTINATION_CUP:
+      case MixinPackage.MOVE__SOURCE_CUP:
+        return sourceCup != SOURCE_CUP_EDEFAULT;
+      case MixinPackage.MOVE__DESTINATION_CUP:
         return destinationCup != DESTINATION_CUP_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -228,10 +284,12 @@ public class MixImpl extends InstructionImpl implements Mix
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (quantity: ");
     result.append(quantity);
+    result.append(", sourceCup: ");
+    result.append(sourceCup);
     result.append(", destinationCup: ");
     result.append(destinationCup);
     result.append(')');
     return result.toString();
   }
 
-} //MixImpl
+} //MoveImpl

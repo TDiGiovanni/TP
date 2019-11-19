@@ -20,7 +20,11 @@ Require-Bundle: mixin,
  org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: mixin.ui.contentassist,
+Export-Package: mixin.ui,
+ mixin.ui.contentassist,
+ mixin.ui.internal,
+ mixin.ui.labeling,
+ mixin.ui.outline,
  mixin.ui.quickfix,
- mixin.ui.internal
+ mixin.validation
 Bundle-Activator: mixin.ui.internal.MixinActivator

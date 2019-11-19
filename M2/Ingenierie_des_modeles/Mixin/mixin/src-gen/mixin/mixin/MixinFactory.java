@@ -42,22 +42,13 @@ public interface MixinFactory extends EFactory
   Instruction createInstruction();
 
   /**
-   * Returns a new object of class '<em>Take</em>'.
+   * Returns a new object of class '<em>Move</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Take</em>'.
+   * @return a new object of class '<em>Move</em>'.
    * @generated
    */
-  Take createTake();
-
-  /**
-   * Returns a new object of class '<em>Mix</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mix</em>'.
-   * @generated
-   */
-  Mix createMix();
+  Move createMove();
 
   /**
    * Returns a new object of class '<em>Clean</em>'.
@@ -67,15 +58,6 @@ public interface MixinFactory extends EFactory
    * @generated
    */
   Clean createClean();
-
-  /**
-   * Returns a new object of class '<em>Exit</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Exit</em>'.
-   * @generated
-   */
-  Exit createExit();
 
   /**
    * Returns the package supported by this factory.

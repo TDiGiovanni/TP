@@ -67,10 +67,8 @@ public class MixinFactoryImpl extends EFactoryImpl implements MixinFactory
     {
       case MixinPackage.MODEL: return createModel();
       case MixinPackage.INSTRUCTION: return createInstruction();
-      case MixinPackage.TAKE: return createTake();
-      case MixinPackage.MIX: return createMix();
+      case MixinPackage.MOVE: return createMove();
       case MixinPackage.CLEAN: return createClean();
-      case MixinPackage.EXIT: return createExit();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -106,22 +104,10 @@ public class MixinFactoryImpl extends EFactoryImpl implements MixinFactory
    * @generated
    */
   @Override
-  public Take createTake()
+  public Move createMove()
   {
-    TakeImpl take = new TakeImpl();
-    return take;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Mix createMix()
-  {
-    MixImpl mix = new MixImpl();
-    return mix;
+    MoveImpl move = new MoveImpl();
+    return move;
   }
 
   /**
@@ -134,18 +120,6 @@ public class MixinFactoryImpl extends EFactoryImpl implements MixinFactory
   {
     CleanImpl clean = new CleanImpl();
     return clean;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Exit createExit()
-  {
-    ExitImpl exit = new ExitImpl();
-    return exit;
   }
 
   /**

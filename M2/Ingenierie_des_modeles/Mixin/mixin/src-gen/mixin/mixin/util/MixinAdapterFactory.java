@@ -86,24 +86,14 @@ public class MixinAdapterFactory extends AdapterFactoryImpl
         return createInstructionAdapter();
       }
       @Override
-      public Adapter caseTake(Take object)
+      public Adapter caseMove(Move object)
       {
-        return createTakeAdapter();
-      }
-      @Override
-      public Adapter caseMix(Mix object)
-      {
-        return createMixAdapter();
+        return createMoveAdapter();
       }
       @Override
       public Adapter caseClean(Clean object)
       {
         return createCleanAdapter();
-      }
-      @Override
-      public Adapter caseExit(Exit object)
-      {
-        return createExitAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -158,31 +148,16 @@ public class MixinAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link mixin.mixin.Take <em>Take</em>}'.
+   * Creates a new adapter for an object of class '{@link mixin.mixin.Move <em>Move</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see mixin.mixin.Take
+   * @see mixin.mixin.Move
    * @generated
    */
-  public Adapter createTakeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link mixin.mixin.Mix <em>Mix</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see mixin.mixin.Mix
-   * @generated
-   */
-  public Adapter createMixAdapter()
+  public Adapter createMoveAdapter()
   {
     return null;
   }
@@ -198,21 +173,6 @@ public class MixinAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCleanAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link mixin.mixin.Exit <em>Exit</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see mixin.mixin.Exit
-   * @generated
-   */
-  public Adapter createExitAdapter()
   {
     return null;
   }

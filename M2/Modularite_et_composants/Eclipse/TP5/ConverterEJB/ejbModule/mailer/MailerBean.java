@@ -53,44 +53,47 @@ public class MailerBean implements MessageListener
     			TextMessage textMessage = (TextMessage) message; 
 	            String content = textMessage.getText();
 	            
-	            // Recuperer le montant a convertir
+	            // Getting the amount to convert
 	            String s = content.substring(0,content.indexOf("#"));
 	            double amount = Double.parseDouble(s);
 	            
-	            // Demander au bean session de faire toutes les conversions
-	            Map<Currency, Double> map = converter.euroToOtherCurrencies(amount);
+	            // Mail service properties
+	            String hotmailHost = "smtp-mail.outlook.com";
+	            String senderAddress = "digio.thomas@hotmail.fr";
 	            Properties p = new Properties();
-	            p.put("mail.smtp.host", "smtp.gmail.com");
+	            p.put("mail.smtp.host", hotmailHost);
 	            p.put("mail.smtp.auth", "true");
 	            p.put("mail.smtp.starttls.enable","true");
 	            javax.mail.Session session = javax.mail.Session.getInstance(p);
 	            javax.mail.Message msg = new MimeMessage(session);
 	            try
 	            {
-	            	// Preparation du mail
-	                msg.setFrom(new InternetAddress("<user>@gmail.com"));
-	                String dest = content.substring(content.indexOf("#") + 1);
+	                Transport transport = session.getTransport("smtp");
+	                transport.connect(hotmailHost, 587, senderAddress, "1233petitschats");
+	                msg.setFrom(new InternetAddress(senderAddress));
+	                
+	            	// Mail destination
+	                String destinationAddress = content.substring(content.indexOf("#") + 1);
 	                msg.setRecipient(javax.mail.Message.RecipientType.TO,
-	                                 new InternetAddress(dest));
+	                                 new InternetAddress(destinationAddress));
+	                
+	                // Mail content
 	                msg.setSubject("Currency converter");
 	                
-	                // Mettre en forme les resultats retournes par le bean session (Map)
-	                // dans une chaine de caracteres contenant les balises HTML
-	                // necessaires pour construire le tableau HTML (variable content)
-	                // Voir la capture d'ecran de la Figure 1
+		            Map<Currency, Double> map = converter.euroToOtherCurrencies(amount);
+		            
+	                //TODO: Mettre en forme les resultats
+	                // dans une chaine de caracteres contenant les balises HTML necessaires pour construire le tableau HTML
+	                
 	                msg.setContent(content, "text/html;charset=utf8");
+	                
+	                // Sending mail
 	                msg.setSentDate(Calendar.getInstance().getTime()); 
-	                
-	                // Preparation de l'envoi du mail
-	                Transport transport = session.getTransport("smtp");
-	                transport.connect("smtp.gmail.com",587,"<user>","<mot-de-passe>");        
-	                
-	                // Envoi du mail
 	                transport.sendMessage(msg, msg.getAllRecipients());
 	                transport.close();
-	                System.out.println("Email sent to " + dest);
+	                System.out.println("Email sent to " + destinationAddress);
 	            }
-	            catch(MessagingException e)
+	            catch (MessagingException e)
 	            {
 	            	e.printStackTrace();
 	            }

@@ -113,11 +113,11 @@ ruleInstruction returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getTakeParserRuleCall_0());
+			newCompositeNode(grammarAccess.getInstructionAccess().getMoveParserRuleCall_0());
 		}
-		this_Take_0=ruleTake
+		this_Move_0=ruleMove
 		{
-			$current = $this_Take_0.current;
+			$current = $this_Move_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -129,36 +129,18 @@ ruleInstruction returns [EObject current=null]
 			$current = $this_Clean_1.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getMixParserRuleCall_2());
-		}
-		this_Mix_2=ruleMix
-		{
-			$current = $this_Mix_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getInstructionAccess().getExitParserRuleCall_3());
-		}
-		this_Exit_3=ruleExit
-		{
-			$current = $this_Exit_3.current;
-			afterParserOrEnumRuleCall();
-		}
 	)
 ;
 
-// Entry rule entryRuleTake
-entryRuleTake returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getTakeRule()); }
-	iv_ruleTake=ruleTake
-	{ $current=$iv_ruleTake.current; }
+// Entry rule entryRuleMove
+entryRuleMove returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMoveRule()); }
+	iv_ruleMove=ruleMove
+	{ $current=$iv_ruleMove.current; }
 	EOF;
 
-// Rule Take
-ruleTake returns [EObject current=null]
+// Rule Move
+ruleMove returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -166,19 +148,19 @@ ruleTake returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='take'
+		otherlv_0='move'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getTakeAccess().getTakeKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getMoveAccess().getMoveKeyword_0());
 		}
 		(
 			(
 				lv_quantity_1_0=RULE_INT
 				{
-					newLeafNode(lv_quantity_1_0, grammarAccess.getTakeAccess().getQuantityINTTerminalRuleCall_1_0());
+					newLeafNode(lv_quantity_1_0, grammarAccess.getMoveAccess().getQuantityINTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTakeRule());
+						$current = createModelElement(grammarAccess.getMoveRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -190,93 +172,56 @@ ruleTake returns [EObject current=null]
 		)
 		otherlv_2='mL'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getTakeAccess().getMLKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getMoveAccess().getMLKeyword_2());
 		}
 		otherlv_3='from'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getTakeAccess().getFromKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getMoveAccess().getFromKeyword_3());
+		}
+		otherlv_4='cup'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getMoveAccess().getCupKeyword_4());
 		}
 		(
 			(
-				lv_inputCup_4_0=RULE_INT
+				lv_sourceCup_5_0=RULE_INT
 				{
-					newLeafNode(lv_inputCup_4_0, grammarAccess.getTakeAccess().getInputCupINTTerminalRuleCall_4_0());
+					newLeafNode(lv_sourceCup_5_0, grammarAccess.getMoveAccess().getSourceCupINTTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTakeRule());
+						$current = createModelElement(grammarAccess.getMoveRule());
 					}
 					setWithLastConsumed(
 						$current,
-						"inputCup",
-						lv_inputCup_4_0,
+						"sourceCup",
+						lv_sourceCup_5_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleMix
-entryRuleMix returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMixRule()); }
-	iv_ruleMix=ruleMix
-	{ $current=$iv_ruleMix.current; }
-	EOF;
-
-// Rule Mix
-ruleMix returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='mix'
+		otherlv_6='to'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getMixAccess().getMixKeyword_0());
+			newLeafNode(otherlv_6, grammarAccess.getMoveAccess().getToKeyword_6());
+		}
+		otherlv_7='cup'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getMoveAccess().getCupKeyword_7());
 		}
 		(
 			(
-				lv_quantity_1_0=RULE_INT
+				lv_destinationCup_8_0=RULE_INT
 				{
-					newLeafNode(lv_quantity_1_0, grammarAccess.getMixAccess().getQuantityINTTerminalRuleCall_1_0());
+					newLeafNode(lv_destinationCup_8_0, grammarAccess.getMoveAccess().getDestinationCupINTTerminalRuleCall_8_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMixRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"quantity",
-						lv_quantity_1_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_2='mL'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getMixAccess().getMLKeyword_2());
-		}
-		otherlv_3='in'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getMixAccess().getInKeyword_3());
-		}
-		(
-			(
-				lv_destinationCup_4_0=RULE_INT
-				{
-					newLeafNode(lv_destinationCup_4_0, grammarAccess.getMixAccess().getDestinationCupINTTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMixRule());
+						$current = createModelElement(grammarAccess.getMoveRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"destinationCup",
-						lv_destinationCup_4_0,
+						lv_destinationCup_8_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -311,51 +256,6 @@ ruleClean returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getCleanAccess().getCleanKeyword_1());
 		}
-	)
-;
-
-// Entry rule entryRuleExit
-entryRuleExit returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getExitRule()); }
-	iv_ruleExit=ruleExit
-	{ $current=$iv_ruleExit.current; }
-	EOF;
-
-// Rule Exit
-ruleExit returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='exit'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getExitAccess().getExitKeyword_0());
-		}
-		otherlv_1='cup'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getExitAccess().getCupKeyword_1());
-		}
-		(
-			(
-				lv_cup_2_0=RULE_INT
-				{
-					newLeafNode(lv_cup_2_0, grammarAccess.getExitAccess().getCupINTTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getExitRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"cup",
-						lv_cup_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
 	)
 ;
 

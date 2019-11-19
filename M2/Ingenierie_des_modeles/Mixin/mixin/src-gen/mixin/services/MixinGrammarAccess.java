@@ -41,50 +41,47 @@ public class MixinGrammarAccess extends AbstractGrammarElementFinder {
 	public class InstructionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mixin.Mixin.Instruction");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cTakeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMoveParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cCleanParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cMixParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cExitParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Instruction:
-		//	Take | Clean | Mix | Exit;
+		//	Move | Clean;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Take | Clean | Mix | Exit
+		//Move | Clean
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Take
-		public RuleCall getTakeParserRuleCall_0() { return cTakeParserRuleCall_0; }
+		//Move
+		public RuleCall getMoveParserRuleCall_0() { return cMoveParserRuleCall_0; }
 		
 		//Clean
 		public RuleCall getCleanParserRuleCall_1() { return cCleanParserRuleCall_1; }
-		
-		//Mix
-		public RuleCall getMixParserRuleCall_2() { return cMixParserRuleCall_2; }
-		
-		//Exit
-		public RuleCall getExitParserRuleCall_3() { return cExitParserRuleCall_3; }
 	}
-	public class TakeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mixin.Mixin.Take");
+	public class MoveElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mixin.Mixin.Move");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTakeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cMoveKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cQuantityAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cQuantityINTTerminalRuleCall_1_0 = (RuleCall)cQuantityAssignment_1.eContents().get(0);
 		private final Keyword cMLKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cFromKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cInputCupAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cInputCupINTTerminalRuleCall_4_0 = (RuleCall)cInputCupAssignment_4.eContents().get(0);
+		private final Keyword cCupKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cSourceCupAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSourceCupINTTerminalRuleCall_5_0 = (RuleCall)cSourceCupAssignment_5.eContents().get(0);
+		private final Keyword cToKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cCupKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cDestinationCupAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cDestinationCupINTTerminalRuleCall_8_0 = (RuleCall)cDestinationCupAssignment_8.eContents().get(0);
 		
-		//Take:
-		//	"take" quantity=INT "mL" "from" inputCup=INT;
+		//Move:
+		//	"move" quantity=INT "mL" "from" "cup" sourceCup=INT "to" "cup" destinationCup=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"take" quantity=INT "mL" "from" inputCup=INT
+		//"move" quantity=INT "mL" "from" "cup" sourceCup=INT "to" "cup" destinationCup=INT
 		public Group getGroup() { return cGroup; }
 		
-		//"take"
-		public Keyword getTakeKeyword_0() { return cTakeKeyword_0; }
+		//"move"
+		public Keyword getMoveKeyword_0() { return cMoveKeyword_0; }
 		
 		//quantity=INT
 		public Assignment getQuantityAssignment_1() { return cQuantityAssignment_1; }
@@ -98,50 +95,26 @@ public class MixinGrammarAccess extends AbstractGrammarElementFinder {
 		//"from"
 		public Keyword getFromKeyword_3() { return cFromKeyword_3; }
 		
-		//inputCup=INT
-		public Assignment getInputCupAssignment_4() { return cInputCupAssignment_4; }
+		//"cup"
+		public Keyword getCupKeyword_4() { return cCupKeyword_4; }
+		
+		//sourceCup=INT
+		public Assignment getSourceCupAssignment_5() { return cSourceCupAssignment_5; }
 		
 		//INT
-		public RuleCall getInputCupINTTerminalRuleCall_4_0() { return cInputCupINTTerminalRuleCall_4_0; }
-	}
-	public class MixElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mixin.Mixin.Mix");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMixKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cQuantityAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cQuantityINTTerminalRuleCall_1_0 = (RuleCall)cQuantityAssignment_1.eContents().get(0);
-		private final Keyword cMLKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cInKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cDestinationCupAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cDestinationCupINTTerminalRuleCall_4_0 = (RuleCall)cDestinationCupAssignment_4.eContents().get(0);
+		public RuleCall getSourceCupINTTerminalRuleCall_5_0() { return cSourceCupINTTerminalRuleCall_5_0; }
 		
-		//Mix:
-		//	"mix" quantity=INT "mL" "in" destinationCup=INT;
-		@Override public ParserRule getRule() { return rule; }
+		//"to"
+		public Keyword getToKeyword_6() { return cToKeyword_6; }
 		
-		//"mix" quantity=INT "mL" "in" destinationCup=INT
-		public Group getGroup() { return cGroup; }
-		
-		//"mix"
-		public Keyword getMixKeyword_0() { return cMixKeyword_0; }
-		
-		//quantity=INT
-		public Assignment getQuantityAssignment_1() { return cQuantityAssignment_1; }
-		
-		//INT
-		public RuleCall getQuantityINTTerminalRuleCall_1_0() { return cQuantityINTTerminalRuleCall_1_0; }
-		
-		//"mL"
-		public Keyword getMLKeyword_2() { return cMLKeyword_2; }
-		
-		//"in"
-		public Keyword getInKeyword_3() { return cInKeyword_3; }
+		//"cup"
+		public Keyword getCupKeyword_7() { return cCupKeyword_7; }
 		
 		//destinationCup=INT
-		public Assignment getDestinationCupAssignment_4() { return cDestinationCupAssignment_4; }
+		public Assignment getDestinationCupAssignment_8() { return cDestinationCupAssignment_8; }
 		
 		//INT
-		public RuleCall getDestinationCupINTTerminalRuleCall_4_0() { return cDestinationCupINTTerminalRuleCall_4_0; }
+		public RuleCall getDestinationCupINTTerminalRuleCall_8_0() { return cDestinationCupINTTerminalRuleCall_8_0; }
 	}
 	public class CleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mixin.Mixin.Clean");
@@ -162,41 +135,12 @@ public class MixinGrammarAccess extends AbstractGrammarElementFinder {
 		//"clean"
 		public Keyword getCleanKeyword_1() { return cCleanKeyword_1; }
 	}
-	public class ExitElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "mixin.Mixin.Exit");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cExitKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cCupKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cCupAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCupINTTerminalRuleCall_2_0 = (RuleCall)cCupAssignment_2.eContents().get(0);
-		
-		//Exit:
-		//	"exit" "cup" cup=INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"exit" "cup" cup=INT
-		public Group getGroup() { return cGroup; }
-		
-		//"exit"
-		public Keyword getExitKeyword_0() { return cExitKeyword_0; }
-		
-		//"cup"
-		public Keyword getCupKeyword_1() { return cCupKeyword_1; }
-		
-		//cup=INT
-		public Assignment getCupAssignment_2() { return cCupAssignment_2; }
-		
-		//INT
-		public RuleCall getCupINTTerminalRuleCall_2_0() { return cCupINTTerminalRuleCall_2_0; }
-	}
 	
 	
 	private final ModelElements pModel;
 	private final InstructionElements pInstruction;
-	private final TakeElements pTake;
-	private final MixElements pMix;
+	private final MoveElements pMove;
 	private final CleanElements pClean;
-	private final ExitElements pExit;
 	
 	private final Grammar grammar;
 	
@@ -209,10 +153,8 @@ public class MixinGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pInstruction = new InstructionElements();
-		this.pTake = new TakeElements();
-		this.pMix = new MixElements();
+		this.pMove = new MoveElements();
 		this.pClean = new CleanElements();
-		this.pExit = new ExitElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -253,7 +195,7 @@ public class MixinGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Instruction:
-	//	Take | Clean | Mix | Exit;
+	//	Move | Clean;
 	public InstructionElements getInstructionAccess() {
 		return pInstruction;
 	}
@@ -262,24 +204,14 @@ public class MixinGrammarAccess extends AbstractGrammarElementFinder {
 		return getInstructionAccess().getRule();
 	}
 	
-	//Take:
-	//	"take" quantity=INT "mL" "from" inputCup=INT;
-	public TakeElements getTakeAccess() {
-		return pTake;
+	//Move:
+	//	"move" quantity=INT "mL" "from" "cup" sourceCup=INT "to" "cup" destinationCup=INT;
+	public MoveElements getMoveAccess() {
+		return pMove;
 	}
 	
-	public ParserRule getTakeRule() {
-		return getTakeAccess().getRule();
-	}
-	
-	//Mix:
-	//	"mix" quantity=INT "mL" "in" destinationCup=INT;
-	public MixElements getMixAccess() {
-		return pMix;
-	}
-	
-	public ParserRule getMixRule() {
-		return getMixAccess().getRule();
+	public ParserRule getMoveRule() {
+		return getMoveAccess().getRule();
 	}
 	
 	//Clean:
@@ -290,16 +222,6 @@ public class MixinGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCleanRule() {
 		return getCleanAccess().getRule();
-	}
-	
-	//Exit:
-	//	"exit" "cup" cup=INT;
-	public ExitElements getExitAccess() {
-		return pExit;
-	}
-	
-	public ParserRule getExitRule() {
-		return getExitAccess().getRule();
 	}
 	
 	//terminal ID:
