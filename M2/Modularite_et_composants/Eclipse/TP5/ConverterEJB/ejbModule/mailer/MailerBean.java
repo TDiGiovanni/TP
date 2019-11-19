@@ -50,11 +50,10 @@ public class MailerBean implements MessageListener
     	{
     		if (message instanceof TextMessage)
     		{
-    			TextMessage textMessage = (TextMessage) message; 
-	            String content = textMessage.getText();
+	            String messageContent = ((TextMessage) message).getText();
 	            
 	            // Getting the amount to convert
-	            String s = content.substring(0,content.indexOf("#"));
+	            String s = messageContent.substring(0, messageContent.indexOf("#"));
 	            double amount = Double.parseDouble(s);
 	            
 	            // Mail service properties
@@ -65,31 +64,35 @@ public class MailerBean implements MessageListener
 	            p.put("mail.smtp.auth", "true");
 	            p.put("mail.smtp.starttls.enable","true");
 	            javax.mail.Session session = javax.mail.Session.getInstance(p);
-	            javax.mail.Message msg = new MimeMessage(session);
+	            javax.mail.Message mail = new MimeMessage(session);
 	            try
 	            {
 	                Transport transport = session.getTransport("smtp");
 	                transport.connect(hotmailHost, 587, senderAddress, "1233petitschats");
-	                msg.setFrom(new InternetAddress(senderAddress));
+	                mail.setFrom(new InternetAddress(senderAddress));
 	                
 	            	// Mail destination
-	                String destinationAddress = content.substring(content.indexOf("#") + 1);
-	                msg.setRecipient(javax.mail.Message.RecipientType.TO,
+	                String destinationAddress = messageContent.substring(messageContent.indexOf("#") + 1);
+	                mail.setRecipient(javax.mail.Message.RecipientType.TO,
 	                                 new InternetAddress(destinationAddress));
 	                
 	                // Mail content
-	                msg.setSubject("Currency converter");
+	                mail.setSubject("Currency converter");
 	                
-		            Map<Currency, Double> map = converter.euroToOtherCurrencies(amount);
+		            Map<Currency, Double> currencies = converter.euroToOtherCurrencies(amount);
 		            
-	                //TODO: Mettre en forme les resultats
-	                // dans une chaine de caracteres contenant les balises HTML necessaires pour construire le tableau HTML
+		            String mailContent = "<table><thead><tr><th colspan=\"2\">Currency conversions for " + amount + "€</th></tr></thead><tbody>";
+		            
+		            for (Currency currency : currencies.keySet())
+		            	mailContent += "<tr><td>" + currencies.get(currency) + "</td><td>" + currency.getFullName() + " (" + currency.getCode() + ")</td></tr>";
+		            
+		            mailContent += "</tbody></table>";
 	                
-	                msg.setContent(content, "text/html;charset=utf8");
+	                mail.setContent(mailContent, "text/html;charset=utf8");
 	                
 	                // Sending mail
-	                msg.setSentDate(Calendar.getInstance().getTime()); 
-	                transport.sendMessage(msg, msg.getAllRecipients());
+	                mail.setSentDate(Calendar.getInstance().getTime()); 
+	                transport.sendMessage(mail, mail.getAllRecipients());
 	                transport.close();
 	                System.out.println("Email sent to " + destinationAddress);
 	            }
