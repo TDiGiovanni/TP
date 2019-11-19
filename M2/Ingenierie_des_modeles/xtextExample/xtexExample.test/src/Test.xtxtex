@@ -1,0 +1,11 @@
+datatype chaine
+
+entity Personne
+{
+	nom: chaine
+}
+
+entity Etudiant extends Personne
+{
+	
+}

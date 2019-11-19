@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: xtextExample
+Bundle-ManifestVersion: 2
+Bundle-Name: xtextExample
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: xtextExample; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0",
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: xtextExample.services,
+ xtextExample.parser.antlr,
+ xtextExample.xtextExample.impl,
+ xtextExample.serializer,
+ xtextExample.xtextExample.util,
+ xtextExample.xtextExample,
+ xtextExample.parser.antlr.internal,
+ xtextExample.validation,
+ xtextExample.generator,
+ xtextExample,
+ xtextExample.scoping
+Import-Package: org.apache.log4j

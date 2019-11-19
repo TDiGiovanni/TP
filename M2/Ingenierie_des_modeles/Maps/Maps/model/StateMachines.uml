@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_XWC1EN7VEemn9PTeCvxBQQ" name="StateMachines">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_XYgTMN7VEemn9PTeCvxBQQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:StateMachine" xmi:id="_dyetAN7VEemn9PTeCvxBQQ" name="StateMachine1">
+    <region xmi:type="uml:Region" xmi:id="_e2VWsN7VEemn9PTeCvxBQQ" name="Region1">
+      <transition xmi:type="uml:Transition" xmi:id="_Ba8jIOm_Eem9RrlYERSmYQ" source="_TKOfcN7WEemn9PTeCvxBQQ" target="_UiLw4N7WEemn9PTeCvxBQQ"/>
+      <transition xmi:type="uml:Transition" xmi:id="_M96QAOm_Eem9RrlYERSmYQ" source="_UiLw4N7WEemn9PTeCvxBQQ" target="_gSsxkN7WEemn9PTeCvxBQQ">
+        <trigger xmi:type="uml:Trigger" xmi:id="_V5q0oOnAEem9RrlYERSmYQ" name="m1" event="_VKidwOnAEem9RrlYERSmYQ"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_N1fYQOm_Eem9RrlYERSmYQ" source="_gSsxkN7WEemn9PTeCvxBQQ" target="_UiLw4N7WEemn9PTeCvxBQQ">
+        <trigger xmi:type="uml:Trigger" xmi:id="_Qj6Q4OnAEem9RrlYERSmYQ" name="m2" event="_PwX7IOnAEem9RrlYERSmYQ"/>
+      </transition>
+      <transition xmi:type="uml:Transition" xmi:id="_UFG8MOm_Eem9RrlYERSmYQ" source="_gSsxkN7WEemn9PTeCvxBQQ" target="_gSsxkN7WEemn9PTeCvxBQQ">
+        <trigger xmi:type="uml:Trigger" xmi:id="_Zw_rgOnAEem9RrlYERSmYQ" name="m1" event="_VKidwOnAEem9RrlYERSmYQ"/>
+      </transition>
+      <subvertex xmi:type="uml:Pseudostate" xmi:id="_TKOfcN7WEemn9PTeCvxBQQ" name="Initial"/>
+      <subvertex xmi:type="uml:State" xmi:id="_UiLw4N7WEemn9PTeCvxBQQ" name="A"/>
+      <subvertex xmi:type="uml:State" xmi:id="_gSsxkN7WEemn9PTeCvxBQQ" name="B"/>
+    </region>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_IhZfkN7WEemn9PTeCvxBQQ" name="Context">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_p8fAMN7fEemUVY9TBQQXUA" name="etatCourant" type="_nns6IN7fEemUVY9TBQQXUA" aggregation="composite" association="_p8dLAN7fEemUVY9TBQQXUA"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_-LhLAOnEEem9RrlYERSmYQ" name="m1"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="__thwUOnEEem9RrlYERSmYQ" name="m2"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DZHRQOnFEem9RrlYERSmYQ" name="m3"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_nns6IN7fEemUVY9TBQQXUA" name="Etat" isAbstract="true">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_qGo5sOm_Eem9RrlYERSmYQ" name="m1"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_sAdiEOm_Eem9RrlYERSmYQ" name="m2"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_p8dLAN7fEemUVY9TBQQXUA" visibility="package" memberEnd="_p8fAMN7fEemUVY9TBQQXUA _p8fnQt7fEemUVY9TBQQXUA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_p8eZIN7fEemUVY9TBQQXUA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_p8eZId7fEemUVY9TBQQXUA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_p8fnQt7fEemUVY9TBQQXUA" type="_IhZfkN7WEemn9PTeCvxBQQ" association="_p8dLAN7fEemUVY9TBQQXUA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uAzCIOm_Eem9RrlYERSmYQ" name="A">
+    <generalization xmi:type="uml:Generalization" xmi:id="_v0Z7gOnEEem9RrlYERSmYQ" general="_nns6IN7fEemUVY9TBQQXUA"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Kg8PkOnFEem9RrlYERSmYQ" name="m1"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_LxlYEOnFEem9RrlYERSmYQ" name="m2"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_0UJPgOm_Eem9RrlYERSmYQ" name="B">
+    <generalization xmi:type="uml:Generalization" xmi:id="_wzlgkOnEEem9RrlYERSmYQ" general="_nns6IN7fEemUVY9TBQQXUA"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_MZdQYOnFEem9RrlYERSmYQ" name="m1"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_NBKJkOnFEem9RrlYERSmYQ" name="m2"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_PwX7IOnAEem9RrlYERSmYQ" name="m2"/>
+  <packagedElement xmi:type="uml:CallEvent" xmi:id="_VKidwOnAEem9RrlYERSmYQ" name="m1"/>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_lWteAN7WEemn9PTeCvxBQQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lWuFEN7WEemn9PTeCvxBQQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>

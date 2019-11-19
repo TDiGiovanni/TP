@@ -1,0 +1,47 @@
+grammar xtextExample.XtextExample with org.eclipse.xtext.common.Terminals
+
+generate xtextExample "http://www.XtextExample.xtextExample"
+
+DomainModel:
+	(elements+=AbstractElement)*
+;
+
+QualifiedName:
+    ID ('.' ID)*
+;
+
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?
+;
+
+AbstractElement:
+    PackageDeclaration | Type | Import
+;
+
+PackageDeclaration:
+    'package' name=QualifiedName '{'
+        (elements+=AbstractElement)*
+    '}'
+;
+
+Type:
+	DataType | Entity
+;
+
+Import:
+	'import' importedNamespace=QualifiedNameWithWildcard
+;
+
+DataType:
+	'datatype' name=ID
+;
+
+Entity:
+    'entity' name=ID ('extends' superType=[Entity|QualifiedName])? '{'
+        (features+=Feature)*
+    '}'
+;
+
+Feature:
+    (many?='many')? name=ID ':' type=[Type|QualifiedName]
+;

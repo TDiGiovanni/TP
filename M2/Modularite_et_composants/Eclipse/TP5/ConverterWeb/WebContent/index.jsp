@@ -1,7 +1,7 @@
 <%@ page language="java"
 	contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
-    import="java.util.*"
+    import="java.util.*, javax.naming.*, javax.jms.*"
 %>
 <!DOCTYPE html>
 <html>
@@ -27,22 +27,34 @@
 		</select>
 		<br/><br/>
 		<input type="submit" value="Convert">
-		<input type="submit" value="Convert to all currencies">
 	</form>	
 	<%
-		String anyParameter = request.getParameter("amount");
-		if (anyParameter != null)
-		{
+		String parameter = request.getParameter("amount");
+		if (parameter != null)
+		{			
+			double amount = Double.parseDouble(request.getParameter("amount"));
+			
+			String currency = request.getParameter("currency");
+			if (currency != null)
+			{
+				double newAmount = converterBean.euroToOtherCurrency(amount, currency);
+				out.println("<p>" + amount + " EUR is equivalent to " + newAmount + " " + currency + ".</p>");
+			}
+			
 			String email = request .getParameter("email");
 			if (email != null && email.length() != 0)
 			{
-				// Demander...
+				// Envoi de message dans la file
+				Context jndiContext = new InitialContext();
+				javax.jms.ConnectionFactory  connectionFactory = (QueueConnectionFactory) jndiContext.lookup("/ConnectionFactory");
+				Connection connection = connectionFactory.createConnection();
+				Session sessionQ = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+				TextMessage message = sessionQ.createTextMessage();
+				message.setText (amount + "#" + email);
+				javax.jms.Queue queue = (javax.jms.Queue) jndiContext.lookup ("queue/MailContent");
+				MessageProducer messageProducer = sessionQ.createProducer(queue);
+				messageProducer.send(message);
 			}
-			
-			double amount = Double.parseDouble(request.getParameter("amount"));
-			String currency = request.getParameter("currency");
-			double newAmount = converterBean.euroToOtherCurrency(amount, currency);
-			out.println("<p>" + amount + " EUR is equivalent to " + newAmount + " " + currency + ".</p>");
 		}
 	%>
 </body>

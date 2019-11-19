@@ -1,0 +1,26 @@
+grammar mixin.Mixin with org.eclipse.xtext.common.Terminals
+
+generate mixin "http://www.Mixin.mixin"
+
+Model:
+	instructions += Instruction*;
+
+Instruction:
+	Take | Clean | Mix | Exit
+;
+
+Take:
+	"take" quantity = INT "mL" "from" inputCup = INT
+;
+
+Mix:
+	"mix" quantity = INT "mL" "in" destinationCup = INT
+;
+
+Clean: {Clean}
+	"clean"
+;
+
+Exit:
+	"exit" "cup" cup = INT
+;
