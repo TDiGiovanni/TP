@@ -1,0 +1,7 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: CSGiPrinter
+Bundle-Name: CSGiPrinter
+Bundle-Version: 1.0.0
+Bundle-Activator: impl.PrinterActivator
+Import-Package: org.osgi.framework
+Export-Package: export

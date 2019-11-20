@@ -1,0 +1,7 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: CSGiHelloer
+Bundle-Name: CSGiHelloer
+Bundle-Version: 1.0.0
+Bundle-Activator: impl.HelloerActivator
+Import-Package: org.osgi.framework
+Export-Package: export
