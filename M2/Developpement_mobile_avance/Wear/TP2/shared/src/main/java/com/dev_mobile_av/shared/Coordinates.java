@@ -2,7 +2,9 @@ package com.dev_mobile_av.shared;
 
 import androidx.annotation.NonNull;
 
-public class Coordinates
+import java.io.Serializable;
+
+public class Coordinates implements Serializable
 {
     private double latitude;
     private double longitude;

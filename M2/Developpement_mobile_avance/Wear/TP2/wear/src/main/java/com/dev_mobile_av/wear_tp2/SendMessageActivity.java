@@ -3,7 +3,6 @@ package com.dev_mobile_av.wear_tp2;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.wearable.activity.WearableActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -23,9 +22,12 @@ import com.google.android.gms.wearable.DataMap;
 import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.Wearable;
 
-public class SendMessageActivity extends WearableActivity
+public class SendMessageActivity extends AmbientActivity
 {
-    protected GoogleApiClient googleApiClient;                  // Client to communicate with the phone
+    // Phone communication
+    protected GoogleApiClient googleApiClient;
+    protected boolean isConnected;
+
     protected FusedLocationProviderClient fusedLocationClient;  // Client to get coordinates
 
     // Layout views
@@ -38,27 +40,28 @@ public class SendMessageActivity extends WearableActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        currentLayoutId = R.layout.activity_send_message;
 
         // Fetches layout views
-        setContentView(R.layout.activity_send_message);
+        setContentView(currentLayoutId);
         studentIdEditText = findViewById(R.id.studentIdEditText);
         contentEditText = findViewById(R.id.contentEditText);
         sendMessageButton = findViewById(R.id.sendMessageButton);
         seeMessagesButton = findViewById(R.id.seeMessagesButton);
 
-        // Creates the Google client to communicate with the wearable
+        // Creates the Google client to communicate with the phone
         googleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks()
                 {
                     @Override
                     public void onConnected(Bundle connectionHint)
                     {
-
+                        isConnected = true;
                     }
                     @Override
                     public void onConnectionSuspended(int cause)
                     {
-
+                        isConnected = false;
                     }
                 })
                 .addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener()
@@ -66,7 +69,7 @@ public class SendMessageActivity extends WearableActivity
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult result)
                     {
-
+                        isConnected = false;
                     }
                 })
                 .addApi(Wearable.API)
@@ -89,10 +92,10 @@ public class SendMessageActivity extends WearableActivity
                     String messageStudentId = studentIdEditText.getText().toString(),
                     messageContent = contentEditText.getText().toString();
 
-                    //TODO: if connected to phone
-                    //sendMessageToPhone(messageStudentId, messageContent);
-                    //else
-                    sendMessageToServer(messageStudentId, messageContent);
+                    if (isConnected) //TODO: not good
+                        sendMessageToPhone(messageStudentId, messageContent);
+                    else
+                        sendMessageToServer(messageStudentId, messageContent);
                 }
             }
         });
@@ -104,9 +107,6 @@ public class SendMessageActivity extends WearableActivity
                 startActivity(intent);
             }
         });
-
-        // Enables Always-on
-        setAmbientEnabled();
     }
 
     // Sends the message to the server directly
@@ -126,13 +126,13 @@ public class SendMessageActivity extends WearableActivity
                     messageContent,
                     Double.toString(coordinates.getLatitude()),
                     Double.toString(coordinates.getLongitude()));
+
+            Toast.makeText(SendMessageActivity.this, getResources().getString(R.string.sentMessage), Toast.LENGTH_LONG).show();
         }
         catch (Exception e)
         {
             Toast.makeText(SendMessageActivity.this, getResources().getString(R.string.errorGeneric), Toast.LENGTH_LONG).show();
         }
-
-        Toast.makeText(SendMessageActivity.this, getResources().getString(R.string.sentMessage), Toast.LENGTH_LONG).show();
     }
 
     // Sends the message to the phone
@@ -156,9 +156,10 @@ public class SendMessageActivity extends WearableActivity
 
         // Send the request
         Wearable.DataApi.putDataItem(googleApiClient, putRequest.asPutDataRequest());
+        Toast.makeText(SendMessageActivity.this, getResources().getString(R.string.sentMessage), Toast.LENGTH_LONG).show();
     }
 
-    // Returns the lsat coordinates of the wearable
+    // Returns the last coordinates of the wearable
     private Coordinates getLastCoordinates()
     {
         final Coordinates coordinates = new Coordinates();

@@ -1,12 +1,11 @@
 package com.dev_mobile_av.wear_tp2;
 
 import android.os.Bundle;
-import android.support.wearable.activity.WearableActivity;
 import android.widget.TextView;
 
 import com.dev_mobile_av.shared.Message;
 
-public class ShowMessageActivity extends WearableActivity
+public class ShowMessageActivity extends AmbientActivity
 {
     protected Message message;
     protected TextView messageStudentIdTextView;
@@ -17,12 +16,13 @@ public class ShowMessageActivity extends WearableActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        currentLayoutId = R.layout.activity_show_message;
 
         // Gets the message from the intent
         message = (Message) getIntent().getSerializableExtra("Message");
 
         // Fetches all layout views
-        setContentView(R.layout.activity_show_message);
+        setContentView(currentLayoutId);
         messageStudentIdTextView = findViewById(R.id.messageStudentIdTextView);
         messageContentTextView = findViewById(R.id.messageContentTextView);
         coordinatesTextView = findViewById(R.id.messageCoordinatesTextView);

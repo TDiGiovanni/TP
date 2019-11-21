@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,7 +16,6 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -51,7 +51,7 @@ public class ServerTask extends AsyncTask<String, Void, List<Message>>
     @Override
     protected List<Message> doInBackground(String... parameters)
     {
-        JSONObject jsonResult = null;
+        JSONArray jsonResult = null;
         List<Message> result = new ArrayList<>();
 
         try
@@ -60,46 +60,58 @@ public class ServerTask extends AsyncTask<String, Void, List<Message>>
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setReadTimeout(15000); // In milliseconds
             connection.setConnectTimeout(15000);
-            connection.setDoInput(true);
-            connection.setDoOutput(true);
-            connection.setRequestMethod("GET");
 
             if (this.isPost)
             {
                 connection.setRequestMethod("POST");
+                connection.setRequestProperty("Content-Type", "application/json");
+                connection.setDoOutput(true);
 
-                // Building
+                // Building the json body
+                JSONObject jsonParameters = new JSONObject();
+                jsonParameters.put("student_id", parameters[0]);        // Student id
+                jsonParameters.put("student_message", parameters[1]);   // Message content
+                jsonParameters.put("gps_lat", parameters[2]);           // Latitude
+                jsonParameters.put("gps_long", parameters[3]);          // Longitude
+
+                // Writing in the output stream
                 BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()));
-                writer.write(parameters[0]); // Student id
-                writer.write(parameters[1]); // Message content
-                writer.write(parameters[2]); // Latitude
-                writer.write(parameters[3]); // Longitude
+                writer.write(jsonParameters.toString());
 
-                // Closing
+                // Closing the writer
                 writer.flush();
                 writer.close();
+            }
+            else
+            {
+                connection.setRequestMethod("GET");
+                connection.setDoInput(true);
             }
 
             // Connecting
             connection.connect();
 
-            // Reading the answer
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            StringBuilder response = new StringBuilder();
-            String line = reader.readLine();
-            while (line != null)
+            // We want the server answer only if the request was GET
+            if (!this.isPost)
             {
-                response.append(line).append('\n');
+                // Reading the answer
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                StringBuilder response = new StringBuilder();
+                String line = reader.readLine();
+                while (line != null)
+                {
+                    response.append(line).append('\n');
 
-                line = reader.readLine();
+                    line = reader.readLine();
+                }
+                reader.close();
+
+                // Store the answer
+                jsonResult = new JSONArray(response.toString());
             }
-            reader.close();
 
             // Disconnecting
             connection.disconnect();
-
-            // Store the answer
-            jsonResult = new JSONObject(response.toString());
         }
         catch (IOException | JSONException e)
         {
@@ -109,16 +121,13 @@ public class ServerTask extends AsyncTask<String, Void, List<Message>>
         // Populate the message list with the json
         if (jsonResult != null)
         {
-            Iterator<String> keys = jsonResult.keys();
-
-            while(keys.hasNext())
+            for (int i = 0; i < jsonResult.length(); i++)
             {
-                String key = keys.next();
                 try
                 {
-                    if (jsonResult.get(key) instanceof JSONObject)
+                    if (jsonResult.get(i) instanceof JSONObject)
                     {
-                        JSONObject currentJsonMessage = (JSONObject) jsonResult.get(key);
+                        JSONObject currentJsonMessage = (JSONObject) jsonResult.get(i);
                         String studentId = currentJsonMessage.getString("student_id");
                         String content = currentJsonMessage.getString("student_message");
                         double latitude = currentJsonMessage.getDouble("gps_lat");

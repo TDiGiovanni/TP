@@ -6,7 +6,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.wearable.activity.WearableActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 
 import static java.lang.Math.abs;
 
-public class ShowMessagesActivity extends WearableActivity implements SensorEventListener
+public class ShowMessagesActivity extends AmbientActivity implements SensorEventListener
 {
     // All attributes used for the shaking detection
     private static final float SHAKE_THRESHOLD = 400;
@@ -40,16 +39,17 @@ public class ShowMessagesActivity extends WearableActivity implements SensorEven
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        currentLayoutId = R.layout.activity_show_messages;
 
         // Initialise the sensor manager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
         // Fetches layout views
-        setContentView(R.layout.activity_show_messages);
+        setContentView(currentLayoutId);
         messageListView = findViewById(R.id.messageListView);
 
         // Converts the list of messages to items displayed in the app
-        MessageAdapter adapter = new MessageAdapter(this, 0, new ArrayList<Message>());
+        adapter = new MessageAdapter(this, 0, new ArrayList<Message>());
         messageListView.setAdapter(adapter);
 
         // Fetches messages from the server
@@ -62,7 +62,7 @@ public class ShowMessagesActivity extends WearableActivity implements SensorEven
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 Intent intent = new Intent(ShowMessagesActivity.this, ShowMessageActivity.class);
-                intent.putExtra("Message", (Message) parent.getItemAtPosition(position));
+                intent.putExtra("Message", adapter.getItem(position));
                 startActivity(intent);
             }
         });
@@ -84,10 +84,15 @@ public class ShowMessagesActivity extends WearableActivity implements SensorEven
         sensorManager.registerListener(this,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
+    }
 
-        sensorManager.registerListener(this,
-                sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),
-                SensorManager.SENSOR_DELAY_NORMAL);
+    @Override
+    public void onExitAmbient()
+    {
+        super.onExitAmbient();
+
+        // Refresh the list of messages when we're back in active mode
+        refreshMessages();
     }
 
     @Override
@@ -109,10 +114,6 @@ public class ShowMessagesActivity extends WearableActivity implements SensorEven
                 float speed = abs(x + y + z - lastX - lastY - lastZ) / timeDifference * 10000;
                 if (speed > SHAKE_THRESHOLD)
                 {
-                    // Converts the list of messages to items displayed in the app
-                    MessageAdapter adapter = new MessageAdapter(this, 0, new ArrayList<Message>());
-                    messageListView.setAdapter(adapter);
-
                     // Fetches messages from the server
                     refreshMessages();
 
@@ -132,12 +133,11 @@ public class ShowMessagesActivity extends WearableActivity implements SensorEven
 
     }
 
-    // Populate the message list with the result from the server //TODO: recall it when back in active mode
+    // Populate the message list with the result from the server
     public void refreshMessages()
     {
         String serverUri = "https://hmin309-embedded-systems.herokuapp.com/message-exchange/messages/";
         ServerTask serverTask = new ServerTask(serverUri, false, adapter, this);
-
         serverTask.execute();
     }
 }
