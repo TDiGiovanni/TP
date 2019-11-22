@@ -10,7 +10,7 @@
     <string name="seeMessages">See messages</string>
     <string name="sendMessage">Send message</string>
     <string name="sentMessage">Message sent</string>
-    <string name="fetchedMessages">Messages fetched</string>
+    <string name="updatedMessages">Messages updated</string>
 
     <string name="startedService">Service started</string>
 

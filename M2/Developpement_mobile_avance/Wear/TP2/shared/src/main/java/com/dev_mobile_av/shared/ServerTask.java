@@ -58,8 +58,8 @@ public class ServerTask extends AsyncTask<String, Void, List<Message>>
         {
             URL url = new URL(this.url);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setReadTimeout(15000); // In milliseconds
-            connection.setConnectTimeout(15000);
+            connection.setReadTimeout(20000); // In milliseconds
+            connection.setConnectTimeout(20000);
 
             if (this.isPost)
             {

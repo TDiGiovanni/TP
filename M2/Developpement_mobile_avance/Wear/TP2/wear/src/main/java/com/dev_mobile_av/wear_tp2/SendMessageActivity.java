@@ -41,9 +41,6 @@ public class SendMessageActivity extends AmbientActivity
     {
         super.onCreate(savedInstanceState);
 
-        // Fetches layout views
-        fetchLayoutViews();
-
         // Creates the Google client to communicate with the phone
         googleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks()
@@ -51,12 +48,12 @@ public class SendMessageActivity extends AmbientActivity
                     @Override
                     public void onConnected(Bundle connectionHint)
                     {
-                        isConnected = true;
+
                     }
                     @Override
                     public void onConnectionSuspended(int cause)
                     {
-                        isConnected = false;
+
                     }
                 })
                 .addOnConnectionFailedListener(new GoogleApiClient.OnConnectionFailedListener()
@@ -64,30 +61,48 @@ public class SendMessageActivity extends AmbientActivity
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult result)
                     {
-                        isConnected = false;
+
                     }
                 })
                 .addApi(Wearable.API)
                 .build();
         googleApiClient.connect();
 
+        // Check if the wearable is connected to the phone
+        checkHandheldConnection();
+
         // Client used to fetch coordinates
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        // Fetches layout views and sets up their behavior
+        setUpLayout();
+    }
+
+    // Fetches layout views and sets up their behavior
+    protected void setUpLayout()
+    {
+        setContentView(R.layout.activity_send_message);
+
+        studentIdEditText = findViewById(R.id.studentIdEditText);
+        contentEditText = findViewById(R.id.contentEditText);
+        sendMessageButton = findViewById(R.id.sendMessageButton);
+        seeMessagesButton = findViewById(R.id.seeMessagesButton);
 
         // Sets up the buttons
         sendMessageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (TextUtils.isEmpty(studentIdEditText.getText())
-                || TextUtils.isEmpty(contentEditText.getText()))
+                        || TextUtils.isEmpty(contentEditText.getText()))
                     Toast.makeText(SendMessageActivity.this, getResources().getString(R.string.fillInfos), Toast.LENGTH_LONG).show();
 
                 else
                 {
                     String messageStudentId = studentIdEditText.getText().toString(),
-                    messageContent = contentEditText.getText().toString();
+                            messageContent = contentEditText.getText().toString();
 
-                    if (isConnected) //TODO: not good
+                    // Only go through the phone if it's connected
+                    if (isConnected)
                         sendMessageToPhone(messageStudentId, messageContent);
                     else
                         sendMessageToServer(messageStudentId, messageContent);
@@ -105,26 +120,27 @@ public class SendMessageActivity extends AmbientActivity
     }
 
     @Override
-    protected void fetchLayoutViews()
-    {
-        setContentView(R.layout.activity_send_message);
-
-        studentIdEditText = findViewById(R.id.studentIdEditText);
-        contentEditText = findViewById(R.id.contentEditText);
-        sendMessageButton = findViewById(R.id.sendMessageButton);
-        seeMessagesButton = findViewById(R.id.seeMessagesButton);
-    }
-
-    @Override
     public void onExitAmbient()
     {
         super.onExitAmbient();
 
-        fetchLayoutViews();
+        setUpLayout();
+    }
+
+    protected void checkHandheldConnection()
+    {
+        new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                isConnected = !(Wearable.NodeApi.getConnectedNodes(googleApiClient).await().getNodes().isEmpty());
+            }
+        }).start();
     }
 
     // Sends the message to the server directly
-    private void sendMessageToServer(String messageStudentId, String messageContent)
+    protected void sendMessageToServer(String messageStudentId, String messageContent)
     {
         // Fetch the last location
         Coordinates coordinates = getLastCoordinates();
@@ -150,7 +166,7 @@ public class SendMessageActivity extends AmbientActivity
     }
 
     // Sends the message to the phone
-    private void sendMessageToPhone(String messageStudentId, String messageContent)
+    protected void sendMessageToPhone(String messageStudentId, String messageContent)
     {
         if (googleApiClient == null)
             return;
@@ -174,7 +190,7 @@ public class SendMessageActivity extends AmbientActivity
     }
 
     // Returns the last coordinates of the wearable
-    private Coordinates getLastCoordinates()
+    protected Coordinates getLastCoordinates()
     {
         final Coordinates coordinates = new Coordinates();
 

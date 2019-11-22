@@ -22,31 +22,28 @@
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
         <uses-library
             android:name="com.google.android.wearable"
             android:required="true" />
 
-        <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
         <meta-data
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
+        <activity android:name=".AmbientActivity" />
+
         <activity
-            android:name=".AmbientActivity"
-            android:label="@string/title_activity_ambient"></activity>
-        <activity
-            android:name=".SendMessageActivity"
-            android:label="@string/appName">
+            android:name=".SendMessageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".ShowMessageActivity" />
+
         <activity android:name=".ShowMessagesActivity" />
     </application>
 

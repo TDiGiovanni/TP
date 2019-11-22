@@ -43,15 +43,23 @@ public class ShowMessagesActivity extends AmbientActivity implements SensorEvent
         // Initialise the sensor manager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
-        // Fetches layout views
-        fetchLayoutViews();
-
-        // Converts the list of messages to items displayed in the app
+        // Adapter to convert the list of messages to items displayed in the app
         adapter = new MessageAdapter(this, 0, new ArrayList<Message>());
-        messageListView.setAdapter(adapter);
+
+        // Fetches all layout views and sets up their behavior
+        setUpLayout();
 
         // Fetches messages from the server
-        refreshMessages();
+        fetchMessages();
+    }
+
+    // Fetches all layout views and sets up their behavior
+    protected void setUpLayout()
+    {
+        setContentView(R.layout.activity_show_messages);
+
+        messageListView = findViewById(R.id.messageListView);
+        messageListView.setAdapter(adapter);
 
         // Show the message in details when it is clicked
         messageListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -64,14 +72,6 @@ public class ShowMessagesActivity extends AmbientActivity implements SensorEvent
                 startActivity(intent);
             }
         });
-    }
-
-    @Override
-    protected void fetchLayoutViews()
-    {
-        setContentView(R.layout.activity_show_messages);
-
-        messageListView = findViewById(R.id.messageListView);
     }
 
     @Override
@@ -97,10 +97,10 @@ public class ShowMessagesActivity extends AmbientActivity implements SensorEvent
     {
         super.onExitAmbient();
 
-        fetchLayoutViews();
+        setUpLayout();
 
-        // Refresh the list of messages when we're back in active mode
-        refreshMessages();
+        // Also refresh the list of messages when we're back in active mode
+        fetchMessages();
     }
 
     @Override
@@ -123,9 +123,9 @@ public class ShowMessagesActivity extends AmbientActivity implements SensorEvent
                 if (speed > SHAKE_THRESHOLD)
                 {
                     // Fetches messages from the server
-                    refreshMessages();
+                    fetchMessages();
 
-                    Toast.makeText(this, getResources().getString(R.string.fetchedMessages), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getResources().getString(R.string.updatedMessages), Toast.LENGTH_LONG).show();
                 }
 
                 lastX = x;
@@ -142,7 +142,7 @@ public class ShowMessagesActivity extends AmbientActivity implements SensorEvent
     }
 
     // Populate the message list with the result from the server
-    public void refreshMessages()
+    public void fetchMessages()
     {
         String serverUri = "https://hmin309-embedded-systems.herokuapp.com/message-exchange/messages/";
         ServerTask serverTask = new ServerTask(serverUri, false, adapter, this);

@@ -4,10 +4,15 @@ import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class AmbientActivity extends WearableActivity
 {
+    protected static final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.FRANCE);
+
+    // Layout views
     protected TextView timeTextView;
 
     @Override
@@ -15,14 +20,11 @@ public class AmbientActivity extends WearableActivity
     {
         super.onCreate(savedInstanceState);
 
-        fetchLayoutViews();
-
         // Enables Always-on
         setAmbientEnabled();
     }
 
-    // The children classes must override this method
-    protected void fetchLayoutViews()
+    protected void setAmbientLayout()
     {
         setContentView(R.layout.activity_ambient);
 
@@ -34,12 +36,12 @@ public class AmbientActivity extends WearableActivity
     {
         super.onEnterAmbient(ambientDetails);
 
-        fetchLayoutViews();
+        setAmbientLayout();
 
-        timeTextView.setText(Calendar.getInstance().getTime().toString());
+        timeTextView.setText(timeFormat.format(Calendar.getInstance().getTime()));
     }
 
-    // The children classes must override this method and call fetchLayoutViews()
+    // The children classes must override this method to reset their layout
     @Override
     public void onExitAmbient()
     {
@@ -51,6 +53,6 @@ public class AmbientActivity extends WearableActivity
     {
         super.onUpdateAmbient();
 
-        timeTextView.setText(Calendar.getInstance().getTime().toString());
+        timeTextView.setText(timeFormat.format(Calendar.getInstance().getTime()));
     }
 }
