@@ -16,20 +16,34 @@ public class ShowMessageActivity extends AmbientActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        currentLayoutId = R.layout.activity_show_message;
+
+        // Fetches all layout views
+        fetchLayoutViews();
 
         // Gets the message from the intent
         message = (Message) getIntent().getSerializableExtra("Message");
-
-        // Fetches all layout views
-        setContentView(currentLayoutId);
-        messageStudentIdTextView = findViewById(R.id.messageStudentIdTextView);
-        messageContentTextView = findViewById(R.id.messageContentTextView);
-        coordinatesTextView = findViewById(R.id.messageCoordinatesTextView);
 
         // Sets up all texts
         messageStudentIdTextView.setText(message.getStudentId());
         messageContentTextView.setText(message.getContent());
         coordinatesTextView.setText(message.getCoordinates().toString());
+    }
+
+    @Override
+    protected void fetchLayoutViews()
+    {
+        setContentView(R.layout.activity_show_message);
+
+        messageStudentIdTextView = findViewById(R.id.messageStudentIdTextView);
+        messageContentTextView = findViewById(R.id.messageContentTextView);
+        coordinatesTextView = findViewById(R.id.messageCoordinatesTextView);
+    }
+
+    @Override
+    public void onExitAmbient()
+    {
+        super.onExitAmbient();
+
+        fetchLayoutViews();
     }
 }

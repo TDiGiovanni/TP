@@ -8,8 +8,6 @@ import java.util.Calendar;
 
 public class AmbientActivity extends WearableActivity
 {
-    protected int currentLayoutId;
-
     protected TextView timeTextView;
 
     @Override
@@ -17,11 +15,18 @@ public class AmbientActivity extends WearableActivity
     {
         super.onCreate(savedInstanceState);
 
-        //setContentView(R.layout.activity_ambient);
-        //timeTextView = findViewById(R.id.timeTextView);
+        fetchLayoutViews();
 
         // Enables Always-on
         setAmbientEnabled();
+    }
+
+    // The children classes must override this method
+    protected void fetchLayoutViews()
+    {
+        setContentView(R.layout.activity_ambient);
+
+        timeTextView = findViewById(R.id.timeTextView);
     }
 
     @Override
@@ -29,16 +34,16 @@ public class AmbientActivity extends WearableActivity
     {
         super.onEnterAmbient(ambientDetails);
 
-        //setContentView(R.layout.activity_ambient); //TODO: not good
-        //timeTextView.setText(Calendar.getInstance().getTime().toString());
+        fetchLayoutViews();
+
+        timeTextView.setText(Calendar.getInstance().getTime().toString());
     }
 
+    // The children classes must override this method and call fetchLayoutViews()
     @Override
     public void onExitAmbient()
     {
         super.onExitAmbient();
-
-        //setContentView(currentLayoutId);
     }
 
     @Override
@@ -46,6 +51,6 @@ public class AmbientActivity extends WearableActivity
     {
         super.onUpdateAmbient();
 
-        //timeTextView.setText(Calendar.getInstance().getTime().toString());
+        timeTextView.setText(Calendar.getInstance().getTime().toString());
     }
 }

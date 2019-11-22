@@ -39,14 +39,12 @@ public class ShowMessagesActivity extends AmbientActivity implements SensorEvent
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        currentLayoutId = R.layout.activity_show_messages;
 
         // Initialise the sensor manager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
         // Fetches layout views
-        setContentView(currentLayoutId);
-        messageListView = findViewById(R.id.messageListView);
+        fetchLayoutViews();
 
         // Converts the list of messages to items displayed in the app
         adapter = new MessageAdapter(this, 0, new ArrayList<Message>());
@@ -66,6 +64,14 @@ public class ShowMessagesActivity extends AmbientActivity implements SensorEvent
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void fetchLayoutViews()
+    {
+        setContentView(R.layout.activity_show_messages);
+
+        messageListView = findViewById(R.id.messageListView);
     }
 
     @Override
@@ -90,6 +96,8 @@ public class ShowMessagesActivity extends AmbientActivity implements SensorEvent
     public void onExitAmbient()
     {
         super.onExitAmbient();
+
+        fetchLayoutViews();
 
         // Refresh the list of messages when we're back in active mode
         refreshMessages();

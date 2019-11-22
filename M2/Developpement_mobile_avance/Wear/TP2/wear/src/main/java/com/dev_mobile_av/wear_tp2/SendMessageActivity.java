@@ -40,14 +40,9 @@ public class SendMessageActivity extends AmbientActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        currentLayoutId = R.layout.activity_send_message;
 
         // Fetches layout views
-        setContentView(currentLayoutId);
-        studentIdEditText = findViewById(R.id.studentIdEditText);
-        contentEditText = findViewById(R.id.contentEditText);
-        sendMessageButton = findViewById(R.id.sendMessageButton);
-        seeMessagesButton = findViewById(R.id.seeMessagesButton);
+        fetchLayoutViews();
 
         // Creates the Google client to communicate with the phone
         googleApiClient = new GoogleApiClient.Builder(this)
@@ -107,6 +102,25 @@ public class SendMessageActivity extends AmbientActivity
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void fetchLayoutViews()
+    {
+        setContentView(R.layout.activity_send_message);
+
+        studentIdEditText = findViewById(R.id.studentIdEditText);
+        contentEditText = findViewById(R.id.contentEditText);
+        sendMessageButton = findViewById(R.id.sendMessageButton);
+        seeMessagesButton = findViewById(R.id.seeMessagesButton);
+    }
+
+    @Override
+    public void onExitAmbient()
+    {
+        super.onExitAmbient();
+
+        fetchLayoutViews();
     }
 
     // Sends the message to the server directly
