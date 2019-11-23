@@ -12,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -26,7 +27,7 @@ public class ServerTask extends AsyncTask<String, Void, List<Message>>
     private String url;                             // Address to connect to
     private boolean isPost;                         // Determines if the HTTP request is POST or GET
 
-    private MessageAdapter adapter;                 // Adapter for the message list
+    private MessageAdapter adapter;                 // Adapter for the message list (used in the case of a GET request)
 
     private final ProgressDialog progressDialog;    // UI indication of the task
 
@@ -74,13 +75,15 @@ public class ServerTask extends AsyncTask<String, Void, List<Message>>
                 jsonParameters.put("gps_lat", parameters[2]);           // Latitude
                 jsonParameters.put("gps_long", parameters[3]);          // Longitude
 
-                // Writing in the output stream
-                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()));
+                // Writing in the output
+                OutputStream os = connection.getOutputStream();
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os));
                 writer.write(jsonParameters.toString());
 
                 // Closing the writer
                 writer.flush();
                 writer.close();
+                os.close();
             }
             else
             {

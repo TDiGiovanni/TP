@@ -50,6 +50,7 @@ public class SendMessageActivity extends AmbientActivity
                     {
 
                     }
+
                     @Override
                     public void onConnectionSuspended(int cause)
                     {
