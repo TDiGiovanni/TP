@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TP2_Forms.MainPage">
+
+    <StackLayout>
+        <Button Text="Refresh"
+                Clicked="RefreshData"
+                VerticalOptions="Start" />
+        
+        <ListView x:Name="TramsView"
+                  ItemsSource="{Binding Trams}"
+                  ItemTapped="OnItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label FontAttributes="Bold" Text="{Binding TramStop}" />
+                            <Label Text="{Binding NextStop}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout BackgroundColor="Beige"
+                     IsVisible="false"
+                     x:Name="InformationLayout">
+            <Label FontAttributes="Bold"
+                   x:Name="stopName"
+                   Text="Name" />
+            <Label x:Name="firstTram"
+                   Text="First" />
+            <Label x:Name="secondTram"
+                   Text="Second"/>
+            <Label x:Name="thirdTram"
+                   Text="Third"/>
+            <Button Text="Close"
+                    Clicked="CloseInformationLayout"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
