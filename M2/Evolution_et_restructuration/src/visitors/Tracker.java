@@ -309,11 +309,9 @@ public class Tracker
 			if (parentCoupling > (leftChildCoupling + rightChildCoupling) / 2)
 			{
 				partition.add(parent);
-				System.out.println("yes");
 			}
 			else
 			{
-				System.out.println("no");
 				stack.push(leftChild);
 				stack.push(rightChild);
 			}
