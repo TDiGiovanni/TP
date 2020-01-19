@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             mc:Ignorable="d"
+             x:Class="XamarinMessenger.Views.MapPage"
+             Title="Vue par carte">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Rafraichir" Clicked="Refresh_Clicked" />
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <maps:Map x:Name="map"
+                  ItemsSource="{Binding Items}">
+            <x:Arguments>
+                <maps:MapSpan>
+                    <x:Arguments>
+                        <maps:Position>
+                            <x:Arguments>
+                                <x:Double>48.862725</x:Double>
+                                <x:Double>2.287592</x:Double>
+                            </x:Arguments>
+                        </maps:Position>
+                        <x:Double>85</x:Double>
+                        <x:Double>85</x:Double>
+                    </x:Arguments>
+                </maps:MapSpan>
+            </x:Arguments>
+            <maps:Map.ItemTemplate>
+                <DataTemplate>
+                    <maps:Pin
+                        Position='{Binding student_position}'
+                        Address="{Binding student_id}"
+                        Label="{Binding student_message}" 
+                        Type="Place">
+                    </maps:Pin>
+                </DataTemplate>
+            </maps:Map.ItemTemplate>
+        </maps:Map>
+    </Grid>
+
+</ContentPage>

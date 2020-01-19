@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinMessenger.Views.ItemDetailPage"
+             Title="{Binding Title}">
+
+    <StackLayout Spacing="20" Padding="15">
+        <Button Text="Add to favorites"
+                Clicked="OnButtonClicked"/>
+        
+        <Label Text="Text:" FontSize="Medium" />
+        <Label Text="{Binding SelectedItem.student_message}" FontSize="Small"/>
+        <Label Text="Author:" FontSize="Medium" />
+        <Label Text="{Binding SelectedItem.student_id}" FontSize="Small"/>
+        <Label Text="Latitude:" FontSize="Medium" />
+        <Label Text="{Binding SelectedItem.gps_lat}" FontSize="Small"/>
+        <Label Text="Longitude:" FontSize="Medium" />
+        <Label Text="{Binding SelectedItem.gps_long}" FontSize="Small"/>
+
+
+        <Picker Title="Change student color"
+                SelectedItem="{Binding SelectedItem.Student.Color, Mode=TwoWay}"
+                SelectedIndexChanged="OnPickerClicked">
+            <Picker.Items>
+                <x:String>White</x:String>
+                <x:String>Blue</x:String>
+                <x:String>Green</x:String>
+                <x:String>Red</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Label Text="Messages from the same student:" FontSize="Medium" />
+        <ListView x:Name="AuthorItemsListView"
+                ItemsSource="{Binding AuthorItems}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="False"
+                CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding student_message}"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="16" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+
+</ContentPage>
