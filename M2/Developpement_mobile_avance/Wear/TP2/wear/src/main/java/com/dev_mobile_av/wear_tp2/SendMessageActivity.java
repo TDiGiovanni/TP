@@ -103,6 +103,7 @@ public class SendMessageActivity extends AmbientActivity
                             messageContent = contentEditText.getText().toString();
 
                     // Only go through the phone if it's connected
+                    checkHandheldConnection();
                     if (isConnected)
                         sendMessageToPhone(messageStudentId, messageContent);
                     else

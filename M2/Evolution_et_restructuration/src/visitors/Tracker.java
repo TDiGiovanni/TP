@@ -67,6 +67,10 @@ public class Tracker
 		createClusterTree();
 		printClusterTree();
 		
+		System.out.println("\nEnter anything to print the identified modules");
+		for (Cluster module : selectClusters())
+			System.out.println(module);
+		
 		s.close();
 	}
 	
@@ -204,7 +208,7 @@ public class Tracker
 				for (Cluster coupledCluster : cluster.coupling.keySet())
 					System.out.println(coupledCluster.getName()
 							+ " - "
-							+ (float) cluster.coupling.get(coupledCluster) / Cluster.getTotalCoupling());
+							+ (float) cluster.coupling.get(coupledCluster) / Cluster.getGlobalCoupling());
 			}
 		}
 	}
@@ -265,7 +269,7 @@ public class Tracker
 		return result;
 	}
 	
-	// Adds the coupling to "newCluster" to the clusters coupled to "firstCluster" or "secondCluster"
+	// Adds the coupling to "newCluster" of the clusters coupled to "firstCluster" or "secondCluster"
 	protected void updateCoupling(Cluster firstCluster, Cluster secondCluster, Cluster newCluster)
 	{
 		for (Cluster cluster : clusters)
@@ -298,10 +302,18 @@ public class Tracker
 					leftChild = parent.getFirstCluster(),
 					rightChild = parent.getSecondCluster();
 			
-			if (true)
+			int parentCoupling = parent.getTotalCoupling(),
+					leftChildCoupling = (leftChild == null? 0 : leftChild.getTotalCoupling()),
+					rightChildCoupling = (rightChild == null? 0 : rightChild.getTotalCoupling());
+			
+			if (parentCoupling > (leftChildCoupling + rightChildCoupling) / 2)
+			{
 				partition.add(parent);
+				System.out.println("yes");
+			}
 			else
 			{
+				System.out.println("no");
 				stack.push(leftChild);
 				stack.push(rightChild);
 			}

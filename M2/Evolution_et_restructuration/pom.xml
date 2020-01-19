@@ -21,6 +21,31 @@
           <release>12</release>
         </configuration>
       </plugin>
+      
+      <plugin>
+	    <groupId>fr.inria.gforge.spoon</groupId>
+	    <artifactId>spoon-maven-plugin</artifactId>
+	        <configuration>
+		      <processors>
+		        <processor>visitors.NameChangeProcessor</processor>
+		      </processors>
+		      <processorProperties>
+		        <processorProperty>
+		          <name>visitors.NameChangeProcessor</name>
+		          <properties>
+		            <property>
+		              <name>oldClassName</name>
+		              <value>OldNameTest</value>
+		            </property>
+		            <property>
+		              <name>newClassName</name>
+		              <value>NewNameTest</value>
+		            </property>
+		          </properties>
+		        </processorProperty>
+		      </processorProperties>
+		    </configuration>
+	  </plugin>
     </plugins>
   </build>
   <dependencies>

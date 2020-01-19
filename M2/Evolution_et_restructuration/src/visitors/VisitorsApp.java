@@ -18,7 +18,10 @@ import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 
 import spoon.Launcher;
+import spoon.processing.ProcessingManager;
 import spoon.reflect.CtModel;
+import spoon.reflect.factory.Factory;
+import spoon.support.QueueProcessingManager;
 
 public class VisitorsApp
 {
@@ -31,28 +34,25 @@ public class VisitorsApp
 		System.out.println("Enter the absolute path of the source code you want to analyse:");
 		String path = s.next();
 		if (path.equals("default"))
-			path = "C:\\Users\\Thomas\\Documents\\Repositories\\GitHub\\TP\\M2\\Modularite_et_composnats\\Others\\src";
+			path = "C:\\Users\\Thomas\\Documents\\Repositories\\GitHub\\TP\\M2\\Evolution_et_restructuration\\src\\visitors";
 		
-		String spoon = "n";
-		/* Spoon
-		System.out.println("With Spoon? (y/n)");
+		// Do we want to use Spoon?
+		String spoon = "";
+		System.out.println("Use Spoon? (y/n)");
 		do
 		{
 			spoon = s.next();
 		}
 		while (!spoon.equals("y") && !spoon.equals("n"));
-		*/
 		
 		// Parse the files based on the user input
 		if (spoon.equals("y"))
-			spoonParse(path);
+			testSpoon(path);
 		else
 		{
 			parseFilesInDirectory(path);
+			tracker.print();
 		}
-
-		// Printing
-		tracker.print();
 		
 		s.close();
 	}
@@ -69,7 +69,7 @@ public class VisitorsApp
 			 {
 				 tracker.lineCount += FileUtils.readLines(f, Charset.defaultCharset()).size();
 				 
-				 manualParse(path, FileUtils.readFileToString(f, Charset.defaultCharset()));
+				 parseAST(path, FileUtils.readFileToString(f, Charset.defaultCharset()));
 			 }
 			 else if (f.isDirectory()) // Call the method again if it's a directory
 			 {
@@ -97,7 +97,7 @@ public class VisitorsApp
 	}
 	
 	// Uses ASTParse to parse the source file, also prints the relevant informations
-	protected static void manualParse(String sourcePath, String sourceFile)
+	protected static void parseAST(String sourcePath, String sourceFile)
 	{
 		CompilationUnit cu = setUpParser(sourcePath, sourceFile);
 
@@ -192,15 +192,24 @@ public class VisitorsApp
 		}
 	}
 
-	protected static void spoonParse(String sourcePath)
+	protected static void testSpoon(String sourcePath)
 	{
 		// Setting up the model
 		Launcher launcher = new Launcher();
 		launcher.addInputResource(sourcePath);
-		launcher.getEnvironment().setAutoImports(true);
 		CtModel model = launcher.buildModel();
 		
+		// Get the number of packages and classes
 		tracker.packageCount = model.getAllPackages().size();
 		tracker.classCount = model.getAllTypes().size();
+		System.out.println("Number of packages: " + tracker.packageCount);
+		System.out.println("Number of classes: " + tracker.classCount);
+		
+		// Test the processor
+		final Factory factory = launcher.getFactory();
+		final ProcessingManager processingManager = new QueueProcessingManager(factory);
+		final NameChangeProcessor processor = new NameChangeProcessor();
+		processingManager.addProcessor(processor);
+		processingManager.process(factory.Class().getAll());
 	}
 }

@@ -69,7 +69,6 @@ namespace TP2_Forms
 
         private void OnItemTapped(object sender, SelectedItemChangedEventArgs e)
         {
-
             InformationLayout.IsVisible = true;
 
             //var tam = (TamSchedule)TramsView.SelectedItem;
@@ -79,7 +78,6 @@ namespace TP2_Forms
             firstTram.Text = tam.NextTrams[0].ToString();
             secondTram.Text = tam.NextTrams[1].ToString();
             thirdTram.Text = tam.NextTrams[2].ToString();
-
         }
 
         // InformationLayout close button action

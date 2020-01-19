@@ -61,6 +61,7 @@ public class ServerTask extends AsyncTask<String, Void, List<Message>>
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setReadTimeout(20000); // In milliseconds
             connection.setConnectTimeout(20000);
+            connection.setDoInput(true);
 
             if (this.isPost)
             {
@@ -88,30 +89,25 @@ public class ServerTask extends AsyncTask<String, Void, List<Message>>
             else
             {
                 connection.setRequestMethod("GET");
-                connection.setDoInput(true);
             }
 
             // Connecting
             connection.connect();
 
-            // We want the server answer only if the request was GET
-            if (!this.isPost)
+            // Reading the answer
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line = reader.readLine();
+            while (line != null)
             {
-                // Reading the answer
-                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                StringBuilder response = new StringBuilder();
-                String line = reader.readLine();
-                while (line != null)
-                {
-                    response.append(line).append('\n');
+                response.append(line).append('\n');
 
-                    line = reader.readLine();
-                }
-                reader.close();
-
-                // Store the answer
-                jsonResult = new JSONArray(response.toString());
+                line = reader.readLine();
             }
+            reader.close();
+
+            // Store the answer
+            jsonResult = new JSONArray(response.toString());
 
             // Disconnecting
             connection.disconnect();

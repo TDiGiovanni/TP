@@ -751,11 +751,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\TP1-2\\TP2_Forms\\TP2_Forms\\TP2_Forms.csproj",
+      "projectUniqueName": "C:\\Users\\Thomas\\Documents\\Repositories\\GitHub\\TP\\M2\\Developpement_mobile_avance\\Xamarin\\TP1-2\\TP2_Forms\\TP2_Forms\\TP2_Forms.csproj",
       "projectName": "TP2_Forms",
-      "projectPath": "C:\\TP1-2\\TP2_Forms\\TP2_Forms\\TP2_Forms.csproj",
+      "projectPath": "C:\\Users\\Thomas\\Documents\\Repositories\\GitHub\\TP\\M2\\Developpement_mobile_avance\\Xamarin\\TP1-2\\TP2_Forms\\TP2_Forms\\TP2_Forms.csproj",
       "packagesPath": "C:\\Users\\Thomas\\.nuget\\packages\\",
-      "outputPath": "C:\\TP1-2\\TP2_Forms\\TP2_Forms\\obj\\",
+      "outputPath": "C:\\Users\\Thomas\\Documents\\Repositories\\GitHub\\TP\\M2\\Developpement_mobile_avance\\Xamarin\\TP1-2\\TP2_Forms\\TP2_Forms\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
